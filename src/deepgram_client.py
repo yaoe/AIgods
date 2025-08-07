@@ -47,17 +47,24 @@ class DeepgramClient:
         )
         
         # Start WebSocket in separate thread
-        ws_thread = threading.Thread(target=self.ws.run_forever)
+        def run_ws():
+            try:
+                self.ws.run_forever(ping_interval=5, ping_timeout=3)
+            except Exception as e:
+                logger.error(f"WebSocket thread error: {e}")
+                
+        ws_thread = threading.Thread(target=run_ws)
         ws_thread.daemon = True
         ws_thread.start()
         
-        # Wait for connection
-        timeout = 5
+        # Wait for connection with better error handling
+        timeout = 10  # Increased timeout for slower connections
         start = time.time()
         while not self.is_connected and time.time() - start < timeout:
             time.sleep(0.1)
             
         if not self.is_connected:
+            logger.error("Connection timeout - WebSocket thread may have failed")
             raise Exception("Failed to connect to Deepgram")
             
     def _on_open(self, ws):
@@ -127,4 +134,7 @@ class DeepgramClient:
     def close(self):
         self.is_connected = False
         if self.ws:
-            self.ws.close()
+            try:
+                self.ws.close()
+            except Exception as e:
+                logger.debug(f"Error closing WebSocket: {e}")
