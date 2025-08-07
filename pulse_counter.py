@@ -9,8 +9,8 @@ import RPi.GPIO as GPIO
 import time
 
 # Pin definitions
-ENABLE_PIN = 23  # Hold this down to enable counting
-PULSE_PIN = 24   # Pulses to count
+ENABLE_PIN = 23  # Hold this down to enable counting // interupt (orange/jaune)
+PULSE_PIN = 24   # Pulses to count // pulase (marron rouge)
 
 # Setup GPIO
 GPIO.setmode(GPIO.BCM)

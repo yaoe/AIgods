@@ -8,7 +8,7 @@ import time
 
 # Setup GPIO
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(25, GPIO.IN, pull_up_down=GPIO.PUD_UP) # mute button (vert jaune)
 
 print("Button test ready. Press button to see message.")
 
