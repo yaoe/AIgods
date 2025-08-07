@@ -95,23 +95,36 @@ class AudioManager:
             # Convert MP3 to PCM for PyAudio
             audio_segment = AudioSegment.from_mp3(io.BytesIO(audio_data))
             
-            # Convert to 16-bit PCM at our sample rate
+            # Convert to 16-bit PCM at our sample rate with proper channel handling
             audio_segment = audio_segment.set_frame_rate(self.sample_rate)
-            audio_segment = audio_segment.set_channels(1)
+            audio_segment = audio_segment.set_channels(1)  # Force mono
             audio_segment = audio_segment.set_sample_width(2)  # 16-bit
+            
+            logger.debug(f"Audio format: {audio_segment.frame_rate}Hz, {audio_segment.channels} channels, {audio_segment.sample_width} bytes/sample")
             
             # Get raw PCM data
             pcm_data = audio_segment.raw_data
             
-            # Play through PyAudio
-            stream = self.audio.open(
-                format=pyaudio.paInt16,
-                channels=1,
-                rate=self.sample_rate,
-                output=True,
-                output_device_index=self.output_device_index,
-                frames_per_buffer=self.chunk_size
-            )
+            # Play through PyAudio with error handling
+            try:
+                stream = self.audio.open(
+                    format=pyaudio.paInt16,
+                    channels=1,
+                    rate=self.sample_rate,
+                    output=True,
+                    output_device_index=self.output_device_index,
+                    frames_per_buffer=self.chunk_size
+                )
+            except Exception as e:
+                logger.error(f"Error opening audio stream: {e}")
+                # Try without specifying device
+                stream = self.audio.open(
+                    format=pyaudio.paInt16,
+                    channels=1,
+                    rate=self.sample_rate,
+                    output=True,
+                    frames_per_buffer=self.chunk_size
+                )
             
             # Play in chunks, checking for interruption
             for i in range(0, len(pcm_data), self.chunk_size):
@@ -163,20 +176,33 @@ class AudioManager:
             # Convert complete MP3 to PCM
             audio_segment = AudioSegment.from_mp3(io.BytesIO(audio_buffer))
             audio_segment = audio_segment.set_frame_rate(self.sample_rate)
-            audio_segment = audio_segment.set_channels(1)
-            audio_segment = audio_segment.set_sample_width(2)
+            audio_segment = audio_segment.set_channels(1)  # Force mono
+            audio_segment = audio_segment.set_sample_width(2)  # 16-bit
+            
+            logger.debug(f"Buffered audio format: {audio_segment.frame_rate}Hz, {audio_segment.channels} channels")
             
             pcm_data = audio_segment.raw_data
             
-            # Open audio stream
-            stream = self.audio.open(
-                format=pyaudio.paInt16,
-                channels=1,
-                rate=self.sample_rate,
-                output=True,
-                output_device_index=self.output_device_index,
-                frames_per_buffer=self.chunk_size
-            )
+            # Open audio stream with error handling
+            try:
+                stream = self.audio.open(
+                    format=pyaudio.paInt16,
+                    channels=1,
+                    rate=self.sample_rate,
+                    output=True,
+                    output_device_index=self.output_device_index,
+                    frames_per_buffer=self.chunk_size
+                )
+            except Exception as e:
+                logger.error(f"Error opening buffered audio stream: {e}")
+                # Try without specifying device
+                stream = self.audio.open(
+                    format=pyaudio.paInt16,
+                    channels=1,
+                    rate=self.sample_rate,
+                    output=True,
+                    frames_per_buffer=self.chunk_size
+                )
             
             # Play complete audio
             for i in range(0, len(pcm_data), self.chunk_size):
