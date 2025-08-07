@@ -13,11 +13,14 @@ logger = logging.getLogger(__name__)
 
 
 class AudioManager:
-    def __init__(self, sample_rate: int = 16000, chunk_size: int = 1024, output_device_index: Optional[int] = None):
+    def __init__(self, sample_rate: int = 16000, chunk_size: int = 1024, 
+                 output_device_index: Optional[int] = None,
+                 input_device_index: Optional[int] = None):
         self.sample_rate = sample_rate
         self.chunk_size = chunk_size
         self.audio = pyaudio.PyAudio()
         self.output_device_index = output_device_index
+        self.input_device_index = input_device_index
         
         # Audio queues
         self.record_queue = queue.Queue()
@@ -66,6 +69,7 @@ class AudioManager:
                 channels=1,
                 rate=self.sample_rate,
                 input=True,
+                input_device_index=self.input_device_index,
                 frames_per_buffer=self.chunk_size
             )
             
