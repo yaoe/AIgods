@@ -92,6 +92,9 @@ class DeepgramClient:
             
     def _on_error(self, ws, error):
         logger.error(f"WebSocket error: {error}")
+        logger.error(f"Error type: {type(error)}")
+        if hasattr(error, '__dict__'):
+            logger.error(f"Error details: {error.__dict__}")
         
     def _on_close(self, ws, close_status_code, close_msg):
         logger.info(f"WebSocket closed: {close_status_code} - {close_msg}")
