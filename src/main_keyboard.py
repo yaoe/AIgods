@@ -32,7 +32,8 @@ class KeyboardVoiceChatbot:
         self.config = ConfigLoader()
         
         # Initialize components
-        self.audio_manager = AudioManager()
+        # Use device 1 for Raspberry Pi headphones
+        self.audio_manager = AudioManager(output_device_index=1)
         self.elevenlabs = ElevenLabsClient(
             api_key=os.getenv("ELEVENLABS_API_KEY"),
             voice_id=os.getenv("ELEVENLABS_VOICE_ID", "21m00Tcm4TlvDq8ikWAM")
