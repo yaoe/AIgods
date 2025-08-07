@@ -33,7 +33,8 @@ class VoiceChatbot:
         self.config = ConfigLoader()
         
         # Initialize components
-        self.audio_manager = AudioManager()
+        # Use device 1 for Raspberry Pi headphones
+        self.audio_manager = AudioManager(output_device_index=1)
         self.deepgram = DeepgramClient(
             api_key=os.getenv("DEEPGRAM_API_KEY"),
             on_transcript=self.handle_transcript
