@@ -280,7 +280,14 @@ class PhoneChatbot:
             
             # Greet the user
             greeting = f"Hello! This is {self.current_personality['name']} speaking. How can I help you?"
-            self._speak_response(greeting)
+            
+            # Generate and speak greeting
+            try:
+                voice_settings = self.current_personality.get("voice_settings", {})
+                audio_data = self.elevenlabs.generate_audio(greeting, voice_settings)
+                self.audio_manager.play_audio(audio_data)
+            except Exception as e:
+                logger.error(f"Error speaking greeting: {e}")
             
             logger.info(f"✅ Conversation started with {self.current_personality['name']}")
             
