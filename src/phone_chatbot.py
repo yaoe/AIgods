@@ -58,15 +58,13 @@ class PhoneChatbot:
         self.current_personality = None
         self.chatbot_instance = None
         
-        # Conversation state for interruptions
-        self.is_user_speaking = False
-        self.last_speech_time = 0
-        self.accumulated_transcript = ""
-        self.is_generating = False
-        self.generated_response = ""
+        # Conversation state (simplified like main.py)
+        self.is_listening = False
+        self.is_processing = False
+        self.current_transcript = ""
+        self.last_final_transcript = ""
         self.shadow_listening = False
-        self.silence_threshold = 1.2
-        self.monitoring_active = False
+        self.last_transcript_time = 0
         
         # GPIO state
         self.last_phone_state = True
@@ -276,14 +274,9 @@ class PhoneChatbot:
             # Connect to Deepgram
             self.deepgram.connect()
             
-            # Start recording
+            # Start listening
+            self.is_listening = True
             self.audio_manager.start_recording(self._handle_audio_chunk)
-            
-            # Start silence monitoring thread
-            self.monitoring_active = True
-            silence_thread = threading.Thread(target=self._monitor_silence)
-            silence_thread.daemon = True
-            silence_thread.start()
             
             # Greet the user
             greeting = f"Hello! This is {self.current_personality['name']} speaking. How can I help you?"
@@ -302,7 +295,7 @@ class PhoneChatbot:
             
         logger.info("Ending conversation...")
         self.conversation_active = False
-        self.monitoring_active = False
+        self.is_listening = False
         
         # Stop recording
         self.audio_manager.stop_recording()
@@ -313,42 +306,40 @@ class PhoneChatbot:
             
         # Clear state
         self.current_personality = None
-        self.accumulated_transcript = ""
+        self.current_transcript = ""
+        self.last_final_transcript = ""
         self.shadow_listening = False
         
     def _handle_audio_chunk(self, audio_data: bytes):
-        """Handle audio from microphone"""
-        if self.conversation_active and hasattr(self, 'deepgram'):
-            # Always send audio for interruption detection
-            if not self.audio_manager.is_playing or self.shadow_listening:
+        """Handle audio chunk from microphone"""
+        if (self.is_listening and not self.is_processing) or self.shadow_listening:
+            if hasattr(self, 'deepgram'):
                 self.deepgram.send_audio(audio_data)
             
     def _handle_transcript(self, transcript: str, is_final: bool):
-        """Handle speech recognition results with interruption support"""
-        if not self.conversation_active or not transcript.strip():
+        """Handle transcript from Deepgram (using main.py approach)"""
+        if not transcript.strip():
             return
             
-        # Update speech timing
-        self.last_speech_time = time.time()
-        self.is_user_speaking = True
-        
         # Handle interruption during AI speech
         if self.shadow_listening and self.audio_manager.is_playing:
             if is_final and self._is_intentional_interruption(transcript):
                 logger.info(f"🛑 INTERRUPTION detected: {transcript}")
                 self._handle_interruption(transcript)
                 return
-                
+            
         if is_final:
-            logger.info(f"User: {transcript}")
-            # Accumulate transcripts
-            if self.accumulated_transcript:
-                self.accumulated_transcript += " " + transcript
-            else:
-                self.accumulated_transcript = transcript
-                
-            # Start generating response immediately
-            self._start_response_generation(self.accumulated_transcript)
+            logger.info(f"Final transcript: {transcript}")
+            self.last_final_transcript = transcript
+            self.last_transcript_time = time.time()
+            
+            # Check if we should process this as a complete utterance
+            if self._should_process_utterance(transcript):
+                # Add a small delay to ensure the user finished speaking
+                self._schedule_delayed_processing(transcript)
+        else:
+            # Update current transcript for display
+            self.current_transcript = transcript
             
     def _is_intentional_interruption(self, transcript: str) -> bool:
         """Check if this is an intentional interruption"""
@@ -376,6 +367,42 @@ class PhoneChatbot:
             return True
             
         return False
+    
+    def _should_process_utterance(self, transcript: str) -> bool:
+        """Determine if we should process the utterance"""
+        # Simple heuristic: process if it's a complete sentence or question
+        transcript = transcript.strip()
+        
+        # Check for question marks or common sentence endings
+        if transcript.endswith(('?', '.', '!')) or len(transcript.split()) > 3:
+            return True
+            
+        return False
+    
+    def _schedule_delayed_processing(self, transcript: str):
+        """Schedule processing with a delay to ensure sentence completion"""
+        def delayed_process():
+            # Wait for 0.5 seconds
+            time.sleep(0.5)
+            
+            # Check if there was a more recent transcript (user continued speaking)
+            if time.time() - self.last_transcript_time < 0.4:
+                logger.info("User still speaking, not processing yet")
+                return
+                
+            # Check if we're already processing something
+            if self.is_processing:
+                logger.info("Already processing, skipping")
+                return
+                
+            # Process the input
+            logger.info(f"Processing after delay: {transcript}")
+            self._process_user_input(transcript)
+            
+        # Start delay thread
+        delay_thread = threading.Thread(target=delayed_process)
+        delay_thread.daemon = True
+        delay_thread.start()
         
     def _handle_interruption(self, transcript: str):
         """Handle user interruption"""
@@ -383,122 +410,63 @@ class PhoneChatbot:
         self.audio_manager.interrupt_playback()
         self.shadow_listening = False
         
-        # Clear accumulated transcript and start fresh
-        self.accumulated_transcript = transcript
-        
-        # Wait a moment
+        # Wait a moment for audio to stop
         time.sleep(0.2)
         
-        # Process the interruption
-        self._start_response_generation(transcript)
+        # Process the interruption directly
+        self._process_user_input(transcript)
         
-    def _monitor_silence(self):
-        """Monitor for silence to trigger responses"""
-        while self.monitoring_active:
-            time.sleep(0.1)
-            
-            if self.is_user_speaking and not self.audio_manager.is_playing:
-                silence_duration = time.time() - self.last_speech_time
-                
-                if silence_duration > self.silence_threshold:
-                    logger.info(f"🔇 Silence detected ({silence_duration:.1f}s)")
-                    self.is_user_speaking = False
-                    
-                    # Respond with the accumulated transcript
-                    if self.accumulated_transcript.strip():
-                        self._respond_to_user()
-                        
-    def _start_response_generation(self, transcript: str):
-        """Start generating response in background"""
-        if self.is_generating:
+    def _process_user_input(self, transcript: str):
+        """Process user input and generate response"""
+        if self.is_processing:
             return
             
-        self.is_generating = True
-        thread = threading.Thread(target=self._generate_response, args=(transcript,))
-        thread.daemon = True
-        thread.start()
+        self.is_processing = True
         
-    def _generate_response(self, transcript: str):
-        """Generate response in background"""
+        # Add user message to conversation
+        self.conversation.add_user_message(transcript)
+        
+        # Generate and speak response in a separate thread
+        response_thread = threading.Thread(target=self._generate_and_speak_response)
+        response_thread.daemon = True
+        response_thread.start()
+        
+    def _generate_and_speak_response(self):
+        """Generate AI response and speak it"""
         try:
-            # Temporarily add to conversation
-            original_count = len(self.conversation.messages)
-            self.conversation.add_user_message(transcript)
-            
-            # Generate response
-            response_parts = []
-            for chunk in self.conversation.generate_response(streaming=True):
-                response_parts.append(chunk)
+            # Generate complete response first
+            logger.info("Generating AI response...")
+            full_response = ""
+            for text_chunk in self.conversation.generate_response(streaming=True):
+                full_response += text_chunk
                 
-            self.generated_response = ''.join(response_parts)
+            logger.info(f"Response: {full_response}")
             
-            # Remove temporary message
-            if len(self.conversation.messages) > original_count:
-                self.conversation.messages.pop()
-                
-            logger.info(f"Response ready: {self.generated_response[:50]}...")
+            # Generate audio for complete response
+            logger.info("Generating audio...")
+            voice_settings = self.current_personality.get("voice_settings", {})
+            audio_data = self.elevenlabs.generate_audio(full_response, voice_settings)
             
-        except Exception as e:
-            logger.error(f"Error generating response: {e}")
-        finally:
-            self.is_generating = False
-            
-    def _respond_to_user(self):
-        """Respond to user after silence"""
-        if not self.accumulated_transcript.strip():
-            return
-            
-        # Wait for generation if needed
-        if self.is_generating:
-            timeout = 3
-            start = time.time()
-            while self.is_generating and time.time() - start < timeout:
-                time.sleep(0.1)
-                
-        if not self.generated_response:
-            return
-            
-        # Add to conversation properly
-        self.conversation.add_user_message(self.accumulated_transcript)
-        
-        # Speak the response
-        self._speak_response(self.generated_response)
-        
-        # Add assistant response to history
-        from src.conversation_manager import Message
-        self.conversation.messages.append(
-            Message(role="assistant", content=self.generated_response)
-        )
-        
-        # Reset state
-        self.accumulated_transcript = ""
-        self.generated_response = ""
-        
-    def _speak_response(self, text: str):
-        """Speak a response using ElevenLabs with interruption support"""
-        try:
-            logger.info(f"Speaking: {text}")
-            
-            # Enable shadow listening for interruptions
+            # Enable shadow listening for interruption detection
             self.shadow_listening = True
-            logger.info("👂 Listening for interruptions...")
+            logger.info("Shadow listening enabled - you can interrupt")
             
-            audio_data = self.elevenlabs.generate_audio(
-                text,
-                self.current_personality.get("voice_settings", {})
-            )
+            # Play the audio
+            logger.info("Playing audio...")
             self.audio_manager.play_audio(audio_data)
             
             # Wait for playback to complete
             while self.audio_manager.is_playing:
                 time.sleep(0.1)
-                
-            # Disable shadow listening
-            self.shadow_listening = False
             
-        except Exception as e:
-            logger.error(f"Error speaking response: {e}")
+            # Disable shadow listening when done
             self.shadow_listening = False
+                
+        except Exception as e:
+            logger.error(f"Error generating response: {e}")
+        finally:
+            self.is_processing = False
+        
             
     def cleanup(self):
         """Clean up resources"""
