@@ -183,15 +183,23 @@ class PhoneChatbot:
         self._play_dial_tone()
         
     def _handle_phone_hangup(self):
-        """Handle when phone is hung up"""
-        logger.info("📞 Phone hung up!")
+        """Handle when phone is hung up - complete shutdown until pickup"""
+        logger.info("📞 Phone hung up - shutting down everything!")
         self.phone_active = False
         
-        # Immediately stop any ongoing audio playback
+        # Immediately stop ALL audio playback
         self.audio_manager.interrupt_playback()
         
+        # Stop dial tone
         self._stop_dial_tone()
+        
+        # End conversation completely
         self._end_conversation()
+        
+        # Ensure complete silence - stop any background audio processes
+        self.audio_manager.stop_all_audio()
+        
+        logger.info("📞 System silent - waiting for phone pickup...")
         
     def _generate_dial_tone(self):
         """Generate dial tone if it doesn't exist"""
@@ -207,15 +215,19 @@ class PhoneChatbot:
         self.dial_tone_playing = True
         
         def play_loop():
-            while self.dial_tone_playing:
+            while self.dial_tone_playing and self.phone_active:
                 try:
+                    # Only play if phone is still active
+                    if not self.phone_active:
+                        break
+                        
                     # Load and play dial tone
                     with open('sounds/dial_tone.wav', 'rb') as f:
                         audio_data = f.read()
                     self.audio_manager.play_audio(audio_data, format='wav')
                     
                     # Small gap between loops
-                    if self.dial_tone_playing:
+                    if self.dial_tone_playing and self.phone_active:
                         time.sleep(0.1)
                 except Exception as e:
                     logger.error(f"Error playing dial tone: {e}")
