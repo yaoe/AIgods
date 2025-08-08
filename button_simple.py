@@ -8,14 +8,14 @@ import time
 
 # Setup GPIO
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(25, GPIO.IN, pull_up_down=GPIO.PUD_UP) # mute button (vert jaune)
+GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP) # mute button (vert jaune)
 
 print("Button test ready. Press button to see message.")
 
 try:
     last_state = True
     while True:
-        current_state = GPIO.input(23)
+        current_state = GPIO.input(21)
         
         # Button pressed (goes from HIGH to LOW)
         if last_state == True and current_state == False:

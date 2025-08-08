@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 import time
 
 # Test these pins
-TEST_PINS = [23, 24, 25, 18]
+TEST_PINS = [23, 24, 25, 21]
 
 GPIO.setmode(GPIO.BCM)
 
