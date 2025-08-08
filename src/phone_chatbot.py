@@ -43,6 +43,8 @@ logger = logging.getLogger(__name__)
 
 # Pin definitions
 PHONE_HANDLE_PIN = 21     # Phone handle sensor
+MUTE_BUTTON_PIN = 25      # Mute button
+RELAY_PIN = 8             # Relay output (mute indicator)
 PULSE_ENABLE_PIN = 23     # Dial pulse enable
 PULSE_INPUT_PIN = 24      # Dial pulse count
 
@@ -68,10 +70,14 @@ class PhoneChatbot:
         
         # GPIO state
         self.last_phone_state = True
+        self.last_mute_button_state = True
         self.last_pulse_enable_state = True
         self.last_pulse_state = True
         self.pulse_count = 0
         self.counting_active = False
+        
+        # Mute state
+        self.is_muted = False
         
         # Load personality list
         self.personalities = self._load_personalities()
@@ -80,8 +86,13 @@ class PhoneChatbot:
         if GPIO_AVAILABLE:
             GPIO.setmode(GPIO.BCM)
             GPIO.setup(PHONE_HANDLE_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+            GPIO.setup(MUTE_BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+            GPIO.setup(RELAY_PIN, GPIO.OUT)
             GPIO.setup(PULSE_ENABLE_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
             GPIO.setup(PULSE_INPUT_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+            
+            # Initialize relay to OFF (unmuted)
+            GPIO.output(RELAY_PIN, GPIO.LOW)
             
     def _load_personalities(self):
         """Load all personality configurations"""
@@ -117,6 +128,7 @@ class PhoneChatbot:
         """Main GPIO monitoring loop"""
         while True:
             phone_state = GPIO.input(PHONE_HANDLE_PIN)
+            mute_button_state = GPIO.input(MUTE_BUTTON_PIN)
             pulse_enable_state = GPIO.input(PULSE_ENABLE_PIN)
             pulse_state = GPIO.input(PULSE_INPUT_PIN)
             
@@ -125,6 +137,13 @@ class PhoneChatbot:
                 self._handle_phone_pickup()
             elif self.last_phone_state == False and phone_state == True:
                 self._handle_phone_hangup()
+                
+            # Mute button detection (only when phone is active)
+            if self.phone_active:
+                if self.last_mute_button_state == True and mute_button_state == False:
+                    self._handle_mute_pressed()
+                elif self.last_mute_button_state == False and mute_button_state == True:
+                    self._handle_mute_released()
                 
             # Pulse counting (dialing)
             if self.phone_active and not self.conversation_active:
@@ -149,6 +168,7 @@ class PhoneChatbot:
                         
             # Update states
             self.last_phone_state = phone_state
+            self.last_mute_button_state = mute_button_state
             self.last_pulse_enable_state = pulse_enable_state
             self.last_pulse_state = pulse_state
             
@@ -159,6 +179,7 @@ class PhoneChatbot:
         print("\nTest mode - use keyboard commands:")
         print("  p: Pick up phone")
         print("  h: Hang up phone")
+        print("  m: Toggle mute")
         print("  1-9,0: Dial number (0=10)")
         print("  q: Quit")
         
@@ -169,6 +190,11 @@ class PhoneChatbot:
                 self._handle_phone_pickup()
             elif cmd == 'h':
                 self._handle_phone_hangup()
+            elif cmd == 'm':
+                if self.is_muted:
+                    self._handle_mute_released()
+                else:
+                    self._handle_mute_pressed()
             elif cmd in '1234567890':
                 num = 10 if cmd == '0' else int(cmd)
                 self._stop_dial_tone()
@@ -201,6 +227,29 @@ class PhoneChatbot:
             self.audio_manager.stop_recording()
         
         logger.info("📞 System silent - waiting for phone pickup...")
+        
+    def _handle_mute_pressed(self):
+        """Handle mute button press - mute microphone"""
+        logger.info("🔇 MUTE button pressed - microphone muted")
+        self.is_muted = True
+        
+        # Turn on relay (mute indicator)
+        if GPIO_AVAILABLE:
+            GPIO.output(RELAY_PIN, GPIO.HIGH)
+        
+        # Stop sending audio to Deepgram (effectively mute mic)
+        logger.info("🎤 Microphone muted - not sending audio to speech recognition")
+        
+    def _handle_mute_released(self):
+        """Handle mute button release - unmute microphone"""
+        logger.info("🔊 MUTE button released - microphone unmuted")
+        self.is_muted = False
+        
+        # Turn off relay (unmute indicator)
+        if GPIO_AVAILABLE:
+            GPIO.output(RELAY_PIN, GPIO.LOW)
+            
+        logger.info("🎤 Microphone unmuted - resuming speech recognition")
         
     def _generate_dial_tone(self):
         """Generate dial tone if it doesn't exist"""
@@ -334,8 +383,17 @@ class PhoneChatbot:
         self.last_final_transcript = ""
         self.shadow_listening = False
         
+        # Reset mute state
+        self.is_muted = False
+        if GPIO_AVAILABLE:
+            GPIO.output(RELAY_PIN, GPIO.LOW)
+        
     def _handle_audio_chunk(self, audio_data: bytes):
-        """Handle audio chunk from microphone"""
+        """Handle audio chunk from microphone (respects mute state)"""
+        # Don't send audio if muted
+        if self.is_muted:
+            return
+            
         if (self.is_listening and not self.is_processing) or self.shadow_listening:
             if hasattr(self, 'deepgram'):
                 self.deepgram.send_audio(audio_data)
@@ -498,7 +556,9 @@ class PhoneChatbot:
         self._end_conversation()
         self.audio_manager.cleanup()
         
+        # Turn off relay and cleanup GPIO
         if GPIO_AVAILABLE:
+            GPIO.output(RELAY_PIN, GPIO.LOW)  # Ensure relay is off
             GPIO.cleanup()
             
 
