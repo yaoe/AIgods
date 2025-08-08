@@ -196,8 +196,9 @@ class PhoneChatbot:
         # End conversation completely
         self._end_conversation()
         
-        # Ensure complete silence - stop any background audio processes
-        self.audio_manager.stop_all_audio()
+        # Ensure complete silence - stop recording too
+        if self.audio_manager.is_recording:
+            self.audio_manager.stop_recording()
         
         logger.info("📞 System silent - waiting for phone pickup...")
         
