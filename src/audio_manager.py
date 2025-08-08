@@ -92,8 +92,13 @@ class AudioManager:
         self.is_interrupted = False
         
         try:
-            # Convert MP3 to PCM for PyAudio
-            audio_segment = AudioSegment.from_mp3(io.BytesIO(audio_data))
+            # Convert audio to PCM for PyAudio
+            if format == "mp3":
+                audio_segment = AudioSegment.from_mp3(io.BytesIO(audio_data))
+            elif format == "wav":
+                audio_segment = AudioSegment.from_wav(io.BytesIO(audio_data))
+            else:
+                raise ValueError(f"Unsupported format: {format}")
             
             # Convert to 16-bit PCM at our sample rate with proper channel handling
             audio_segment = audio_segment.set_frame_rate(self.sample_rate)

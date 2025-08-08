@@ -1,0 +1,361 @@
+#!/usr/bin/env python3
+"""
+Phone-based Voice Chatbot System
+- Pick up phone → hear dial tone
+- Dial 1-10 → select personality
+- Start conversation with selected personality
+- Hang up → end conversation
+"""
+
+import os
+import sys
+import time
+import json
+import logging
+import threading
+import subprocess
+from dotenv import load_dotenv
+
+# Add parent directory to path for imports
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from src.deepgram_client import DeepgramClient
+from src.elevenlabs_client import ElevenLabsClient
+from src.conversation_manager import ConversationManager
+from src.audio_manager import AudioManager
+from src.config_loader import ConfigLoader
+
+# GPIO imports
+try:
+    import RPi.GPIO as GPIO
+    GPIO_AVAILABLE = True
+except ImportError:
+    GPIO_AVAILABLE = False
+    print("Warning: RPi.GPIO not available, running in test mode")
+
+load_dotenv()
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+# Pin definitions
+PHONE_HANDLE_PIN = 21     # Phone handle sensor
+PULSE_ENABLE_PIN = 23     # Dial pulse enable
+PULSE_INPUT_PIN = 24      # Dial pulse count
+
+class PhoneChatbot:
+    def __init__(self):
+        # Audio components
+        self.audio_manager = AudioManager()
+        
+        # State management
+        self.phone_active = False
+        self.dial_tone_playing = False
+        self.conversation_active = False
+        self.current_personality = None
+        self.chatbot_instance = None
+        
+        # GPIO state
+        self.last_phone_state = True
+        self.last_pulse_enable_state = True
+        self.last_pulse_state = True
+        self.pulse_count = 0
+        self.counting_active = False
+        
+        # Load personality list
+        self.personalities = self._load_personalities()
+        
+        # Initialize GPIO if available
+        if GPIO_AVAILABLE:
+            GPIO.setmode(GPIO.BCM)
+            GPIO.setup(PHONE_HANDLE_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+            GPIO.setup(PULSE_ENABLE_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+            GPIO.setup(PULSE_INPUT_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+            
+    def _load_personalities(self):
+        """Load all personality configurations"""
+        personalities = {}
+        for i in range(1, 11):
+            try:
+                with open(f'config/personalities/personality_{i}.json', 'r') as f:
+                    personalities[i] = json.load(f)
+                    logger.info(f"Loaded personality {i}: {personalities[i]['name']}")
+            except Exception as e:
+                logger.error(f"Error loading personality {i}: {e}")
+        return personalities
+        
+    def start(self):
+        """Start the phone system"""
+        logger.info("📞 Phone Chatbot System Ready!")
+        logger.info("Pick up the phone to begin...")
+        
+        # Start dial tone generation
+        self._generate_dial_tone()
+        
+        try:
+            if GPIO_AVAILABLE:
+                self._gpio_loop()
+            else:
+                self._test_loop()
+        except KeyboardInterrupt:
+            logger.info("\nShutting down...")
+        finally:
+            self.cleanup()
+            
+    def _gpio_loop(self):
+        """Main GPIO monitoring loop"""
+        while True:
+            phone_state = GPIO.input(PHONE_HANDLE_PIN)
+            pulse_enable_state = GPIO.input(PULSE_ENABLE_PIN)
+            pulse_state = GPIO.input(PULSE_INPUT_PIN)
+            
+            # Phone handle detection
+            if self.last_phone_state == True and phone_state == False:
+                self._handle_phone_pickup()
+            elif self.last_phone_state == False and phone_state == True:
+                self._handle_phone_hangup()
+                
+            # Pulse counting (dialing)
+            if self.phone_active and not self.conversation_active:
+                # Start counting
+                if self.last_pulse_enable_state == True and pulse_enable_state == False:
+                    logger.info("📞 Dialing started...")
+                    self.counting_active = True
+                    self.pulse_count = 0
+                    self._stop_dial_tone()
+                    
+                # Stop counting and process
+                elif self.last_pulse_enable_state == False and pulse_enable_state == True:
+                    if self.counting_active:
+                        self.counting_active = False
+                        self._process_dial(self.pulse_count)
+                        
+                # Count pulses
+                if self.counting_active:
+                    if self.last_pulse_state == True and pulse_state == False:
+                        self.pulse_count += 1
+                        logger.info(f"Pulse {self.pulse_count}")
+                        
+            # Update states
+            self.last_phone_state = phone_state
+            self.last_pulse_enable_state = pulse_enable_state
+            self.last_pulse_state = pulse_state
+            
+            time.sleep(0.01)
+            
+    def _test_loop(self):
+        """Test loop for non-GPIO systems"""
+        print("\nTest mode - use keyboard commands:")
+        print("  p: Pick up phone")
+        print("  h: Hang up phone")
+        print("  1-9,0: Dial number (0=10)")
+        print("  q: Quit")
+        
+        while True:
+            cmd = input("\nCommand: ").strip().lower()
+            
+            if cmd == 'p':
+                self._handle_phone_pickup()
+            elif cmd == 'h':
+                self._handle_phone_hangup()
+            elif cmd in '1234567890':
+                num = 10 if cmd == '0' else int(cmd)
+                self._stop_dial_tone()
+                self._process_dial(num)
+            elif cmd == 'q':
+                break
+                
+    def _handle_phone_pickup(self):
+        """Handle when phone is picked up"""
+        logger.info("☎️  Phone picked up!")
+        self.phone_active = True
+        self._play_dial_tone()
+        
+    def _handle_phone_hangup(self):
+        """Handle when phone is hung up"""
+        logger.info("📞 Phone hung up!")
+        self.phone_active = False
+        self._stop_dial_tone()
+        self._end_conversation()
+        
+    def _generate_dial_tone(self):
+        """Generate dial tone if it doesn't exist"""
+        if not os.path.exists('sounds/dial_tone.wav'):
+            logger.info("Generating dial tone...")
+            subprocess.run([sys.executable, 'generate_dial_tone.py'])
+            
+    def _play_dial_tone(self):
+        """Play dial tone in loop"""
+        if self.dial_tone_playing:
+            return
+            
+        self.dial_tone_playing = True
+        
+        def play_loop():
+            while self.dial_tone_playing:
+                try:
+                    # Load and play dial tone
+                    with open('sounds/dial_tone.wav', 'rb') as f:
+                        audio_data = f.read()
+                    self.audio_manager.play_audio(audio_data, format='wav')
+                    
+                    # Small gap between loops
+                    if self.dial_tone_playing:
+                        time.sleep(0.1)
+                except Exception as e:
+                    logger.error(f"Error playing dial tone: {e}")
+                    break
+                    
+        threading.Thread(target=play_loop, daemon=True).start()
+        
+    def _stop_dial_tone(self):
+        """Stop dial tone"""
+        self.dial_tone_playing = False
+        time.sleep(0.2)  # Let it finish
+        
+    def _process_dial(self, number):
+        """Process dialed number and start conversation"""
+        logger.info(f"📞 Dialed: {number}")
+        
+        if number < 1 or number > 10:
+            logger.warning(f"Invalid number: {number}")
+            # Play error tone or message
+            return
+            
+        if number not in self.personalities:
+            logger.error(f"Personality {number} not found")
+            return
+            
+        # Select personality
+        self.current_personality = self.personalities[number]
+        logger.info(f"🎭 Selected: {self.current_personality['name']}")
+        
+        # Start conversation with selected personality
+        self._start_conversation()
+        
+    def _start_conversation(self):
+        """Start conversation with selected personality"""
+        if self.conversation_active:
+            return
+            
+        self.conversation_active = True
+        
+        # Create chatbot instance with selected personality
+        try:
+            # Create a config loader with the selected personality
+            config = ConfigLoader()
+            config.personality = self.current_personality
+            
+            # Initialize chatbot components
+            self.deepgram = DeepgramClient(
+                api_key=os.getenv("DEEPGRAM_API_KEY"),
+                on_transcript=self._handle_transcript
+            )
+            self.elevenlabs = ElevenLabsClient(
+                api_key=os.getenv("ELEVENLABS_API_KEY"),
+                voice_id=os.getenv("ELEVENLABS_VOICE_ID", "21m00Tcm4TlvDq8ikWAM")
+            )
+            self.conversation = ConversationManager(
+                api_key=os.getenv("OPENAI_API_KEY"),
+                personality_config=self.current_personality
+            )
+            
+            # Connect to Deepgram
+            self.deepgram.connect()
+            
+            # Start recording
+            self.audio_manager.start_recording(self._handle_audio_chunk)
+            
+            # Greet the user
+            greeting = f"Hello! This is {self.current_personality['name']} speaking. How can I help you?"
+            self._speak_response(greeting)
+            
+            logger.info(f"✅ Conversation started with {self.current_personality['name']}")
+            
+        except Exception as e:
+            logger.error(f"Error starting conversation: {e}")
+            self.conversation_active = False
+            
+    def _end_conversation(self):
+        """End current conversation"""
+        if not self.conversation_active:
+            return
+            
+        logger.info("Ending conversation...")
+        self.conversation_active = False
+        
+        # Stop recording
+        self.audio_manager.stop_recording()
+        
+        # Close connections
+        if hasattr(self, 'deepgram'):
+            self.deepgram.close()
+            
+        # Clear state
+        self.current_personality = None
+        
+    def _handle_audio_chunk(self, audio_data: bytes):
+        """Handle audio from microphone"""
+        if self.conversation_active and hasattr(self, 'deepgram'):
+            self.deepgram.send_audio(audio_data)
+            
+    def _handle_transcript(self, transcript: str, is_final: bool):
+        """Handle speech recognition results"""
+        if not self.conversation_active or not transcript.strip():
+            return
+            
+        if is_final:
+            logger.info(f"User: {transcript}")
+            
+            # Add to conversation
+            self.conversation.add_user_message(transcript)
+            
+            # Generate response
+            response = ""
+            for chunk in self.conversation.generate_response(streaming=False):
+                response += chunk
+                
+            # Speak response
+            self._speak_response(response)
+            
+    def _speak_response(self, text: str):
+        """Speak a response using ElevenLabs"""
+        try:
+            logger.info(f"Speaking: {text}")
+            audio_data = self.elevenlabs.generate_audio(
+                text,
+                self.current_personality.get("voice_settings", {})
+            )
+            self.audio_manager.play_audio(audio_data)
+        except Exception as e:
+            logger.error(f"Error speaking response: {e}")
+            
+    def cleanup(self):
+        """Clean up resources"""
+        self._stop_dial_tone()
+        self._end_conversation()
+        self.audio_manager.cleanup()
+        
+        if GPIO_AVAILABLE:
+            GPIO.cleanup()
+            
+
+def main():
+    # Check required environment variables
+    required = ["DEEPGRAM_API_KEY", "ELEVENLABS_API_KEY", "OPENAI_API_KEY"]
+    missing = [var for var in required if not os.getenv(var)]
+    
+    if missing:
+        logger.error(f"Missing environment variables: {', '.join(missing)}")
+        sys.exit(1)
+        
+    # Start phone chatbot
+    chatbot = PhoneChatbot()
+    chatbot.start()
+    
+
+if __name__ == "__main__":
+    main()
