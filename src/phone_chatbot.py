@@ -186,6 +186,10 @@ class PhoneChatbot:
         """Handle when phone is hung up"""
         logger.info("📞 Phone hung up!")
         self.phone_active = False
+        
+        # Immediately stop any ongoing audio playback
+        self.audio_manager.interrupt_playback()
+        
         self._stop_dial_tone()
         self._end_conversation()
         
