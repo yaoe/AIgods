@@ -25,14 +25,24 @@ class DeepgramClient:
             "sample_rate": "16000",
             "channels": "1",
             "model": "nova-2",
-            "language": "en",
+            "language": ["en", "fr"],  # Support both English and French
             "punctuate": "true",
             "interim_results": "true",
             "utterance_end_ms": "1000",
-            "vad_events": "true"
+            "vad_events": "true",
+            "detect_language": "true"  # Enable automatic language detection
         }
         
-        query_string = "&".join([f"{k}={v}" for k, v in params.items()])
+        # Build query string with proper array handling
+        query_parts = []
+        for k, v in params.items():
+            if isinstance(v, list):
+                # For arrays like language=["en", "fr"], create multiple entries
+                for item in v:
+                    query_parts.append(f"{k}={item}")
+            else:
+                query_parts.append(f"{k}={v}")
+        query_string = "&".join(query_parts)
         full_url = f"{url}?{query_string}"
         
         self.ws = websocket.WebSocketApp(

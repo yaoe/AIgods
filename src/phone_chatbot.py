@@ -345,7 +345,7 @@ class PhoneChatbot:
             self.audio_manager.start_recording(self._handle_audio_chunk)
             
             # Greet the user
-            greeting = f"Hello! This is {self.current_personality['name']} speaking. How can I help you?"
+            greeting = f"Hello! Bonjour! This is {self.current_personality['name']} speaking. I can communicate in both English and French. How can I help you? Comment puis-je vous aider?"
             
             # Generate and speak greeting
             try:
@@ -432,20 +432,29 @@ class PhoneChatbot:
         if len(words) < 2:
             return False
             
-        # Check for common interruption phrases
+        # Check for common interruption phrases (English and French)
         interruption_patterns = [
+            # English patterns
             'wait', 'stop', 'hold on', 'excuse me', 'sorry', 'actually',
             'let me', 'but', 'however', 'i need', 'i want', 'can you',
             'what about', 'i think', 'no', 'yes but', 'hang on',
-            'shut up', 'quiet', 'enough', 'okay stop', 'okay shut'
+            'shut up', 'quiet', 'enough', 'okay stop', 'okay shut',
+            # French patterns
+            'attends', 'attendez', 'arrête', 'arrêtez', 'pardon', 'excusez-moi',
+            'désolé', 'désolée', 'en fait', 'laisse-moi', 'laissez-moi',
+            'mais', 'cependant', 'j\'ai besoin', 'je veux', 'pouvez-vous',
+            'et alors', 'je pense', 'non', 'oui mais', 'moment', 'un moment'
         ]
         
         for pattern in interruption_patterns:
             if transcript.startswith(pattern):
                 return True
                 
-        # Check for questions or longer statements
-        if transcript.startswith(('what', 'why', 'how', 'when', 'where', 'who')) or len(words) >= 4:
+        # Check for questions or longer statements (English and French)
+        question_words = ('what', 'why', 'how', 'when', 'where', 'who',  # English
+                         'qu\'est-ce', 'pourquoi', 'comment', 'quand', 'où', 'qui',  # French
+                         'que', 'quoi', 'quel', 'quelle', 'quels', 'quelles')  # More French
+        if transcript.startswith(question_words) or len(words) >= 4:
             return True
             
         return False
