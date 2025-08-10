@@ -64,13 +64,17 @@ class AudioManager:
         """Recording loop"""
         stream = None
         try:
+            # Try to reduce electrical interference by using different buffer size
+            # and disabling automatic gain control if possible
             stream = self.audio.open(
                 format=pyaudio.paInt16,
                 channels=1,
                 rate=self.sample_rate,
                 input=True,
                 input_device_index=self.input_device_index,
-                frames_per_buffer=self.chunk_size
+                frames_per_buffer=self.chunk_size * 4,  # Larger buffer might help
+                stream_callback=None,  # Use blocking mode
+                input_host_api_specific_stream_info=None
             )
             
             while self.is_recording:
@@ -88,11 +92,19 @@ class AudioManager:
                 stream.stop_stream()
                 stream.close()
                 
-    def _reduce_mic_volume(self, audio_data: bytes, reduction_factor: float = 0.5) -> bytes:
-        """EXTREME TEST: Return complete silence to isolate buzzing source"""
-        # DIAGNOSTIC: Always return silence to see if buzzing is from mic or elsewhere
-        logger.info("TEST MODE: Returning complete silence from microphone")
-        return bytes(len(audio_data))  # Always return zeros
+    def _reduce_mic_volume(self, audio_data: bytes, reduction_factor: float = 0.3) -> bytes:
+        """Reduce microphone input volume"""
+        try:
+            # Convert bytes to numpy array
+            audio_array = np.frombuffer(audio_data, dtype=np.int16)
+            
+            # More aggressive volume reduction to minimize feedback
+            reduced_audio = (audio_array * reduction_factor).astype(np.int16)
+            
+            return reduced_audio.tobytes()
+        except Exception as e:
+            logger.error(f"Error reducing mic volume: {e}")
+            return audio_data
     
     def _remove_buzzing(self, audio_array: np.ndarray) -> np.ndarray:
         """Remove constant buzzing by subtracting DC offset and applying simple filter"""
