@@ -105,6 +105,9 @@ class AudioManager:
             audio_segment = audio_segment.set_channels(1)  # Force mono
             audio_segment = audio_segment.set_sample_width(2)  # 16-bit
             
+            # Increase volume by 6dB (approximately double the volume)
+            audio_segment = audio_segment + 6
+            
             logger.debug(f"Audio format: {audio_segment.frame_rate}Hz, {audio_segment.channels} channels, {audio_segment.sample_width} bytes/sample")
             
             # Get raw PCM data
