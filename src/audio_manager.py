@@ -89,38 +89,10 @@ class AudioManager:
                 stream.close()
                 
     def _reduce_mic_volume(self, audio_data: bytes, reduction_factor: float = 0.5) -> bytes:
-        """Reduce microphone input volume by the given factor with aggressive noise removal"""
-        try:
-            # Convert bytes to numpy array (16-bit signed integers)
-            audio_array = np.frombuffer(audio_data, dtype=np.int16)
-            
-            # Apply volume reduction (0.5 = half volume, 0.25 = quarter volume)
-            reduced_audio = (audio_array * reduction_factor).astype(np.int16)
-            
-            # Calculate the energy/loudness of this chunk
-            energy = np.sqrt(np.mean(reduced_audio.astype(np.float32) ** 2))
-            
-            # AGGRESSIVE APPROACH: If the audio is below a certain energy threshold,
-            # just return complete silence
-            SILENCE_THRESHOLD = 500  # Adjust this value based on your buzzing level
-            
-            if energy < SILENCE_THRESHOLD:
-                # Return complete silence - no buzzing can pass through!
-                import random
-                if random.random() < 0.05:  # Log 5% of the time to avoid spam
-                    logger.info(f"SILENCING: Audio energy {energy:.0f} < {SILENCE_THRESHOLD}")
-                return bytes(len(audio_data))  # Return zeros
-            else:
-                # Audio is loud enough to be real speech, let it through
-                import random
-                if random.random() < 0.05:  # Log 5% of the time
-                    logger.info(f"PASSING: Audio energy {energy:.0f} >= {SILENCE_THRESHOLD}")
-                return reduced_audio.tobytes()
-                
-        except Exception as e:
-            logger.error(f"Error reducing mic volume: {e}")
-            # Return original data if reduction fails
-            return audio_data
+        """EXTREME TEST: Return complete silence to isolate buzzing source"""
+        # DIAGNOSTIC: Always return silence to see if buzzing is from mic or elsewhere
+        logger.info("TEST MODE: Returning complete silence from microphone")
+        return bytes(len(audio_data))  # Always return zeros
     
     def _remove_buzzing(self, audio_array: np.ndarray) -> np.ndarray:
         """Remove constant buzzing by subtracting DC offset and applying simple filter"""
