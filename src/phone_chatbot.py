@@ -592,21 +592,23 @@ class PhoneChatbot:
         beep_thread.start()
     
     def _play_god_greeting(self, greeting: str):
-        """Play the god's greeting, stopping any connection beep"""
+        """Play the god's greeting using streaming audio"""
         try:
-            logger.info("🎭 Generating divine greeting audio...")
+            logger.info("🎭 Streaming divine greeting...")
             voice_settings = self.current_personality.get("voice_settings", {})
-            audio_data = self.elevenlabs.generate_audio(greeting, voice_settings)
             
-            # Stop connection beep and play greeting immediately
+            # Create streaming audio generator
+            audio_stream = self.elevenlabs.stream_text(greeting, voice_settings)
+            
+            # Stop connection beep as soon as we start streaming
             self._beep_active = False
             time.sleep(0.1)  # Brief pause to stop beep cleanly
             
-            logger.info(f"👑 The god answers: {greeting[:50]}...")
-            self.audio_manager.play_audio(audio_data)
+            logger.info(f"👑 The god speaks (streaming): {greeting[:50]}...")
+            self.audio_manager.play_audio_stream(audio_stream)
             
         except Exception as e:
-            logger.error(f"Error playing god greeting: {e}")
+            logger.error(f"Error streaming god greeting: {e}")
             self._beep_active = False
     
     def _play_connection_beep(self):
