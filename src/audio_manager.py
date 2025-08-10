@@ -64,17 +64,13 @@ class AudioManager:
         """Recording loop"""
         stream = None
         try:
-            # Try to reduce electrical interference by using different buffer size
-            # and disabling automatic gain control if possible
             stream = self.audio.open(
                 format=pyaudio.paInt16,
                 channels=1,
                 rate=self.sample_rate,
                 input=True,
                 input_device_index=self.input_device_index,
-                frames_per_buffer=self.chunk_size * 4,  # Larger buffer might help
-                stream_callback=None,  # Use blocking mode
-                input_host_api_specific_stream_info=None
+                frames_per_buffer=self.chunk_size
             )
             
             while self.is_recording:
@@ -92,67 +88,22 @@ class AudioManager:
                 stream.stop_stream()
                 stream.close()
                 
-    def _reduce_mic_volume(self, audio_data: bytes, reduction_factor: float = 0.3) -> bytes:
-        """Reduce microphone input volume"""
+    def _reduce_mic_volume(self, audio_data: bytes, reduction_factor: float = 0.5) -> bytes:
+        """Reduce microphone input volume by the given factor"""
         try:
-            # Convert bytes to numpy array
+            # Convert bytes to numpy array (16-bit signed integers)
             audio_array = np.frombuffer(audio_data, dtype=np.int16)
             
-            # More aggressive volume reduction to minimize feedback
+            # Apply volume reduction (0.5 = half volume, 0.25 = quarter volume)
             reduced_audio = (audio_array * reduction_factor).astype(np.int16)
             
+            # Convert back to bytes
             return reduced_audio.tobytes()
         except Exception as e:
             logger.error(f"Error reducing mic volume: {e}")
+            # Return original data if reduction fails
             return audio_data
     
-    def _remove_buzzing(self, audio_array: np.ndarray) -> np.ndarray:
-        """Remove constant buzzing by subtracting DC offset and applying simple filter"""
-        try:
-            # Remove DC offset (constant bias that can cause buzzing)
-            dc_offset = np.mean(audio_array)
-            audio_no_dc = audio_array - dc_offset
-            
-            # Simple moving average filter to smooth out high-frequency noise
-            # This can help reduce digital buzzing
-            window_size = 3
-            if len(audio_no_dc) > window_size:
-                # Apply simple smoothing
-                smoothed = np.convolve(audio_no_dc, np.ones(window_size)/window_size, mode='same')
-                return smoothed.astype(np.int16)
-            else:
-                return audio_no_dc.astype(np.int16)
-                
-        except Exception as e:
-            logger.error(f"Error removing buzzing: {e}")
-            return audio_array
-    
-    def _apply_noise_gate(self, audio_array: np.ndarray, 
-                         threshold: float = 0.005,  # Lowered threshold from 0.02
-                         attack_time: float = 0.01,
-                         release_time: float = 0.05) -> np.ndarray:
-        """Apply noise gate to eliminate low-level buzzing"""
-        # For debugging - let's log occasional info about audio levels
-        import random
-        
-        # Calculate RMS (Root Mean Square) of the audio chunk
-        rms = np.sqrt(np.mean(audio_array.astype(np.float32) ** 2))
-        
-        # Normalize RMS to 0-1 range (based on 16-bit audio max value)
-        normalized_rms = rms / 32768.0
-        
-        # Debug logging (only occasionally to avoid spam)
-        if random.random() < 0.01:  # 1% chance to log
-            logger.debug(f"Audio RMS: {normalized_rms:.4f}, Threshold: {threshold}")
-        
-        # Try a simpler approach - hard cut with no fade
-        if normalized_rms < threshold:
-            # Return complete silence
-            return np.zeros(len(audio_array), dtype=np.int16)
-        else:
-            # Above threshold - pass through unchanged
-            return audio_array
-                
     def play_audio(self, audio_data: bytes, format: str = "mp3"):
         """Play audio data"""
         self.is_playing = True
