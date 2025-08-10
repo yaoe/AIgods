@@ -97,8 +97,11 @@ class AudioManager:
             # Apply volume reduction (0.5 = half volume, 0.25 = quarter volume)
             reduced_audio = (audio_array * reduction_factor).astype(np.int16)
             
-            # Apply noise gate to eliminate buzzing
-            gated_audio = self._apply_noise_gate(reduced_audio)
+            # First try to remove constant buzzing frequencies
+            filtered_audio = self._remove_buzzing(reduced_audio)
+            
+            # Then apply noise gate to eliminate remaining low-level noise
+            gated_audio = self._apply_noise_gate(filtered_audio)
             
             # Convert back to bytes
             return gated_audio.tobytes()
@@ -107,35 +110,51 @@ class AudioManager:
             # Return original data if reduction fails
             return audio_data
     
+    def _remove_buzzing(self, audio_array: np.ndarray) -> np.ndarray:
+        """Remove constant buzzing by subtracting DC offset and applying simple filter"""
+        try:
+            # Remove DC offset (constant bias that can cause buzzing)
+            dc_offset = np.mean(audio_array)
+            audio_no_dc = audio_array - dc_offset
+            
+            # Simple moving average filter to smooth out high-frequency noise
+            # This can help reduce digital buzzing
+            window_size = 3
+            if len(audio_no_dc) > window_size:
+                # Apply simple smoothing
+                smoothed = np.convolve(audio_no_dc, np.ones(window_size)/window_size, mode='same')
+                return smoothed.astype(np.int16)
+            else:
+                return audio_no_dc.astype(np.int16)
+                
+        except Exception as e:
+            logger.error(f"Error removing buzzing: {e}")
+            return audio_array
+    
     def _apply_noise_gate(self, audio_array: np.ndarray, 
-                         threshold: float = 0.02,
+                         threshold: float = 0.005,  # Lowered threshold from 0.02
                          attack_time: float = 0.01,
                          release_time: float = 0.05) -> np.ndarray:
         """Apply noise gate to eliminate low-level buzzing"""
+        # For debugging - let's log occasional info about audio levels
+        import random
+        
         # Calculate RMS (Root Mean Square) of the audio chunk
         rms = np.sqrt(np.mean(audio_array.astype(np.float32) ** 2))
         
         # Normalize RMS to 0-1 range (based on 16-bit audio max value)
         normalized_rms = rms / 32768.0
         
-        # Apply gate based on threshold
+        # Debug logging (only occasionally to avoid spam)
+        if random.random() < 0.01:  # 1% chance to log
+            logger.debug(f"Audio RMS: {normalized_rms:.4f}, Threshold: {threshold}")
+        
+        # Try a simpler approach - hard cut with no fade
         if normalized_rms < threshold:
-            # Below threshold - gate is closed, silence the audio
-            # Apply smooth fade to avoid clicks
-            fade_samples = int(self.sample_rate * 0.001)  # 1ms fade
-            if len(audio_array) > fade_samples:
-                # Create fade out at beginning and fade in at end
-                gated_audio = audio_array.copy()
-                gated_audio[:fade_samples] = gated_audio[:fade_samples] * np.linspace(1, 0, fade_samples)
-                gated_audio[-fade_samples:] = gated_audio[-fade_samples:] * np.linspace(0, 1, fade_samples)
-                # Silence the middle
-                gated_audio[fade_samples:-fade_samples] = 0
-                return gated_audio.astype(np.int16)
-            else:
-                # Too short for fade, just silence it
-                return np.zeros_like(audio_array, dtype=np.int16)
+            # Return complete silence
+            return np.zeros(len(audio_array), dtype=np.int16)
         else:
-            # Above threshold - gate is open, pass audio through
+            # Above threshold - pass through unchanged
             return audio_array
                 
     def play_audio(self, audio_data: bytes, format: str = "mp3"):
