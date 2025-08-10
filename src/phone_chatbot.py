@@ -322,6 +322,10 @@ class PhoneChatbot:
         self.current_personality = self.personalities[number]
         logger.info(f"🎭 Selected: {self.current_personality['name']}")
         
+        # Play phone-line beep while connecting to the god
+        logger.info("📞 Connecting to divine line...")
+        self._start_connection_beep()
+        
         # Start conversation with selected personality
         self._start_conversation()
         
@@ -580,51 +584,55 @@ class PhoneChatbot:
             GPIO.output(RELAY_PIN, GPIO.LOW)  # Ensure relay is off
             GPIO.cleanup()
     
-    def _play_god_greeting(self, greeting: str):
-        """Play the god's greeting with beep until audio is ready"""
-        # Start playing beep tone immediately
+    def _start_connection_beep(self):
+        """Start the phone-line beep while connecting"""
         self._beep_active = True
-        beep_thread = threading.Thread(target=self._play_beep_until_ready)
+        beep_thread = threading.Thread(target=self._play_connection_beep)
         beep_thread.daemon = True
         beep_thread.start()
-        
+    
+    def _play_god_greeting(self, greeting: str):
+        """Play the god's greeting, stopping any connection beep"""
         try:
             logger.info("🎭 Generating divine greeting audio...")
             voice_settings = self.current_personality.get("voice_settings", {})
             audio_data = self.elevenlabs.generate_audio(greeting, voice_settings)
             
-            # Stop beeping and play greeting
+            # Stop connection beep and play greeting immediately
             self._beep_active = False
             time.sleep(0.1)  # Brief pause to stop beep cleanly
             
-            logger.info(f"👑 The god speaks: {greeting[:50]}...")
+            logger.info(f"👑 The god answers: {greeting[:50]}...")
             self.audio_manager.play_audio(audio_data)
             
         except Exception as e:
             logger.error(f"Error playing god greeting: {e}")
             self._beep_active = False
     
-    def _play_beep_until_ready(self):
-        """Play a beep sound until the greeting is ready"""
+    def _play_connection_beep(self):
+        """Play phone-line connection beep until god answers"""
         try:
-            # Simple beep frequency (1000Hz tone for 0.1 seconds every 0.5 seconds)
+            # Phone-like beep tone (800Hz for 0.2s every 1 second, like phone ringing)
             import numpy as np
             sample_rate = 16000
-            duration = 0.1
-            frequency = 1000
+            duration = 0.2
+            frequency = 800
             
-            # Generate beep tone
+            # Generate phone-like beep tone
             t = np.linspace(0, duration, int(sample_rate * duration), False)
-            beep_tone = np.sin(2 * np.pi * frequency * t) * 0.3  # Lower volume
+            beep_tone = np.sin(2 * np.pi * frequency * t) * 0.4  # Moderate volume
             beep_audio = (beep_tone * 32767).astype(np.int16)
             beep_bytes = beep_audio.tobytes()
             
+            logger.info("📞 Playing connection tone while god prepares...")
+            
             while hasattr(self, '_beep_active') and self._beep_active:
-                self.audio_manager.play_audio(beep_bytes, format='raw')
-                time.sleep(0.5)  # Pause between beeps
+                if hasattr(self, '_beep_active') and self._beep_active:
+                    self.audio_manager.play_audio(beep_bytes, format='raw')
+                    time.sleep(0.8)  # Pause between beeps (like phone ringing)
                 
         except Exception as e:
-            logger.error(f"Error playing beep: {e}")
+            logger.error(f"Error playing connection beep: {e}")
             
 
 def main():
