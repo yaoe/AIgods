@@ -359,18 +359,13 @@ class PhoneChatbot:
             self.is_listening = True
             self.audio_manager.start_recording(self._handle_audio_chunk)
             
-            # Greet the user
-            greeting = f"Hello! Bonjour! This is {self.current_personality['name']} speaking. I can communicate in both English and French. How can I help you? Comment puis-je vous aider?"
+            # The god answers the phone immediately with their unique greeting
+            greeting = self.current_personality.get("greeting", f"You have reached {self.current_personality['name']}")
             
-            # Generate and speak greeting
-            try:
-                voice_settings = self.current_personality.get("voice_settings", {})
-                audio_data = self.elevenlabs.generate_audio(greeting, voice_settings)
-                self.audio_manager.play_audio(audio_data)
-            except Exception as e:
-                logger.error(f"Error speaking greeting: {e}")
+            # Start greeting generation and playback immediately
+            threading.Thread(target=self._play_god_greeting, args=(greeting,), daemon=True).start()
             
-            logger.info(f"✅ Conversation started with {self.current_personality['name']}")
+            logger.info(f"✅ {self.current_personality['name']} is answering the divine phone!")
             
         except Exception as e:
             logger.error(f"Error starting conversation: {e}")
@@ -584,6 +579,52 @@ class PhoneChatbot:
         if GPIO_AVAILABLE:
             GPIO.output(RELAY_PIN, GPIO.LOW)  # Ensure relay is off
             GPIO.cleanup()
+    
+    def _play_god_greeting(self, greeting: str):
+        """Play the god's greeting with beep until audio is ready"""
+        # Start playing beep tone immediately
+        self._beep_active = True
+        beep_thread = threading.Thread(target=self._play_beep_until_ready)
+        beep_thread.daemon = True
+        beep_thread.start()
+        
+        try:
+            logger.info("🎭 Generating divine greeting audio...")
+            voice_settings = self.current_personality.get("voice_settings", {})
+            audio_data = self.elevenlabs.generate_audio(greeting, voice_settings)
+            
+            # Stop beeping and play greeting
+            self._beep_active = False
+            time.sleep(0.1)  # Brief pause to stop beep cleanly
+            
+            logger.info(f"👑 The god speaks: {greeting[:50]}...")
+            self.audio_manager.play_audio(audio_data)
+            
+        except Exception as e:
+            logger.error(f"Error playing god greeting: {e}")
+            self._beep_active = False
+    
+    def _play_beep_until_ready(self):
+        """Play a beep sound until the greeting is ready"""
+        try:
+            # Simple beep frequency (1000Hz tone for 0.1 seconds every 0.5 seconds)
+            import numpy as np
+            sample_rate = 16000
+            duration = 0.1
+            frequency = 1000
+            
+            # Generate beep tone
+            t = np.linspace(0, duration, int(sample_rate * duration), False)
+            beep_tone = np.sin(2 * np.pi * frequency * t) * 0.3  # Lower volume
+            beep_audio = (beep_tone * 32767).astype(np.int16)
+            beep_bytes = beep_audio.tobytes()
+            
+            while hasattr(self, '_beep_active') and self._beep_active:
+                self.audio_manager.play_audio(beep_bytes, format='raw')
+                time.sleep(0.5)  # Pause between beeps
+                
+        except Exception as e:
+            logger.error(f"Error playing beep: {e}")
             
 
 def main():

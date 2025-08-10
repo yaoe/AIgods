@@ -115,6 +115,14 @@ class AudioManager:
                 audio_segment = AudioSegment.from_mp3(io.BytesIO(audio_data))
             elif format == "wav":
                 audio_segment = AudioSegment.from_wav(io.BytesIO(audio_data))
+            elif format == "raw":
+                # Raw 16-bit PCM data, create AudioSegment directly
+                audio_segment = AudioSegment(
+                    data=audio_data,
+                    sample_width=2,  # 16-bit = 2 bytes
+                    frame_rate=self.sample_rate,
+                    channels=1
+                )
             else:
                 raise ValueError(f"Unsupported format: {format}")
             
