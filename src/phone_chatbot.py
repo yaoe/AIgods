@@ -35,6 +35,16 @@ except ImportError:
 
 load_dotenv()
 
+# AUDIO DEVICE CONFIGURATION
+# Run 'python list_audio_devices.py' to find your device indices
+# Set these based on your hardware setup:
+AUDIO_INPUT_DEVICE = int(os.getenv("AUDIO_INPUT_DEVICE", "-1"))  # USB microphone index
+AUDIO_OUTPUT_DEVICE = int(os.getenv("AUDIO_OUTPUT_DEVICE", "-1"))  # 3.5mm jack index
+
+# Use None if -1 (will use system default)
+AUDIO_INPUT_DEVICE = None if AUDIO_INPUT_DEVICE == -1 else AUDIO_INPUT_DEVICE
+AUDIO_OUTPUT_DEVICE = None if AUDIO_OUTPUT_DEVICE == -1 else AUDIO_OUTPUT_DEVICE
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -50,8 +60,13 @@ PULSE_INPUT_PIN = 24      # Dial pulse count
 
 class PhoneChatbot:
     def __init__(self):
-        # Audio components
-        self.audio_manager = AudioManager()
+        # Audio components with separate input/output devices
+        # USB mic as input, 3.5mm jack as output
+        logger.info(f"Audio Config - Input Device: {AUDIO_INPUT_DEVICE}, Output Device: {AUDIO_OUTPUT_DEVICE}")
+        self.audio_manager = AudioManager(
+            input_device_index=AUDIO_INPUT_DEVICE,
+            output_device_index=AUDIO_OUTPUT_DEVICE
+        )
         
         # State management
         self.phone_active = False
