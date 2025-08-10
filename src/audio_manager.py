@@ -77,7 +77,9 @@ class AudioManager:
                 try:
                     data = stream.read(self.chunk_size, exception_on_overflow=False)
                     if self.on_audio_chunk:
-                        self.on_audio_chunk(data)
+                        # Reduce microphone volume by applying gain reduction
+                        reduced_volume_data = self._reduce_mic_volume(data)
+                        self.on_audio_chunk(reduced_volume_data)
                 except Exception as e:
                     logger.error(f"Recording error: {e}")
                     
@@ -85,6 +87,22 @@ class AudioManager:
             if stream:
                 stream.stop_stream()
                 stream.close()
+                
+    def _reduce_mic_volume(self, audio_data: bytes, reduction_factor: float = 0.5) -> bytes:
+        """Reduce microphone input volume by the given factor"""
+        try:
+            # Convert bytes to numpy array (16-bit signed integers)
+            audio_array = np.frombuffer(audio_data, dtype=np.int16)
+            
+            # Apply volume reduction (0.5 = half volume, 0.25 = quarter volume)
+            reduced_audio = (audio_array * reduction_factor).astype(np.int16)
+            
+            # Convert back to bytes
+            return reduced_audio.tobytes()
+        except Exception as e:
+            logger.error(f"Error reducing mic volume: {e}")
+            # Return original data if reduction fails
+            return audio_data
                 
     def play_audio(self, audio_data: bytes, format: str = "mp3"):
         """Play audio data"""
