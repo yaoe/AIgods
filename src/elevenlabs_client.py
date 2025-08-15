@@ -27,53 +27,57 @@ class ElevenLabsClient:
         self.client = ElevenLabs(api_key=api_key) if ElevenLabs else None
     
     def stream_text_official(self, text: str, voice_settings: dict = None, voice_id: str = None) -> Generator[bytes, None, None]:
-        """Stream TTS audio using official ElevenLabs library"""
-        if not self.client or not VoiceSettings:
-            logger.warning("ElevenLabs client not available, using HTTP fallback")
-            yield from self.stream_text(text, voice_settings, voice_id)
-            return
-            
+        """Stream TTS audio using direct ElevenLabs REST API"""
+        # Use the voice_id from personality or fallback to default
+        selected_voice_id = voice_id or self.voice_id
+        logger.info(f"Starting ElevenLabs REST API streaming with voice: {selected_voice_id}")
+        
+        # Use direct REST API streaming (always works)
+        url = f"{self.base_url}/text-to-speech/{selected_voice_id}/stream"
+        
+        headers = {
+            "xi-api-key": self.api_key,
+            "Content-Type": "application/json"
+        }
+        
+        # Convert voice_settings to the expected format
+        voice_config = voice_settings or {}
+        api_voice_settings = {
+            "stability": voice_config.get("stability", 0.5),
+            "similarity_boost": voice_config.get("similarity_boost", 0.75),
+            "style": voice_config.get("style", 0.0),
+            "use_speaker_boost": voice_config.get("use_speaker_boost", True)
+        }
+        
+        data = {
+            "text": text,
+            "model_id": "eleven_turbo_v2",
+            "voice_settings": api_voice_settings
+        }
+        
         try:
-            # Convert voice_settings dict to VoiceSettings object
-            if voice_settings:
-                voice_config = VoiceSettings(
-                    stability=voice_settings.get("stability", 0.5),
-                    similarity_boost=voice_settings.get("similarity_boost", 0.75),
-                    style=voice_settings.get("style", 0.0),
-                    use_speaker_boost=voice_settings.get("use_speaker_boost", True),
-                    speed=voice_settings.get("speed", 1.0)
-                )
-            else:
-                voice_config = VoiceSettings(
-                    stability=0.5,
-                    similarity_boost=0.75,
-                    style=0.0,
-                    use_speaker_boost=True,
-                    speed=1.0
-                )
+            logger.info("Making streaming request to ElevenLabs REST API...")
+            response = requests.post(url, headers=headers, json=data, stream=True)
             
-            # Use the voice_id from personality or fallback to default
-            selected_voice_id = voice_id or self.voice_id
-            logger.info(f"Starting official ElevenLabs streaming with voice: {selected_voice_id}")
+            if response.status_code != 200:
+                logger.error(f"ElevenLabs API error: {response.status_code} - {response.text}")
+                return
             
-            # Use the official streaming method from the documentation
-            response = self.client.text_to_speech.stream(
-                voice_id=selected_voice_id,
-                output_format="mp3_22050_32",
-                text=text,
-                model_id="eleven_turbo_v2",
-                voice_settings=voice_config
-            )
+            logger.info("Successfully connected to ElevenLabs streaming API")
             
-            # Stream each chunk as it arrives
-            for chunk in response:
+            # Stream audio chunks
+            chunk_count = 0
+            for chunk in response.iter_content(chunk_size=1024):
                 if chunk:
+                    chunk_count += 1
                     yield chunk
                     
+            logger.info(f"Streaming completed: {chunk_count} chunks received")
+                    
         except Exception as e:
-            logger.error(f"Official ElevenLabs streaming error: {e}")
-            # Fallback to the old HTTP streaming method
-            logger.info("Falling back to HTTP streaming...")
+            logger.error(f"ElevenLabs REST API streaming error: {e}")
+            # Still fallback to the original HTTP method if this fails
+            logger.info("Falling back to original HTTP streaming...")
             yield from self.stream_text(text, voice_settings, voice_id)
         
     def stream_text_realtime(self, text: str, voice_settings: dict = None, on_audio_chunk: Callable[[bytes], None] = None):
