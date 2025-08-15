@@ -82,6 +82,7 @@ class PhoneChatbot:
         self.last_final_transcript = ""
         self.shadow_listening = False
         self.last_transcript_time = 0
+        self.processing_start_time = 0  # Track when we start processing
         
         # GPIO state
         self.last_phone_state = True
@@ -396,6 +397,7 @@ class PhoneChatbot:
         self.current_transcript = ""
         self.last_final_transcript = ""
         self.shadow_listening = False
+        self.processing_start_time = 0
         
         # Reset mute state
         self.is_muted = False
@@ -419,6 +421,13 @@ class PhoneChatbot:
             
         # Handle interruption during AI speech
         if self.shadow_listening and self.audio_manager.is_playing:
+            # Ignore fragments that come too soon after processing started
+            # (these are likely trailing parts of the original utterance)
+            time_since_processing = time.time() - self.processing_start_time
+            if time_since_processing < 3.0:  # Ignore fragments for 3 seconds
+                logger.info(f"Ignoring trailing fragment ({time_since_processing:.1f}s since processing): {transcript}")
+                return
+                
             if is_final and self._is_intentional_interruption(transcript):
                 logger.info(f"🛑 INTERRUPTION detected: {transcript}")
                 self._handle_interruption(transcript)
@@ -487,11 +496,11 @@ class PhoneChatbot:
     def _schedule_delayed_processing(self, transcript: str):
         """Schedule processing with a delay to ensure sentence completion"""
         def delayed_process():
-            # Wait for 1.2 seconds (increased from 0.5 to prevent cutting off)
-            time.sleep(1.2)
+            # Wait for 2.0 seconds to ensure user has finished speaking
+            time.sleep(2.0)
             
             # Check if there was a more recent transcript (user continued speaking)
-            if time.time() - self.last_transcript_time < 1.0:
+            if time.time() - self.last_transcript_time < 1.8:
                 logger.info("User still speaking, not processing yet")
                 return
                 
@@ -527,6 +536,7 @@ class PhoneChatbot:
             return
             
         self.is_processing = True
+        self.processing_start_time = time.time()  # Record when we start processing
         
         # Add user message to conversation
         self.conversation.add_user_message(transcript)
