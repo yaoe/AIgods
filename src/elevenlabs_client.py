@@ -4,8 +4,14 @@ import queue
 import threading
 from typing import Callable, Optional, Generator
 import logging
-from elevenlabs.client import ElevenLabs
-from elevenlabs import stream
+try:
+    from elevenlabs.client import ElevenLabs
+    from elevenlabs import stream
+except ImportError:
+    try:
+        from elevenlabs import ElevenLabs, stream
+    except ImportError:
+        ElevenLabs = None
 
 logger = logging.getLogger(__name__)
 
@@ -18,19 +24,34 @@ class ElevenLabsClient:
         self.audio_queue = queue.Queue()
         self.is_playing = False
         
-        # Initialize official ElevenLabs client
-        self.client = ElevenLabs(api_key=api_key)
+        # Initialize official ElevenLabs client if available
+        self.client = ElevenLabs(api_key=api_key) if ElevenLabs else None
     
     def stream_text_official(self, text: str, voice_settings: dict = None) -> Generator[bytes, None, None]:
         """Stream TTS audio using official ElevenLabs library"""
+        if not self.client:
+            logger.warning("ElevenLabs client not available, using HTTP fallback")
+            yield from self.stream_text(text, voice_settings)
+            return
+            
         try:
-            # Use the official streaming method
-            audio_stream = self.client.text_to_speech.stream(
-                text=text,
-                voice_id=self.voice_id,
-                model_id="eleven_turbo_v2",
-                voice_settings=voice_settings
-            )
+            # Try different API patterns for ElevenLabs library
+            if hasattr(self.client, 'generate'):
+                audio_stream = self.client.generate(
+                    text=text,
+                    voice=self.voice_id,
+                    model="eleven_turbo_v2",
+                    stream=True
+                )
+            elif hasattr(self.client, 'text_to_speech'):
+                audio_stream = self.client.text_to_speech(
+                    text=text,
+                    voice_id=self.voice_id,
+                    model_id="eleven_turbo_v2",
+                    stream=True
+                )
+            else:
+                raise AttributeError("Unknown ElevenLabs API pattern")
             
             # Yield each chunk
             for chunk in audio_stream:
@@ -39,7 +60,9 @@ class ElevenLabsClient:
                     
         except Exception as e:
             logger.error(f"Official ElevenLabs streaming error: {e}")
-            return
+            # Fallback to the old HTTP streaming method
+            logger.info("Falling back to HTTP streaming...")
+            yield from self.stream_text(text, voice_settings)
         
     def stream_text_realtime(self, text: str, voice_settings: dict = None, on_audio_chunk: Callable[[bytes], None] = None):
         """Stream TTS audio using websockets for real-time playback"""
