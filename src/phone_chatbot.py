@@ -631,7 +631,7 @@ class PhoneChatbot:
             voice_id = self.current_personality.get("voice_id")
             logger.info(f"Using voice_id for {self.current_personality['name']}: {voice_id}")
             
-            # Create streaming audio generator using official ElevenLabs library
+            # Create streaming audio generator using official ElevenLabs 2.9+ library
             audio_stream = self.elevenlabs.stream_text_official(greeting, voice_settings, voice_id)
             
             # Stop connection beep as soon as we start streaming
