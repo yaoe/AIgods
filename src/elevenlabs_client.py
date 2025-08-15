@@ -30,7 +30,7 @@ class ElevenLabsClient:
         """Stream TTS audio using official ElevenLabs library"""
         if not self.client or not VoiceSettings:
             logger.warning("ElevenLabs client not available, using HTTP fallback")
-            yield from self.stream_text(text, voice_settings)
+            yield from self.stream_text(text, voice_settings, voice_id)
             return
             
         try:
@@ -52,10 +52,9 @@ class ElevenLabsClient:
                     speed=1.0
                 )
             
-            logger.info("Starting official ElevenLabs streaming...")
-            
             # Use the voice_id from personality or fallback to default
             selected_voice_id = voice_id or self.voice_id
+            logger.info(f"Starting official ElevenLabs streaming with voice: {selected_voice_id}")
             
             # Use the official streaming method from the documentation
             response = self.client.text_to_speech.stream(
@@ -75,7 +74,7 @@ class ElevenLabsClient:
             logger.error(f"Official ElevenLabs streaming error: {e}")
             # Fallback to the old HTTP streaming method
             logger.info("Falling back to HTTP streaming...")
-            yield from self.stream_text(text, voice_settings)
+            yield from self.stream_text(text, voice_settings, voice_id)
         
     def stream_text_realtime(self, text: str, voice_settings: dict = None, on_audio_chunk: Callable[[bytes], None] = None):
         """Stream TTS audio using websockets for real-time playback"""
@@ -140,9 +139,11 @@ class ElevenLabsClient:
         
         ws.run_forever()
     
-    def stream_text(self, text: str, voice_settings: dict = None) -> Generator[bytes, None, None]:
+    def stream_text(self, text: str, voice_settings: dict = None, voice_id: str = None) -> Generator[bytes, None, None]:
         """Stream TTS audio chunks as they're generated (HTTP fallback)"""
-        url = f"{self.base_url}/text-to-speech/{self.voice_id}/stream"
+        selected_voice_id = voice_id or self.voice_id
+        logger.info(f"Starting HTTP streaming with voice: {selected_voice_id}")
+        url = f"{self.base_url}/text-to-speech/{selected_voice_id}/stream"
         
         headers = {
             "Accept": "audio/mpeg",

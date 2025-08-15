@@ -568,6 +568,7 @@ class PhoneChatbot:
             logger.info("Generating audio...")
             voice_settings = self.current_personality.get("voice_settings", {})
             voice_id = self.current_personality.get("voice_id")
+            logger.info(f"Using voice_id for response: {voice_id}")
             
             # Use streaming for responses too
             audio_stream = self.elevenlabs.stream_text_official(full_response, voice_settings, voice_id)
@@ -628,6 +629,7 @@ class PhoneChatbot:
             logger.info("🎭 Streaming divine greeting...")
             voice_settings = self.current_personality.get("voice_settings", {})
             voice_id = self.current_personality.get("voice_id")
+            logger.info(f"Using voice_id for {self.current_personality['name']}: {voice_id}")
             
             # Create streaming audio generator using official ElevenLabs library
             audio_stream = self.elevenlabs.stream_text_official(greeting, voice_settings, voice_id)
