@@ -642,10 +642,6 @@ class PhoneChatbot:
             # Play the audio using ElevenLabs streaming function
             logger.info("Playing audio...")
             
-            # Stop thinking beep right before making the actual HTTP request
-            self._thinking_beep_active = False
-            time.sleep(0.1)  # Brief pause to stop beep cleanly
-            
             audio_stream = self.elevenlabs.client.text_to_speech.stream(
                 text=full_response,
                 voice_id=voice_id,
@@ -655,7 +651,12 @@ class PhoneChatbot:
             
             # Option 2: process the audio bytes manually and play through our device
             audio_chunks = []
+            beep_stopped = False
             for chunk in audio_stream:
+                # Stop thinking beep right when the first chunk arrives (HTTP request completed)
+                if not beep_stopped:
+                    self._thinking_beep_active = False
+                    beep_stopped = True
                 if isinstance(chunk, bytes):
                     audio_chunks.append(chunk)
             
@@ -705,10 +706,6 @@ class PhoneChatbot:
             
             logger.info(f"👑 The god speaks (streaming): {greeting[:50]}...")
             
-            # Stop connection beep right before making the actual HTTP request
-            self._beep_active = False
-            time.sleep(0.1)  # Brief pause to stop beep cleanly
-            
             audio_stream = self.elevenlabs.client.text_to_speech.stream(
                 text=greeting,
                 voice_id=voice_id,
@@ -718,7 +715,12 @@ class PhoneChatbot:
             
             # Option 2: process the audio bytes manually and play through our device
             audio_chunks = []
+            beep_stopped = False
             for chunk in audio_stream:
+                # Stop connection beep right when the first chunk arrives (HTTP request completed)
+                if not beep_stopped:
+                    self._beep_active = False
+                    beep_stopped = True
                 if isinstance(chunk, bytes):
                     audio_chunks.append(chunk)
             
