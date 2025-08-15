@@ -6,12 +6,11 @@ from typing import Callable, Optional, Generator
 import logging
 try:
     from elevenlabs.client import ElevenLabs
-    from elevenlabs import stream
+    from elevenlabs import VoiceSettings
+    from io import BytesIO
 except ImportError:
-    try:
-        from elevenlabs import ElevenLabs, stream
-    except ImportError:
-        ElevenLabs = None
+    ElevenLabs = None
+    VoiceSettings = None
 
 logger = logging.getLogger(__name__)
 
@@ -29,33 +28,44 @@ class ElevenLabsClient:
     
     def stream_text_official(self, text: str, voice_settings: dict = None) -> Generator[bytes, None, None]:
         """Stream TTS audio using official ElevenLabs library"""
-        if not self.client:
+        if not self.client or not VoiceSettings:
             logger.warning("ElevenLabs client not available, using HTTP fallback")
             yield from self.stream_text(text, voice_settings)
             return
             
         try:
-            # Try different API patterns for ElevenLabs library
-            if hasattr(self.client, 'generate'):
-                audio_stream = self.client.generate(
-                    text=text,
-                    voice=self.voice_id,
-                    model="eleven_turbo_v2",
-                    stream=True
-                )
-            elif hasattr(self.client, 'text_to_speech'):
-                audio_stream = self.client.text_to_speech(
-                    text=text,
-                    voice_id=self.voice_id,
-                    model_id="eleven_turbo_v2",
-                    stream=True
+            # Convert voice_settings dict to VoiceSettings object
+            if voice_settings:
+                voice_config = VoiceSettings(
+                    stability=voice_settings.get("stability", 0.5),
+                    similarity_boost=voice_settings.get("similarity_boost", 0.75),
+                    style=voice_settings.get("style", 0.0),
+                    use_speaker_boost=voice_settings.get("use_speaker_boost", True),
+                    speed=voice_settings.get("speed", 1.0)
                 )
             else:
-                raise AttributeError("Unknown ElevenLabs API pattern")
+                voice_config = VoiceSettings(
+                    stability=0.5,
+                    similarity_boost=0.75,
+                    style=0.0,
+                    use_speaker_boost=True,
+                    speed=1.0
+                )
             
-            # Yield each chunk
-            for chunk in audio_stream:
-                if isinstance(chunk, bytes):
+            logger.info("Starting official ElevenLabs streaming...")
+            
+            # Use the official streaming method from the documentation
+            response = self.client.text_to_speech.stream(
+                voice_id=self.voice_id,
+                output_format="mp3_22050_32",
+                text=text,
+                model_id="eleven_turbo_v2",
+                voice_settings=voice_config
+            )
+            
+            # Stream each chunk as it arrives
+            for chunk in response:
+                if chunk:
                     yield chunk
                     
         except Exception as e:

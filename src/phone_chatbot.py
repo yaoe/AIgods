@@ -684,22 +684,22 @@ class PhoneChatbot:
         beep_thread.start()
     
     def _play_thinking_beep(self):
-        """Play continuous thinking beep until stopped"""
+        """Play continuous calm thinking tone until stopped"""
         try:
             import numpy as np
             from pydub import AudioSegment
             import io
             
             sample_rate = 16000
-            duration = 0.15  # Duration of each beep
-            frequency = 600  # Different frequency for thinking
+            duration = 0.8  # Longer, calmer tone
+            frequency = 220  # Lower frequency (A3 note)
             
-            # Generate thinking beep tone
+            # Generate calm thinking tone
             t = np.linspace(0, duration, int(sample_rate * duration), False)
-            beep_tone = np.sin(2 * np.pi * frequency * t) * 0.4  # Moderate volume
+            beep_tone = np.sin(2 * np.pi * frequency * t) * 0.25  # Quieter volume
             
-            # Add a quick fade in/out to avoid clicks
-            fade_samples = int(0.01 * sample_rate)  # 10ms fade
+            # Add longer fade in/out for smoother sound
+            fade_samples = int(0.05 * sample_rate)  # 50ms fade
             beep_tone[:fade_samples] *= np.linspace(0, 1, fade_samples)
             beep_tone[-fade_samples:] *= np.linspace(1, 0, fade_samples)
             
@@ -720,12 +720,12 @@ class PhoneChatbot:
             wav_buffer.seek(0)
             beep_wav = wav_buffer.read()
             
-            logger.info("🤔 Playing thinking beeps while AI processes...")
+            logger.info("🤔 Playing calm thinking tone while AI processes...")
             
             while hasattr(self, '_thinking_beep_active') and self._thinking_beep_active:
                 if hasattr(self, '_thinking_beep_active') and self._thinking_beep_active:
                     self.audio_manager.play_audio(beep_wav, format='wav')
-                    time.sleep(0.3)  # Shorter pause for thinking beeps
+                    time.sleep(1.2)  # Longer pause between tones
                 
         except Exception as e:
             logger.error(f"Error playing thinking beep: {e}")
