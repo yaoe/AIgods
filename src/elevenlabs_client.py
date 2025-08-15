@@ -26,7 +26,7 @@ class ElevenLabsClient:
         # Initialize official ElevenLabs client if available
         self.client = ElevenLabs(api_key=api_key) if ElevenLabs else None
     
-    def stream_text_official(self, text: str, voice_settings: dict = None) -> Generator[bytes, None, None]:
+    def stream_text_official(self, text: str, voice_settings: dict = None, voice_id: str = None) -> Generator[bytes, None, None]:
         """Stream TTS audio using official ElevenLabs library"""
         if not self.client or not VoiceSettings:
             logger.warning("ElevenLabs client not available, using HTTP fallback")
@@ -54,9 +54,12 @@ class ElevenLabsClient:
             
             logger.info("Starting official ElevenLabs streaming...")
             
+            # Use the voice_id from personality or fallback to default
+            selected_voice_id = voice_id or self.voice_id
+            
             # Use the official streaming method from the documentation
             response = self.client.text_to_speech.stream(
-                voice_id=self.voice_id,
+                voice_id=selected_voice_id,
                 output_format="mp3_22050_32",
                 text=text,
                 model_id="eleven_turbo_v2",

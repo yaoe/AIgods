@@ -563,7 +563,16 @@ class PhoneChatbot:
             # Generate audio for complete response
             logger.info("Generating audio...")
             voice_settings = self.current_personality.get("voice_settings", {})
-            audio_data = self.elevenlabs.generate_audio(full_response, voice_settings)
+            voice_id = self.current_personality.get("voice_id")
+            
+            # Use streaming for responses too
+            audio_stream = self.elevenlabs.stream_text_official(full_response, voice_settings, voice_id)
+            
+            # Collect streamed audio into complete response
+            audio_chunks = []
+            for chunk in audio_stream:
+                audio_chunks.append(chunk)
+            audio_data = b''.join(audio_chunks)
             
             # Stop thinking beep right before playing audio
             self._thinking_beep_active = False
@@ -613,9 +622,10 @@ class PhoneChatbot:
         try:
             logger.info("🎭 Streaming divine greeting...")
             voice_settings = self.current_personality.get("voice_settings", {})
+            voice_id = self.current_personality.get("voice_id")
             
             # Create streaming audio generator using official ElevenLabs library
-            audio_stream = self.elevenlabs.stream_text_official(greeting, voice_settings)
+            audio_stream = self.elevenlabs.stream_text_official(greeting, voice_settings, voice_id)
             
             # Stop connection beep as soon as we start streaming
             self._beep_active = False
