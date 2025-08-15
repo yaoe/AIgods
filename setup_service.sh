@@ -21,6 +21,11 @@ echo "📁 Setting up for user: $ACTUAL_USER"
 echo "📁 Home directory: $ACTUAL_HOME"
 echo "📁 Working directory: $(pwd)"
 
+# Create logs directory
+echo "📁 Creating logs directory..."
+mkdir -p /home/pi/AIgods
+chown $ACTUAL_USER:$ACTUAL_USER /home/pi/AIgods
+
 # Create a proper service file with correct paths
 SERVICE_FILE="/etc/systemd/system/phone-chatbot.service"
 
@@ -39,11 +44,9 @@ WorkingDirectory=$(pwd)
 Environment=PATH=/usr/local/bin:/usr/bin:/bin
 Environment=PYTHONPATH=$(pwd)
 Environment=HOME=$ACTUAL_HOME
-ExecStart=/usr/bin/python3 $(pwd)/src/phone_chatbot.py
+ExecStart=/bin/bash -c '/usr/bin/python3 $(pwd)/src/phone_chatbot.py >/home/pi/AIgods/logs.txt 2>&1'
 Restart=always
 RestartSec=10
-StandardOutput=journal
-StandardError=journal
 SyslogIdentifier=phone-chatbot
 
 # Restart configuration
