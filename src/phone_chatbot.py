@@ -25,6 +25,12 @@ from src.conversation_manager import ConversationManager
 from src.audio_manager import AudioManager
 from src.config_loader import ConfigLoader
 
+# ElevenLabs import
+try:
+    from elevenlabs import stream
+except ImportError:
+    stream = None
+
 # GPIO imports
 try:
     import RPi.GPIO as GPIO
@@ -628,10 +634,6 @@ class PhoneChatbot:
             voice_id = self.current_personality.get("voice_id")
             logger.info(f"Using voice_id for response: {voice_id}")
             
-            # Stop thinking beep right before making HTTP request (when audio generation starts)
-            self._thinking_beep_active = False
-            time.sleep(0.1)  # Brief pause to stop beep cleanly
-            
             # Enable shadow listening for interruption detection
             self.shadow_listening = True
             self.audio_playback_start_time = time.time()  # Record when audio starts
@@ -639,7 +641,11 @@ class PhoneChatbot:
             
             # Play the audio using ElevenLabs streaming function
             logger.info("Playing audio...")
-            from elevenlabs import stream
+            
+            # Stop thinking beep right before making the actual HTTP request
+            self._thinking_beep_active = False
+            time.sleep(0.1)  # Brief pause to stop beep cleanly
+            
             audio_stream = self.elevenlabs.client.text_to_speech.stream(
                 text=full_response,
                 voice_id=voice_id,
@@ -699,12 +705,10 @@ class PhoneChatbot:
             
             logger.info(f"👑 The god speaks (streaming): {greeting[:50]}...")
             
-            # Stop connection beep right before making HTTP request (when audio generation starts)
+            # Stop connection beep right before making the actual HTTP request
             self._beep_active = False
             time.sleep(0.1)  # Brief pause to stop beep cleanly
             
-            # Use ElevenLabs streaming function directly
-            from elevenlabs import stream
             audio_stream = self.elevenlabs.client.text_to_speech.stream(
                 text=greeting,
                 voice_id=voice_id,
