@@ -539,8 +539,8 @@ class PhoneChatbot:
     def _generate_and_speak_response(self):
         """Generate AI response and speak it"""
         try:
-            # Play a short beep to indicate AI is thinking
-            self._play_thinking_beep()
+            # Start continuous thinking beep
+            self._start_thinking_beep()
             
             # Generate complete response first
             logger.info("Generating AI response...")
@@ -554,6 +554,10 @@ class PhoneChatbot:
             logger.info("Generating audio...")
             voice_settings = self.current_personality.get("voice_settings", {})
             audio_data = self.elevenlabs.generate_audio(full_response, voice_settings)
+            
+            # Stop thinking beep right before playing audio
+            self._thinking_beep_active = False
+            time.sleep(0.1)  # Brief pause to stop beep cleanly
             
             # Enable shadow listening for interruption detection
             self.shadow_listening = True
@@ -662,20 +666,27 @@ class PhoneChatbot:
         except Exception as e:
             logger.error(f"Error playing connection beep: {e}")
     
+    def _start_thinking_beep(self):
+        """Start continuous thinking beep while AI processes"""
+        self._thinking_beep_active = True
+        beep_thread = threading.Thread(target=self._play_thinking_beep)
+        beep_thread.daemon = True
+        beep_thread.start()
+    
     def _play_thinking_beep(self):
-        """Play a short beep to indicate AI is processing"""
+        """Play continuous thinking beep until stopped"""
         try:
             import numpy as np
             from pydub import AudioSegment
             import io
             
             sample_rate = 16000
-            duration = 0.15  # Slightly longer for better audibility
+            duration = 0.15  # Duration of each beep
             frequency = 600  # Different frequency for thinking
             
             # Generate thinking beep tone
             t = np.linspace(0, duration, int(sample_rate * duration), False)
-            beep_tone = np.sin(2 * np.pi * frequency * t) * 0.5  # Increased volume
+            beep_tone = np.sin(2 * np.pi * frequency * t) * 0.4  # Moderate volume
             
             # Add a quick fade in/out to avoid clicks
             fade_samples = int(0.01 * sample_rate)  # 10ms fade
@@ -685,7 +696,7 @@ class PhoneChatbot:
             # Convert to 16-bit PCM
             beep_audio = (beep_tone * 32767).astype(np.int16)
             
-            # Create AudioSegment for better compatibility
+            # Create AudioSegment
             audio_segment = AudioSegment(
                 data=beep_audio.tobytes(),
                 sample_width=2,
@@ -693,14 +704,19 @@ class PhoneChatbot:
                 channels=1
             )
             
-            # Export as WAV for playback
+            # Export as WAV
             wav_buffer = io.BytesIO()
             audio_segment.export(wav_buffer, format="wav")
             wav_buffer.seek(0)
+            beep_wav = wav_buffer.read()
             
-            logger.info("🤔 Playing thinking beep...")
-            self.audio_manager.play_audio(wav_buffer.read(), format='wav')
+            logger.info("🤔 Playing thinking beeps while AI processes...")
             
+            while hasattr(self, '_thinking_beep_active') and self._thinking_beep_active:
+                if hasattr(self, '_thinking_beep_active') and self._thinking_beep_active:
+                    self.audio_manager.play_audio(beep_wav, format='wav')
+                    time.sleep(0.3)  # Shorter pause for thinking beeps
+                
         except Exception as e:
             logger.error(f"Error playing thinking beep: {e}")
             
