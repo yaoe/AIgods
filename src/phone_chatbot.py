@@ -589,8 +589,16 @@ class PhoneChatbot:
                 voice_settings=self.elevenlabs._create_voice_settings(voice_settings) if voice_settings else None
             )
             
-            # Use ElevenLabs stream function for real-time playback
-            stream(audio_stream)
+            # Option 2: process the audio bytes manually and play through our device
+            audio_chunks = []
+            for chunk in audio_stream:
+                if isinstance(chunk, bytes):
+                    audio_chunks.append(chunk)
+            
+            # Combine and play through our audio manager (correct device)
+            if audio_chunks:
+                complete_audio = b''.join(audio_chunks)
+                self.audio_manager.play_audio(complete_audio, format='mp3')
             
             # Wait for playback to complete
             while self.audio_manager.is_playing:
@@ -646,8 +654,16 @@ class PhoneChatbot:
                 voice_settings=self.elevenlabs._create_voice_settings(voice_settings) if voice_settings else None
             )
             
-            # Play using ElevenLabs stream function
-            stream(audio_stream)
+            # Option 2: process the audio bytes manually and play through our device
+            audio_chunks = []
+            for chunk in audio_stream:
+                if isinstance(chunk, bytes):
+                    audio_chunks.append(chunk)
+            
+            # Combine and play through our audio manager (correct device)
+            if audio_chunks:
+                complete_audio = b''.join(audio_chunks)
+                self.audio_manager.play_audio(complete_audio, format='mp3')
             
         except Exception as e:
             logger.error(f"Error streaming god greeting: {e}")
