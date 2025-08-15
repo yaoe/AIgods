@@ -523,7 +523,7 @@ class PhoneChatbot:
         delay_thread.start()
         
     def _handle_interruption(self, transcript: str):
-        """Handle user interruption"""
+        """Handle user interruption with extended silence tolerance"""
         # Stop current audio
         self.audio_manager.interrupt_playback()
         self.shadow_listening = False
@@ -531,8 +531,36 @@ class PhoneChatbot:
         # Wait a moment for audio to stop
         time.sleep(0.2)
         
-        # Process the interruption directly
-        self._process_user_input(transcript)
+        # Schedule processing with much longer delay for interruptions
+        # Users often wait for the AI to stop before continuing their sentence
+        self._schedule_interruption_processing(transcript)
+        
+    def _schedule_interruption_processing(self, transcript: str):
+        """Schedule interruption processing with extended silence timeout"""
+        def delayed_interruption_process():
+            # Wait much longer for interruptions (6 seconds) since users often
+            # pause after the AI stops to collect their thoughts
+            time.sleep(6.0)
+            
+            # Check if there was a more recent transcript (user continued speaking)
+            # Use longer threshold for interruptions (5 seconds vs 2.5 for normal)
+            if time.time() - self.last_transcript_time < 5.0:
+                logger.info("User still speaking after interruption, waiting longer")
+                return
+                
+            # Check if we're already processing something
+            if self.is_processing:
+                logger.info("Already processing, skipping interruption")
+                return
+                
+            # Process the interruption
+            logger.info(f"Processing interruption after extended delay: {transcript}")
+            self._process_user_input(transcript)
+            
+        # Start delay thread for interruption
+        delay_thread = threading.Thread(target=delayed_interruption_process)
+        delay_thread.daemon = True
+        delay_thread.start()
         
     def _process_user_input(self, transcript: str):
         """Process user input and generate response"""
