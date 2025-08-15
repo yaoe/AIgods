@@ -85,6 +85,7 @@ class PhoneChatbot:
         self.processing_start_time = 0  # Track when we start processing
         self.audio_playback_start_time = 0  # Track when audio actually starts playing
         self.interruption_transcript = ""  # Store interruption text to combine with continuation
+        self.accumulated_transcript = ""  # Store all speech chunks for complete context
         
         # GPIO state
         self.last_phone_state = True
@@ -402,6 +403,7 @@ class PhoneChatbot:
         self.processing_start_time = 0
         self.audio_playback_start_time = 0
         self.interruption_transcript = ""
+        self.accumulated_transcript = ""
         
         # Reset mute state
         self.is_muted = False
@@ -444,11 +446,19 @@ class PhoneChatbot:
             self.last_final_transcript = transcript
             self.last_transcript_time = time.time()
             
+            # Accumulate all speech chunks to build complete context
+            if self.accumulated_transcript:
+                self.accumulated_transcript += f" {transcript}"
+            else:
+                self.accumulated_transcript = transcript
+            
             # Combine with any pending interruption transcript
-            full_transcript = transcript
+            full_transcript = self.accumulated_transcript
             if self.interruption_transcript:
-                full_transcript = f"{self.interruption_transcript} {transcript}"
+                full_transcript = f"{self.interruption_transcript} {self.accumulated_transcript}"
                 logger.info(f"Combined with interruption: {full_transcript}")
+            else:
+                logger.info(f"Accumulated transcript: {full_transcript}")
             
             # Check if we should process this as a complete utterance
             if self._should_process_utterance(transcript):
@@ -525,8 +535,9 @@ class PhoneChatbot:
             logger.info(f"Processing after delay: {transcript}")
             self._process_user_input(transcript)
             
-            # Clear any interruption transcript since we processed the full message
+            # Clear transcripts since we processed the full message
             self.interruption_transcript = ""
+            self.accumulated_transcript = ""
             
         # Start delay thread
         delay_thread = threading.Thread(target=delayed_process)
@@ -572,8 +583,9 @@ class PhoneChatbot:
             logger.info(f"Processing interruption after extended delay: {transcript}")
             self._process_user_input(transcript)
             
-            # Clear the interruption transcript as it's been processed
+            # Clear transcripts as they've been processed
             self.interruption_transcript = ""
+            self.accumulated_transcript = ""
             
         # Start delay thread for interruption
         delay_thread = threading.Thread(target=delayed_interruption_process)
@@ -616,7 +628,7 @@ class PhoneChatbot:
             voice_id = self.current_personality.get("voice_id")
             logger.info(f"Using voice_id for response: {voice_id}")
             
-            # Stop thinking beep right before playing audio
+            # Stop thinking beep right before making HTTP request (when audio generation starts)
             self._thinking_beep_active = False
             time.sleep(0.1)  # Brief pause to stop beep cleanly
             
@@ -685,11 +697,11 @@ class PhoneChatbot:
             voice_id = self.current_personality.get("voice_id")
             logger.info(f"Using voice_id for {self.current_personality['name']}: {voice_id}")
             
-            # Stop connection beep as soon as we start streaming
+            logger.info(f"👑 The god speaks (streaming): {greeting[:50]}...")
+            
+            # Stop connection beep right before making HTTP request (when audio generation starts)
             self._beep_active = False
             time.sleep(0.1)  # Brief pause to stop beep cleanly
-            
-            logger.info(f"👑 The god speaks (streaming): {greeting[:50]}...")
             
             # Use ElevenLabs streaming function directly
             from elevenlabs import stream
