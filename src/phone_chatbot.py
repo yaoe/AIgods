@@ -619,6 +619,9 @@ class PhoneChatbot:
         try:
             # Phone-like beep tone (800Hz for 0.2s every 1 second, like phone ringing)
             import numpy as np
+            from pydub import AudioSegment
+            import io
+            
             sample_rate = 16000
             duration = 0.2
             frequency = 800
@@ -626,14 +629,34 @@ class PhoneChatbot:
             # Generate phone-like beep tone
             t = np.linspace(0, duration, int(sample_rate * duration), False)
             beep_tone = np.sin(2 * np.pi * frequency * t) * 0.4  # Moderate volume
+            
+            # Add fade to avoid clicks
+            fade_samples = int(0.01 * sample_rate)
+            beep_tone[:fade_samples] *= np.linspace(0, 1, fade_samples)
+            beep_tone[-fade_samples:] *= np.linspace(1, 0, fade_samples)
+            
+            # Convert to 16-bit PCM
             beep_audio = (beep_tone * 32767).astype(np.int16)
-            beep_bytes = beep_audio.tobytes()
+            
+            # Create AudioSegment
+            audio_segment = AudioSegment(
+                data=beep_audio.tobytes(),
+                sample_width=2,
+                frame_rate=sample_rate,
+                channels=1
+            )
+            
+            # Export as WAV
+            wav_buffer = io.BytesIO()
+            audio_segment.export(wav_buffer, format="wav")
+            wav_buffer.seek(0)
+            beep_wav = wav_buffer.read()
             
             logger.info("📞 Playing connection tone while god prepares...")
             
             while hasattr(self, '_beep_active') and self._beep_active:
                 if hasattr(self, '_beep_active') and self._beep_active:
-                    self.audio_manager.play_audio(beep_bytes, format='raw')
+                    self.audio_manager.play_audio(beep_wav, format='wav')
                     time.sleep(0.8)  # Pause between beeps (like phone ringing)
                 
         except Exception as e:
@@ -643,18 +666,40 @@ class PhoneChatbot:
         """Play a short beep to indicate AI is processing"""
         try:
             import numpy as np
+            from pydub import AudioSegment
+            import io
+            
             sample_rate = 16000
-            duration = 0.1  # Shorter beep
+            duration = 0.15  # Slightly longer for better audibility
             frequency = 600  # Different frequency for thinking
             
             # Generate thinking beep tone
             t = np.linspace(0, duration, int(sample_rate * duration), False)
-            beep_tone = np.sin(2 * np.pi * frequency * t) * 0.3  # Quieter volume
+            beep_tone = np.sin(2 * np.pi * frequency * t) * 0.5  # Increased volume
+            
+            # Add a quick fade in/out to avoid clicks
+            fade_samples = int(0.01 * sample_rate)  # 10ms fade
+            beep_tone[:fade_samples] *= np.linspace(0, 1, fade_samples)
+            beep_tone[-fade_samples:] *= np.linspace(1, 0, fade_samples)
+            
+            # Convert to 16-bit PCM
             beep_audio = (beep_tone * 32767).astype(np.int16)
-            beep_bytes = beep_audio.tobytes()
+            
+            # Create AudioSegment for better compatibility
+            audio_segment = AudioSegment(
+                data=beep_audio.tobytes(),
+                sample_width=2,
+                frame_rate=sample_rate,
+                channels=1
+            )
+            
+            # Export as WAV for playback
+            wav_buffer = io.BytesIO()
+            audio_segment.export(wav_buffer, format="wav")
+            wav_buffer.seek(0)
             
             logger.info("🤔 Playing thinking beep...")
-            self.audio_manager.play_audio(beep_bytes, format='raw')
+            self.audio_manager.play_audio(wav_buffer.read(), format='wav')
             
         except Exception as e:
             logger.error(f"Error playing thinking beep: {e}")
