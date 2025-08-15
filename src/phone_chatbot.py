@@ -487,11 +487,11 @@ class PhoneChatbot:
     def _schedule_delayed_processing(self, transcript: str):
         """Schedule processing with a delay to ensure sentence completion"""
         def delayed_process():
-            # Wait for 0.5 seconds
-            time.sleep(0.5)
+            # Wait for 1.2 seconds (increased from 0.5 to prevent cutting off)
+            time.sleep(1.2)
             
             # Check if there was a more recent transcript (user continued speaking)
-            if time.time() - self.last_transcript_time < 0.4:
+            if time.time() - self.last_transcript_time < 1.0:
                 logger.info("User still speaking, not processing yet")
                 return
                 
@@ -539,6 +539,9 @@ class PhoneChatbot:
     def _generate_and_speak_response(self):
         """Generate AI response and speak it"""
         try:
+            # Play a short beep to indicate AI is thinking
+            self._play_thinking_beep()
+            
             # Generate complete response first
             logger.info("Generating AI response...")
             full_response = ""
@@ -635,6 +638,26 @@ class PhoneChatbot:
                 
         except Exception as e:
             logger.error(f"Error playing connection beep: {e}")
+    
+    def _play_thinking_beep(self):
+        """Play a short beep to indicate AI is processing"""
+        try:
+            import numpy as np
+            sample_rate = 16000
+            duration = 0.1  # Shorter beep
+            frequency = 600  # Different frequency for thinking
+            
+            # Generate thinking beep tone
+            t = np.linspace(0, duration, int(sample_rate * duration), False)
+            beep_tone = np.sin(2 * np.pi * frequency * t) * 0.3  # Quieter volume
+            beep_audio = (beep_tone * 32767).astype(np.int16)
+            beep_bytes = beep_audio.tobytes()
+            
+            logger.info("🤔 Playing thinking beep...")
+            self.audio_manager.play_audio(beep_bytes, format='raw')
+            
+        except Exception as e:
+            logger.error(f"Error playing thinking beep: {e}")
             
 
 def main():
