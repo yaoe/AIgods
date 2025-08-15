@@ -579,9 +579,8 @@ class PhoneChatbot:
             self.audio_playback_start_time = time.time()  # Record when audio starts
             logger.info("Shadow listening enabled - you can interrupt")
             
-            # Play the audio using ElevenLabs built-in streaming
+            # Play the audio using our audio manager with ElevenLabs streaming
             logger.info("Playing audio...")
-            from elevenlabs import stream
             audio_stream = self.elevenlabs.client.text_to_speech.stream(
                 text=full_response,
                 voice_id=voice_id,
@@ -589,8 +588,8 @@ class PhoneChatbot:
                 voice_settings=self.elevenlabs._create_voice_settings(voice_settings) if voice_settings else None
             )
             
-            # Use ElevenLabs' built-in streaming for real-time playback
-            stream(audio_stream)
+            # Use our audio manager to play through the correct device
+            self.audio_manager.play_audio_stream(audio_stream)
             
             # Wait for playback to complete
             while self.audio_manager.is_playing:
@@ -637,8 +636,7 @@ class PhoneChatbot:
             
             logger.info(f"👑 The god speaks (streaming): {greeting[:50]}...")
             
-            # Use ElevenLabs built-in stream function for real-time playback
-            from elevenlabs import stream
+            # Use ElevenLabs streaming with our audio manager
             audio_stream = self.elevenlabs.client.text_to_speech.stream(
                 text=greeting,
                 voice_id=voice_id,
@@ -646,8 +644,8 @@ class PhoneChatbot:
                 voice_settings=self.elevenlabs._create_voice_settings(voice_settings) if voice_settings else None
             )
             
-            # Play using ElevenLabs' built-in streaming (handles real-time playback)
-            stream(audio_stream)
+            # Play through our audio manager (correct device)
+            self.audio_manager.play_audio_stream(audio_stream)
             
         except Exception as e:
             logger.error(f"Error streaming god greeting: {e}")
