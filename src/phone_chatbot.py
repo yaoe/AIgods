@@ -84,6 +84,7 @@ class PhoneChatbot:
         self.last_transcript_time = 0
         self.processing_start_time = 0  # Track when we start processing
         self.audio_playback_start_time = 0  # Track when audio actually starts playing
+        self.interruption_transcript = ""  # Store interruption text to combine with continuation
         
         # GPIO state
         self.last_phone_state = True
@@ -400,6 +401,7 @@ class PhoneChatbot:
         self.shadow_listening = False
         self.processing_start_time = 0
         self.audio_playback_start_time = 0
+        self.interruption_transcript = ""
         
         # Reset mute state
         self.is_muted = False
@@ -442,10 +444,16 @@ class PhoneChatbot:
             self.last_final_transcript = transcript
             self.last_transcript_time = time.time()
             
+            # Combine with any pending interruption transcript
+            full_transcript = transcript
+            if self.interruption_transcript:
+                full_transcript = f"{self.interruption_transcript} {transcript}"
+                logger.info(f"Combined with interruption: {full_transcript}")
+            
             # Check if we should process this as a complete utterance
             if self._should_process_utterance(transcript):
                 # Add a small delay to ensure the user finished speaking
-                self._schedule_delayed_processing(transcript)
+                self._schedule_delayed_processing(full_transcript)
         else:
             # Update current transcript for display
             self.current_transcript = transcript
@@ -517,6 +525,9 @@ class PhoneChatbot:
             logger.info(f"Processing after delay: {transcript}")
             self._process_user_input(transcript)
             
+            # Clear any interruption transcript since we processed the full message
+            self.interruption_transcript = ""
+            
         # Start delay thread
         delay_thread = threading.Thread(target=delayed_process)
         delay_thread.daemon = True
@@ -527,6 +538,9 @@ class PhoneChatbot:
         # Stop current audio
         self.audio_manager.interrupt_playback()
         self.shadow_listening = False
+        
+        # Store the interruption transcript to combine with any continuation
+        self.interruption_transcript = transcript
         
         # Wait a moment for audio to stop
         time.sleep(0.2)
@@ -553,9 +567,13 @@ class PhoneChatbot:
                 logger.info("Already processing, skipping interruption")
                 return
                 
-            # Process the interruption
+            # Process the interruption (transcript is just the original interruption)
+            # If there was a continuation, it would have been handled in _handle_transcript
             logger.info(f"Processing interruption after extended delay: {transcript}")
             self._process_user_input(transcript)
+            
+            # Clear the interruption transcript as it's been processed
+            self.interruption_transcript = ""
             
         # Start delay thread for interruption
         delay_thread = threading.Thread(target=delayed_interruption_process)
