@@ -570,15 +570,6 @@ class PhoneChatbot:
             voice_id = self.current_personality.get("voice_id")
             logger.info(f"Using voice_id for response: {voice_id}")
             
-            # Use streaming for responses too
-            audio_stream = self.elevenlabs.stream_text_official(full_response, voice_settings, voice_id)
-            
-            # Collect streamed audio into complete response
-            audio_chunks = []
-            for chunk in audio_stream:
-                audio_chunks.append(chunk)
-            audio_data = b''.join(audio_chunks)
-            
             # Stop thinking beep right before playing audio
             self._thinking_beep_active = False
             time.sleep(0.1)  # Brief pause to stop beep cleanly
@@ -588,9 +579,18 @@ class PhoneChatbot:
             self.audio_playback_start_time = time.time()  # Record when audio starts
             logger.info("Shadow listening enabled - you can interrupt")
             
-            # Play the audio
+            # Play the audio using ElevenLabs built-in streaming
             logger.info("Playing audio...")
-            self.audio_manager.play_audio(audio_data)
+            from elevenlabs import stream
+            audio_stream = self.elevenlabs.client.text_to_speech.stream(
+                text=full_response,
+                voice_id=voice_id,
+                model_id="eleven_multilingual_v2",
+                voice_settings=self.elevenlabs._create_voice_settings(voice_settings) if voice_settings else None
+            )
+            
+            # Use ElevenLabs' built-in streaming for real-time playback
+            stream(audio_stream)
             
             # Wait for playback to complete
             while self.audio_manager.is_playing:
@@ -631,15 +631,23 @@ class PhoneChatbot:
             voice_id = self.current_personality.get("voice_id")
             logger.info(f"Using voice_id for {self.current_personality['name']}: {voice_id}")
             
-            # Create streaming audio generator using official ElevenLabs 2.9+ library
-            audio_stream = self.elevenlabs.stream_text_official(greeting, voice_settings, voice_id)
-            
             # Stop connection beep as soon as we start streaming
             self._beep_active = False
             time.sleep(0.1)  # Brief pause to stop beep cleanly
             
             logger.info(f"👑 The god speaks (streaming): {greeting[:50]}...")
-            self.audio_manager.play_audio_stream(audio_stream)
+            
+            # Use ElevenLabs built-in stream function for real-time playback
+            from elevenlabs import stream
+            audio_stream = self.elevenlabs.client.text_to_speech.stream(
+                text=greeting,
+                voice_id=voice_id,
+                model_id="eleven_multilingual_v2",
+                voice_settings=self.elevenlabs._create_voice_settings(voice_settings) if voice_settings else None
+            )
+            
+            # Play using ElevenLabs' built-in streaming (handles real-time playback)
+            stream(audio_stream)
             
         except Exception as e:
             logger.error(f"Error streaming god greeting: {e}")

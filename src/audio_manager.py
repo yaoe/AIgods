@@ -190,6 +190,19 @@ class AudioManager:
         self.playback_thread.daemon = True
         self.playback_thread.start()
         
+    def play_realtime_stream(self, audio_generator):
+        """Play audio with real-time streaming (plays chunks as they arrive)"""
+        self.is_playing = True
+        self.is_interrupted = False
+        
+        # Start real-time playback thread
+        self.playback_thread = threading.Thread(
+            target=self._realtime_stream_loop,
+            args=(audio_generator,)
+        )
+        self.playback_thread.daemon = True
+        self.playback_thread.start()
+        
     def _playback_stream_loop(self, audio_generator):
         """Standard ElevenLabs streaming playback - collect all then play"""
         stream = None

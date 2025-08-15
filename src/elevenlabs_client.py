@@ -27,6 +27,18 @@ class ElevenLabsClient:
         # Initialize official ElevenLabs client if available
         self.client = ElevenLabs(api_key=api_key) if ElevenLabs else None
     
+    def _create_voice_settings(self, voice_settings_dict):
+        """Create VoiceSettings object from dict"""
+        if not VoiceSettings or not voice_settings_dict:
+            return None
+        
+        return VoiceSettings(
+            stability=voice_settings_dict.get("stability", 0.5),
+            similarity_boost=voice_settings_dict.get("similarity_boost", 0.75),
+            style=voice_settings_dict.get("style", 0.0),
+            use_speaker_boost=voice_settings_dict.get("use_speaker_boost", True)
+        )
+    
     def stream_text_official(self, text: str, voice_settings: dict = None, voice_id: str = None) -> Generator[bytes, None, None]:
         """Stream TTS audio using official ElevenLabs 2.9+ API"""
         if not self.client:
