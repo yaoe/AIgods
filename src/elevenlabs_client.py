@@ -2,10 +2,10 @@ import requests
 import json
 import queue
 import threading
-import websocket
-import base64
 from typing import Callable, Optional, Generator
 import logging
+from elevenlabs.client import ElevenLabs
+from elevenlabs import stream
 
 logger = logging.getLogger(__name__)
 
@@ -17,6 +17,29 @@ class ElevenLabsClient:
         self.base_url = "https://api.elevenlabs.io/v1"
         self.audio_queue = queue.Queue()
         self.is_playing = False
+        
+        # Initialize official ElevenLabs client
+        self.client = ElevenLabs(api_key=api_key)
+    
+    def stream_text_official(self, text: str, voice_settings: dict = None) -> Generator[bytes, None, None]:
+        """Stream TTS audio using official ElevenLabs library"""
+        try:
+            # Use the official streaming method
+            audio_stream = self.client.text_to_speech.stream(
+                text=text,
+                voice_id=self.voice_id,
+                model_id="eleven_turbo_v2",
+                voice_settings=voice_settings
+            )
+            
+            # Yield each chunk
+            for chunk in audio_stream:
+                if isinstance(chunk, bytes):
+                    yield chunk
+                    
+        except Exception as e:
+            logger.error(f"Official ElevenLabs streaming error: {e}")
+            return
         
     def stream_text_realtime(self, text: str, voice_settings: dict = None, on_audio_chunk: Callable[[bytes], None] = None):
         """Stream TTS audio using websockets for real-time playback"""

@@ -609,21 +609,20 @@ class PhoneChatbot:
         beep_thread.start()
     
     def _play_god_greeting(self, greeting: str):
-        """Play the god's greeting using real-time streaming audio"""
+        """Play the god's greeting using standard ElevenLabs streaming"""
         try:
-            logger.info("🎭 Real-time streaming divine greeting...")
+            logger.info("🎭 Streaming divine greeting...")
             voice_settings = self.current_personality.get("voice_settings", {})
             
-            def stream_generator():
-                # Stop connection beep as soon as we start streaming
-                self._beep_active = False
-                logger.info(f"👑 The god speaks (real-time): {greeting[:50]}...")
-                
-                # Use HTTP streaming for better compatibility
-                return self.elevenlabs.stream_text(greeting, voice_settings)
+            # Create streaming audio generator using official ElevenLabs library
+            audio_stream = self.elevenlabs.stream_text_official(greeting, voice_settings)
             
-            # Start real-time streaming
-            self.audio_manager.play_realtime_stream(stream_generator)
+            # Stop connection beep as soon as we start streaming
+            self._beep_active = False
+            time.sleep(0.1)  # Brief pause to stop beep cleanly
+            
+            logger.info(f"👑 The god speaks (streaming): {greeting[:50]}...")
+            self.audio_manager.play_audio_stream(audio_stream)
             
         except Exception as e:
             logger.error(f"Error streaming god greeting: {e}")

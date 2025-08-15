@@ -177,19 +177,6 @@ class AudioManager:
         finally:
             self.is_playing = False
             
-    def play_realtime_stream(self, stream_generator_func):
-        """Play real-time audio stream with immediate playback"""
-        self.is_playing = True
-        self.is_interrupted = False
-        
-        # Start real-time playback
-        self.playback_thread = threading.Thread(
-            target=self._realtime_playback_loop,
-            args=(stream_generator_func,)
-        )
-        self.playback_thread.daemon = True
-        self.playback_thread.start()
-        
     def play_audio_stream(self, audio_generator):
         """Play streaming audio"""
         self.is_playing = True
@@ -204,63 +191,32 @@ class AudioManager:
         self.playback_thread.start()
         
     def _playback_stream_loop(self, audio_generator):
-        """Playback loop for streaming audio - true streaming approach"""
+        """Standard ElevenLabs streaming playback - collect all then play"""
         stream = None
         audio_buffer = b''
-        min_buffer_size = 8192  # Minimum bytes before starting playback
-        pcm_queue = queue.Queue(maxsize=50)  # Buffer for PCM chunks
-        playback_started = False
-        
-        def audio_decoder_thread():
-            """Decode MP3 chunks to PCM in a separate thread"""
-            try:
-                chunk_buffer = b''
-                for chunk in audio_generator:
-                    chunk_buffer += chunk
-                    
-                    # Process in larger chunks for better MP3 decoding
-                    if len(chunk_buffer) >= 4096:
-                        try:
-                            # Decode MP3 chunk to PCM
-                            audio_segment = AudioSegment.from_mp3(io.BytesIO(chunk_buffer))
-                            audio_segment = audio_segment.set_frame_rate(self.sample_rate)
-                            audio_segment = audio_segment.set_channels(1)
-                            audio_segment = audio_segment.set_sample_width(2)
-                            audio_segment = audio_segment + 6  # Volume boost
-                            
-                            pcm_data = audio_segment.raw_data
-                            pcm_queue.put(pcm_data)
-                            chunk_buffer = b''  # Reset buffer
-                        except Exception as e:
-                            # Keep accumulating if decode fails
-                            continue
-                
-                # Process any remaining data
-                if chunk_buffer:
-                    try:
-                        audio_segment = AudioSegment.from_mp3(io.BytesIO(chunk_buffer))
-                        audio_segment = audio_segment.set_frame_rate(self.sample_rate)
-                        audio_segment = audio_segment.set_channels(1)
-                        audio_segment = audio_segment.set_sample_width(2)
-                        audio_segment = audio_segment + 6
-                        pcm_queue.put(audio_segment.raw_data)
-                    except Exception as e:
-                        logger.error(f"Error decoding final chunk: {e}")
-                
-                # Signal end of stream
-                pcm_queue.put(None)
-                
-            except Exception as e:
-                logger.error(f"Decoder thread error: {e}")
-                pcm_queue.put(None)
         
         try:
-            # Start decoder thread
-            decoder = threading.Thread(target=audio_decoder_thread)
-            decoder.daemon = True
-            decoder.start()
+            # Collect all audio chunks from ElevenLabs streaming
+            logger.info("Streaming audio from ElevenLabs...")
+            for chunk in audio_generator:
+                audio_buffer += chunk
+                    
+            if not audio_buffer:
+                logger.warning("No audio data received from stream")
+                return
+                
+            logger.info(f"Received {len(audio_buffer)} bytes of streamed audio")
             
-            logger.info("Starting true audio streaming from ElevenLabs...")
+            # Convert complete MP3 to PCM
+            audio_segment = AudioSegment.from_mp3(io.BytesIO(audio_buffer))
+            audio_segment = audio_segment.set_frame_rate(self.sample_rate)
+            audio_segment = audio_segment.set_channels(1)
+            audio_segment = audio_segment.set_sample_width(2)
+            
+            # Increase volume by 6dB (same as regular playback)
+            audio_segment = audio_segment + 6
+            
+            pcm_data = audio_segment.raw_data
             
             # Open audio stream
             try:
@@ -276,145 +232,16 @@ class AudioManager:
                 logger.error(f"Error opening stream: {e}")
                 return
             
-            # Play PCM chunks as they become available
-            accumulated_pcm = b''
-            while True:
+            # Play audio
+            for i in range(0, len(pcm_data), self.chunk_size):
                 if self.is_interrupted:
                     logger.info("Streaming playback interrupted")
                     break
-                
-                try:
-                    # Get PCM chunk (timeout prevents hanging)
-                    pcm_chunk = pcm_queue.get(timeout=0.1)
-                    
-                    if pcm_chunk is None:  # End of stream
-                        break
-                    
-                    accumulated_pcm += pcm_chunk
-                    
-                    # Start playback once we have enough data
-                    if not playback_started and len(accumulated_pcm) >= min_buffer_size:
-                        logger.info("Starting audio playback...")
-                        playback_started = True
-                    
-                    # Play accumulated data if we've started
-                    if playback_started:
-                        for i in range(0, len(accumulated_pcm), self.chunk_size):
-                            if self.is_interrupted:
-                                break
-                            chunk = accumulated_pcm[i:i + self.chunk_size]
-                            if len(chunk) > 0:
-                                stream.write(chunk)
-                        accumulated_pcm = b''  # Clear played data
-                        
-                except queue.Empty:
-                    # Play any accumulated data if available
-                    if playback_started and accumulated_pcm:
-                        for i in range(0, len(accumulated_pcm), self.chunk_size):
-                            if self.is_interrupted:
-                                break
-                            chunk = accumulated_pcm[i:i + self.chunk_size]
-                            if len(chunk) > 0:
-                                stream.write(chunk)
-                        accumulated_pcm = b''
-                    continue
+                chunk = pcm_data[i:i + self.chunk_size]
+                stream.write(chunk)
                     
         except Exception as e:
             logger.error(f"Streaming playback error: {e}")
-        finally:
-            if stream:
-                stream.stop_stream()
-                stream.close()
-            self.is_playing = False
-    
-    def _realtime_playback_loop(self, stream_generator_func):
-        """Real-time playback loop for immediate audio streaming"""
-        stream = None
-        
-        try:
-            # Open audio stream for output
-            try:
-                stream = self.audio.open(
-                    format=pyaudio.paInt16,
-                    channels=1,
-                    rate=self.sample_rate,
-                    output=True,
-                    output_device_index=self.output_device_index,
-                    frames_per_buffer=self.chunk_size
-                )
-            except Exception as e:
-                logger.error(f"Error opening stream: {e}")
-                return
-            
-            logger.info("Starting real-time audio streaming...")
-            
-            # Get the audio generator
-            audio_generator = stream_generator_func()
-            
-            # Buffer for partial MP3 data
-            mp3_buffer = b''
-            first_chunk_played = False
-            
-            # Process audio chunks as they arrive
-            for chunk in audio_generator:
-                if self.is_interrupted:
-                    break
-                    
-                mp3_buffer += chunk
-                
-                # Try to decode when we have enough data
-                if len(mp3_buffer) >= 4096 or not first_chunk_played:
-                    try:
-                        # Attempt to decode the accumulated MP3 data
-                        audio_segment = AudioSegment.from_mp3(io.BytesIO(mp3_buffer))
-                        audio_segment = audio_segment.set_frame_rate(self.sample_rate)
-                        audio_segment = audio_segment.set_channels(1)
-                        audio_segment = audio_segment.set_sample_width(2)
-                        audio_segment = audio_segment + 6  # Volume boost
-                        
-                        pcm_data = audio_segment.raw_data
-                        
-                        # Play immediately
-                        for i in range(0, len(pcm_data), self.chunk_size):
-                            if self.is_interrupted:
-                                break
-                            pcm_chunk = pcm_data[i:i + self.chunk_size]
-                            if len(pcm_chunk) > 0:
-                                stream.write(pcm_chunk)
-                        
-                        # Clear buffer after successful decode
-                        mp3_buffer = b''
-                        first_chunk_played = True
-                        
-                    except Exception as e:
-                        # If decode fails, keep accumulating data
-                        if len(mp3_buffer) > 32768:  # Prevent unlimited growth
-                            logger.warning("MP3 buffer too large, resetting")
-                            mp3_buffer = chunk  # Keep only latest chunk
-                        continue
-            
-            # Process any remaining buffer
-            if mp3_buffer and not self.is_interrupted:
-                try:
-                    audio_segment = AudioSegment.from_mp3(io.BytesIO(mp3_buffer))
-                    audio_segment = audio_segment.set_frame_rate(self.sample_rate)
-                    audio_segment = audio_segment.set_channels(1)
-                    audio_segment = audio_segment.set_sample_width(2)
-                    audio_segment = audio_segment + 6
-                    
-                    pcm_data = audio_segment.raw_data
-                    for i in range(0, len(pcm_data), self.chunk_size):
-                        if self.is_interrupted:
-                            break
-                        pcm_chunk = pcm_data[i:i + self.chunk_size]
-                        if len(pcm_chunk) > 0:
-                            stream.write(pcm_chunk)
-                            
-                except Exception as e:
-                    logger.error(f"Error processing final buffer: {e}")
-                    
-        except Exception as e:
-            logger.error(f"Real-time streaming error: {e}")
         finally:
             if stream:
                 stream.stop_stream()
