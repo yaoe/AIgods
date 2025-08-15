@@ -83,6 +83,7 @@ class PhoneChatbot:
         self.shadow_listening = False
         self.last_transcript_time = 0
         self.processing_start_time = 0  # Track when we start processing
+        self.audio_playback_start_time = 0  # Track when audio actually starts playing
         
         # GPIO state
         self.last_phone_state = True
@@ -398,6 +399,7 @@ class PhoneChatbot:
         self.last_final_transcript = ""
         self.shadow_listening = False
         self.processing_start_time = 0
+        self.audio_playback_start_time = 0
         
         # Reset mute state
         self.is_muted = False
@@ -422,10 +424,12 @@ class PhoneChatbot:
         # Handle interruption during AI speech
         if self.shadow_listening and self.audio_manager.is_playing:
             # Ignore fragments that come too soon after processing started
-            # (these are likely trailing parts of the original utterance)
+            # OR before audio playback actually started (these are trailing parts)
             time_since_processing = time.time() - self.processing_start_time
-            if time_since_processing < 3.0:  # Ignore fragments for 3 seconds
-                logger.info(f"Ignoring trailing fragment ({time_since_processing:.1f}s since processing): {transcript}")
+            time_since_audio_start = time.time() - self.audio_playback_start_time
+            
+            if time_since_processing < 5.0 or time_since_audio_start < 1.0:
+                logger.info(f"Ignoring trailing fragment (processing: {time_since_processing:.1f}s, audio: {time_since_audio_start:.1f}s): {transcript}")
                 return
                 
             if is_final and self._is_intentional_interruption(transcript):
@@ -496,11 +500,11 @@ class PhoneChatbot:
     def _schedule_delayed_processing(self, transcript: str):
         """Schedule processing with a delay to ensure sentence completion"""
         def delayed_process():
-            # Wait for 2.0 seconds to ensure user has finished speaking
-            time.sleep(2.0)
+            # Wait for 3.0 seconds to ensure user has finished speaking completely
+            time.sleep(3.0)
             
             # Check if there was a more recent transcript (user continued speaking)
-            if time.time() - self.last_transcript_time < 1.8:
+            if time.time() - self.last_transcript_time < 2.5:
                 logger.info("User still speaking, not processing yet")
                 return
                 
@@ -580,6 +584,7 @@ class PhoneChatbot:
             
             # Enable shadow listening for interruption detection
             self.shadow_listening = True
+            self.audio_playback_start_time = time.time()  # Record when audio starts
             logger.info("Shadow listening enabled - you can interrupt")
             
             # Play the audio
