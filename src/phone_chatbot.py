@@ -57,6 +57,36 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+
+
+
+# Suppress ALSA error messages
+os.environ['ALSA_PCM_CARD'] = '1'
+os.environ['ALSA_PCM_DEVICE'] = '0'
+
+# Redirect ALSA errors to null (optional - more aggressive)
+import ctypes
+from ctypes import cdll
+
+# Suppress ALSA lib messages
+ERROR_HANDLER_FUNC = ctypes.CFUNCTYPE(None, ctypes.c_char_p, ctypes.c_int,
+                                     ctypes.c_char_p, ctypes.c_int, ctypes.c_char_p)
+
+def py_error_handler(filename, line, function, err, fmt):
+    pass
+
+c_error_handler = ERROR_HANDLER_FUNC(py_error_handler)
+
+try:
+    asound = cdll.LoadLibrary('libasound.so.2')
+    asound.snd_lib_error_set_handler(c_error_handler)
+except:
+    pass  # If library not found, just continue
+
+
+
+
+
 # Pin definitions
 PHONE_HANDLE_PIN = 21     # Phone handle sensor
 MUTE_BUTTON_PIN = 25      # Mute button
@@ -74,6 +104,9 @@ class PhoneChatbot:
             output_device_index=AUDIO_OUTPUT_DEVICE
         )
         
+        # Always set volume on startup (most reliable method)
+        self._ensure_audio_setup()
+                
         # State management
         self.phone_active = False
         self.dial_tone_playing = False
@@ -118,7 +151,33 @@ class PhoneChatbot:
             
             # Initialize relay to OFF (unmuted)
             GPIO.output(RELAY_PIN, GPIO.LOW)
+    
+    def _ensure_audio_setup(self):
+        """Ensure audio is properly configured every time we start"""
+        try:
+            # Wait a moment for audio system to be ready
+            time.sleep(1)
             
+            # Force 3.5mm jack
+            subprocess.run(['amixer', 'cset', 'numid=3', '1'], 
+                        check=False, capture_output=True)
+            
+            # Set maximum volume
+            subprocess.run(['amixer', '-c', '1', 'sset', 'PCM', '100%'], 
+                        check=False, capture_output=True)
+            
+            # Verify it worked
+            result = subprocess.run(['amixer', '-c', '1', 'sget', 'PCM'], 
+                                capture_output=True, text=True, check=False)
+            if '100%' in result.stdout:
+                logger.info("🔊 Audio configured: 3.5mm jack at 100% volume")
+            else:
+                logger.warning("⚠️ Volume setting may not have worked")
+                
+        except Exception as e:
+            logger.error(f"Error setting up audio: {e}")
+   
+      
     def _load_personalities(self):
         """Load all personality configurations"""
         personalities = {}
