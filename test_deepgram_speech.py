@@ -7,6 +7,7 @@ import json
 import pyaudio
 import threading
 import websocket
+import numpy as np
 from dotenv import load_dotenv
 
 # Load environment
@@ -83,8 +84,10 @@ class DeepgramSpeechTest:
                 start_time = time.time()
                 while self.is_recording and (time.time() - start_time) < 10:
                     data = self.audio_stream.read(1024, exception_on_overflow=False)
+                    # Amplify audio for better recognition
+                    amplified_data = self._amplify_audio(data)
                     if self.ws and self.ws.sock and self.ws.sock.connected:
-                        self.ws.send(data, websocket.ABNF.OPCODE_BINARY)
+                        self.ws.send(amplified_data, websocket.ABNF.OPCODE_BINARY)
                     time.sleep(0.01)
                     
                 # Signal end of audio
@@ -161,6 +164,25 @@ class DeepgramSpeechTest:
             traceback.print_exc()
         finally:
             self.stop_audio_recording()
+            
+    def _amplify_audio(self, audio_data: bytes, amplification_factor: float = 3.0) -> bytes:
+        """Amplify audio volume by the given factor"""
+        try:
+            # Convert bytes to numpy array (16-bit signed integers)
+            audio_array = np.frombuffer(audio_data, dtype=np.int16)
+            
+            # Apply volume amplification
+            amplified_audio = (audio_array * amplification_factor)
+            
+            # Prevent clipping by limiting to int16 range
+            amplified_audio = np.clip(amplified_audio, -32768, 32767).astype(np.int16)
+            
+            # Convert back to bytes
+            return amplified_audio.tobytes()
+        except Exception as e:
+            print(f"Error amplifying audio: {e}")
+            # Return original data if amplification fails
+            return audio_data
 
 def main():
     try:

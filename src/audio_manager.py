@@ -77,8 +77,9 @@ class AudioManager:
                 try:
                     data = stream.read(self.chunk_size, exception_on_overflow=False)
                     if self.on_audio_chunk:
-                        # Send full volume audio to Deepgram for better recognition
-                        self.on_audio_chunk(data)
+                        # Amplify microphone volume for better recognition
+                        amplified_data = self._amplify_mic_volume(data)
+                        self.on_audio_chunk(amplified_data)
                 except Exception as e:
                     logger.error(f"Recording error: {e}")
                     
@@ -87,20 +88,23 @@ class AudioManager:
                 stream.stop_stream()
                 stream.close()
                 
-    def _reduce_mic_volume(self, audio_data: bytes, reduction_factor: float = 0.5) -> bytes:
-        """Reduce microphone input volume by the given factor"""
+    def _amplify_mic_volume(self, audio_data: bytes, amplification_factor: float = 3.0) -> bytes:
+        """Amplify microphone input volume by the given factor"""
         try:
             # Convert bytes to numpy array (16-bit signed integers)
             audio_array = np.frombuffer(audio_data, dtype=np.int16)
             
-            # Apply volume reduction (0.5 = half volume, 0.25 = quarter volume)
-            reduced_audio = (audio_array * reduction_factor).astype(np.int16)
+            # Apply volume amplification (3.0 = triple volume, 2.0 = double volume)
+            amplified_audio = (audio_array * amplification_factor)
+            
+            # Prevent clipping by limiting to int16 range
+            amplified_audio = np.clip(amplified_audio, -32768, 32767).astype(np.int16)
             
             # Convert back to bytes
-            return reduced_audio.tobytes()
+            return amplified_audio.tobytes()
         except Exception as e:
-            logger.error(f"Error reducing mic volume: {e}")
-            # Return original data if reduction fails
+            logger.error(f"Error amplifying mic volume: {e}")
+            # Return original data if amplification fails
             return audio_data
     
     def play_audio(self, audio_data: bytes, format: str = "mp3"):
