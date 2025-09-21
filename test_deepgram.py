@@ -33,12 +33,21 @@ def test_deepgram():
     # Test simple WebSocket connection
     url = "wss://api.deepgram.com/v1/listen?encoding=linear16&sample_rate=16000&channels=1"
     
+    connection_success = False
+    
     def on_open(ws):
+        nonlocal connection_success
         print("WebSocket opened successfully!")
-        # Give it a moment before closing to ensure connection is stable
-        time.sleep(0.5)
-        if ws and hasattr(ws, 'close'):
-            ws.close()
+        connection_success = True
+        # Send a simple message to test the connection
+        try:
+            ws.send('{"type": "KeepAlive"}')
+            print("KeepAlive message sent successfully!")
+        except Exception as e:
+            print(f"Error sending message: {e}")
+        # Schedule close after a short delay
+        import threading
+        threading.Timer(1.0, lambda: ws.close() if ws else None).start()
         
     def on_error(ws, error):
         print(f"WebSocket error: {error}")
@@ -46,6 +55,10 @@ def test_deepgram():
         
     def on_close(ws, close_status_code, close_msg):
         print(f"WebSocket closed: {close_status_code} - {close_msg}")
+        if connection_success:
+            print("✓ Deepgram connection test PASSED!")
+        else:
+            print("✗ Deepgram connection test FAILED!")
     
     try:
         ws = websocket.WebSocketApp(
@@ -59,7 +72,7 @@ def test_deepgram():
         )
         
         print("Attempting to connect to Deepgram...")
-        ws.run_forever(ping_interval=5, ping_timeout=2)
+        ws.run_forever()
         
     except Exception as e:
         print(f"Exception: {e}")
