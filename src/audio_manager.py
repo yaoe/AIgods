@@ -77,9 +77,8 @@ class AudioManager:
                 try:
                     data = stream.read(self.chunk_size, exception_on_overflow=False)
                     if self.on_audio_chunk:
-                        # Reduce microphone volume by applying gain reduction
-                        reduced_volume_data = self._reduce_mic_volume(data)
-                        self.on_audio_chunk(reduced_volume_data)
+                        # Send full volume audio to Deepgram for better recognition
+                        self.on_audio_chunk(data)
                 except Exception as e:
                     logger.error(f"Recording error: {e}")
                     
