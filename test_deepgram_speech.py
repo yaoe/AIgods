@@ -8,6 +8,7 @@ import pyaudio
 import threading
 import websocket
 import numpy as np
+import wave
 from dotenv import load_dotenv
 
 # Load environment
@@ -24,6 +25,8 @@ class DeepgramSpeechTest:
         self.p = None
         self.is_recording = False
         self.transcripts = []
+        self.recorded_audio = []
+        self.amplified_audio = []
         
     def on_open(self, ws):
         print("✓ Connected to Deepgram")
@@ -84,8 +87,13 @@ class DeepgramSpeechTest:
                 start_time = time.time()
                 while self.is_recording and (time.time() - start_time) < 10:
                     data = self.audio_stream.read(1024, exception_on_overflow=False)
+                    # Save original audio
+                    self.recorded_audio.append(data)
+                    
                     # Amplify audio for better recognition
                     amplified_data = self._amplify_audio(data)
+                    self.amplified_audio.append(amplified_data)
+                    
                     if self.ws and self.ws.sock and self.ws.sock.connected:
                         self.ws.send(amplified_data, websocket.ABNF.OPCODE_BINARY)
                     time.sleep(0.01)
@@ -140,6 +148,9 @@ class DeepgramSpeechTest:
             # Wait a moment for final results
             time.sleep(2)
             
+            # Save audio files for inspection
+            self._save_audio_files()
+            
             # Show results
             print("\n" + "="*50)
             print("📊 SPEECH RECOGNITION TEST RESULTS")
@@ -183,6 +194,30 @@ class DeepgramSpeechTest:
             print(f"Error amplifying audio: {e}")
             # Return original data if amplification fails
             return audio_data
+            
+    def _save_audio_files(self):
+        """Save recorded audio to files for inspection"""
+        try:
+            if self.recorded_audio:
+                # Save original audio
+                with wave.open('recorded_audio_original.wav', 'wb') as wf:
+                    wf.setnchannels(1)
+                    wf.setsampwidth(2)  # 16-bit
+                    wf.setframerate(16000)
+                    wf.writeframes(b''.join(self.recorded_audio))
+                print("💾 Saved original audio: recorded_audio_original.wav")
+                
+            if self.amplified_audio:
+                # Save amplified audio
+                with wave.open('recorded_audio_amplified.wav', 'wb') as wf:
+                    wf.setnchannels(1)
+                    wf.setsampwidth(2)  # 16-bit
+                    wf.setframerate(16000)
+                    wf.writeframes(b''.join(self.amplified_audio))
+                print("💾 Saved amplified audio: recorded_audio_amplified.wav")
+                
+        except Exception as e:
+            print(f"❌ Error saving audio files: {e}")
 
 def main():
     try:
