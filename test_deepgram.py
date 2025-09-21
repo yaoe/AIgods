@@ -59,8 +59,7 @@ def test_deepgram():
         )
         
         print("Attempting to connect to Deepgram...")
-        # Add timeout to prevent hanging
-        ws.run_forever(ping_interval=5, ping_timeout=2, timeout=10)
+        ws.run_forever(ping_interval=5, ping_timeout=2)
         
     except Exception as e:
         print(f"Exception: {e}")
