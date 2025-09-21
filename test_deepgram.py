@@ -35,7 +35,10 @@ def test_deepgram():
     
     def on_open(ws):
         print("WebSocket opened successfully!")
-        ws.close()
+        # Give it a moment before closing to ensure connection is stable
+        time.sleep(0.5)
+        if ws and hasattr(ws, 'close'):
+            ws.close()
         
     def on_error(ws, error):
         print(f"WebSocket error: {error}")
@@ -56,7 +59,8 @@ def test_deepgram():
         )
         
         print("Attempting to connect to Deepgram...")
-        ws.run_forever(ping_interval=5, ping_timeout=2)
+        # Add timeout to prevent hanging
+        ws.run_forever(ping_interval=5, ping_timeout=2, timeout=10)
         
     except Exception as e:
         print(f"Exception: {e}")

@@ -158,10 +158,10 @@ class ElevenLabsClient:
         
         data = {
             "text": text,
-            "model_id": "eleven_turbo_v2",
+            "model_id": "eleven_turbo_v2_5",
             "voice_settings": voice_settings or {
-                "stability": 0.5,
-                "similarity_boost": 0.75,
+                "stability": 0.6,
+                "similarity_boost": 0.99,
                 "style": 0.0,
                 "use_speaker_boost": True
             }
