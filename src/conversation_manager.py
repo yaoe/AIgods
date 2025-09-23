@@ -4,6 +4,12 @@ import logging
 from typing import List, Dict, Optional, Generator
 from dataclasses import dataclass
 from datetime import datetime
+import google.genai as genai
+from google.genai import types
+import os
+import sys
+
+from gemini_cache import get_gemini_cache
 
 logger = logging.getLogger(__name__)
 
@@ -48,9 +54,11 @@ class ConversationManager:
     def generate_response(self, streaming: bool = True) -> Generator[str, None, None]:
         """Generate AI response, optionally streaming"""
         conv_style = self.personality.get("conversation_style", {})
+        print ("conv style == " , conv_style)
         
         # Prepare messages for API
         api_messages = [msg.to_dict() for msg in self.messages]
+        print ("API msg = ", api_messages)
         
         try:
             if streaming:
@@ -111,6 +119,109 @@ class ConversationManager:
             self.messages = [self.messages[0]]  # Keep only system message
         else:
             self.messages = []
+            
+    def get_conversation_summary(self) -> str:
+        """Get a summary of the conversation"""
+        user_messages = [m for m in self.messages if m.role == "user"]
+        assistant_messages = [m for m in self.messages if m.role == "assistant"]
+        
+        return f"Conversation summary: {len(user_messages)} user messages, {len(assistant_messages)} assistant responses"
+
+
+class GeminiConversationManager:
+    def __init__(self, api_key: str, personality_config: dict = None):
+        self.client = genai.Client(api_key=api_key)
+        self.model_name = "gemini-2.5-flash"
+        self.personality = personality_config or {}
+        self.messages: List[Message] = []
+        
+        # Get cache name for Primavera context
+        self.cache_name = get_gemini_cache()
+        
+    def _get_cache_name(self):
+        """Get cache name from file or create new cache"""
+        cache_file = "../cache_name.txt"
+        cache_name = ""
+        
+        if os.path.exists(cache_file):
+            with open(cache_file, 'r') as f:
+                cache_name = f.read().strip()
+                logger.info(f"Using existing cache: {cache_name}")
+        else:
+            logger.info("Cache file not found. Creating new cache...")
+            cache_name = create_new_cache()
+            
+        return cache_name
+        
+    def add_user_message(self, content: str):
+        """Add a user message to the conversation"""
+        msg = Message(role="user", content=content)
+        self.messages.append(msg)
+        logger.info(f"User: {content}")
+        
+    def generate_response(self, streaming: bool = True) -> Generator[str, None, None]:
+        """Generate AI response using Gemini"""
+        if not self.messages:
+            return
+            
+        # Build conversation context from message history
+        conversation_context = ""
+        for msg in self.messages:
+            if msg.role == "user":
+                conversation_context += f"User: {msg.content}\n"
+            elif msg.role == "assistant":
+                conversation_context += f"Assistant: {msg.content}\n"
+        
+        # Add instruction for current response
+        conversation_context += "Assistant:"
+        
+        try:
+            # Generate response using cached Gemini model with full conversation context
+            response = self.client.models.generate_content(
+                model=self.model_name,
+                contents=conversation_context,
+                config=types.GenerateContentConfig(
+                    cached_content=self.cache_name
+                )
+            )
+            
+            response_text = response.text
+            
+            # Add response to conversation history
+            assistant_msg = Message(role="assistant", content=response_text)
+            self.messages.append(assistant_msg)
+            logger.info(f"Assistant: {response_text}")
+            
+            # For streaming, yield the entire response at once
+            # (Gemini doesn't support true streaming in this setup)
+            if streaming:
+                yield response_text
+            else:
+                return response_text
+                
+        except Exception as e:
+            logger.error(f"Gemini API error: {e}")
+            error_msg = "I'm having trouble responding right now."
+            assistant_msg = Message(role="assistant", content=error_msg)
+            self.messages.append(assistant_msg)
+            yield error_msg
+            
+    def get_thinking_sound(self) -> str:
+        """Get a random thinking sound"""
+        import random
+        sounds = self.personality.get("conversation_style", {}).get("thinking_sounds", ["Hmm..."])
+        return random.choice(sounds)
+        
+    def get_interruption_acknowledgment(self) -> str:
+        """Get interruption acknowledgment phrase"""
+        return self.personality.get("conversation_style", {}).get(
+            "interruption_acknowledgment", 
+            "Oh, go ahead!"
+        )
+        
+    def clear_history(self, keep_system: bool = True):
+        """Clear conversation history"""
+        self.messages = []
             
     def get_conversation_summary(self) -> str:
         """Get a summary of the conversation"""
