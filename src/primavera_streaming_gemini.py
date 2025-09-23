@@ -9,6 +9,9 @@ import time
 import logging
 import threading
 import queue
+import subprocess
+import ctypes
+from ctypes import cdll
 from dotenv import load_dotenv
 
 from deepgram_client import DeepgramClient
@@ -19,6 +22,35 @@ from config_loader import ConfigLoader
 
 # Load environment variables
 load_dotenv()
+
+# AUDIO DEVICE CONFIGURATION
+# Run 'python list_audio_devices.py' to find your device indices
+# Set these based on your hardware setup:
+AUDIO_INPUT_DEVICE = int(os.getenv("AUDIO_INPUT_DEVICE", "-1"))  # USB microphone index
+AUDIO_OUTPUT_DEVICE = int(os.getenv("AUDIO_OUTPUT_DEVICE", "-1"))  # 3.5mm jack index
+
+# Use None if -1 (will use system default)
+AUDIO_INPUT_DEVICE = None if AUDIO_INPUT_DEVICE == -1 else AUDIO_INPUT_DEVICE
+AUDIO_OUTPUT_DEVICE = None if AUDIO_OUTPUT_DEVICE == -1 else AUDIO_OUTPUT_DEVICE
+
+# Suppress ALSA error messages
+os.environ['ALSA_PCM_CARD'] = '1'
+os.environ['ALSA_PCM_DEVICE'] = '0'
+
+# Redirect ALSA errors to null (optional - more aggressive)
+ERROR_HANDLER_FUNC = ctypes.CFUNCTYPE(None, ctypes.c_char_p, ctypes.c_int,
+                                     ctypes.c_char_p, ctypes.c_int, ctypes.c_char_p)
+
+def py_error_handler(filename, line, function, err, fmt):
+    pass
+
+c_error_handler = ERROR_HANDLER_FUNC(py_error_handler)
+
+try:
+    asound = cdll.LoadLibrary('libasound.so.2')
+    asound.snd_lib_error_set_handler(c_error_handler)
+except:
+    pass  # If library not found, just continue
 
 # Set up logging
 logging.basicConfig(
@@ -33,8 +65,18 @@ class StreamingVoiceChatbot:
         # Load configuration
         self.config = ConfigLoader()
         
-        # Initialize components
-        self.audio_manager = AudioManager()  # Use default device for now
+        # Initialize components with configured audio devices
+        logger.info(f"Audio Config - Input Device: {AUDIO_INPUT_DEVICE}, Output Device: {AUDIO_OUTPUT_DEVICE}")
+        self.audio_manager = AudioManager(
+            input_device_index=AUDIO_INPUT_DEVICE,
+            output_device_index=AUDIO_OUTPUT_DEVICE
+        )
+        
+        # Always set volume on startup (most reliable method)
+        self._ensure_audio_setup()
+        
+        # Debug audio devices
+        self._debug_audio_devices()
         self.deepgram = DeepgramClient(
             api_key=os.getenv("DEEPGRAM_API_KEY"),
             on_transcript=self.handle_transcript
@@ -62,6 +104,49 @@ class StreamingVoiceChatbot:
         # Threads
         self.tts_thread = None
         self.playback_thread = None
+        
+    def _ensure_audio_setup(self):
+        """Ensure audio is properly configured every time we start"""
+        try:
+            # Wait a moment for audio system to be ready
+            time.sleep(1)
+            
+            # Force 3.5mm jack (only on Raspberry Pi - safe to run on other systems)
+            subprocess.run(['amixer', 'cset', 'numid=3', '1'], 
+                        check=False, capture_output=True)
+            
+            # Set maximum volume (card 1 is typically USB audio on Raspberry Pi)
+            subprocess.run(['amixer', '-c', '1', 'sset', 'PCM', '100%'], 
+                        check=False, capture_output=True)
+            
+            # Verify it worked
+            result = subprocess.run(['amixer', '-c', '1', 'sget', 'PCM'], 
+                                capture_output=True, text=True, check=False)
+            if '100%' in result.stdout:
+                logger.info("🔊 Audio configured: 3.5mm jack at 100% volume")
+            else:
+                logger.warning("⚠️ Volume setting may not have worked (may be running on Mac)")
+                
+        except Exception as e:
+            logger.error(f"Error setting up audio: {e}")
+            
+    def _debug_audio_devices(self):
+        """Debug available audio devices"""
+        try:
+            logger.info("=== AUDIO DEVICES DEBUG ===")
+            logger.info("Available output devices:")
+            for device in self.audio_manager.get_output_devices():
+                logger.info(f"  {device['index']}: {device['name']} ({device['channels']} channels)")
+            
+            logger.info("Available input devices:")
+            for device in self.audio_manager.get_input_devices():
+                logger.info(f"  {device['index']}: {device['name']} ({device['channels']} channels)")
+                
+            logger.info(f"Selected input device: {AUDIO_INPUT_DEVICE}")
+            logger.info(f"Selected output device: {AUDIO_OUTPUT_DEVICE}")
+            logger.info("===========================")
+        except Exception as e:
+            logger.error(f"Error debugging audio devices: {e}")
         
     def start(self):
         """Start the streaming voice chatbot"""
@@ -239,9 +324,10 @@ class StreamingVoiceChatbot:
                 if audio_data is None:  # Shutdown signal
                     break
                     
-                # Play audio
+                # Play audio with explicit format
                 logger.info("Playing audio chunk...")
-                self.audio_manager.play_audio(audio_data)
+                logger.info(f"Audio output device: {self.audio_manager.output_device_index}")
+                self.audio_manager.play_audio(audio_data, format='mp3')
                 
             except queue.Empty:
                 continue
