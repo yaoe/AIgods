@@ -9,7 +9,7 @@ from google.genai import types
 import os
 import sys
 
-from gemini_cache import get_gemini_cache
+from gemini_cache import get_gemini_cache, create_new_cache
 
 logger = logging.getLogger(__name__)
 
@@ -138,20 +138,20 @@ class GeminiConversationManager:
         # Get cache name for Primavera context
         self.cache_name = get_gemini_cache()
         
-    def _get_cache_name(self):
-        """Get cache name from file or create new cache"""
-        cache_file = "../cache_name.txt"
-        cache_name = ""
+    # def _get_cache_name(self):
+    #     """Get cache name from file or create new cache"""
+    #     cache_file = "../cache_name.txt"
+    #     cache_name = ""
         
-        if os.path.exists(cache_file):
-            with open(cache_file, 'r') as f:
-                cache_name = f.read().strip()
-                logger.info(f"Using existing cache: {cache_name}")
-        else:
-            logger.info("Cache file not found. Creating new cache...")
-            cache_name = create_new_cache()
+    #     if os.path.exists(cache_file):
+    #         with open(cache_file, 'r') as f:
+    #             cache_name = f.read().strip()
+    #             logger.info(f"Using existing cache: {cache_name}")
+    #     else:
+    #         logger.info("Cache file not found. Creating new cache...")
+    #         cache_name = create_new_cache()
             
-        return cache_name
+    #     return cache_name
         
     def add_user_message(self, content: str):
         """Add a user message to the conversation"""
@@ -200,11 +200,17 @@ class GeminiConversationManager:
                 return response_text
                 
         except Exception as e:
-            logger.error(f"Gemini API error: {e}")
-            error_msg = "I'm having trouble responding right now."
-            assistant_msg = Message(role="assistant", content=error_msg)
-            self.messages.append(assistant_msg)
-            yield error_msg
+            if "403 PERMISSION_DENIED" in str(e):
+                logger.error("Cache not found or permission denied. Creating a new cache.")
+                self.cache_name = create_new_cache()  # Create a new cache
+                # Retry the operation with the new cache
+                yield from self.generate_response(streaming)
+            else:
+                logger.error(f"Gemini API error: {e}")
+                error_msg = "I'm having trouble responding right now."
+                assistant_msg = Message(role="assistant", content=error_msg)
+                self.messages.append(assistant_msg)
+                yield error_msg
             
     def get_thinking_sound(self) -> str:
         """Get a random thinking sound"""
