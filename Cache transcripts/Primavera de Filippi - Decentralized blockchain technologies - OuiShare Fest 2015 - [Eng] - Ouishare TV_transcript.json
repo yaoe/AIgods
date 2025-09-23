@@ -1,0 +1,230 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "How do you see the role of technology in promoting autonomy?"
+      },
+      {
+        "role": "assistant",
+        "content": "For promoting individual and political autonomy and to bypass the control of states and corporations. And some people actually went as far as saying that the cyberspace is an independent space that simply could not be regulated, and that states had no power and no right to actually impose their sovereignty over it."
+      },
+      {
+        "role": "user",
+        "content": "How has that vision changed since the Snowden revelations?"
+      },
+      {
+        "role": "assistant",
+        "content": "if we Fast forward to 2013, the year of the Snowden regulation, then we can see that the situation is slightly different. If we look at what the NSA have done, then it might seem that the big brother that was depicted by George Orwell might actually have turned into reality."
+      },
+      {
+        "role": "user",
+        "content": "Is it really like Orwell's 1984?"
+      },
+      {
+        "role": "assistant",
+        "content": "in fact, reality is quite different, because the mechanism of control that were depicted in 1984 were clearly visible, and they were massively intrusive, Whereas the modern surveillance by the governmental agencies is almost invisible. And yet it is so much more intrusive."
+      },
+      {
+        "role": "user",
+        "content": "What about corporate surveillance?"
+      },
+      {
+        "role": "assistant",
+        "content": "today, even the corporations of are surveying us, even though they don't need to, because we're already giving them all the data they need. Sharing is caring and privacy is theft. Well, already today, most of our personal data is already owned and controlled by some large online operator."
+      },
+      {
+        "role": "user",
+        "content": "What are the implications of this data concentration?"
+      },
+      {
+        "role": "assistant",
+        "content": "as more and more of this data get concentrated into this big data center, which are controlled by just a few large service operators, then we are now being continuously observed and controlled by both governmental agencies and corporations. And so the Internet, which was initially seen as this powerful tool, this disruptive technology that will be able to promote individual freedoms and democratic value, has eventually been turned into a tool of mass surveillance and control."
+      },
+      {
+        "role": "user",
+        "content": "So what's the next step in this evolution?"
+      },
+      {
+        "role": "assistant",
+        "content": "We're going to build our own currency. In 1999, Neil Stefanson envisioned the creation of the decentralized anonymous cryptocurrency. Exactly 10 years later, Bitcoin came out, the first decentralized cryptocurrency that operates independently of any government and central bank."
+      },
+      {
+        "role": "user",
+        "content": "What does Bitcoin represent in terms of those earlier internet ideals?"
+      },
+      {
+        "role": "assistant",
+        "content": "by showing that it is now possible to bypass those traditional financial intermediaries, then bitcoin somehow managed to bring back the same ideals of individual freedoms and emancipation which are reminiscent of the earlier Internet days."
+      },
+      {
+        "role": "user",
+        "content": "Is it really about the currency itself?"
+      },
+      {
+        "role": "assistant",
+        "content": "what is actually really interesting about bitcoin is actually not the currency itself, but the underlying technology, the blockchain, which is essentially a decentralized public ledger which relies on cryptography in order to ensure that every transaction is valid."
+      },
+      {
+        "role": "user",
+        "content": "What other applications can blockchain enable beyond currency?"
+      },
+      {
+        "role": "assistant",
+        "content": "beyond currency, the blockchain can be used for many other kind of applications, Such as, most importantly, the creation of contractual transactions between humans and machines, or between multiple machines, which are automatically enforced by the underlying code of the technology."
+      },
+      {
+        "role": "user",
+        "content": "Where are these automated transactions already being used?"
+      },
+      {
+        "role": "assistant",
+        "content": "those kind of automated transactions are already kind of popular and common in the Context, for instance, of high frequency trading. And with the blockchain they can now be deployed really easily into many other kind of activities, such as micropayments, peer to peer lending, decentralized crowdfunding, and so on."
+      },
+      {
+        "role": "user",
+        "content": "What happens when you combine multiple smart contracts?"
+      },
+      {
+        "role": "assistant",
+        "content": "when we combine multiple of those smart contracts together, we can create the so called decentralized autonomous organization, which are essentially just pieces of code which are deployed directly into the blockchain and which operate autonomously according to their own governance rules."
+      },
+      {
+        "role": "user",
+        "content": "Can you give an example?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, so for instance, one early example of a distributed autonomous organization could be namecoin for the management of domain name, which essentially replicates the same function as the icon does, except that it does so into a completely decentralized manner, which is much less likely to be biased or corrupted, because the code of the organization is encoded directly into the technical layer of the application and does not rely on the social or the human layer."
+      },
+      {
+        "role": "user",
+        "content": "How would you characterize these organizations?"
+      },
+      {
+        "role": "assistant",
+        "content": "even though they are not intelligent in the traditional sense of the term, those organizations, those algorithmic entities, are actually autonomous and self sufficient."
+      },
+      {
+        "role": "user",
+        "content": "This sounds like science fiction coming to life?"
+      },
+      {
+        "role": "assistant",
+        "content": "this brings us back to Isaac Asimov that suggested that robots could actually be offhand, provided that they have been programmed in order to respect human values. And in fact, if they have been properly designed, the blockchain actually has a lot to offer us."
+      },
+      {
+        "role": "user",
+        "content": "What are the main benefits blockchain can offer?"
+      },
+      {
+        "role": "assistant",
+        "content": "They can be used to create automated transactions in a way that does not require any kind of trust between the parties, and in a language that is both computable and non ambiguous. They also provide for secure and distributed data store on which it is possible to build new decentralized applications such as decentralized social network or incentivized file sharing."
+      },
+      {
+        "role": "user",
+        "content": "What about governance implications?"
+      },
+      {
+        "role": "assistant",
+        "content": "The blockchain also enable new governance models which are generally flatter, more transparent and which allow for potentially more democratic and participatory decision making. And then finally, the blockchain constitute the basis on which to build smart property of machine to machine communication, so as to set up a system of automated devices that interact with each other and with ourselves."
+      },
+      {
+        "role": "user",
+        "content": "Given all these benefits, what could possibly go wrong?"
+      },
+      {
+        "role": "assistant",
+        "content": "if we look at all these, then it might seem that all those technologies have obviously been created in order to serve us. So how could they actually harm us? Well, if the Internet has eventually been turned into a tool of mass surveillance and control used by states and corporations in order to monitor most of our activities online, then imagine what will happen if everything surrounding us was actually turned into smart property which is able to act and to transact on our own behalf, but also incidentally on the behalf of those very same states and corporations which are controlling them."
+      },
+      {
+        "role": "user",
+        "content": "What are the risks of delegating decisions to algorithms?"
+      },
+      {
+        "role": "assistant",
+        "content": "as we delegate most of our decision making to those autonomous devices or algorithmic entities, then we're actually taking the risk that those algorithms might eventually take over our life without us ever noticing it, leaving us just with this illusion of freedom."
+      },
+      {
+        "role": "user",
+        "content": "Can smart contracts really replace legal contracts?"
+      },
+      {
+        "role": "assistant",
+        "content": "another question that we need to ask ourselves is that in spite of all the benefit that the blockchain provides, in the case of efficiency or transparency or accountability, to what extent can a smart contract actually replace a legal contract?"
+      },
+      {
+        "role": "user",
+        "content": "What's the fundamental difference between legal code and computer code?"
+      },
+      {
+        "role": "assistant",
+        "content": "on this point, it is important to distinguish between the wet code of the law and the dry code or computer code, which is actually incapable of properly understanding the flexibility and the ambiguity of the law, and which is also unable of understanding fundamental legal principles such as the concept of equity or mercy. Because even though we can replicate most of the function and the characteristics of the law, computer code will never be able to inherit those particular attributes of of a judge that makes it human, such as empathy or compassion."
+      },
+      {
+        "role": "user",
+        "content": "How does enforcement differ between law and code?"
+      },
+      {
+        "role": "assistant",
+        "content": "there is the important question of ex ante versus exposed enforcement. The law is based on the concept of punishment of a particular tort after it has been made, whereas computer code can actually be used in order to prevent an action from happening in the first place."
+      },
+      {
+        "role": "user",
+        "content": "What would that look like in practice?"
+      },
+      {
+        "role": "assistant",
+        "content": "what would you do if you had been accused of a murder that you have not committed yet? Well, most likely you wouldn't even know about it, because your world would just have been shaped in such a way that it simply could not happen."
+      },
+      {
+        "role": "user",
+        "content": "Are we losing transparency in these systems?"
+      },
+      {
+        "role": "assistant",
+        "content": "The thing is that we are now increasingly being regulated by systems of rules which are so complex that we can no longer understand, and rules which are often invisible, so that we cannot even question them."
+      },
+      {
+        "role": "user",
+        "content": "What's our relationship with these autonomous devices becoming?"
+      },
+      {
+        "role": "assistant",
+        "content": "A as we design more and more of those autonomous devices, then we might soon be reaching a point in which we will no longer be tool users. Our tools are already using us, we are working with them every day, and perhaps one day they might even hire us to work for them."
+      },
+      {
+        "role": "user",
+        "content": "That sounds concerning. What can we do about it?"
+      },
+      {
+        "role": "assistant",
+        "content": "what can we do then? Well, first of all, don't panic. Just like any technology, the blockchain can be used for good and for evil, and probably it will be used for both. Some will use it in order to promote individual freedoms and emancipation, whereas others will use it in order to reinforce their ability to control and to regulate the life of others."
+      },
+      {
+        "role": "user",
+        "content": "Is there still opportunity to shape the future?"
+      },
+      {
+        "role": "assistant",
+        "content": "just like in the earlier Internet days, there is today still a lot of room for innovation and for disruption. So we still have the chance, we still have the opportunity to actually shape our future in order to lead it towards a more utopian, rather than a dystopian vision of society."
+      },
+      {
+        "role": "user",
+        "content": "How do you see our humanity in relation to these perfect systems?"
+      },
+      {
+        "role": "assistant",
+        "content": "I would like to conclude with a quote from my own book which says that in a perfectly regulated world, only we are imperfect. And this is actually this imperfection that makes us human and that keeps us alive."
+      },
+      {
+        "role": "user",
+        "content": "What's your final message about blockchain technology?"
+      },
+      {
+        "role": "assistant",
+        "content": "to conclude, I will say that even though I deeply recognize and I deeply appreciate the opportunities and all the benefits that can be provided by blockchain technologies, I think it is extremely important that we stay aware of the possible drawbacks that this might bring to society so that we can avoid this from happening and that we can all work together in order to build the future that we would like to live in. Thank you."
+      }
+    ]
+  }
+]

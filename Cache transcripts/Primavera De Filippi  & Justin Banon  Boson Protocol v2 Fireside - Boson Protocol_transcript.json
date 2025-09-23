@@ -1,0 +1,50 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hello, welcome. Prima or Dr. Primavera di Philippi. Very honored to have you with us today. Prima is an advisor to Boson protocol and has a very illustrious academic career. But I will pass over to Prema, please. Could you introduce yourself?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. Thank you. I'm a legal scholar. I'm a researcher at CNRS in Paris and I'm faculty associate at the Beckmann Klein center at the University of Harvard. And I've been focusing most of my research on the legal challenge and regulatory implications of Internet and distributed architecture. And then in 2013, I guess when I heard first about Ethereum, I decided to focus pretty much all of my research on blockchain technology and to explore what are the legal challenges, but also what are the new opportunities in terms of governance and legal tech, all those things. And I'm also an artist and I use art as a way of illustrating or challenging my research. And so of course now I do blockchain art, which also has brought me into the field of NFTs and the legal question and the legal challenge, but also the opportunities that NFTs provide with regard to copyright, licensing and etc. So it's kind of like there's this whole amalgamation of things around blockchain and art that comes together."
+      },
+      {
+        "role": "user",
+        "content": "Brilliant. I mean, you're so intertwined with the space and we're very honored to have you on our sort of advisory team. Prima, could you sort of just sort of talk us through, I guess, you know, how would you sort of describe Boson Protocol?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So Boson protocol is first of all a protocol, a protocol for decentralized commerce with an associated dispute resolution system. And essentially the Boson protocol enables people to engage into peer to peer transactions for the sale and purchase of assets, but digital assets, but also physical assets. And the way it does that for physical assets in particular is via the intermediary of digital coupons, which are essentially some kind of tokenized commitments that represent the commitment to purchase and sell a particular physical asset at a particular point in time, whenever the coupon is redeemed? In a nutshell, yes."
+      },
+      {
+        "role": "user",
+        "content": "And could you sort of describe for me what you see as Boson's role, I guess, within web 3? The economy and its sort of potential and importance?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So first and foremost, I think it's actually enabling a new form of decentralized commerce, which is very important and quite essential feature in the emerging Web3 landscape. It also provides some kind of bridge between the more traditional marketplaces with a physical or digital, but that have not yet entered into the Web3 system. And this new type of decentralized blockchain based marketplaces. And then perhaps just as importantly, because it is an open protocol, it also create or enable the construction of an ecosystem of decentralized commerce applications that are building upon the Boson protocol and therefore automatically enabling them to leverage the new potentiality of blockchain technology in order to experiment with a variety of new innovative applications in these open and permissionless and interoperable manner."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, yeah, really well put. And we already are seeing this sort of what's happening with when you create another LEGO brick and then the other LEGO bricks that want to play with us and create these, these kind of super systems that perhaps we couldn't have foreseen when we were building Boson. So super exciting. And could you sort of describe what's sort of an interesting or the most interesting aspect of Boson for you personally?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, so for me, probably because I'm biased and I'm a lawyer, I think one very interesting aspect of Boson is that in order to actually implement those vouchers or this commitment token, there is this necessity to both innovate at the technical level. But also it also requires some substantial legal innovation. Of course, the most interesting part is this integration between the technological infrastructure and the legal infrastructure in order to create this techno legal solution, which of course for me is the most interesting. And as part of like one interesting component I think that Boston has been building in the last three months is this architecture to combine legally valid and enforceable contracts within the Boson protocol, so that if things go wrong within the transaction, and if the dispute resolution system does not provide a satisfactory answer, then the parties, only if they wish so, but they can actually bring the dispute to a real world court. And all the system that is actually incorporated into the technological infrastructure and that can operate autonomously also can be rendered on demand into an actual legal contract by extrapolating the data and the parameters that have been provided within the SMART contract into an actual legal template that will then generate provable and legally valid legal contract. So it's kind of these intersection between the legal and the technical, which I think is interesting because this is probably again one building block that might be required by many other applications. And in a sense, Boson is kind of like pioneering in that direction."
+      },
+      {
+        "role": "user",
+        "content": "Yes, absolutely agree. And thanks in no small part to your sort of contribution, that was always going to be a very, very hard problem. And as you say, I think we're really pioneering that. And the great thing about Web3 is that then that's a piece of composable IP and innovation that the whole ecosystem can copy and build on and benefit from. Great. And lastly, what do you see as the sort of the potential for Boson sort of moving forward?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, so I think like, I mean, we're seeing right now this huge enthusiasm towards the Metaverse. And I think Boson, through this protocol, can actually become potentially the default infrastructure for commerce on the Metaverse, again with regard to physical assets, but also native digital assets. And I think in terms of potential, there is also another place in which I think Burzen can actually be a pioneer which is actually creating digital commerce of those digital assets which are not just digital content, like what we sell today mostly on the Internet, which are also not just NFT in the traditional art sense of nft, but actually that constitute real virtual assets. And again, I think these require devising technological solution in order to create the proper infrastructure technically and legally for implementing those ownership rights in the context of those digital assets which are actually they become virtual property. Today on the Internet, we can only talk about intellectual property. Everything is based on copyright or trademark, and so you're just licensing rights over the content of things. And that's the digital assets that we exchange today. And when we come into the Metaverse, we have this newfound possibility of creating real virtual assets and therefore real virtual properties which are not related to the content. It's not intellectual property, it's actually a new type of virtual property. And I think in the few months, years to come, this will become like, obviously a huge market if the Metaverse is to evolve as we are expecting it to. And I think that's where again, this construction of connectivity between the legal rights and the digital assets becomes something extremely fundamental. And yeah, I'm looking forward to see Boson pioneering the ground with this type of technological innovations."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, I mean, that is an amazing vision. And I mean, what is key is being able to fathom these kind of complex questions. And we are sort of honored and very lucky to have you with us helping us do that. And I think very much for Boson, we've spent many, many months basically laying the foundations, which has been fun and exciting, but. But now we're onboarding all of these different partners and working with creators and innovators, and I think really this is where the fun starts. And, you know, creating new types of virtual property and working out the techno legal rights is going to be a really important part of that. So look forward to exploring this, these new horizons with you, Prema. And once again, thank you for your huge contribution to Boson."
+      }
+    ]
+  }
+]

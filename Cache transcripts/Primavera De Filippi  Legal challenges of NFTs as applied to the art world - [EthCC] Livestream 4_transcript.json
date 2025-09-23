@@ -1,0 +1,302 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "What will you be discussing today about NFTs?"
+      },
+      {
+        "role": "assistant",
+        "content": "I want to speak about the legal challenges of NFTs. So I guess I don't need to go much in details, but since a few months, one year, we have like this kind of explosion of adoption of non fungible tokens in the art world and we have like a bunch of very beautiful and interesting artworks that are selling for quite a few million dollars."
+      },
+      {
+        "role": "user",
+        "content": "What are the main legal aspects to consider?"
+      },
+      {
+        "role": "assistant",
+        "content": "what I want to explore in this presentation is actually what are the various legal challenges, implications or the legal aspect that need to be considered when we think about NFTs, especially when applied into the artistic domain? One is the question of ownership. So, so what does it actually mean to own an nft? Second is the question of authorship. So who is the author of an NFT and what kind of rights are associated to that? Then the question of digital scarcity. So can we actually, and how do we guarantee the uniqueness of digital copies of digital artworks? And then finally the question of intellectual property and the various recourses that are or are not available in the case of, of possible misuses of NFTs."
+      },
+      {
+        "role": "user",
+        "content": "Let's start with ownership - what does it mean to own an NFT?"
+      },
+      {
+        "role": "assistant",
+        "content": "first of all, the question of ownership. So what does it actually mean to own an nft? So in the context of a digital artwork, the notion of ownership was only inherently associated with the notion of intellectual property. So you cannot really own a digital work, but you can own the copyright in the digital work. When we move into the NFT space, then we create for the first time the possibility of actually owning at least a particular digital copy of an artwork."
+      },
+      {
+        "role": "user",
+        "content": "But what exactly are you owning?"
+      },
+      {
+        "role": "assistant",
+        "content": "actually the notion of ownership is kind of strange because you're still not owning the digital file. You're basically just having a proof of ownership of this concept that is a unique copy of a digital file. And that's what the NFT is about."
+      },
+      {
+        "role": "user",
+        "content": "What about the actual digital file itself?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now there is also the interesting question is like actually when you own an nft, because your private key is controlling this nft, you're not really possessing necessarily a digital copy of the artwork. And so there is all this question of digital preservation, meaning that me as the owner of an nft, I also want to make sure that the digital work that is associated with my NFT remains accessible so that I can prove that I own these digital file."
+      },
+      {
+        "role": "user",
+        "content": "How is digital preservation handled?"
+      },
+      {
+        "role": "assistant",
+        "content": "We have like, of course, the centralized NFT platforms which are responsible to own a copy of the digital file. But of course we never know when those digital platform will close down, are bankrupt, and not take care of the preservation anymore. We have of course, the IPFS or other decentralized storage systems. But once again, there needs to be sufficient incentives for the various nodes to actually host the digital copy. And so when I own the nft, I cannot have the guarantee, unless I am myself responsible for maintaining a digital copy of the work that is associated, that this work will remain available."
+      },
+      {
+        "role": "user",
+        "content": "What rights come with NFT ownership?"
+      },
+      {
+        "role": "assistant",
+        "content": "with regard to what are the rights that are associated? So when I own an nft, what do I actually own in terms of property or intellectual property? So ownership of an NFT does not at all entail ownership of the copyright in the work, in the same way as if I own a copy of a book, I don't actually own the copyright of the book."
+      },
+      {
+        "role": "user",
+        "content": "Are there any licensing possibilities?"
+      },
+      {
+        "role": "assistant",
+        "content": "of course there are some licensing possibilities. So there is a variety of platforms which, when I acquire the nft, then they ensure that the copyright owner of the image associated is licensing some rights. So usually it's like the right of displaying it on my social media or on some virtual galleries, potentially on my own website and so forth. But again, this always comes because there is an actual copyright license that comes from the copyright holder and that is given to the owner of the nft."
+      },
+      {
+        "role": "user",
+        "content": "Moving to authorship - who can create NFTs?"
+      },
+      {
+        "role": "assistant",
+        "content": "when we talk about authorship, so we have in this case Beeple, that is creating a digital work, so he's the author of this digital world, and then can create an NFT of a limited edition of this work. Now the problem is that more and more everyone is trying to create NFTs, and we can see how people are just literally going on the Internet and taking any picture available, remixing it or not remixing it, and then dropping it as an NFT event, though they are not actually the author of this nft."
+      },
+      {
+        "role": "user",
+        "content": "How can buyers verify authenticity?"
+      },
+      {
+        "role": "assistant",
+        "content": "there is no guarantee. When I purchase an nft, I cannot verify whether the source, the person that actually minted this nft, was actually the copyright owner or the author of this digital file."
+      },
+      {
+        "role": "user",
+        "content": "What about the digital scarcity aspect?"
+      },
+      {
+        "role": "assistant",
+        "content": "with regard to the question of digital scarcity, the problem is similar. So if people creates a limited edition of this digital artwork, then I don't really have a guarantee that either people can create another NFT with another set of limited edition, or that someone else might actually take the same digital file and create, without the authorization of people, another NFT with another limited edition."
+      },
+      {
+        "role": "user",
+        "content": "Is there any guarantee of uniqueness?"
+      },
+      {
+        "role": "assistant",
+        "content": "even though there is a guarantee of digital scarcity at the level of the token, because no one can reproduce the token, there is actually no guarantee that no 2 token actually are associated with the same type of digital artwork."
+      },
+      {
+        "role": "user",
+        "content": "How do platforms try to address this?"
+      },
+      {
+        "role": "assistant",
+        "content": "of course now you have the NFT platforms that are acting as gatekeepers. So when you Join any of those platform, you have to commit that you are only uploading images or digital works to whom you are the author. And you need to promise and guarantee that you're not uploading the same picture on different platform."
+      },
+      {
+        "role": "user",
+        "content": "What liability do platforms have?"
+      },
+      {
+        "role": "assistant",
+        "content": "the question of course becomes if the NFT platforms become now the gatekeeper, for instance, be held liable if the user are violating those terms or condition, or how do you actually revocate an NFT that has been produced illegitimately, either because the author generated more than one or because someone else has generated the same nft."
+      },
+      {
+        "role": "user",
+        "content": "Can you give us examples of fraudulent NFT activities?"
+      },
+      {
+        "role": "assistant",
+        "content": "That was the introduction. Now we're going to more details about what are the various fraudulent activities that can be achieved in the context of nft. So we have this example which is a real case example in which we have the cryptopunks and then some person decided to create a remix of a cryptopunk where the remix was basically making a higher resolution version and uploaded this on the foundation platform."
+      },
+      {
+        "role": "user",
+        "content": "How did CryptoPunks respond?"
+      },
+      {
+        "role": "assistant",
+        "content": "the crypto punks of course complained and said, well, this is actually copyright infringement because you are using my work. And the question then is what type of records do they have in order to prevent this type of activity? So they actually rely on the DMCA takedown notice. So they requested foundation to remove the work for the platform and immediately what happened is that the person that uploaded this created an NFT of the DMCA takedown notice as a statement."
+      },
+      {
+        "role": "user",
+        "content": "What was their defense?"
+      },
+      {
+        "role": "assistant",
+        "content": "the statement here was we are actually doing fair use because this is a remix. Then of course there is a substantive question to what extent is a higher resolution version of a work an actual fair use of the work? And this was possible because foundation is a centralized gatekeeper and therefore had, according to US regulation, had to take down the work under the claim of copyright infringement."
+      },
+      {
+        "role": "user",
+        "content": "Are there other derivative CryptoPunks projects?"
+      },
+      {
+        "role": "assistant",
+        "content": "At the same time, we have a lot of other platform, the crypto punks on Binance, which are completely identical to the other, to the, to the traditional crypto banks. And no one seems to have managed to take them down or complain. We have the crypto funks, which are basically a flipped version of the cryptopunks. So again, that's. Is that fair use? Is that a legitimate remix? That's open to question, but so they, those can still be purchased"
+      },
+      {
+        "role": "user",
+        "content": "What happened to the removed NFT?"
+      },
+      {
+        "role": "assistant",
+        "content": "even the one on foundation, even though it's no longer accessible on the platform. So people cannot see this particular image on the platform. The NFT is still in circulation and anyone else can prove if they have the actual digital version of the file, that they own the NFT of this particular file."
+      },
+      {
+        "role": "user",
+        "content": "Can copyright law help with these issues?"
+      },
+      {
+        "role": "assistant",
+        "content": "So that's one. Then the other question is, again, if we have all those derivatives, we don't really know what kind of recourse is available. Well, copyright is a complex one because usually we would rely on copyright infringement to claim that those are not sufficiently original in order to qualify as fair use. The problem is that copyright require a reproduction of the expression of the work. And the NFT does not actually incorporate any images. They just incorporate the hash of a particular digital file."
+      },
+      {
+        "role": "user",
+        "content": "So copyright doesn't apply?"
+      },
+      {
+        "role": "assistant",
+        "content": "A there is actually no reproduction, there is no unauthorized reproduction or distribution, or any of the exclusive right of copyright are not actually violated by incorporating the hash of a digital file into a token. So copyright is not helpful in that case."
+      },
+      {
+        "role": "user",
+        "content": "What about trademark law?"
+      },
+      {
+        "role": "assistant",
+        "content": "We might wonder whether we could rely perhaps on trademark law as an indication of origin or deceiving the consumer. But as long as the person is actually not claiming to be the author of the work, and they actually say, well, actually I'm selling the work of people, then there is no deception, there is no deceiving towards what is the origin, what is the source of the work in terms of the, the qualitative, the substantial content. Even though of course there is an assumption that this NFT has been created by people, but there is actually no claim towards that."
+      },
+      {
+        "role": "user",
+        "content": "Can you give an analogy?"
+      },
+      {
+        "role": "assistant",
+        "content": "it's kind of like if I take a Picasso and I sell a Picasso and I say, this is a Picasso, I didn't make it, I'm not claiming I made it. So trademark might also be complex."
+      },
+      {
+        "role": "user",
+        "content": "How does counterfeiting apply to NFTs?"
+      },
+      {
+        "role": "assistant",
+        "content": "the question is that when we are entering into the context of NFTs, the notion of counterfeiting is a particular notion that does not easily apply into the notion of counterfeiting that we are used to deal with. But in the context of copyright, where the question is, is there originality in the content and is there an actual reproduction, unitarized reproduction of the content? And in the terrible trial mark, where it's a question of provenance and it's a question of what is the product actually the source and the provenance of the product."
+      },
+      {
+        "role": "user",
+        "content": "Are platforms taking any verification measures?"
+      },
+      {
+        "role": "assistant",
+        "content": "we are seeing now that there is like some NFT platforms again, so some centralized gatekeeper that are partnering up with some companies in order to actually verify that whoever is uploading a particular NFT onto their platform is the legitimate artist and that there is no one that is trying to sell the work on the behalf of someone else."
+      },
+      {
+        "role": "user",
+        "content": "Does this model have limitations?"
+      },
+      {
+        "role": "assistant",
+        "content": "But this, again, this is a workable model because we do rely on those centralized platform which have the ability to verify every single upload. And because there is a contractual relationship with every one of their user and then they can go and go into recourse against the user otherwise."
+      },
+      {
+        "role": "user",
+        "content": "Can you tell us about the NFT heist involving Beeple?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now another interesting thing that also happened was the NFT heist again with people, which is more interesting because it shows the limitation of having actually those open market. So OpenSea as opposed to foundation is a platform that visualize a variety of NFTs which are not necessarily generated through the OpenSea platform, but that actually respect the ERC 721 standard."
+      },
+      {
+        "role": "user",
+        "content": "What exactly happened in this heist?"
+      },
+      {
+        "role": "assistant",
+        "content": "what happened here is that there is an original NFT made by people and then someone else created another smart contract which is compatible with the ERC721 standard, but which implements additional features. And, and so what they did is that they actually minted the same NFT with the same token ID and they minted it in the address of bipol."
+      },
+      {
+        "role": "user",
+        "content": "How did this appear to buyers?"
+      },
+      {
+        "role": "assistant",
+        "content": "when that NFT was being visualized on these open platforms like OpenSea, then people will just see whatever the platform has been instructed to display. And so it will be seen as if BIPOL had minted this token and the token had exactly the same ID of the original token that had been minted on another smart contract. For all practical purposes, if one is just looking at this, they will assume that BIPOL is the originator of this nft and you check the token ID and you can verify that this is the correct token."
+      },
+      {
+        "role": "user",
+        "content": "Was this technically illegal?"
+      },
+      {
+        "role": "assistant",
+        "content": "Again the question here is what kind of recourse is available? That person did not actually do anything officially wrong. There was no hacking, there was no exploitation of flow event. Of course, it was like displaying a more large conceptual flow in the actual design and in the actual implementation of this platform, which are just recognizing some smart contract without actually checking."
+      },
+      {
+        "role": "user",
+        "content": "What was the additional malicious feature?"
+      },
+      {
+        "role": "assistant",
+        "content": "here this smart contract  had an additional feature which was the SEIZE feature, so that whenever someone is purchasing that nft, then whoever controlled the smart contract could then seize the money. And so when people were thinking that they were buying the NFT of people, in reality they were actually giving money to the non hacker because it's not a hacker anyway. And this person eventually gave back the money and just said I just wanted to show that there are some issues."
+      },
+      {
+        "role": "user",
+        "content": "What does this reveal about NFT authenticity and scarcity?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is interesting because it raised the question of like there is obviously ways in which you can create NFT which are either not really scarce because multiple artworks can actually be minted into different NFT or that are not authentic because they are not created by the original author or copyright owner."
+      },
+      {
+        "role": "user",
+        "content": "Could incorporating a hash be considered copyright infringement?"
+      },
+      {
+        "role": "assistant",
+        "content": "to which extent can copyright help? There is one crazy idea that will be, well, maybe incorporating the hash of a digital work could be considered to be potentially a violation of copyright, which will be extremely problematic and dangerous because that's pretty much like saying that any hash of, like using the hash of something will actually qualify as copyright infringement. And so we can no longer use hashes."
+      },
+      {
+        "role": "user",
+        "content": "What about linking or referencing works?"
+      },
+      {
+        "role": "assistant",
+        "content": "same thing with the question of like, could we consider that the, like the referencing of our work? And I mean, of course there is, there is questions already at the copyright level of saying that a URL that people cannot link to a particular copyright because that will be copyright violation, which is completely insane because then it completely breaks down the whole Internet."
+      },
+      {
+        "role": "user",
+        "content": "Could hashes be considered derivative works?"
+      },
+      {
+        "role": "assistant",
+        "content": "in copyright law we have this notion that the architectural blueprint of something can be considered a derivative work or a source of, for instance, a building. In this case, it's not really the case because even though it is derived, the hash is derived from the original work, you cannot recreate the original work from the hash. And so it basically does not apply. So copyright is not helpful at all."
+      },
+      {
+        "role": "user",
+        "content": "What about trademark violations for token IDs?"
+      },
+      {
+        "role": "assistant",
+        "content": "Trademark, again, same thing is not. So it can, for instance, the fact that they use the same token ID for this NFT because they had deceiving because of, you know, improper indication of origin. And again, it's not actually claiming anything that is not true. It's actually claiming this is a people work and it is a people work, it's just that people did not mint it. And same thing like whether we can consider that this is like some kind of serial number. But again, like every smart contract is completely free to implement its own system of serial number. And the fact that two smart contracts use the same ID for a token will be very problematic if we consider this to be potentially a trademark violation."
+      },
+      {
+        "role": "user",
+        "content": "So what legal recourse is actually available?"
+      },
+      {
+        "role": "assistant",
+        "content": "basically, IP is actually not very helpful in this particular type of fraudulent activities. And so we need to actually look at other bodies of law which have nothing to do with copyright or trademark, whether that is fraud, unjust, enrichment, or parasitism in French free riding, which obviously are valid, valid bodies of law in which we can rely because there is obviously some kind of illegitimate behavior. It's just that the traditional means by which we protect usually intellectual property do not provide this type of protection."
+      }
+    ]
+  }
+]

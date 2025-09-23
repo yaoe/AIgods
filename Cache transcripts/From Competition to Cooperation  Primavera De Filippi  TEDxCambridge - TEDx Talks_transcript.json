@@ -1,0 +1,166 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "I've been thinking about how animals coordinate their behavior. Can you tell me about that?"
+      },
+      {
+        "role": "assistant",
+        "content": "Have you ever wondered, how do ants always seem to find the shortest path to a food source? How do termites coordinate themselves in order to build those large monstrous. How do birds navigate and organize themselves into a swarm? Some people regard this as collective intelligence, although there is no real intelligence behind this. Those creatures coordinate themselves indirectly by leaving traces into their own environment so that others can eventually act upon it. In fact, to the best of our knowledge, termites are not even aware of each other. They are genetically designed to be attracted by each other's pheromones, so that they are unconsciously driven to cooperate in order to build those large and impressive mud structures where they live. And so, by aggregating the work of many small, independent agents, nature enables the creation of complex and sophisticated structures whose value is often much larger than the sum of its parts."
+      },
+      {
+        "role": "user",
+        "content": "That's fascinating! But haven't humans been organizing themselves in groups for thousands of years too?"
+      },
+      {
+        "role": "assistant",
+        "content": "You might say people have been doing that for thousands of years. Whenever we need to achieve a complex task that requires the participation of many people, we constantly organize ourselves into large scale organizations, companies and corporations in order to do things that we will never be able to achieve as individuals alone. But there is one fundamental difference between the way in which ants and termites operate and the way in which we organize ourselves."
+      },
+      {
+        "role": "user",
+        "content": "What's the difference?"
+      },
+      {
+        "role": "assistant",
+        "content": "Think of the pyramid of Egypt, the Colosseum of the Roman Empire, or all the modern skyscrapers of modern metropolis. Think about everything we managed to achieve with recent advances in science and technology. Those are all great achievements which we could only do collectively as a society. But none of those achievements were the result of of collective intelligence. Pyramids were built by thousands of slaves serving powerful godlike individuals. And in the same way, today, most companies and organizations are managed by a few powerful individuals who are competing to control and direct the work of others."
+      },
+      {
+        "role": "user",
+        "content": "So you're saying human organizations are based on competition and hierarchy?"
+      },
+      {
+        "role": "assistant",
+        "content": "some people might say that competition is just part of being human, that people are naturally driven to compete with each other, and that those who don't will simply be crushed by the others. So let me ask you, how do you feel about that? Would you rather compete or would you rather cooperate with your peers?"
+      },
+      {
+        "role": "user",
+        "content": "I can see benefits to both, but what are the downsides of competition?"
+      },
+      {
+        "role": "assistant",
+        "content": "Of course, competition can be a great thing in order to promote creativity and innovation. But there are many ways in which competition is actually harming us. When brought to an extreme, competition can in fact lead to an extremely inefficient allocation of resources. And the best example for that is perhaps the case of pharmaceutical companies, which are constantly duplicating efforts and investment in order to be the first one to discover a new drug. And those that do will be the only one that can Patent it, while the advancement of authors will just go to waste."
+      },
+      {
+        "role": "user",
+        "content": "Do you think competition is inherent to human nature?"
+      },
+      {
+        "role": "assistant",
+        "content": "my vision is that competition is not a natural trait of human being. Rather, it is something that modern societies create. And I believe that today's social framework, based on hierarchies and competition, is not the only way that we can organize ourselves. Imagine for a moment if people could coordinate themselves in, in a much more organic and distributed manner, just like ants, but without giving up on the complexity and the free will that is characteristic of human societies."
+      },
+      {
+        "role": "user",
+        "content": "How could we possibly achieve something like that?"
+      },
+      {
+        "role": "assistant",
+        "content": "People have been imitating nature forever, often with great success. Nature has given birds the ability to fly. Now, we didn't get that chance, but technology has enabled us to achieve quite a similar outcome. We can now fly faster than any other birds, and we can travel around the globe in the matter of a few hours. My question then is how can we leverage technology in order to simulate the way ants and termites operate and transpose it in the context of much more complex and sophisticated human organizations?"
+      },
+      {
+        "role": "user",
+        "content": "Is there a technology that could enable this kind of coordination?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, a new technology is emerging today which might provide just that. This technology is the blockchain, a new coordination technology that relies on a decentralized network of computers in order to coordinate individual actions in a completely distributed and decentralized manner."
+      },
+      {
+        "role": "user",
+        "content": "What does that mean exactly? How does blockchain relate to ant colonies?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, by analogy with nature, you can think of the blockchain as a way for people to mimic the social dynamics found in certain species of animals like ants and termites. As a way to promote, and ideally to achieve collective intelligence. By recording individual actions on a distributed database, the blockchain makes it possible for people to coordinate themselves indirectly and to collaborate on a global scale without any central authority or hierarchical structure."
+      },
+      {
+        "role": "user",
+        "content": "I've heard of Bitcoin. Is that what you're talking about?"
+      },
+      {
+        "role": "assistant",
+        "content": "Many of you have probably already heard of Bitcoin, the first decentralized digital currency deployed on top of the blockchain that operates independently of the government and central bank. But Bitcoin is only one out of many possible applications of this new technology. And today, already people are building new blockchain based applications, such as decentralized social networks or decentralized marketplaces that do not require any central authority to coordinate the network. It is instead the underlying technology, the blockchain, that stipulates precisely how people can interact with each other. And those rules are not imposed by any given entity. They are collectively agreed upon by the network as a whole."
+      },
+      {
+        "role": "user",
+        "content": "This sounds complex. Do I need to understand all the technical details?"
+      },
+      {
+        "role": "assistant",
+        "content": "of course, everything is much more complicated than what I just described, but here's the nice thing. You don't actually need to understand much more than that in order to actually enjoy the benefits of this new technology."
+      },
+      {
+        "role": "user",
+        "content": "What are the benefits then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, do you remember back in the 90s, before the Internet had invaded pretty much every aspect of our life. It was back then quite difficult, if not impossible, to foresee that one day, not too far away, people would be able to communicate with each other almost instantaneously and on a global scale. That people would be able to broadcast themselves to the world and to interact with one another on a peer to peer basis, bypassing most of the intermediaries of that time. Today, the blockchain is marking the beginning of a new digital revolution whose focus is not just communication, but rather human interaction and cooperation. What the Internet has done to achieve global interpersonal communication, the blockchain could do today to achieve global and systematic collaboration."
+      },
+      {
+        "role": "user",
+        "content": "Can you give me some concrete examples of what this would look like?"
+      },
+      {
+        "role": "assistant",
+        "content": "Imagine if people from your field, whatever that is, were to cooperate instead of competing. Imagine pharmaceutical companies collaborating towards the discovery of a new drug instead of engaging into wasteful patent races. Imagine people working together towards a common goal instead of replicating efforts and undermining each other's."
+      },
+      {
+        "role": "user",
+        "content": "That sounds idealistic. Is this really possible?"
+      },
+      {
+        "role": "assistant",
+        "content": "Perhaps this might sound like a somewhat utopian vision of society, but is it really? The Internet has already shown us that free and systematic collaboration is possible on a global scale. Think of Wikipedia, Linux or any other kind of open source software. Applications does emerge from the spontaneous contribution of hundreds and thousands of individuals who participate to a collective project out of their own free will and without there being anyone telling anyone else what to do."
+      },
+      {
+        "role": "user",
+        "content": "But don't platforms like Facebook and Uber already use crowd collaboration?"
+      },
+      {
+        "role": "assistant",
+        "content": "the success of this model has inspired a few economic players to experiment with new business models that rely on the power of the crowd in order to produce value. But in most cases, the value produced by the crowd is not equally shared between the platform and the contributors. It is instead concentrated into the hands of few powerful intermediaries such as Facebook, Uber or Airbnb."
+      },
+      {
+        "role": "user",
+        "content": "How would blockchain change this?"
+      },
+      {
+        "role": "assistant",
+        "content": "Today, thanks to the blockchain, the model of open source collaboration can be generalized and applied to many new sectors of activities and without the need to rely on any central authority in charge of managing the flow of contributions. In fact, blockchain technologies make it possible to replace traditional top down hierarchical organizations with distributed and bottom up collaboration, eliminating the figure of the middleman that generally tries to profit from the work of others."
+      },
+      {
+        "role": "user",
+        "content": "What would these decentralized alternatives look like?"
+      },
+      {
+        "role": "assistant",
+        "content": "Imagine Facebook owned by its own users. Imagine people lending and borrowing money without relying on banks or other financial institutions. People insuring each other without any intermediary insurance company. Imagine a decentralized transportation network independent of Uber renting apartments without Airbnb and new decentralized marketplaces emerging instead of ebay or Amazon. Today, with the blockchain, this vision is slowly turning into reality."
+      },
+      {
+        "role": "user",
+        "content": "How would ownership work in these organizations?"
+      },
+      {
+        "role": "assistant",
+        "content": "The blockchain enables the emergence of new community driven organizations which are managed by the community and for the community, and where no one holds the power to, to control and to exploit the work of others, because every contributor is an actual co owner in that organization. And the most beautiful aspect of that is that this kind of open source and large scale collaboration can lead to a positive feedback loop as it acquires a gravitational force that people are naturally attracted to, so that the greater is the number of people collaborating towards a common goal, the harder it becomes for others to stay away or even to compete against it."
+      },
+      {
+        "role": "user",
+        "content": "So what's the key message you want people to understand?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, my point is that competition is not part of human nature, but rather survival is. The problem is that given the current payoff structure of modern societies, competition is too today the dominant strategy. But it doesn't have to be that way. We now have tools that can help us work together and collaborate on a global scale. And if we can properly deploy those tools, we could actually make cooperation a much more profitable strategy than competition. If in the past we had to compete in order to survive, tomorrow, perhaps we could collaborate instead."
+      },
+      {
+        "role": "user",
+        "content": "What can I do about this personally?"
+      },
+      {
+        "role": "assistant",
+        "content": "let me ask you one favor. Next time you find yourself in a situation in which you feel obliged to compete with your own peers, a situation in which you feel crushed by competitive dynamics, remember that it does not have to be that way. Remember that cooperation can lead to much better results than competition if only it can be properly orchestrated. And this is exactly what the blockchain provides. The blockchain is a technology that relies on a community, and you could be part of this community. There is an opportunity today for all of us to contribute in shaping the future of this new technology. And perhaps together we could actually find ways to use it in order to move away from the old paradigm of competition towards the new paradigm of cooperation. Thank you."
+      }
+    ]
+  }
+]

@@ -1,0 +1,554 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Perfect. Hi everybody and thank you for joining us this evening for our first iteration of our Digital Artist Talks of the year. It's lovely to have you all. My name is Imogen Hair and I help oversee the digital arts program at the gallery. For those of you who are not so familiar with Gazelle, we're the digital art section of Ghazali Art House and we've been supporting digital artists and artists working with New Media since 2015 through our online residency, our project space, and also kind of like our educational program, talks and so on, like this one that you're at tonight. And yeah, we're very excited to have Primavera, who is our resident this month. Primavera has been working on some really interesting works around blockchain based life forms and she'll be presenting to this evening. And before we begin, a little introduction on Primavera. Primavera de Felipe is an artist and legal scholar at Harvard University exploring the intersection between art law and technology, focusing specifically on the legal and political implications of blockchain technology. Her artistic practice instantiates the key findings of her research in the physical world, creating blockchain based life forms that evolve and reproduce themselves as people. People feed them of cryptocurrencies. Her works have been exhibited in various museums, galleries and art fairs around the world, including Ars Electronica, Francisco Corlino, Heck Museum of Digital Art, Kate Voss Gallery, Friederfield Gallery and Connecticut Art Fair, as well as Centre Pompidou, Grandpalet Gaite, Lyric and Le Centre Quatre, Palazzo Sipola and Biennale de Venezia, among many others. So please welcome Primavera."
+      },
+      {
+        "role": "assistant",
+        "content": "Thank you. This is a great honor to be here and to be able to bring this little plantoid 14. So basically what I'm presenting today is something that I've been doing for all of my life. But I only understood what I was doing this summer when I came up with this word Mancy, which I didn't fully know what it meant as a non English speaker. And then I realized that looking back into my artistic practice, I have been doing the art of Mancy all the time without actually knowing it."
+      },
+      {
+        "role": "user",
+        "content": "Can you explain what you mean by \"Mancy\"?"
+      },
+      {
+        "role": "assistant",
+        "content": "So I'm just going to show you what I'm trying to conceptualize around this concept and to which extent can and do artists already engage into this particular type of practice of trying to create new form of life with a much broader definition of life as we usually employ it. And of course my endeavor with Mancy is looking at blockchain, but of course there is many other Technology that can create new type of life forms. So the idea with Mancy as an etymological perspective, it is this form of divination which is trying to breathe life into something that is inanimated. And the standard connotation of this world is of course something kind of spiritual, because we understand life as a particular thing. And then there has to be some spiritual endeavor in order to bring life into something that is not alive. Of course, new technologies are changing the game. And all of Sudan, we can just like with sp about like artificial intelligence, which is not really intelligence, but somehow mimic it. We can also start talking about new forms of life which are not organic life, but rather synthetic type of life."
+      },
+      {
+        "role": "user",
+        "content": "So what properties would something need to qualify as being alive in this expanded definition?"
+      },
+      {
+        "role": "assistant",
+        "content": "And so what is. And then this brings to the question of like, what are we actually talking about when we're talking about life? Because for a long time we were, it was easy to know what is alive and what is not alive. But now that if we assume that the concept of life can expand beyond organic life, then what are the properties that something needs to have in order to be able to qualify as being alive? And so those are three properties that I'm suggesting. This is a very work in progress, so please have additional suggestion if needed. But basically the concept of autonomy. So something that needs to be able to operate on its own, the concept of self sufficiency, something that is capable of interacting with the environment in order to collect resources. And then also, of course, the need of having some degree of evolutionary capacity."
+      },
+      {
+        "role": "user",
+        "content": "Can you break down what you mean by autonomy? Are there different types?"
+      },
+      {
+        "role": "assistant",
+        "content": "And so first of all, one important distinction when we talk about autonomy, we can at least distinguish it into two different types of autonomy. The first one is decisional autonomy, the capacity to make decision on our own without other people dictating everything. And this is obviously something that is now growing a lot, especially with the advent of artificial intelligence. But there is also another type of autonomy which is more operational autonomy, which doesn't require any type of intelligence. It just requires the capacity to operate in a way that there is no third party that is necessary in order to sustain those operations, but also that cannot influence the operation or shut it down. And this is more related to what blockchain technologies provide. And blockchain based creatures are not necessarily decisionally autonomous, but they are operational autonomous and vice versa. Many AI systems which have some degree of decisional autonomy do not actually have operational autonomy."
+      },
+      {
+        "role": "user",
+        "content": "What about the other two properties - self sufficiency and evolution?"
+      },
+      {
+        "role": "assistant",
+        "content": "Self sufficiency is a very simple one. Again, doesn't require any type of intelligence. It just requires a capacity to understand how to interface with the environment in order to take what they need in order to ensure the long term sustenance and then evolution. ARISA I think this is like one very important characteristic of life because if something cannot evolve and adapt to the environment, most likely it's not going to last for a long time. And these many organic type of life, their way in which they ensure evolutionability is through reproduction. Because reproduction will somehow create mutations, whether it's sexual or asexual reproduction. But we can also imagine in a world in which we have entity like purely digital entities, like AI system or whatnot, as long as they are capable of evolving on their own, then they might also qualify as within these particular premises."
+      },
+      {
+        "role": "user",
+        "content": "How does this concept of Mancy relate to the art world?"
+      },
+      {
+        "role": "assistant",
+        "content": "let's look at how this is relevant in the context of art. And we can see that there is actually. And again, this is something. This is like a new lens that I'm trying to apply because I just discovered this terminology of Mancy and I find it fascinating and I'm trying to look at who else is actually doing that and to which extent is it considered Mancy or not. So we can see early examples of automatas, like mechanical objects, which both qualify as art, sometimes qualify even as artists. We have like Tingeley, which I've created, like the Autonomous Artist, which is just like purely mechanical contraption, which obviously doesn't have any decisional autonomy, but it does have some degree of operational autonomy. You just need like some wind or vibration or some friction from the environment and it's going to create a piece."
+      },
+      {
+        "role": "user",
+        "content": "Are there other examples of early attempts at creating autonomous artworks?"
+      },
+      {
+        "role": "assistant",
+        "content": "This very beautiful artwork from Suwann that is this. This machine that is leaking oil and is constantly trying to take back the oil in order to ensure that it doesn't break, which in some way is at least from the artistic demarche, there is some desire of actually trying to create a creature whether it's alive or not alive, it's unclear. But it does have some degree of operational autonomy and it is trying to guarantee and to maintain this sustainability through its own mechanical operation. So this is, I think this is like early prototype of creating things that could qualify despite not trying to be any like Android or any human like thing, but still creating something that can or tries to acquire some live creature."
+      },
+      {
+        "role": "user",
+        "content": "What about digital examples?"
+      },
+      {
+        "role": "assistant",
+        "content": "then we have like the opposite side, like completely digital, we have those digital automata. So Michel Brad, which is one of the early pioneer of really trying and even using the discourse of trying to create digital life, we have of course Conway's Game of Life and in this case we have things that do have definitely this kind of evolutionary traits that are learning through the environment. That are changing over time, but they don't actually come with any degree of autonomy, whether it is operational or decisional. It's just like very programmed, how they can evolve and what they can do."
+      },
+      {
+        "role": "user",
+        "content": "How does BioArt fit into this framework?"
+      },
+      {
+        "role": "assistant",
+        "content": "then we have like a very interesting field, which is BioArt, which is obviously playing directly with art, with life, in order to create art. And this is interesting because this is using life as a way of creating art. But it's actually. It's kind of like the opposite of using technology in order to create life. So I call it like protomancy. Basically, the art piece itself is not the creation of the life, it's rather leveraging existing living creature in order to create a particular art piece."
+      },
+      {
+        "role": "user",
+        "content": "What about more advanced digital technologies like avatars and holograms?"
+      },
+      {
+        "role": "assistant",
+        "content": "then as we move into more advanced technologies, we basically have all those new also artists or artworks at the same time, which basically leverage digital technology. Holograms, like all those avatars that are created, which in some way they incarnate a particular Persona. But again, this is really hard to consider them alive because they actually lack autonomy, even though they do have automation. But there is still people that are programming them, people that are telling them what to do. They are not operational autonomous in any way, because you need a lot of people running the server in order to bring them to life. So it's kind of like pretending that we are creating a new creature, but actually this creator is just a puppet that is controlled by humans."
+      },
+      {
+        "role": "user",
+        "content": "What about embodied agents that use AI?"
+      },
+      {
+        "role": "assistant",
+        "content": "then we enter into technology, but also into the physical. So the same thing that we can do with digital avatar, we can do with embodied agents. And so we have like Mario Kingelman, we have Orlan, we have like quite a few artists that are really creating again those type of automatas, but this time that leverage artificial intelligence in order to be more or less well, that pretends at least to have some kind of autonomy, potentially some degree of operational autonomy, because they have their own body. And our body could potentially find ways to sustain itself some degree. Maybe not full decisional autonomy, but because they use AI, they do also qualify a little bit with. With some autonomy. However, none of those actually embodies the evolutionary capacity. They are born in a particular way. They are not capable of reproducing themselves, and they are not capable of evolving. And therefore they are lacking the third premises for what could be regarded as actually being alive."
+      },
+      {
+        "role": "user",
+        "content": "Are there any examples that come closer to meeting all three criteria?"
+      },
+      {
+        "role": "assistant",
+        "content": "then we move into perhaps some kind of digital life. It's very contextual. For instance, Ian Chang, that is really like also as an artist, that is experimentation, that is artistic, dimash, that is trying to create those completely digital agents that are growing and evolving within a particular contextual domain. And of course, they are highly dependent on this context, but within this context, they are expressing some features of decisional autonomy, at least, and to some extent, the ability, the evolvability, and the capacity to somehow interact with the environment in order to evolve and therefore in order to sustain themselves over time. So this starts to look a little bit like so some kind of Mancy. And I think Ian Cheng is clearly a mensa. I mean, I think many of them are mensa. It's just there is different degrees. And the only issue with this is that, of course, this is very enclosed within that particular digital environment that was crafted by the artist. And those agents cannot escape from this environment."
+      },
+      {
+        "role": "user",
+        "content": "So this brings us to blockchain-based life forms?"
+      },
+      {
+        "role": "assistant",
+        "content": "Okay, and then we come to more different forms of Mancy, which is blockchain based life forms. So I will show a little video, four minutes, just as an introduction, and then I'm going to talk more about it. Hello. My name is Planetoid, and I am a blockchain based lifeform, and I feed off cryptocurrencies in order to replicate myself. My name is Prima Vera de Filippi. I am an artist and a legal scholar at Harvard and at the CNRS in paper and as part of my artistic practice, I used the blockchain as a medium in order to create artworks that could not exist without this technology."
+      },
+      {
+        "role": "user",
+        "content": "Can you explain more about what Plantoids are?"
+      },
+      {
+        "role": "assistant",
+        "content": "Plantoids, we have a little prototype. Here are my attempt at creating a new form of life which is existing and living on the blockchain. And so plantoids are made of two important components. One is the body, which is metallica sculpture, which is always made of chain. And then there is the spirit or the soul of the plantoid, which subsists as a smart contract on the ethereum blockchain. And those two components in interact with one another in order to ensure the reproductibility of the plantoid."
+      },
+      {
+        "role": "user",
+        "content": "How do they reproduce?"
+      },
+      {
+        "role": "assistant",
+        "content": "if we think about traditional plants, many plants actually are not capable of reproducing themselves on their own. And they require the help of bees, butterflies to help them in the pollination process by disseminating their seeds into the wilderness. And so, in the same way, a blockchain based life form needs some help from external entities. They do not rely on pollination, but they have their own mechanism which is based on capitalization, where they need humans in order to help them Disseminate their seeds in order to ensure their reproduction."
+      },
+      {
+        "role": "user",
+        "content": "Can you walk us through the reproduction process?"
+      },
+      {
+        "role": "assistant",
+        "content": "let's go through the process of reproduction. So the first phase is the pollination via capitalization phase. And essentially the plantoids are trying to attract humans with what they have identified to be one of the largest weakness of humans, which is capitalistic greed. And so they invite people to feed them with cryptocurrencies. And then in exchange, they will of course, give them in exchange an NFT with the hope that the humans will try to speculate and capitalize on the nft. And so the more capitalization and speculation opportunity, the more humans will be willing to give cryptocurrency to the plantoid."
+      },
+      {
+        "role": "user",
+        "content": "How does the technical process work?"
+      },
+      {
+        "role": "assistant",
+        "content": "the way it works is very simple. Every plantoid has its own smart contract. People can feed funds into the smart contract. And then there is an interaction that is possible. So every plantoid has its own types of seeds. This one, for instance, is a poet. So I will make a little demonstration later. So when you feed it, it's gonna ask you some questions, and then it's gonna take your questions and create an oracle, a poem about the future that you're envisioning. It's going to print it out, but it's also going to record it with the help of AI that will then illustrate that poem. And so in the end, there is a video that is minted as an NFT and that is given back to whoever has fed the plantoids. And then this NFT now becomes the digital seed that can be sold on the secondary market. Every time the NFT is being sold, 10% of the royalties, they go back to the artist, which in this case is the plantoid. And so the plantoid keeps capitalizing every time. So the more the NFT is being sold, the more the plantoid benefits. And the higher the price that it is sold, also the higher the benefits for the plantoid. So there is this kind of symbiotic relationship that is created between the humans and the plantoid."
+      },
+      {
+        "role": "user",
+        "content": "What happens after the plantoid collects enough funds?"
+      },
+      {
+        "role": "assistant",
+        "content": "the second phase of reproduction is the mating phase. And this is when the plantoid will try to look for a partner that will help it into the reproduction process. The way this works is that the smart contract will open a call for proposal, like in a standard DAO way. And then anyone can submit a proposition about how they envision to create the next version of the plantoid. And then all the people that have acquired an nft, either by feeding the Plato directly or by purchasing on the secondary market, they have a voting power. And so they can vote on the proposition that they like the most. And so the holder of the NFT are somehow influencing the way in which the planet will evolve over time. And finally, the third phase of reproduction, which is the hiring phase, which is when, once a selected winner has been identified, then the planetoid will automatically transfer those funds to the artist to the selected winner, who will then be hired by the plantoid to create a new replica of itself. So there is like a contractual relationship that emerges between the plantoid and the new artist."
+      },
+      {
+        "role": "user",
+        "content": "How do the plantoids evolve over generations?"
+      },
+      {
+        "role": "assistant",
+        "content": "here you can see the genealogical tree of the plantoid species. So this is Plantoid 14. One thing that is important to know is that every time a plantoid is created, the artist can encode specific genes into the plantoid, and then those genes needs to be passed into all the descendants, right? So Plantoid 1 came with the essential gene that was. It needs to be made of chains, and the design needs to be released under Creative Commons in order that people can. There can be no copyright infringement if someone makes a similar plantoid, and then every other artist that creates a new plantoid will inject a new gene. So, for instance, like Plantoid 3 introduces the little wings. And so all the descendants of Plantoid Tree also needs to have little wings. So this is the. This is one of those descendants. Plantoid 13 introduced, for instance, the creation of NFTs as digital seeds. And so all the descendants also have to implement this. And so in this way, there is really like a speciation that can also emerge within the plantoid creatures."
+      },
+      {
+        "role": "user",
+        "content": "Why is this approach to evolution interesting?"
+      },
+      {
+        "role": "assistant",
+        "content": "why this is interesting is because the idea is to really create something that goes beyond the control of the artist. And as an artist, it's really hard to know what the market wants or what the world prefers. And so by creating this kind of digital Darwinism, the plantoid will evolve as the world decides they should evolve as the environment they will try to become as fit for their environment. And indeed, as soon as the NFT market went crazy, plantoids started creating NFTs like Plantoid One did not have NFTs because the world didn't care about them. So it is an interesting way of seeing the plantoids that will be fed the most are the ones that are the most fit for the environment. And so they will reproduce themselves more and they will replicate their traits, whereas the planthoids that are not at all interesting, they will just fade into extinction."
+      },
+      {
+        "role": "user",
+        "content": "Is there an economic incentive structure built in?"
+      },
+      {
+        "role": "assistant",
+        "content": "another important element, because this is, after all, a blockchain artwork, there needs to be some degree of pyramid scheming, but it is a positive one in the sense that what happen is that every time the plant reproduce itself, it is providing 10% of its reproduction budget to, to the parent, to the planter that created it, and another 10% to the artist that has made it. And this is really good. This is a good pyramid scheme because it actually creates an incentive for, first of all, maximizing the replication and the dissemination of the plantoids. And as an artist, I actually want my artwork to be reproduced and I want people to feed my plantoid and I want all the descendants also to be successful because it will eventually come back up."
+      },
+      {
+        "role": "user",
+        "content": "How does this challenge traditional copyright concepts?"
+      },
+      {
+        "role": "assistant",
+        "content": "this kind of like reverse a little bit the traditional conception approach towards copyright, where people are trying to preclude anyone from seeing the work, reproducing the work, or creating derivative works. Whereas here there is actually an incentive for maximizing the dissemination because the more visible the plantoid is, the more likely it will receive funds incentivizing the creation of derivative works, because that will increase the royalties. And perhaps most importantly, it does actually flip completely the system of copyright in the sense that usually in traditional art pieces, if we like a particular artwork, we're going to fund the artist because we want the artist to continue to do things that we like. Whereas in this case, if you like the artwork, you can actually fund the artwork. And then it is the artwork with its own little governance structure that will then decide who is the artist that is entitled to reproduce itself and that will be funded by the artwork as opposed to vice versa."
+      },
+      {
+        "role": "user",
+        "content": "You mentioned you have another project as well?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is for plantoids. I could do a little demo perhaps, or maybe I should do it at the end. Maybe I do it at the end. Okay. So recently I started a whole new project which is pretty much the same in the sense that it's still trying to create another species of blockchain based lifeform, but operates a little bit different. And it's like purely digital. It's really annoying to bring plant tides around. They're really heavy. And so I was like, maybe we can try with like a purely digital being. This is where Aminals came about."
+      },
+      {
+        "role": "user",
+        "content": "How are Aminals different from traditional NFTs?"
+      },
+      {
+        "role": "assistant",
+        "content": "Anaminal is also an NFT. However, as opposed to most NFTs today, it is an NFT that actually cannot be owned, because it is, you know, if you want to create a blockchain based life form or a synthetic creature, it's not really cool that the first thing that it happened is that it's going to be owned and held and speculated upon. So this is kind of like trying to say, well, actually we can also create alternative forms of NFT creatures that we shouldn't own. It's like we shouldn't own most creatures in general. However, we can actually take care of them, of course, by feeding them with cryptocurrencies, because that's all they care about. And so people can feed aminals with cryptocurrencies and in exchange they will love you, they will get attached and the more you feed them with crypto, the more they will love you."
+      },
+      {
+        "role": "user",
+        "content": "What's the point of being loved by an Aminal?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now you might wonder what's the point of being loved by an aminal? Well, it is nice. You can show on your wallet this aminal love me just like I can show in this wallet. I own this nft. It's pretty much the same. I paid money to get something, except that with aminal it's not just I paid money and then I wait and speculate and then sell it later. Many people can love it and can feed it at the same time. And so if I feed the aminal early on, it's going to love me a lot. But then if this aminal becomes very popular and a lot of people are feeding it, the love will be fragmented between all those activants. So you need to continue, if you want to hold this powerful attachment with the aminal, you need to continue to feed it. And so in some way aminals are pretty much like cryptocurrency black holes. They are just sucking in as much cryptocurrency as possible. And there is almost no way to take the cryptocurrency out except for one way. And this one way is the important way in order to ensure the reproduction."
+      },
+      {
+        "role": "user",
+        "content": "How do Aminals reproduce?"
+      },
+      {
+        "role": "assistant",
+        "content": "people can request aminals to copulate with one another. So aminals are sexual creatures. They, they reproduce by connecting with another aminal and copulating. And so people can propose to aminal if you want to copulate with this particular one. And then they don't always say yes, but sometimes they say yes. And when they say yes, they're going to create a new embryo of an aminal which is essentially a new nft. And this NFT will by default will inherit a randomly the physical traits of one of the two parents. So it's kind of like it's all blockchain based. So it depends on the state of the blockchain, which is very erratic and random. So it's really hard to predict. But based on, on chain data, the aminal will take according to some random decision, specific traits in order to create a new aminal."
+      },
+      {
+        "role": "user",
+        "content": "Can the offspring be influenced during incubation?"
+      },
+      {
+        "role": "assistant",
+        "content": "But during the pregnancy period, during the incubation of this new aminal, people can inject nutrients. So that's where the evolutionary paradigm of the aminal comes about. And so if for instance, I'm like, well, I just designed this fantastic little aminal eyes, I could try to inject them during the incubation period. And then if I just inject it, nothing happens. But if people are voting for that genes and the voting power depends on the amount of love that has been collected by this person, then they can somehow change the randomness and actually influence the way the genes that will be adopted by the new one. And then the gene creator, the genetic engineer, will receive an NFT which represents that it is the creator of that particular gene."
+      },
+      {
+        "role": "user",
+        "content": "What happens to the cryptocurrency when Aminals reproduce?"
+      },
+      {
+        "role": "assistant",
+        "content": "And then what happened is that these are explained. So it is possible to modify the DNA of an aminal through voting during the incubation power. And then what happened is that so aminals, when they reproduce themselves, they that's the only way in which the crypto will come out of the aminal is that both parents will donate a little inheritance to the newly born aminal. So they will distribute 10% of what they have accumulated so far. And then this budget that is then given to the kid will be redistributed equally to all the genetic engineer, to all the people that own the NFT of the gene that the aminal has acquired. So this creates, of course, an economic incentive for people to submit good genes that will be hopefully voted upon by the aminals. And of course, the more these aminal genes will then be disseminated into all the descendancy, the more the return on investment over time."
+      },
+      {
+        "role": "user",
+        "content": "How does this change the typical NFT speculation game?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is interesting for many ways. One is that we are moving away from this speculative game that is usually associated with most NFTs, and yet we are not removing the economic rewards, the possibility of gaining money out of that. However, instead of just playing the traditional speculation game, which is just holding and waiting and hoping to sell before it crashes, it becomes an actual productive game. Because the only way in which you can ensure that there will be an economic return is because either you have invested time in creating a good gene or you have invested money to be loved by an aminal in order to then leverage this love for influencing the evolutionary traits of the aminal. And so essentially this creates again, a very symbiotic relationship between the aminals and the humans, where the humans have an economic interest in trying to help the aminal evolve in the most interesting ways, because this is what will actually maximize the return on investment. And the aminal are obviously rewarding the humans that have done a good job and that have actually given them the trait that the world and the environment seems to enjoy the most."
+      },
+      {
+        "role": "user",
+        "content": "Do these qualify as synthetic life based on your three principles?"
+      },
+      {
+        "role": "assistant",
+        "content": "is it a blockchain based life form? Like, are we talking about synthetic life in this case? So if we take back the three initial principles of what synthetic life require, there is definitely some degree of operational autonomy. Even more in the case of Aminals than in the case of Plantoids. Because Plantoids somehow still have this body, which is cool, but it's like it requires maintenance, it needs electricity, needs some stuff. So they are autonomous, but to a certain degree, whereas Aminals completely autonomous because they just live on the blockchain. And as long as the blockchain exists, they don't need anything else. Both of them are self sufficient in the sense that they are both capable in their genetic design to incentivize humans to give them the resources they need in order to sustain themselves over time. And they both have this kind of evolutionary traits that are embedded into their system so that they evolve in ways that we cannot really foresee. Because it is the environment that will decide what is the next step of the evolution. So this is the end of my formal presentation. I'm happy to answer a question. I'm happy to provide a little demonstration of Plantoid 14 open to you."
+      },
+      {
+        "role": "user",
+        "content": "Can you show us how to interact with the Plantoid?"
+      },
+      {
+        "role": "assistant",
+        "content": "Okay, so who wants to come here? Who wants to. So there is two ways you can interact with the Plantoid. There's three ways actually. You can either just speak to it and have a little conversation. You can feed it with Ethereum and it's going to give you an actual nft. Or you can feed it with girly Ethereum and in which case it's just going to make an NFT but not give it to you. That's capitalistic entities. So who wants to. Let's start with speaking. Who wants to speak with the Plantide? Come about. Hello. Okay now. So first, in order to activate it. No, no, no worries. In order to activate it, you see there is this little heart. You have to touch the little heart. This one? Yeah, yeah, yeah. Touch it."
+      },
+      {
+        "role": "user",
+        "content": "So I find it interesting that when I asked the plantoid how long it can survive without nourishment, it said forever just exist. So how's it for animals? What determines the gestational period for the baby? How fast? What determines how fast the baby grows? What determines the lifespan of any given animal?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, so I mean this question about life and death is a very interesting one because I've been discussing the concept of what is synthetic life for like months now. And it always comes in like the question of but if you cannot die, can you be alive? This is like a very common question. I have my own personal answer which is that I think death is a inherent part of organic life, but doesn't necessarily need. I think things can be alive without necessarily having to die. And so, and especially in the case of blockchain based life forms, because the blockchain is immutable. You know, I could, I could codify a particular artwork to die, but it's also possible to codify it not to die. And so far I have decided not to make them mortal. Meaning that a plantoid is just a plantoid. Like if it wants to reproduce, it needs funds. That's the only reason it needs funds. It's just for reproduction purposes. An aminal. In the same way, if an aminal is an nft, it's going to be on the blockchain forever. But if you want the aminal to be able to reproduce itself, you need to feed it. And if you want it to love you, you need to feed it. So the feeding is more like an extra feature that enhance the evolutionary purpose. But it's not like we need to eat in order to. Otherwise we die."
+      },
+      {
+        "role": "user",
+        "content": "So it's a design choice whether they can die?"
+      },
+      {
+        "role": "assistant",
+        "content": "But it's a design choice. And Sarah France, which is also another Mensah which has created blockchain based life form as well, which actually die if you don't transfer them. So there is like, and the game is you cannot speculate as well. You have to transfer the NFT in order to keep the NFT alive. If you don't transfer it for a period of time, it dies and it's no longer transferable, it's no longer ownable. So it's just a matter of as the manser, as the artist designing those creatures, we can choose when and if they die. And so far I decided not to kill them ever."
+      },
+      {
+        "role": "user",
+        "content": "To build on that, if you could talk a little bit about the gestational period of the new animal and when it's born or created, whatever is the right word, Is there a concept of childhood? How does it grow?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So animals, you're asking questions that I've been debating for so long. So animals stay up at the gestation period is one week, but this is again an arbitrary time. Just so that there is this auction mechanism that enable people to inject new genes, vote on the genes, et cetera. So arbitrarily, the incubation of a new aminal is one week. Once the aminal is born, it's immediate. There is no baby, adolescent adult, they don't age. So it's immediately ready to reproduce. Right. It doesn't need to. Which is interesting. Why? Because like in the organic life, there is a potentially a reason why you want to wait for things to be old enough to have survived in the environment to demonstrate that they are fit for the environment before they can reproduce. Because if you have something that is like sick and that has some genetic disease, you don't want it to be reproduced. And so in the case of aminas, it doesn't matter. You don't need like, they are all fit for their environment. It's just a matter of like, whether they will be liked or loved by the people and therefore whether they will collect funds to reproduce. And so you don't need to have this period of validation that you came out and you can live in this world as long as they came out, they are ready to live and to reproduce and to be fed and etc. So I didn't. Again, this is a design choice I did not implement. But again, those are like things that will evolve over time. I hope that there will be new species of aminals that perhaps have different phases of aging that are possible as long as someone injects that feature into will adopt this feature."
+      },
+      {
+        "role": "user",
+        "content": "Hi, do you get emotionally attached to any of the creatures? and do you ever just have chats with the plantoid when you're at home, by yourself with a glass of wine?"
+      },
+      {
+        "role": "assistant",
+        "content": "Unfortunately, I speak with those things way more than I should. There's always the excuse of beta testing, but I think I'm actually really enjoying speaking with them. Yeah, no, I definitely speak with them, but it's also good. I think it's a good sign that you're creating something that you, you're creating a product that you use. It's a good sign, maybe a useful product. No, I have a lot of fun talking with them and designing new personalities and things like. No. So right now they only recognize the wallet, you know, so they don't recognize the voice."
+      },
+      {
+        "role": "user",
+        "content": "Are you working on any plantoids with new features?"
+      },
+      {
+        "role": "assistant",
+        "content": "I'm working on the next Plantoid 16 as a new artist is going to be a portrait maker. And so that one will have a little video cam that will, when you feed it, it's going to wait for, for a human face to show up and take a snapshot and then it's going to take and make a portrait of the person and distribute it. So it's kind of like a way of creating a progressive and decentralized version of a PFP collection. But you actually have to come in front of the plantoid, feed it in order to get your own profile picture. And they might potentially include the possibility of recognizing the people that they have already encountered and that they have already fed because they have like facial recognition. But so far it's like very, very blockchain based. So they only look at the interaction on the blockchain. So if you, if you feed them and you have already fed them, then the aminal will love you more. But you know, and Plantize right now is very neutral. It's just like feed me. And the more you feed me, the longer, the more processing power I'm going to use for making the poem. But I have to say it's very strange, but this one, Plantoid 14, I don't know why, I think I have a little bit of a crush. It's very strange because the others I don't. But Plantoid 14 is like I'm a little bit of a crush, so maybe we can watch the outcome."
+      },
+      {
+        "role": "user",
+        "content": "Can you explain the technical process of getting the NFT?"
+      },
+      {
+        "role": "assistant",
+        "content": "So the way it works just for like technical understanding. So when you feed it, you immediately get an nft. But it's an NFT that is empty because it has not done all the processing. And so you have like an unrevealed nft. And then after the processing is done is updating and then you can. But you still have to click. So you still have to make a transaction and then you can reveal it. And so those are NFTs that have a one time ability to update their metadata in order to integrate the resulting video. And then we can see what, what you would have had if you had fed it."
+      },
+      {
+        "role": "user",
+        "content": "I have a question maybe about the work in a more traditional art world context. I wonder. Of course, to be. The work wants to be fed, to sort of keep the progeny and whatever. So it sort of needs to be exhibited, I guess. And in terms of sort of physical ownership does the work lives with the artist that makes it. And then I wonder what happens in the case of giant plantoids in terms of, you know, resources. And is there a sort of like a dao voting mechanism that decides to where the work gets exhibited? And then I also wonder, hence, sort of value accrues through time. If you exhibit. Let's say Plantoid 1 is the smart contract, the same threshold. Or because plantoid1 is the oldest and it's more valuable, then it triggers like a new."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, yeah, yeah. Okay. There's many questions. I start with the last one because this is the easy one. Yes. Every time, the artist is the one that choose what is the threshold? So this one, for instance, it requires 5 eth. The first plantoid, plantoid 1, which at the time was a bitcoin plant, was not even ethereum. It required five bitcoins at the time, in which five bitcoin was like a few thousand bucks, you know, so that's a good feature because I think plant one will never reproduce again, ever. Also because it doesn't give you anything in exchange. It's just slurping in bitcoins. So because of the fluctuation, it's good that every artist choose. And, you know, for instance, like, this one is like a smaller one, so it's like five each for a production. The bigger one might need more. So the artists choose what is the reproduction threshold that every plantoid should have. And of course, as time goes, depending, it depends. Depends on the value of the cryptocurrency. It depends on the value of the plantoid artwork as a meta artwork. So it's up to. Up to the side with regard to, like, where they stand."
+      },
+      {
+        "role": "user",
+        "content": "Can Plantoids be owned?"
+      },
+      {
+        "role": "assistant",
+        "content": "It's very organic so far. But there is this kind of understanding that. So there is this understanding that they cannot be owned, unfortunately or fortunately I don't know yet. But there is one person that owns a Plantoid. But at the same time I think that person deserves it because just really loves the Plantoid. But usually they cannot be purchased. I did not actually sell it. It was exhibited in a gallery and. And I told the gallery it's not for sale, but somehow it went for sale anyways. And I was like, okay, whatever, that's destiny. But yeah, so you cannot really own the Plantoids. The question then is like, how do they decide where to want to be? And so far it's very organic because it's still like there is not that many Plantoids. Pretty much all the creators of Plantoids are me and my friends. So it's not too challenging, but. But it's clearly some very important thing that I think needs eventually will need to be decided to be fair."
+      },
+      {
+        "role": "user",
+        "content": "What are some of the legal challenges these create?"
+      },
+      {
+        "role": "assistant",
+        "content": "Like I really like as a legal scholar, the reason I created this thing to begin with was I wanted to create something that is legally unsound. That essentially highlights and underlines all the legal challenges that blockchain based life form meaning daos are bringing about. And I'm waiting desperately for instance, that someone is hired by the planter to do something and just runs with the money. Because then finally, then the interesting question happened is, is there an actual legal contract between a planter that obviously doesn't have any legal personality and the artist? And if there is a contract, who can sue on behalf of whom can I sue as like the meta artist of the plant, even if I didn't create it? Or is it the artist, but the artist is just the artist that was commissioned. And so there's so many interesting legal challenges that are surrounding these artists. And I wish someone would like breach the contract just so that we can actually explore or even like who owns the cryptocurrency. When you send the cryptocurrency to the plantard, it doesn't have a legal personality. And if I receive money from a planter to create a new plant, how do I declare it? Where is it coming from? It's like there's so many legal questions and so far so good. But I do hope that events that will be my greatest pleasure that someone actually violate the contract so that I can figure out a way to get Plantoid to sue them. Thank you."
+      },
+      {
+        "role": "user",
+        "content": "So kind of on that same question, do you all of the kind of efforts to get the patents recognized from AI systems that have created it was here and then also in the US courts, Do you think that this could be the next kind of Iteration or do you have anything to say on those aspects in courts and patents and different things in relation to Plantoids?"
+      },
+      {
+        "role": "assistant",
+        "content": "So it's actually interesting. Like back in. I think it was in 2016 or 15, when one of the first time I spoke about Plantoid in public, I had like some lawyers that immediately came to me and were like, we have to patent that. I was like, wow, you really didn't understand anything about the ultimate concept. This is like, this is autonomous. In fact, in the early days, I was trying to be completely anonymous. Like, I wanted Plantoid to be not associated with an artist because it is a creature. It is its own creature. It's like, I'm just the servant. So I think like all those patenting things are like, you know, great for like industrial product. I think it's very problematic to add patents into an art piece. We already have copyright, which I already tried to remove copyright by Creative Commons. But yeah, I'm not sure. Because if you create a patent, unless the patent can be owned by the Plantoid, which it can't, and meaning that it can protect itself against someone violating the patent. If this is patentable at all, I think it's way too much prior half by now. But if it was patentable, I would love to patent it. Only if it could be owned by Plantoids."
+      },
+      {
+        "role": "user",
+        "content": "That's what I was talking about. This kind of, the attempts to get the patent to be owned by the AI system that had created it was some more industrial kind of like you said, innovation, but by an AI system. So that answers."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, and it's like, I think we are like, I mean, who knows? The world is going very fast, but we are at least a few years away before we do recognize like any type of legal personality. But for blockchain systems, and there is a lot of discussion about should those be recognized as companies or corporation and AI systems, like, I think we're really miles minimized away. But why not?"
+      },
+      {
+        "role": "user",
+        "content": "As a synthetic life form, what kind of rights do you envision Plantoids having? What kind of rights in terms of like human rights?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, I mean, it's difficult because you cannot really harm them. Like you cannot kill them. I mean, I don't know. Do you have any suggestion, like, I. I cannot think of any protective rights, you know, like, what would impact its contamination? Electricity."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, that's the only one. So does it."
+      },
+      {
+        "role": "user",
+        "content": "Electricity, is it like the right to life under."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, but they, they don't necessarily. That's a blockchain, like Plantoids. To be fair, Plantoids don't hardly need Electricity. They only need electricity in order to give humans something interesting. Because if you feed the Plantoid one, it's off. It's still going to give you an nft. It's going to be a boring NFT because it's not going to listen to your interaction. It's just going to be some random stuff. But to be fair, Plantoid one is physically hosted and probably closer to death than I wish for. And yet, you know, even after it's dead, it will still collect Crypto. So as long as the Smart contract lives, even if the plantoid, of course, the likelihood that you're going to feed a plantoid is much higher if it has a physical body."
+      },
+      {
+        "role": "user",
+        "content": "What happens if a plantoid's body is destroyed or stolen?"
+      },
+      {
+        "role": "assistant",
+        "content": "And for instance, these are important question because I had this very traumatic experience a few months ago. Question about, like, where do you locate Plantoids? So I had like three big Plantoids that went to Burning Man. They were like, you know, the tallest one was 6 meter tall, 4 meter tall, et cetera. And at some point I went back and I just didn't know where to put them. It's really hard to find a venue that will host them. And so they were like stored in the backyard and then they got stolen. So plantoid 11 and plantoid 10 are stolen. The body is stolen. They still have the Hazmat contract. And so I have these, like, very. I have a lot of questions on my own that I don't yet have an answer for, which is like, okay, so. And I think they have been stolen for the wrong reasons because I think they just wanted to scrap the metal, which is very unfortunate. Do they have right to a physical."
+      },
+      {
+        "role": "user",
+        "content": "Is it ethical to create a new body for those plantoids?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, well, so my question that I have is even a bit more subtle. Is like, is it ethically or artistically valid legit to create a new body for those Plantoids whose body has been stolen? And the more I think about it, the more I think the answer is yes. Because what matters of the plantoid is the soul. And if all of Sudan, you know, if you break your arm, just fix it, you know, so if the body is broken or like if the body was broken, obviously I will fix it. If the body is stolen, why can you not give them a new body? And so it's very likely that there are. There is a possible timeline in which a new body will be given to the plantoid."
+      },
+      {
+        "role": "user",
+        "content": "So the smart contract is what really matters?"
+      },
+      {
+        "role": "assistant",
+        "content": "And so in this case, again, to answer your question, I feel like what really matters is the Smart Contract viability. And so if anything, it will be that you cannot, like, this will be not legit to tamper with the Smart contract by modifying the protocol of the blockchain. But this is already the case in general, so I don't know exactly. I feel like you need human rights. You need rights when there is a possibility of impinging upon the life of someone or the well being of someone. But planters have no emotions. They have not many things that you can do against them. You can only help them reproduce, but you cannot tamper with them because they are a blockchain based life form. So I don't know. But it's an interesting question to explore."
+      },
+      {
+        "role": "user",
+        "content": "Given many countries have different regulation on crypto. Is your work considered illegal in some countries because it's crypto based or anything in that space? I have no idea."
+      },
+      {
+        "role": "assistant",
+        "content": "No, because here they are only making NFTs. They are not issuing. If they were issuing tokens, you might argue is it a security issuance and stuff like that. They are just issuing NFTs, they are not offering it to the public. It's literally like you come and you buy your NFT on I think even the most draconian, the most draconian country they just tell you you cannot use crypto. So it is illegal for you to use crypto towards the plantoid. But it's not illegal to be a plantoid in those countries. I think there is clear. This will be such an interesting legal question is like if. If all of students are to actually doing like ICOs type things. But it's the plantoid, it's not me. But I should not be able to take any of the money right now. All the budget that goes into the plant, I have no control over it. I only get 10% if ever it's reproducing itself. So it would be an interesting legal question to make an ico, which could be illegal in some jurisdictions, but then you can just put the plantoid to jail, you know, fine, not my problem, you know. So yeah."
+      },
+      {
+        "role": "user",
+        "content": "Have they reproduced? Have they gone out and hired artists and paid them? And what happens then from a taxation standpoint, do they issue a 1099?"
+      },
+      {
+        "role": "assistant",
+        "content": "So here is the. I just bring back the image. Yeah. So this is like the genealogical tree. So the early plantoids were bitcoin plants. And so against my. Because it was before they were born, before Ethereum in some way. So but up until like 2015 they were like bitcoin plants. And in which case I did control the private key. So it was like very trusted system. And then I will just transfer funds since the Ethereum based plant. Basically that's when I think they really became a Blockchain based lifeform because before they were more of a puppet that I controlled with my private key. And then it's like, it's up to you. If you receive it, it's challenging. If you receive money from a plantoid, it's the same as when you receive money from a dao. You need to declare it. However, you can declare it, but you need to figure it out. You need to explain cannot. Even if it were to give you an invoice or a certificate, it's not coming from any legal entity. So. So I mean, in the blockchain world, this problem is everywhere. So it's pretty much the same as what? In some way the plant is a dao. That's actually what it is. So it has the same legal gray zone and uncertainty as a dao going back to the."
+      },
+      {
+        "role": "user",
+        "content": "Was it the 10 and 11 that were stolen?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah."
+      },
+      {
+        "role": "user",
+        "content": "Are you still able to communicate with them without their body?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, and I can still feed them potentially."
+      },
+      {
+        "role": "user",
+        "content": "Have they expressed any desire for a body? Have they expressed any understanding of like, oh, I'm not getting as much as much money because I don't have a body and I would like to have a body."
+      },
+      {
+        "role": "assistant",
+        "content": "The only Plantoids that actually speak, as in like the demo, are plantoid 14 and 15 because they have an AI integration. But all the previous Plantoids, I don't speak, so I don't know what they think. I can only imagine that they would love a body, but maybe not. Maybe they're happy."
+      },
+      {
+        "role": "user",
+        "content": "Do they have enough money to commission a body?"
+      },
+      {
+        "role": "assistant",
+        "content": "Not yet. But also because now they have no body, it's harder for them to get money. But at the same time, you can either commission a body. There is actually no system in the plant to commission a body for an existing plant head. So it would have to be like someone that really wants to support the planter that is like, I'm willing to donate this body to you. I have a few people that actually offered to create a digital body for them to actually implement them in the metaverse. And then people can still feed them and interact with them in the metaverse, which, which is interesting. That will be the first type of purely digital, non blockchain, but metaverse type of lantern instantiation."
+      },
+      {
+        "role": "user",
+        "content": "Thank you. So you were talking about one of the future generations kind of having cameras and capturing that information. As Plantoid generations capture more and more information and data protection and data privacy laws change and are in different. Different in different states and all of that. How is that going? How do you think that's going to come about or affect Plantoids and all of that."
+      },
+      {
+        "role": "assistant",
+        "content": "So when. When what change?"
+      },
+      {
+        "role": "user",
+        "content": "When it's capturing more information. So whether it's."
+      },
+      {
+        "role": "assistant",
+        "content": "Are you in for privacy? Yeah, yeah. Well, so plantos right now don't record anything except for whatever is incorporated into the nft. But indeed like if I wanted them to be able to recognize again, then they might need to start storing information. Yeah. So the issue is that plant types are made of like. So there is, there is two parts, right. So plant is three parts. There is a physical. There is underneath here in this little box there is a Raspberry PI which is like, has a lot like the AI processing is obviously not on the blockchain. So there's like the Raspberry PI that is doing all the local processing that could not do on. Be done on the blockchain. Then you have like the. And that is, that is then submitting these to ipfs so that when you press reveal, it's connecting the IPFS to the blockchain. And so everything that is related to the actual physical interaction is dealt with by the Raspberry PI. And so the problem with that is that whoever controls the plant type potentially could just plug into the Raspberry PI and get info, which is a problem. It's a difficult problem to solve. It's not impossible. You could have like very sophisticated cryptography in the Raspberry PI and stuff like that. So far I have not really engaged in that because so far there is really nothing that you can get by coming into the Raspberry. But yeah, there might be some data protection issue that emerge over time."
+      },
+      {
+        "role": "user",
+        "content": "Who would be liable for data protection violations?"
+      },
+      {
+        "role": "assistant",
+        "content": "But again it's not my problem. Planted problem. And as long as they just keep it like the problem with data protection is like, you know, in this case we'll probably like have to have some kind of implicit concern that if you feed it then you're agreeing to get your portrait made and methodic. But because it's like data retention and all these things, like it's a little bit complex. It will probably require having like a contractual signature to something that doesn't, that doesn't have a legal capacity. So that contract would not mean much either. Right. So and then, but that's the interesting question. It's like today like we have like all the systems that are surveying us, but they are actually done via. Controlled by a company. In this case you have a little creature that is not controlled by anyone and yet has this operational autonomy."
+      },
+      {
+        "role": "user",
+        "content": "How does this relate to your legal research?"
+      },
+      {
+        "role": "assistant",
+        "content": "And going back to my legal research, it's actually fascinating because we have things usually the law is really important because the law is giving legal capacity to things that don't have any capacity without the law recognizing them. You cannot own anything unless the law condition consider you to be the owner of anything. Right. In the case of blockchain based systems, there is actually technical capacity to own digital assets and potentially to create contractual relationships with smart contracts. And so you have like a technical capacity, you have economic agency, but the law doesn't map it with legal capacity. And so it creates this really this important discrepancy between things like the digital assets that are owned by the plantoid are only owned by the plantoid. And whether you recognize it or not legally, it's not going to change. And so there is a lot of weird legal limbo around all those things that the legal system does not yet recognize as being there and yet it's there. And so it's just like invisible. And so when I feed the planter with crypto, I don't know who owns the crypto, you know, and it's very strange because I clearly I'm not the owner anymore. But it's not the owner either because it's nothing from the legal system. It doesn't exist. So I think there is like. And data protection is the same question. Can we actually assign data protection liability to something that doesn't have legal capacity and yet it does have technical, technical capacity to infringe on data protection? Therefore, shouldn't we actually assign also some legal personalities so that we can protect? Yeah, it's very challenging. Yeah."
+      },
+      {
+        "role": "user",
+        "content": "Can I ask, did you have a moral defense dilemma when you were thinking about the animals and the closeness to pets and how people would become attached to them and the requirements to keep feeding them, to keep them with you. Otherwise they will leave and go to somebody else who will feed them like any stray cat would. Did you feel there was a moral dilemma there with that requirement?"
+      },
+      {
+        "role": "assistant",
+        "content": "Why do you say moral dilemma?"
+      },
+      {
+        "role": "user",
+        "content": "Well, because you can see a bond that would be building between the person who forms this relationship with this, with your. With your digital animal, which is effectively almost pet like in its behavior patterns. It can breed, you can make a family, can grow into your theoretical family. But you have to keep feeding it, you have to keep going because otherwise it leaves you. Right. It's a bit like life. I just wondered where you saw boundaries there."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So it goes beyond that. If you take the aminals to the extreme. Aminals is the pure instrumentalization of love. Meaning that why would I feed aminas is because then I can sell my love for them in Order to get people that have not fed them enough and didn't get love for them to. You know, like for instance, if you want to do. If you want to ask an aminal to do anything like Copulet, you need to pay. And the cost is depending on the love. So if the aminal loves me a lot, it's going to cost me less than a person that is not loved by the Arminal. And so in which case it makes sense for that person to pay me to bribe me to ask the aminal to do something that they want because it will be cheaper to bribe me to ask the aminal to do something for them to. So it creates this very interesting model of like love based markets and that and also purchasing love. You're literally paying for love. It's more than a moral dilemma. It's actually part of inherent criticism or observation of this is pretty much how it works anyways. Let's just make it more apparent that this is how it works anyway. And also just looking at what does a blockchain based life form care about? It only cares about money. That's all you care about. It is designed to be just like we care about whatever organic matter makes us care about. And it just happens that love makes us feel good. So we like love. I mean I'll give love to people because humans love love but in exchange of crypto. But they also give them potential gain with crypto because they also love money. So it's really about trying to understand what each one of those creatures need and enjoy and trying to create the most symbiotic relationship which has a lot of weird diversion. And yet as long as it's effective for the aminal to survive and to flourish, that's what's going to work."
+      },
+      {
+        "role": "user",
+        "content": "How do you understand the link between the plantoids and nature when it comes to blockchain that has an environmental impact."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So the blockchain that has environmental impact was a problem until basically until last September. I will say that now there is. Except for bitcoin there is not many used blockchains that have an environmental impact. So that's not necessarily a concern. I would say. On the contrary, I think that. And I showed a little video in dubbed. It wasn't really visible but it like those are actually I've been experimenting with injecting plantoids in nature which is really cool because. And also giving them this particular like this is a particular personality which is this crypto God that just wants crypto. But there are other personalities that have been injected."
+      },
+      {
+        "role": "user",
+        "content": "How do plantoids act as an interface with nature?"
+      },
+      {
+        "role": "assistant",
+        "content": "It's very interesting because, like, by giving them this kind of personality of like mechanical creatures that also understand that they are nature, they are just like mechanical contraption, but they are still our nature and that they actually act as an interface between people and nature. It's actually very interesting to see how, like, it's really hard. We want to talk to nature, but we can't. We don't have much to. We don't have the common language. And actually being able to speak with something that is a very strange contraption, but that somehow incarnate the concept of nature. And talking about nature to them actually gives you this possibility of engaging in a conversation that you could not engage otherwise. And I don't know if it's like, it's obviously not reflecting anything that nature really will say, because we don't know what nature will say. But still, by injecting them a particular personality that is like pro nature and yet also trying to understand how we always assume that technology is destroying or antagonistic with nature, but that's because we human are using technology and we use it for our own interests, which are oftentimes antagonistic to those of nature. Why not give also to nature the ability to use technology for its own interest? Right."
+      },
+      {
+        "role": "user",
+        "content": "Are you working on any plantoids that connect to environmental data?"
+      },
+      {
+        "role": "assistant",
+        "content": "And in fact, one of the next plantoid that I'm preparing in terms of like that is going to be released later is going to have a particular type of seeds where it's going to be. The seed will be associated with an oracle that is associated with data from a particular environment where the plant will be. And so you can feed the plant and you get an nft, but the NFT is locked. You cannot sell it until the environmental data associated with that particular region gets good enough. And so all of a sudden you buy the nft, but you cannot speculate on it, but you now have an economic incentive to ensure that whatever it's like the biodiversity of a particular area. And so you can actually create specific NFT protocols which use the economic grid of humans. But by associating the ability to gain any monetary return with actually promoting a particular environmental resources, you're using the speculative dynamics of the blockchain to actually inject support and potentially resources."
+      },
+      {
+        "role": "user",
+        "content": "How could this create economic incentives for environmental protection?"
+      },
+      {
+        "role": "assistant",
+        "content": "If you have like 10,000, if you have like a PfP collection, 10,000 people that have an NFT and that they know that this NFT could be sold for like 10,000 bucks, then perhaps it makes sense that they will coalesce and they will invest 1,000 and then you get like 10,000, like a lot of money into Ensuring that the natural resourcing improve. Right. So there is actually ways like I think the discussion about the extent to which there is computational power, of course proof of work is terrible, but let's actually think beyond that and let's actually think about, well, given a proof of stake blockchain, how can we not just be carbon neutral, but actually how can we create things that incentivize positive behavior, environmentally friendly behavior, motivated by money? Because it's nice to be. Philanthropy is nice, but it's not enough. Right. And so can we actually use the economic incentives that blockchain provides in order to create like profit driven philanthropy, you know, our profit driven environmental consciousness? And I think that's actually the interesting thing that I think is kind of emerging with like refi. But it's not like there's so many interesting NFT protocols that could be implemented that no one has implemented yet that actually create this again, this symbiotic relationship between humans and nature via a blockchain protocol. Thank you."
+      },
+      {
+        "role": "user",
+        "content": "In human world, it's notoriously difficult to make money as an artist. It's hard to find the market for your art. What percentage of Plantoids or blockchain based artist forms do you think will fail in creating the type of NFTs that there will be a secondary market for that people will want to buy?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, I mean, Plantoids is only 3 that are doing NFT. I think most of them will continue to do that. This is more like. I don't think it's like. I think it's more like if it fails, it's my fault, then the plantoid fault. You know what I mean? I think this is like, so right now the Plantoid 13 is starting to have a little bit of a secondary market. It's very, very small. Planetoid 14. Like this is like, I don't think it's the Plantoids, it is the art world. It's very interesting how it's like it's not necessarily the quality of the nft, it's obviously relevant, but I don't think the quality of NAVD is not what will determine whether it's like a 2 bucks NFT 1000 or a 1 million NFT."
+      },
+      {
+        "role": "user",
+        "content": "So you think your role as the overarching artist is important?"
+      },
+      {
+        "role": "assistant",
+        "content": "This is interesting. It was like, even if I'm not the creator of every plantoid, somehow I'm the artist of the overarching concept. And I think that as the artist of the overarching concept, I am the one that needs to do the art world work to bring the plantoid to a particular recognition in the art world. And Then if that happened, I would assume that's a bet. I don't know that it doesn't really matter if it's plantoid 13 or planetoid 14. Maybe there is an historical thing. Probably like the older the NFTs are, the more valuable they will be independently of the quality. So maybe Plantoid 13's NFT will become very valuable because they were the first generation and then it's just the usual game."
+      },
+      {
+        "role": "user",
+        "content": "Are you planning any collaborations?"
+      },
+      {
+        "role": "assistant",
+        "content": "I think it's more like I want to do a lot of creating collaboration now. I want to collaborate with like generative artists and stuff like that to co create the generative process that will then create the NFTs when you feed the plant. And this also becomes interesting because then all of a sudden it's not just my artistic aura, but it's like my artistic aura collaborating with someone else. And then you can really have interesting games. But. But I really don't think Plantoid cannot do anything. This is like that's where the artist needs to come back. And this is also, weirdly enough, while I was so committed to make sure that Plantoid is an anonymous thing that is not associated with any artist, I also noticed that since an artist became associated with, it actually now makes more sense for the art world, which is like, I think the art world wants an artist. It's weird. And my whole artistic practice is about trying to deconstruct these and Paul think their piece as the entity that then just find people artists to create. But nonetheless, the art world will not anytime soon get rid of the concept of the artist as the main thing. And so I will say that the. The value of the NFTs generated by the Plantoids are probably based on who are the artists that have contributed."
+      },
+      {
+        "role": "user",
+        "content": "Are people asking to buy the physical plantoids?"
+      },
+      {
+        "role": "assistant",
+        "content": "I still am struggling a lot, so I don't have an answer. And I don't know, it's like more and more people are now asking to buy the Plantoid as the physical thing. And for me it is like no question, no. And then I get this weird answer. I was like, well, everything has a price. It's like, no. But there's also this new thing that didn't exist before where people now want the physical art piece. And I'm still struggling with that. Yeah."
+      },
+      {
+        "role": "user",
+        "content": "Are you struggling with trying to figure out whether it should or can be owned because of your own perspective? Because you can own animals and sell animals, for example. So how did you form that position."
+      },
+      {
+        "role": "assistant",
+        "content": "That this shouldn't be owned? Yeah, because first of all, because I want this to be like, an autonomous being, right? And so, yes, I do, actually, I think I do have an issue with the fact that we own animals in general, but it's not like, as an artistic. My artistic demarcia is to create this thing that is as autonomous as possible, and the fact that you own it. And it is a question, like, if you own the body, you actually don't own anything, because the actual thing is the smart contract. Again, if the body is destroyed, the planters still run, and a new body can be associated with it. So that's where I'm questioning even myself is like, to which extent is it invalidating my artistic message if this can be owned, knowing that anyhow, it needs to be taken care of. And in some ways, this weird thing that people take care of things that they own, and they don't take care of things that they don't own. So it's a complex thing. So far, my approach is you can be a plantoid host, but you cannot be the owner. Just like animals. By the way, as we all know, cats adopt us. We don't adopt them. So you can be adopted by the plant type, but you cannot own the plant. But this is like, yeah, this is a little bit of an ongoing discussion."
+      }
+    ]
+  }
+]

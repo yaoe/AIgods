@@ -1,0 +1,374 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "What will you be discussing today about the Internet and its evolution?"
+      },
+      {
+        "role": "assistant",
+        "content": "Today, I'm going to speak about the Internet, obviously, but I will look at how this network has actually evolved over the years, and I will look in particular at the different forces and power dynamics that actually contributed to shaping the architecture of this global communication network. And I will focus in particular on specific region of this network, mostly those regions which are populated by those disruptive technologies which are constantly trying to push towards more and more decentralization."
+      },
+      {
+        "role": "user",
+        "content": "Who is this influential economist you're starting with?"
+      },
+      {
+        "role": "assistant",
+        "content": "let's start from the beginning. Some of you might recognize this person as the man who first understood how capitalism really works. And for those without an economic background, this is Joseph Schumpeter, one of the most influential economists of the 20th century, who saw capitalism as a source of innovation and as a fundamental trigger for social and economic development."
+      },
+      {
+        "role": "user",
+        "content": "What was Schumpeter's key contribution?"
+      },
+      {
+        "role": "assistant",
+        "content": "perhaps one of the greatest contributions of Schumpeter is the notion of creative destructions, which it defines as a process of disruptive innovation that comes to destroy existing economic structures in order to replace them with new ones. And according to his theory, modern societies are subject to those constant and recurring cycles of disruptive innovation, which are characterized by an initial period of economic expansion, followed by a period of recession or crisis that will eventually lead to a new phase and a new wave of innovation."
+      },
+      {
+        "role": "user",
+        "content": "How have we seen these cycles play out historically?"
+      },
+      {
+        "role": "assistant",
+        "content": "those dynamics actually constantly repeat themselves every time a new innovation comes to disrupt the status quo. And so we have seen this with the invention of the steam engine, the printing press, the advent of electricity, and then more recently, with the deployment of those modern communication networks, such as the radio, the television, and, of course, the Internet network. And every one of those innovations has actually contributed to significant economic growth and has enabled the flourishing of many new industries, which often have happened at the expenses of a few established players that simply did not manage to adjust to the rapid changes of society."
+      },
+      {
+        "role": "user",
+        "content": "Where is this process of creative destruction leading us?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now, the question is, of course, where is this process of disrupting innovation or creating destruction actually leading us to? Are those new technological developments actually helping us evolve and create a better society, or are we just replicating the same old models within a new technological framework?"
+      },
+      {
+        "role": "user",
+        "content": "What's your perspective on this question?"
+      },
+      {
+        "role": "assistant",
+        "content": "I do not have the answer to this question, of course, but I do have some hypotheses, especially when it comes in the realm of digital technologies. So I'm a researcher at the CNRS in Paris and at Harvard University, which is, by the way, where Schumpeter has been teaching most of his life. And it's been many years now that I am investigating the legal challenges and opportunities of distributed online architectures."
+      },
+      {
+        "role": "user",
+        "content": "What pattern have you observed over the years?"
+      },
+      {
+        "role": "assistant",
+        "content": "over all those years, there is this one thing that I keep seeing over and over again. And it is this constant struggle or cycle between new disruptive technologies being developed with the promises of creating new systems capable of promoting individual freedoms and autonomy. And then, as they become more mainstream, those technologies being co opted by established players in order to further their own interest, and eventually replicating the very same social, economic, and political order from the past."
+      },
+      {
+        "role": "user",
+        "content": "How was the Internet originally conceived?"
+      },
+      {
+        "role": "assistant",
+        "content": "let's look at how those dynamics actually played out in shaping the infrastructure of the Internet network. The Internet was initially conceived as a military experiment, intended to create a network that could withstand a nuclear attack."
+      },
+      {
+        "role": "user",
+        "content": "What were the key design principles?"
+      },
+      {
+        "role": "assistant",
+        "content": "because of these objectives, then, the Internet network was designed with two important design principles in mind. The first one is decentralization at the level of the infrastructure, meaning that there is no single operator in charge of setting up or managing the network, but rather, the network emerges organically through the connectivity of multiple nodes interacting with each other. And this is important because it means that it is extremely difficult to shut down this network because there is no single point of failure."
+      },
+      {
+        "role": "user",
+        "content": "What's the second principle?"
+      },
+      {
+        "role": "assistant",
+        "content": "The other principle is the end to end principle, which happen at the application level. And this means that the intelligence should be spread at the edges of the network, whereas the center should actually remain as simple and stupid as possible. And this means that all the protocols that make up the Internet should only be responsible for passing traffic around, leaving it to the endpoints to decide how to process this traffic."
+      },
+      {
+        "role": "user",
+        "content": "What made the Internet resistant to more than just nuclear attacks?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now, of course, what makes the Internet resilient against a nuclear attack also makes it resilient against regulation and control. And so the early Internet pioneers actually saw this network as a powerful tool to promote individual freedom and autonomy, as well as a means to bypass the control of states and corporations. And some people even went as far as saying that the cyberspace was an independent space that simply could not be regulated, and that governments simply did not have the right nor the authority to actually exert their sovereignty over it."
+      },
+      {
+        "role": "user",
+        "content": "Did these promises materialize?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now, of course, as we all know, many of those promises did not actually materialize in the same way as many of us would have hoped for. Because as soon as the commercial opportunities of the Internet began to be understood by new and established market players, then market dynamics kicked in. And then somehow the architecture of the Internet slowly started to change, evolving into a more and more concentrated system, which is controlled by a few incumbents."
+      },
+      {
+        "role": "user",
+        "content": "How has the Internet's architecture changed?"
+      },
+      {
+        "role": "assistant",
+        "content": "we are progressively moving away from the original design of the Internet, whose basic infrastructure was designed and managed by a distributed network of peers spontaneously cooperating and working together to ensure the proper operation of this network. And we are now moving towards a new model of connectivity, one that actually relies on centralized operators, which are providing a service to a much more passive set of consumers."
+      },
+      {
+        "role": "user",
+        "content": "What are the consequences of this centralization?"
+      },
+      {
+        "role": "assistant",
+        "content": "under this model, instead of intelligence being pushed at the edge of the network, it is actually concentrated at the center, with the power in the hand of a few centralized operators, which ultimately dictate what people can or cannot do on those platforms. And so the problem with this model is that it reintroduces a single point of failure, because if one of the centralized operators actually shuts down, then the whole services become unavailable."
+      },
+      {
+        "role": "user",
+        "content": "Does centralization have any advantages?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now, the flip side of that is of course, that centralization also increases the regulability of the Internet, making it possible for governments to regulate centralized intermediaries in order to indirectly regulate the users interacting on those platforms. And perhaps most importantly, the centralized intermediaries also constitute a very valuable tool for governments to actually collect data about citizens."
+      },
+      {
+        "role": "user",
+        "content": "How does modern surveillance compare to Orwell's vision?"
+      },
+      {
+        "role": "assistant",
+        "content": "if we think about the Snowden Revolution, the UK Surveillance act, and the new French Intelligence Bill, then it might seem that the Big Brother as envisioned by George Orwell back in 1984 might actually have turned into reality. But reality is actually quite different, because the mechanism of surveillance and vision by George Orwell were clearly visible and massively intrusive, Whereas modern surveillance by governmental agencies is almost invisible. And yet it is so much more intrusive."
+      },
+      {
+        "role": "user",
+        "content": "What about corporate surveillance?"
+      },
+      {
+        "role": "assistant",
+        "content": "even corporations are surveying us, even though they don't need to, because we're already giving them all the data they need. And as more and more of this data gets concentrated into those large data centers which are controlled by a few centralized operators, then we are now being simultaneously controlled and surveyed by both governmental agencies and corporations."
+      },
+      {
+        "role": "user",
+        "content": "What has the Internet become?"
+      },
+      {
+        "role": "assistant",
+        "content": "the Internet, which was originally seen as this powerful tool to promote democratic values and individual freedoms, has eventually been turned into a powerful tool for mass surveillance and control."
+      },
+      {
+        "role": "user",
+        "content": "Is this pattern unique to the Internet?"
+      },
+      {
+        "role": "assistant",
+        "content": "if we look carefully, we can see that those dynamics are actually coming up over and over again through the whole history of the Internet. The innovation that has been enabled by disruptive technologies often comes with many new promises and dreams for a new world. But then soon enough, as soon as those technologies get tamed by the established system, then they somehow flips around and eventually become a tool to reinforce the existing status quo."
+      },
+      {
+        "role": "user",
+        "content": "How did open source collaboration inspire new business models?"
+      },
+      {
+        "role": "assistant",
+        "content": "think about Wikipedia and all those open source software programs which have emerged over the Internet, relying on the contribution of multiple people collaborating towards a common goal. Those new practices have shown us that open and decentralized collaboration makes it possible to achieve things that will be extremely difficult to achieve internally within a single company or organization. And the success of this model has inspired many economic players to experiment with new business models that rely on the power of the crowd in order to produce value."
+      },
+      {
+        "role": "user",
+        "content": "Which platforms use this model?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is the model used by many of the Internet giants, such as Google, YouTube, Facebook or Twitter, as well as by those new crowdsourcing platforms such as Uber or Airbnb."
+      },
+      {
+        "role": "user",
+        "content": "What industries have been disrupted?"
+      },
+      {
+        "role": "assistant",
+        "content": "the success of those platforms is progressively leading to the extinction of many historical intermediaries, starting with ebay, which has replaced traditional auction houses. Amazon, which has brought many libraries into bankruptcy. Apple or itunes, which now holds the monopoly over the sale of digital music. And then more recently, Uber, which is disrupting the taxi industry. Airbnb, which is disrupting the hospitality business. And then Kickstarter, which is trying to crowdsource venture capital."
+      },
+      {
+        "role": "user",
+        "content": "What promises did these platforms bring?"
+      },
+      {
+        "role": "assistant",
+        "content": "all of those platforms have contributed to radically changing the architecture of the Internet landscape. And as the derivative of a so called collaborative or sharing economy, many of those platforms came with many new promises of decentralization and distributed collaboration. And yet today, we are actually quite far from seeing a change, a radical change in the economic or social structures of society."
+      },
+      {
+        "role": "user",
+        "content": "What's the problem with these platforms?"
+      },
+      {
+        "role": "assistant",
+        "content": "the problem is that in many cases, the value produced by the crowd is not equally redistributed between the platform and the actual contributors, and it is instead concentrated into the hands of those few centralized operators, which eventually dictates the rule of the platform. And so what is happening today is actually that former incumbents are being replaced by new incumbents, which essentially are becoming part of the very same system that they were originally meant to disrupt."
+      },
+      {
+        "role": "user",
+        "content": "What's the next disruption?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, we're going to create our own currency. Back in 1999, Neal Stephenson first envisioned the creation of a decentralized, anonymous cryptocurrency. And exactly 10 years later, Bitcoin came out. The first decentralized cryptocurrency that can be traded on a peer to peer network without the need for any banks or other financial institutions."
+      },
+      {
+        "role": "user",
+        "content": "How does Bitcoin work?"
+      },
+      {
+        "role": "assistant",
+        "content": "Bitcoin was first deployed in 2009 by a pseudonymous entity called Satoshi Nakamoto, as opposed to traditional fiat currencies like the euro or the kronach, which are issued by central banks and controlled by a state. The issuance of bitcoin is defined by a computer protocol which precisely stipulates the total amount of bitcoins that will ever be created, 21 million. And the speed at which those bitcoins will be generated. Today, it is 12.5 bitcoins every 10 minutes, more or less."
+      },
+      {
+        "role": "user",
+        "content": "How is Bitcoin like gold?"
+      },
+      {
+        "role": "assistant",
+        "content": "bitcoin somehow replicates or simulates the characteristic of gold. Gold cannot be created out of nothing. It must be extracted from the ground. And as time passes and the reserve of gold gets depleted, then the harder it becomes to find new gold. In the same way, Bitcoins cannot be created out of nothing. New Bitcoins are generated every time a computer identifies a solution to a mathematical problem whose difficulty increases with the network size. This means that the more people are providing resources to the network, then the harder it becomes to generate new bitcoins."
+      },
+      {
+        "role": "user",
+        "content": "What's this mathematical problem like?"
+      },
+      {
+        "role": "assistant",
+        "content": "this mathematical problem is similar to that of finding the solution to a padlock. So one needs to try every single possibility in order to find the right combination. But once the solution has been found, it is very easy for others to verify that it is correct."
+      },
+      {
+        "role": "user",
+        "content": "How can we trust a digital currency?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now you might wonder, because it is, after all, a digital currency, how can we trust this system? How can we ensure that people are not going to reproduce their bitcoins in the same way as they can reproduce digital content? And so the Bitcoin network operates on top of another technology, the blockchain. And this technology makes it possible to transfer value in a secure and decentralized manner without the need to rely on any trusted authority or intermediary operator."
+      },
+      {
+        "role": "user",
+        "content": "How does the blockchain work?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, instead of assigning to a centralized intermediary the task of verifying transactions, with Bitcoin, the history of all transactions is stored on a common database, the blockchain. And this database is shared among all network participants, who all contribute to the verification and to the validation of those transactions. And because everyone holds a copy of the blockchain, it is virtually impossible to cheat, because if one tries to modify even a single one of those transactions, the fraud will be immediately detected by all network participants."
+      },
+      {
+        "role": "user",
+        "content": "How are transactions secured?"
+      },
+      {
+        "role": "assistant",
+        "content": "once they have been validated, those transactions are stored in a chronological order inside a block of transactions which incorporate a reference to the previous blocks. And this reference is part of the same mathematical problem which I have mentioned before. And this means that the only way to validate transactions on the Bitcoin blockchain is to find the right combination that will enable the system to attach a new block of transaction with the farmer chain of blocks."
+      },
+      {
+        "role": "user",
+        "content": "Why is the blockchain secure?"
+      },
+      {
+        "role": "assistant",
+        "content": "The blockchain is, after all, just this long chain of transactions that reference each other. And the longer is the chain, the higher is the security of the network, because the modification of a single one of those transactions will invalidate the reference to the previous blocks, which will inevitably break the chain."
+      },
+      {
+        "role": "user",
+        "content": "What promises did Bitcoin bring?"
+      },
+      {
+        "role": "assistant",
+        "content": "because the Bitcoin network operates on a peer to peer network independently of any government or central bank, then it presents itself as a disruptive technology, as an innovation that could help us transition towards a more decentralized society, bringing back the same ideals of freedom and autonomy, which are reminiscent of the early Internet days."
+      },
+      {
+        "role": "user",
+        "content": "Have these promises materialized?"
+      },
+      {
+        "role": "assistant",
+        "content": "So far, not really. In fact, today, bitcoin is regarded more as a speculative tool than an actual revolutionary tool. And if we look at the price of bitcoin, we can see that its value has gone from $1,000 to over $8,000 in just a few months."
+      },
+      {
+        "role": "user",
+        "content": "Why has Bitcoin become speculative?"
+      },
+      {
+        "role": "assistant",
+        "content": "the reason is that, by its very nature, bitcoin has reproduced the same market logic, attracting the same market players, and eventually replicating the same speculative dynamics that we encounter every day in the traditional world of finance. And so, once again, the cycle repeats itself. As soon as Bitcoin has gained in popularity, it has eventually fallen into the very same system that it was originally meant to disrupt."
+      },
+      {
+        "role": "user",
+        "content": "What about other cryptocurrencies?"
+      },
+      {
+        "role": "assistant",
+        "content": "But where bitcoin might fail, other cryptocurrencies could succeed. And a new wave of disruption is currently underway using blockchain technologies in order to support the development of new decentralized blockchain based applications that each come with their own cryptocurrency."
+      },
+      {
+        "role": "user",
+        "content": "What's Ethereum?"
+      },
+      {
+        "role": "assistant",
+        "content": "perhaps the most popular of those is Ethereum, a decentralized platform for blockchain based applications that come with its own programming language. And this enabled anyone to actually deploy software on a blockchain so that the code will be executed in a distributed manner without the need for any centralized operator or intermediary authority."
+      },
+      {
+        "role": "user",
+        "content": "How was Ethereum funded?"
+      },
+      {
+        "role": "assistant",
+        "content": "the development of Ethereum was funded through the sale of its own native cryptocurrency, the Ether. And this was done via crowdsale, which collected over $18 million worth of Bitcoin back in 2014. And since then, many projects are raising several hundreds and millions of dollars in the matter of a few days or even a few hours for some of them. And those projects, which generally consist of a preliminary idea or a prototype at best, are essentially funding themselves through the sales of new cryptocurrencies."
+      },
+      {
+        "role": "user",
+        "content": "What's the problem with this model?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now, the problem with this model is, of course, that most of those cryptocurrencies are used essentially for speculative purpose. People are purchasing those cryptocurrencies only because they want to sell them again on the market at a higher price."
+      },
+      {
+        "role": "user",
+        "content": "Does this remind you of historical bubbles?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, you might remember the tulip mania back in the 17th century, an economic bubble which has led to the price of a single tulip bulb to equal that of a real estate in Amsterdam, until eventually the price rapidly crashed back to that of a standard onion. Or you might remember the Great Depression of 1929, where a large number of uneducated investors borrowed money from banks in order to invest into this booming stock market, only to eventually find themselves victim of a rapid market crash that eventually disrupted the world economy. And then again, the dot com bubble in the late 90s, characterized by an exponential growth of investment in Internet related companies whose value was mostly driven by speculation, until eventually the bubble burst."
+      },
+      {
+        "role": "user",
+        "content": "How is today's cryptocurrency bubble different?"
+      },
+      {
+        "role": "assistant",
+        "content": "the same things are happening today in the world of cryptocurrencies, except that those dynamics today are even more exacerbated. People are currently relying on cryptocurrencies such as bitcoin or ether in order to invest into new cryptocurrencies. And this increases the demand and therefore the value of both bitcoin and ether, which makes it possible for people to reinvest their money into many more cryptocurrencies whose value is still quite low. And this obviously increases the demand and therefore the value of those new cryptocurrencies, which is therefore generating even more profits to those investors. And those profits, the investor will use it to invest again into even more cryptocurrencies. And so you've guessed it, the money is just going in circles, generating therefore a new speculative bubble."
+      },
+      {
+        "role": "user",
+        "content": "So history is repeating itself?"
+      },
+      {
+        "role": "assistant",
+        "content": "once again, history repeats itself, with those new disruptive technologies eventually replicating the former traditional model of finance, and essentially reinforcing the existing social, economic and political structure of society."
+      },
+      {
+        "role": "user",
+        "content": "Is there still hope for blockchain technology?"
+      },
+      {
+        "role": "assistant",
+        "content": "of course, all is not lost. We are currently in a period of hype in a speculative bubble, which has led to the price of those cryptocurrencies to be completely disconnected from the real economy. But we should not forget nor ignore the real potential of the underlying technology. The blockchain is a radical innovation which provides us with many new opportunities."
+      },
+      {
+        "role": "user",
+        "content": "What opportunities does blockchain provide?"
+      },
+      {
+        "role": "assistant",
+        "content": "if this technology is today used mostly for the purpose of speculation, the blockchain also enables us to create alternative economies and new business models which are much more open, collaborative and decentralized. And beyond financial applications, blockchain technology also help us increase the transparency and accountability of existing institutions. It provides us with new tools for distributed collaboration and peer to peer coordination. And it enables us to experiment with new organizational structure and distributed governance system, which are much more transparent and less hierarchical than those of existing organizations."
+      },
+      {
+        "role": "user",
+        "content": "What needs to happen for these opportunities to materialize?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now, of course, none of those opportunities will actually materialize on their own. And for those opportunities to actually come into being, it is important that we find ways to counterbalance the efforts of existing industry players, companies or corporations, which are mostly interested in the maximization of their own profit, with more grassroots initiatives from civil society, which is trying to explore how we can use blockchain technologies to promote the social good."
+      },
+      {
+        "role": "user",
+        "content": "What's your call to action?"
+      },
+      {
+        "role": "assistant",
+        "content": "it is actually extremely important that people like us and people like you actually understand the potential of those new technologies and start experimenting with it already today. Because it is only by assuming an active role in the deployment of those new technologies that we might eventually succeed in creating this decentralized society and eventually seeing the Those promises from the early Internet days finally materialize into reality. Thank you."
+      }
+    ]
+  }
+]

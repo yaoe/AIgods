@@ -1,0 +1,190 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "What will you be discussing today about digital technology and coordination?"
+      },
+      {
+        "role": "assistant",
+        "content": "today I want to discuss about how we can use digital technology, perhaps in particular blockchain technology, in order to. To be a catalyst for new modalities of coordination. And the spelling is actually important. So the question is essentially how we use technology or can we leverage technology in order to create a more open, decentralized, pluralistic society which actually incentivize more cooperation rather than competition."
+      },
+      {
+        "role": "user",
+        "content": "How do you see plurality functioning in society?"
+      },
+      {
+        "role": "assistant",
+        "content": "just to begin perhaps with an important observation, which is that when we talk about plurality, plurality can be both a source of competition to the extent that we have a greater number of actors that are trying to acquire a particular set of resources or which are trying to achieve a particular outcome. And so this can generate in some case some kind of zero sum game where there is winners and losers, and therefore people end up competing in order to be the winners."
+      },
+      {
+        "role": "user",
+        "content": "Can plurality also lead to cooperation?"
+      },
+      {
+        "role": "assistant",
+        "content": "of course, plurality can also be a source of cooperation insofar as those multiple actors can also realize that there is a benefit in coordinating themselves and aggregating forces in order to create a system that is stronger than the sum of its parts, and that will then compete as an individual entity into a broader ecosystem."
+      },
+      {
+        "role": "user",
+        "content": "What's the current focus in the Internet and blockchain communities?"
+      },
+      {
+        "role": "assistant",
+        "content": "the thing is that when we look about the way in which the Internet, the cyberspace, and the general ideology that also blockchain community have somehow adopted, there is a strong focus on the question of independence and autonomy and the idea of creating a new system that is exiting from the existing systems in order to fit better the needs and the preference of people. And then if we don't like that new system, it's no problem, because anyone can create yet another system."
+      },
+      {
+        "role": "user",
+        "content": "What's the problem with this exit-based approach?"
+      },
+      {
+        "role": "assistant",
+        "content": "there is this focus on exit based governance, which of course creates a plurality of different systems, each one with their own idiosyncrasy, but at the same time is also potentially creating competition between the system."
+      },
+      {
+        "role": "user",
+        "content": "What's the alternative lens you're proposing?"
+      },
+      {
+        "role": "assistant",
+        "content": "perhaps an alternative lens is to actually think not in terms of independence, but rather in terms of interdependence. And once we adopt this interdependent mindset that then we can no longer focus only and exclusively on the notion of exit, but instead we need to think in a more common based approach, because it becomes fundamental to identify ways to govern and to manage those resources that we are mutually dependent upon."
+      },
+      {
+        "role": "user",
+        "content": "How does this interdependence create new forms of competition and cooperation?"
+      },
+      {
+        "role": "assistant",
+        "content": "all these interconnectedness and this interdependence actually generate new modalities for co petition, where a variety of plural actors decide to cooperate with one another in order to create a system which is stronger and which enable this form of cooperation inside and competition outside. And so what happened is that the people that choose to cooperate with one another eventually compete with those that choose not to cooperate within this broader ecosystem."
+      },
+      {
+        "role": "user",
+        "content": "Can you give an example of this in practice?"
+      },
+      {
+        "role": "assistant",
+        "content": "perhaps Wikipedia is one of the most interesting and perhaps successful example of this, which has shown that once there is sufficient gravitational force around the cooperative model, then it becomes very difficult, if not impossible, to compete with this system. And the most rational thing to do is therefore to start cooperating as well into this cooperative model."
+      },
+      {
+        "role": "user",
+        "content": "What's the paradox with Wikipedia?"
+      },
+      {
+        "role": "assistant",
+        "content": "the problem with Wikipedia is that it works in practice, but not in theory. This is a popular saying amongst Wikipedians. And the reason is that for some reason it managed to escape from the tragedy of the commons, which relates to free riding and to the under provision or the over exploitation of resources, which often affects a variety of common base resources."
+      },
+      {
+        "role": "user",
+        "content": "Why is it difficult to replicate Wikipedia's success?"
+      },
+      {
+        "role": "assistant",
+        "content": "while these models seem to have worked well in practice for Wikipedia, it might be difficult to transpose it and to extrapolate it to many other fields of activities."
+      },
+      {
+        "role": "user",
+        "content": "How could blockchain technology help?"
+      },
+      {
+        "role": "assistant",
+        "content": "that's where blockchain technology could perhaps come to the rescue. By providing this system of incentivization that ensure that there is enough contribution to this common infrastructure and also prevent overexploitation by requiring that people expand tokens in order to access the service. And so we can then create this common base infrastructure that is scalable, that is elastic and that is not subject to free riding."
+      },
+      {
+        "role": "user",
+        "content": "What's the problem with blockchain systems?"
+      },
+      {
+        "role": "assistant",
+        "content": "the problem is that as opposed to Wikipedia, many of those blockchain systems, they work in theory but not in practice. This is actually not such a popular saying, but it is nonetheless worth analyzing in the sense that blockchain technology is indeed as many other technology, it's a double edged sword in the sense that on the one hand it enabled those new modalities for collective actions, which is based on peer to peer collaboration, common based production, and therefore enable those new types of distributed cooperation."
+      },
+      {
+        "role": "user",
+        "content": "What's the other edge of this sword?"
+      },
+      {
+        "role": "assistant",
+        "content": "the same time it also enable different types of collective action which is not based on market driven coordination, on economics and speculation, which essentially exacerbates the competition that we already find in many of our existing market systems."
+      },
+      {
+        "role": "user",
+        "content": "What do we see happening in practice?"
+      },
+      {
+        "role": "assistant",
+        "content": "while of course blockchain has the potential for both, we can see that there is somehow this dominant bias towards creating plurality of system like a variety of new tokens and ICO and NFT collections, which eventually are a source of competition among each other, instead of actually using this plurality as a source of cooperation."
+      },
+      {
+        "role": "user",
+        "content": "How does this manifest in new digital communities?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is even more evident when we look at all the system of the new dreams and promises that blockchain technology and generally digital online community are providing, which is really focused on these opt in participation and exit based governance."
+      },
+      {
+        "role": "user",
+        "content": "Can you explain the network state concept?"
+      },
+      {
+        "role": "assistant",
+        "content": "the most salient example of this, like I cannot talk about this, is the network state, which is a concept that was popularized recently by Balaji with his new book which defines it as highly aligned on young communities with the capacity for collective action, which are crowdfunding territories around the world to gain diplomatic recognition from other states."
+      },
+      {
+        "role": "user",
+        "content": "What's interesting but problematic about network states?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is interesting to the extent that it does clearly enable a whole new variety of plurality by creating those different types of state and nation states that coexist. But because it is focused on this exit based system, it is actually creating competition amongst nation state and network state and among multiple network states. And so again, we can see how in this context plurality is used and leveraged as a source of competition rather than a source of cooperation."
+      },
+      {
+        "role": "user",
+        "content": "What's your alternative proposal?"
+      },
+      {
+        "role": "assistant",
+        "content": "So for lack of a better word, this is like proposition. So this is a work that we're doing with, with some people that are trying to actually provide an alternative narrative for the network state that is based on this more common based approach as opposed to exit based approach."
+      },
+      {
+        "role": "user",
+        "content": "How do you define coordinations?"
+      },
+      {
+        "role": "assistant",
+        "content": "coordinations are voluntary communities of value aligned individuals with a common yet implicit agenda for a shared societal vision, which have a collective identity that is constituted through self sovereignty and self determination, and which exists alongside other nation states, while introducing those new layers of sovereignty to all those domains that are not inherently territorial."
+      },
+      {
+        "role": "user",
+        "content": "How do coordinations differ from network states?"
+      },
+      {
+        "role": "assistant",
+        "content": "again, just like the network state, it has to enable a whole new plurality of system through these additional and overlapping layers of sovereignty. But as opposed to the network state, because it is not based on x is, but rather acknowledge the interdependencies, then it actually encourages or foster cooperation amongst different coordinations and actual nation states in order to enable a more local or global governance."
+      },
+      {
+        "role": "user",
+        "content": "What's the relationship with existing nation states?"
+      },
+      {
+        "role": "assistant",
+        "content": "again, the idea here is of course not to exit from the nation state, but rather to recognize the role of the nation state as landlords which are responsible for public infrastructure, public safety, law enforcement, while acknowledging that there can be a plurality of alternative governance structure which exists on top, layered on top of the nation state, which are responsible for the collective governance and the shared use of common resources that are non territorial in nature."
+      },
+      {
+        "role": "user",
+        "content": "What's the current status of this project?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is of course a huge work in progress. But essentially the idea is that we need to counteract the mimetic land grab of the network state and create alternative narrative, alternative visions that do not necessarily focus on the state as the institution, but rather on the nation as the collective identity, and that do not focus on the exit based governance, but rather on common based governance. And so we're still trying to find what's the right name for it. So please help us."
+      },
+      {
+        "role": "user",
+        "content": "What's your final message about plurality?"
+      },
+      {
+        "role": "assistant",
+        "content": "just to conclude so when we are thinking, especially when we're moving towards a more plurality and pluralistic society, it is important to find ways in which we can constantly acknowledge the existence of interdependencies and foster more system of interoperability amongst those pluralistic systems so that we can actually make sure that plurality is actually used as a source of coordination and cooperation rather than a source of competition. Thank you."
+      }
+    ]
+  }
+]

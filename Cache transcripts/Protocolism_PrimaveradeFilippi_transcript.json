@@ -1,0 +1,270 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Could you introduce yourself and tell us about your background and interests?"
+      },
+      {
+        "role": "assistant",
+        "content": "Actually. I will start with my own introduction, and later on, I will introduce this little creature here. So I'm a legal scholar. I'm working at Harvard and at the. In Paris. I'm also an artist, and I'm also an entrepreneur. But in everything I do, there is always one common quest, which is to understand what are the challenges and opportunities of blockchain technology and artificial intelligence, and in particular, what is the implications of. Of those emergent technology on artistic practices."
+      },
+      {
+        "role": "user",
+        "content": "What specific aspect of these technologies and artistic practices would you like to discuss today?"
+      },
+      {
+        "role": "assistant",
+        "content": "what I would like to talk about today is, in fact, looking at how the evolution of artistic practice are actually mutating the conceptualization of what does it mean to be an artist in the digital era. And the best way to do that, in my view, as a legal scholar, is to actually look at copyright law. And copyright law is essentially based on those three fundamental tenets. First is the author. Second is the creative process, and then finally third is the work that is stemming out of this creative process. And so all of three of those tenets are actually currently being challenged and questioned with the advance of this new artistic practice that are derived from. From the advent of those emerging technologies."
+      },
+      {
+        "role": "user",
+        "content": "Let's start with the first tenet - how is the concept of the author being challenged?"
+      },
+      {
+        "role": "assistant",
+        "content": "let's start with the first one, the author. So the author is generally understood as this person from whom the works originate, which essentially means that the work of authorship is a direct expression of the originality and the creativity of the author. And so when we look at the advent of digital technology, we can see how it has actually. It starts to question this concept of, like, the single author, because it enables this kind of, like, massive collaboration on a global scale where we have, like, hundreds and thousands and millions of people that are collaborating towards a collective digital work, oftentimes in ways that are actually very difficult to distinguish who is contributing what and when. And so the concept of authorship then becomes, to some extent, fragmented between those thousands and millions of users, many of which actually oftentimes contribute in an anonymous or pseudonymous manner. And so it becomes increasingly difficult to really understand who is the author of these collective works."
+      },
+      {
+        "role": "user",
+        "content": "Has this question of authorship and machines been explored before the digital age?"
+      },
+      {
+        "role": "assistant",
+        "content": "even before the digital technology, artists have actually been relying on mechanical artifact in order to create artworks. And so one of the earliest examples of that is perhaps the harmonograph, which is a device that was created in the 19th century, which essentially used this set of pendulum in order to create those beautiful and complex geographical drawings without the need of any human intervention. And this was actually the first time in which artists then started questioning and actually started to perceive technology as a potential danger that perhaps one day will eventually replace them. And with regard to copyright, why this is interesting is because those work are actually not eligible for copyright because they are machine generated, and because they do not require any type of human intervention, then the concept of the author is lacking, because a machine cannot qualify as an author under copyright law. And therefore, as soon as they are born, those works automatically fall within the public domain."
+      },
+      {
+        "role": "user",
+        "content": "How does copyright law distinguish between different types of machine involvement in creating art?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is different in the case of the use of machines that are actually not the only and exclusive producer of the work, but rather machines that are actually used as a tool to assist humans in actually expressing the their creativity and manifest a particular artwork. And so copyright law makes an important distinction between machine generated artworks, which do not qualify for copyright, and machine assisted artworks, which do qualify for copyright. And the copyright holder is the person that is making use of this machine in order to actually manifest a new work into the world. And of course, it is oftentimes quite difficult to assess are we talking about machine generated or machine assisted? Because it is oftentimes a matter of degree, which essentially depends on to which extent is the creativity and the originality of the author transpiring into the final work."
+      },
+      {
+        "role": "user",
+        "content": "What about when living organisms, rather than machines, are involved in creating art?"
+      },
+      {
+        "role": "assistant",
+        "content": "sometimes it is not a machine that is actually generating the work, but it is a living organism, like fungus or like spiders, for instance. And so again, here we must distinguish between the case in which the artist is actually ideating and conceptualizing and orchestrating the production of an actual work, and then leveraging those living organisms in order to actually assist in the finalization and the manifestation of the work. And a different situation in which we actually leveraging those living organisms to be the only and exclusive producer of the work. And so you probably have all heard of this very interesting case of the monkey selfie, which generated a lot of debate and copyright disputes concerning the question of whether an animal, so in this case a monkey, could actually qualify as the author of the selfie that it has made of itself. And the court actually decided against it, claiming that an animal actually cannot qualify as an author. And therefore the work was simply not eligible for copyright production and so the monkey selfie eventually immediately entered into the public domain, just like any other machine generated artwork."
+      },
+      {
+        "role": "user",
+        "content": "How does this distinction become more complex with computer-assisted versus computer-generated art?"
+      },
+      {
+        "role": "assistant",
+        "content": "the distinction actually becomes a little bit more blurry when we enter into the context of computer assisted versus computer generated art. And so if we ask those artists that are working with software like photoshop or like 3D rendering, they will claim that, of course, they are only using those tools as an assistant, as a tool that actually enable them to manifest their creativity and to create things that they have in their mind, and they are just leveraging this tool in order to bring it into being. And therefore, they should obviously be considered as the author of the resulting artwork, and therefore they should be also the copyright holder of this work. And then things get a little bit more complicated when we enter into the realm of generative art, and in particular, AI generative art."
+      },
+      {
+        "role": "user",
+        "content": "What are the copyright implications for generative art and AI art?"
+      },
+      {
+        "role": "assistant",
+        "content": "in the case of generative art, the artist that is actually creating the computer software, the algorithm that will make it possible to create those create the generative artworks, obviously has a copyright claim over the software, but it is actually unclear whether it will be able to claim also some form of authorship and copyright on the resulting work that is actually generated by the software. And ultimately, again, this is a matter of degree, and this will depend on the extent to which the artist has some kind of creative control over what is the outcome of the work. And therefore it is using the generative art algorithm as a tool, or whether the creation of the work is completely delegated to this software. And in which case it will be hard to claim copyright on the resulting work. And then similarly, in the case of generative AI art, so whoever is prompting a generative AI model potentially can have a claim of authorship and copyright over the text of the prompt, assuming that it is sufficiently original to qualify for copyright. But according to the current state of the law, at least, the resulting output that is generated by the model will itself not qualify for copyright protection, and therefore will also be immediately part of the public domain."
+      },
+      {
+        "role": "user",
+        "content": "Moving to the second tenet, how has the creative process itself evolved in contemporary art?"
+      },
+      {
+        "role": "assistant",
+        "content": "with regard to the second tenet of copyright law, we have the creative process, which is essentially understood as the creative endeavor that is undertaken by the author in order to create the work. And so already we can see how the new artistic practices that have evolved over the past decades have questioned the role of the artist within this creative process. And so, starting with interactive art, where the audience is invited to interact with the artworks in order to influence the way in which it will be manifested, moving to fully audience generated art. So, for instance, like the famous Silent Symphony of John Cage, where the Audience was invited to listen to the noises that are generated by the members of the audience itself, while they are actually listening to this silent symphony and then passing through those chance generated art, such as, for instance, the choreographic work of Mars Cunningham, which essentially only prepared a particular set of dance moves as potential moves, and then delegated to chance and randomness the task of combining those different dance moves into an actual choreography that will then be performed by the dancers."
+      },
+      {
+        "role": "user",
+        "content": "Can you explain the concept of Ready-made art and how it challenges traditional notions of creation?"
+      },
+      {
+        "role": "assistant",
+        "content": "we have Ready made art, which is a term coined by Marcel Duchamp, in order to describe the use of ordinary and prefabricated objects, which are diverse from their ordinary context, in order to then be presented as an art piece because of the deconstextualization. And then we have also artists like Ben, that actually brought Ready Made to a whole new level by claiming that art is the process of putting a signature onto an object in in order to then turn automatically this object into a piece of art. And so what is the common ground within these Ready made artists is that they actually rely on third parties to create objects that then the artist will reclaim as part of their own body of works."
+      },
+      {
+        "role": "user",
+        "content": "What is protocol art and how does it differ from Ready-made art?"
+      },
+      {
+        "role": "assistant",
+        "content": "where things get actually interesting is in the case of protocol art, where artists are also relying on third parties to actually produce a work. But as opposed to Ready Made, which actually rely on pre existing and prefabricated objects, in this case, there is actually a need for a person to recognize the existence of a protocol and the desire of actually instantiating this protocol, which is the work of another artist, into a new instance. And this is interesting because this actually question the third tenets of copyright law, which is what constitutes an actual work of authorship."
+      },
+      {
+        "role": "user",
+        "content": "Can you give us some examples of protocol art?"
+      },
+      {
+        "role": "assistant",
+        "content": "one of the most archetypical examples of protocol art is when the artist is not actually producing the final work, but is actually providing a set of instructions that can be used in order to instantiate an indefinite number of works. And so one of the most interesting examples is Sol Levit and its wall drawings. And so Sol Leavit in this case was not necessarily like realizing and instantiating those drawings, but was actually sending instruction. And the actual art piece is the set of instructions. And then inviting the people that wanted to exhibit his work to actually implement the instructions, but because the instruction actually gave enough like they were sufficiently ambiguous to actually allow some discretionary role for the people implementing them, Meaning that every time those instructions were actually implemented, it will give rise to a slightly modified work, because people had to choose where to put the shapes or where to put the lines on their own. Another interesting example is the Ulipo movement, which essentially require the people that want to abide to this movement to abide by very precise instruction and constrained writing technique in order to try and use creativity to escape from those constraints and therefore creating a variety of protocol that many authors can then follow in order to instantiate this protocol in many possible ways."
+      },
+      {
+        "role": "user",
+        "content": "Are there other forms of protocol art beyond instructions?"
+      },
+      {
+        "role": "assistant",
+        "content": "another type of protocol art is not about instruction, but it's actually about primitives. And so here an interesting example is the work of Atoz Bulsao, which created those ceramic tile. And every ceramic has a particular, very distinctive pattern that can be very easily recognized as belonging to the work of Atasmilsau. And similarly, Atoz was not actually telling people how those different tiles had to be combined, but actually let it to the people implementing those artworks to decide which combination to do, and therefore creating an indefinite number of patterns that the author himself did not ever conceive of. And then of course we have generative art. And so again here the creative effort of the artist is not focused towards the creation of the artistic piece, but rather towards the design of the algorithm and the state of instruction that can be fed into a computer. And then it is the computer that will process those instructions in order to generate an indefinite number of works."
+      },
+      {
+        "role": "user",
+        "content": "What about generative AI - how does it fit into this framework?"
+      },
+      {
+        "role": "assistant",
+        "content": "generative AI is actually slightly more contentious or controversial. So some artists that use foundational model like midjourney or stability diffusion would claim that the creative endeavor that is required in order to identify this amazing spot in the latent space in order to produce a particular work should be sufficient to actually justify authorship on the resulting work. And this is a little bit similar to the question of photography, where an artist a photograph that is actually taking a shot of an existing, a pre existing landscape. If there is this really amazing standpoint that has been discovered by the photograph, then there is a claim potentially of saying, well, actually there is a copyright in the photograph independently of whether the photograph has created the landscape. But then other people will claim that actually there should not be such authorship claim on the resulting work, because the artist that is prompting does not actually have the capacity of predicting and foreseeing what the work will be. And so it is more similar to an artist that is actually commissioning a person. And so the commissioning is unless it is like extremely precise and you actually ask to do this. But if it's a general prompt, then the person that is commissioned might claim some kind of copyright, if it's like a work for hire, but will not be able to claim authorship on the resulting work."
+      },
+      {
+        "role": "user",
+        "content": "What about artists who train their own AI models?"
+      },
+      {
+        "role": "assistant",
+        "content": "where it is more interesting is actually when artists are not just prompting a pre existing generative AI model, but rather are training or fine tuning their own model, either based on pre existing content. For instance, like Obvious, which has created a set of models based on public domain works, or actually creating on their own copyright content. And so this is the case, for instance, of Oliplatz, which has trained a model on her voice and has made it available for authors to use the model in order to create songs where the voice sounds precisely like the voice of Ollie. And so this later case is actually the one that is the most interesting because it is when an AI artist is actually turning into an AI protocol artist."
+      },
+      {
+        "role": "user",
+        "content": "Can you tell us about Alia Studio and what it aims to achieve?"
+      },
+      {
+        "role": "assistant",
+        "content": "this bring me to my second hat as an entrepreneur. And so Alia Studio is a platform that I'm developing that is essentially aiming to provide a platform for any type of artist to turn into an AI protocol artist. And so the idea is actually to enable and to make it easy for artists to create generative AI models that reflect the unique and distinctive style of the artist, and then to publicly release those models to the public so that anyone can then use them in order to explore this latent space of creations that have not yet been created by the artist, but nonetheless belong to its artistic universe. And so artists can upload images into the platform and then they can train or fine tune a model that will essentially learn to generate images in the same distinctive style as the artist. And so artists basically can do like, there's a lot of parametrization, they can test the model, they can retrain it, they can add images, they can change parameter, et cetera, until they are actually fully satisfied with the result that the model is providing. And then once they are satisfied, the artist can register the model into the platform's legal tech, which is blockchain, backend. And then these enable people that come on the platform to verify that this model was indeed authentic, and that it has been certified and endorsed by the artist, which is the copyright owner, so that by using this model there is no risk of copyright infringement."
+      },
+      {
+        "role": "user",
+        "content": "How does the platform work once an artist has created their model?"
+      },
+      {
+        "role": "assistant",
+        "content": "once the model has been published on the platform, then artists can choose whether to keep the model private, so only for internal and personal uses, or whether they actually want to release it to the public in order to enable anyone to then expand, explore their latent space of creations and potentially generate new works, which can then be purchased or minted as NFTs. And so if they choose to make it public, then the artist can choose the license under which the model will be released, as well as the terms and condition under which all of the images that will be generated by the model can be purchased or used by either the fans or by potential clients. And so where it's really interesting is also that these enable a new type of engagement with the audience, because it enabled to create this kind of, like, personalized relationship where the audience can actually prompt the generative AI model of the artist in order to discover things that the artist didn't produce, and therefore really come up with this kind of, like, personalized relationship and. And creating personalized and customized artworks that reflect the desires of the audience and therefore changing the way in which the artists actually speak to the audience by inviting the audience to be more of an active prompter for the artist."
+      },
+      {
+        "role": "user",
+        "content": "How can this technology actually benefit artists economically?"
+      },
+      {
+        "role": "assistant",
+        "content": "these type of models can also be a response to one of the big challenges with generative AI today when it comes to the question of impinging upon the livelihood of artists, because they are basically taking away their job. And so, if instead of actually seeing generative AI as the enemy or as a danger for their own livelihood, artists can actually leverage this technology and use it as a potential source of revenue by encouraging people to actually prompt this model and generate new works, and every time those works will be purchased or will be licensed, then this creates the possibility for the artist to collect royalties. And so, instead of having commissioning work, the artist can focus on just creating its own artistic universe and then sending potential clients or commissioners to work with their alias, as opposed to bothering the artist itself."
+      },
+      {
+        "role": "user",
+        "content": "So what exactly does it mean to be a protocol artist? Are we witnessing a new artistic movement?"
+      },
+      {
+        "role": "assistant",
+        "content": "to recap,  what does it mean exactly to be a protocol artist? And are we actually witnessing the emergence of a new artistic movement? So, first of all, the artist still has a very important role to play, except that the artist is no longer concerned, first and foremost, about the creation of an actual artwork, but with the actual creation of this protocol that makes it possible for authors to instantiate the works that are consistent with the protocol. And then when we talk about what actually constitutes the work of authorship, then that thing that actually emanates from the artist is the actual protocol. And therefore, there can be a new conceptualization of the protocol as an art piece. And so, by analogy with, we can say, like, the protocol is the recipe. So as the artist, you create this art piece of a recipe, and then anyone can then instantiate this recipe in many different ways. But this is always transpiring the personality and the creativity and the originality of the protocol artist in every single instance."
+      },
+      {
+        "role": "user",
+        "content": "How does copyright work with protocol art and the resulting instantiations?"
+      },
+      {
+        "role": "assistant",
+        "content": "because protocolism is not like the protocol, always give this kind of, like, artistic discretion to the people Instantiating it, then the resulting artwork itself could qualify for copyright protection. And so in this sense we have this kind of like this dual authorship that exists, that is like multiple layers. So for every work that is instantiating a protocol, the person that has made that work is obviously the author of this piece. But the protocol artist from which the piece has been derived also could have some kind of authorship claim. Perhaps not a copyright claim, but at least an authorship claim, because it is actually the author of the protocol that enabled the instantiation of this work. And so this is interesting because this enabled this kind of asynchronous type of collaboration between the protocol artist and every artist that will instantiate the work. And so as a protocol artist, the fear of reproduction actually disappear and becomes more of incentivizing, because every time the protocol gets instantiated by a third party into a new artwork, then this person is actually helping the protocol artist expand its own body of work by the creation of a new instance."
+      },
+      {
+        "role": "user",
+        "content": "Now, can you introduce us to your guest and explain what a plantoid is?"
+      },
+      {
+        "role": "assistant",
+        "content": "I will now introduce our guest. So, as an artist, I'm also a protocol artist. And so one of my artistic protocol is plantoid, which I've been doing now since 10 years now. And so this is Plantoid 16. So this is the 16th instantiation of the Plantoid protocol. And the goal of the plantoid protocol is to provide a framework to enable people to create blockchain based life forms. So what exactly is a blockchain based lifeform? Well, it's a creature that lives on the blockchain and that feeds of cryptocurrency and which is autonomous in the sense that because it operates on the blockchain, it is not under the control of anyone. It is self sufficient because it can collect the resources necessary for its own sustenance. And like any other life form, it is capable of reproducing itself and is also very important when it comes to protocol art."
+      },
+      {
+        "role": "user",
+        "content": "How does a plantoid work? What are its components?"
+      },
+      {
+        "role": "assistant",
+        "content": "a plantoid is made of two fundamental components. So one is the physical body, the mechanical sculpture, which is always made of chain because it's a blockchain based lifeform. And then there is the spirit or the soul of the plantoid, which exists as a smart contract on the Ethereum blockchain. And those two components interact with one another in order to be bring the plantoid to life and in order to enable its reproduction. So we're going to do a little demonstration so you can see how does it look like to interact with a plantoid. But basically traditional plant relies on the concept of pollinization. So they rely on bees and butterflies to help them reproduce by disseminating their seeds. And similarly, the plantoid is also leveraging third parties, in this case humans, for the process of polinization under the form of capitalization."
+      },
+      {
+        "role": "user",
+        "content": "Can you show us how someone interacts with a plantoid?"
+      },
+      {
+        "role": "assistant",
+        "content": "I'm going to feed the plantoid just so that you get to see how it works. Okay. Okay. So it's going to take a while for the transaction to process that. Essentially, once the plantoid is fed, then it activates itself, and then there is different type of activation. So some plantoids are covered by sensors, and so you can touch them and activate the sensor and create generative music. Some of them are actually taking pictures and making portraits. And this one is actually a poet. So it has little devices here. So you will see when I interact with it. And the idea is that then the person, the pollinator, the human pollinator, interacts with the plantoid and co creates together through this interaction, a particular artwork. And then this artwork then gets minted as an NFT and is given back to the human pollinator. So it is by analogy to the way in which traditional plants operate. So there is this concept of creating a digital seed. The humans come to the plantite and then give the money and. Okay, so now it's going to generate a little poem in a little bit of time, because it's doing like, okay, so here is the poem. He's going to read it to us. So I'm going to give the mic."
+      },
+      {
+        "role": "user",
+        "content": "What happens while the plantoid is processing?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is the poem that was generated now. It's not over now the plant is actually doing a lot of processing. So it's going to take a few minutes because it's now illustrating this poem with generative AI so that we get this like a whole animated video that is the illustration of the poem. So while it is actually doing the work, I will show an example of a previous digital seed that I have collected yesterday. Okay, so that's an example. Good job, plantoid. So it's going to take literally a few minutes, but hopefully by the Q and A, I will be able to show you this seed."
+      },
+      {
+        "role": "user",
+        "content": "Why does the plantoid generate these digital seeds? What's their purpose?"
+      },
+      {
+        "role": "assistant",
+        "content": "why is the plant actually generating a seed? Because the seed is actually instrumental for its reproduction. And so what happens is that now that I have this digital seed, what I'm going to do with it, I could keep it, but actually, as a Homo economicus, I want to make profits. And so I can also sell, disseminate the seed. I can sell it on the secondary market by uploading to, like, NFT trading platforms. And then every time the seed is being sold on the secondary market, the royalties, assuming that the platforms actually recognize it, the royalties are sent back to the plantoid. And so this creates this kind of symbiotic relationship where the plantoid and the human both have an interest for the speculation to be as good as possible, because the humans obviously want to make profits. But the more, the higher the price of the digital seed, the more the plantoid will actually accumulate funds. And then the more the seed is being disseminated and transferred from one person to the other, again, the more funds will actually go to the plantoid. So there is an actual seed dissemination that happens in the digital world."
+      },
+      {
+        "role": "user",
+        "content": "What happens when the plantoid accumulates enough funds?"
+      },
+      {
+        "role": "assistant",
+        "content": "there is a point in which the plantoid will have accumulated enough funds to actually ensure its reproduction. And this is what leads to the second phase of reproduction, which is the mating phase. And this is where the plantoid will start looking for a mate in order to help it reproduce. And so the way it works is that the smart contract on Ethereum is actually a dao. And so it will open a call for proposals. And anyone, artist, designer, whatever, anyone, can submit a proposition about how they envision to create the next version of the plantoid. And then all the people that have collected a digital seed, either by interacting directly with the plantoid or on the secondary market, they can vote on the proposition that they like the most. So it's this kind of like, seedocracy. So one seed, one vote, and at some point there is a proposition that is actually selected as the winner. And this will activate the third phase of reproduction, which is the hiring phase. And this is when the plant will then automatically, via the smart contract, transfer the funds to the author of the selected proposition, which will then be hired by the plantoid in order to create a replica of itself."
+      },
+      {
+        "role": "user",
+        "content": "Can you explain the genealogy and genetic system of plantoids?"
+      },
+      {
+        "role": "assistant",
+        "content": "here you can see the genealogical tree of plantoids. So this is like all the family until plantoid 15, this is the new one. And as you can see, every plantoid is a descendant of another plantoid. And so every plantoid also comes with its own genetic code. So there is, like, genes that needs to be preserved into the descendancy. And so you can see, for instance, Plantoid 3 introduced the feature of like, wings. And so all the descendants of Plantoid 3 also needs to implement wings. Plantoid 13 was the first one to actually implement this new pollinization system through the emission of NFTs. And so again, Plantoid 1415 and 1616 also are now creating NFT as their digital seed to enable the reproduction. And so every artist that creates a new plantoid needs to respect all the previous criteria and can add a new criteria that then will be passed to the descendancy. And so this creates some kind of like, digital Darwinism or like an evolutionary algorithm where the Plantoids that have the most attractive feature will be able to reproduce themselves more because they can collect more money and eventually colonize the planet. Whereas the Plantoids that are not very attractive to the environment, then they will just fade into extinction."
+      },
+      {
+        "role": "user",
+        "content": "Is there any kind of financial incentive structure built into the plantoid system?"
+      },
+      {
+        "role": "assistant",
+        "content": "Another important feature to the Plantoid protocol is the pyramid scheme, because it is a blockchain project, after all, but it's actually a positive type of pyramid scheme, like all of them. But essentially every time the plantoid reproduces itself, it's transferring 10% of its funds to the parent to the plantoid that generated it, and it's also transferring 10% to the artist that created the plantoid. And so this is a positive planning scheme, because this creates an incentive for the artist to create the most amazing, the most attractive, the most beautiful plantoid, because this is actually what will guarantee the reproduction of this plantoid and therefore will ensure a maximum of return on investment. And another positive feature is that I am at the top of the pyramid scheme, and so eventually I might actually get some funds."
+      },
+      {
+        "role": "user",
+        "content": "How does the plantoid protocol challenge traditional copyright mechanisms?"
+      },
+      {
+        "role": "assistant",
+        "content": "the actual real interesting things about the Plantoid Protocol is copyright, because it's actually challenging and questioning the traditional mechanism by which copyright operates, in particular the incentives, because under traditional copyright law, artists actually are incentivized to preclude people from accessing their work and preventing the making of derivative works, because they want to monetize their copyright by actually providing licenses. Whereas in the case of a Plantoid, the artist actually has an incentive to maximize the visibility of the artwork, because this is what will enable the plantoid to collect more funds and also to encourage the creation of derivative work, so many new descendant Plantoids in order to maximize the profits. But the real, real interesting aspect is that it's actually flipping copyright on its head. In the sense that it's usually when we have works that we like, all we can do is actually funding the artist, hoping that the artist will continue to do works that we enjoy. And now, thanks to blockchain technology, for the first time in history, perhaps it is possible to actually fund the art piece itself. And then it is the art piece with its own governance structure that will select and elect who is the next artist that is entitled to actually reinstantiate this protocol into a new plantoid."
+      },
+      {
+        "role": "user",
+        "content": "How does this shift our understanding of reproduction in art?"
+      },
+      {
+        "role": "assistant",
+        "content": "this basically brings us to a shift towards the work of art. In the age of mechanical reproduction. We are not actually talking about reproduction anymore. We are not talking about replicating, duplicating, and creating identical copies, where actually, with protocolism, there is no incentive to prevent reproduction, because reproduction is actually the creation every time of a new work. And so every time the protocol gets instantiated, there is the body of work of the artist that expands. So as a protocol artist, I actually want thousands and millions of Plantoids in the world. But of course, I don't have the time, I don't have the resources. And so I actually want to delegate the task of creating as many Plantoids in the world to the people that will then instantiate my work. And eventote will be the author of the resulting artwork. I will always have some kind of claim of authorship, because every plantoid is actually part of my plantoid protocol."
+      },
+      {
+        "role": "user",
+        "content": "I see the processing has finished. Can you show us the NFT that was created?"
+      },
+      {
+        "role": "assistant",
+        "content": "now you can see that it has finished processing. So, so we are very lucky. So I'm going to reveal the nft. And as we do that, because it always takes a while, we can do some Q and A if there is any questions. So it depends. I have not made them all. I've made lots of them, but not all of them, because it is the whole point. So, yeah, so the physical version is done by the person that has submitted the proposal to the Planter Dao and which has been selected by the various seed holder as being the winning proposition, and therefore will receive the funds from the planter to actually implement a new piece of art. I'm sorry, what? Yeah, yeah, exactly, yeah, yeah. Any other question?"
+      },
+      {
+        "role": "user",
+        "content": "How do you see the relationship between blockchain autonomy and AI autonomy in these creatures?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, so it's a very interesting question, because in my view, so the planted with The AI is actually a recent evolution. When I started thinking about blockchain based life forms, they were, they were not AI enabled, they were just blockchain. And there's an interesting distinction to be made between operational autonomy, which I think blockchain provides, but a plant that is not very smart. I mean, it can create like little, you know, little poems and like art, but it's not very smart. It's not sentient. However, it is really operationally autonomous because everything is done via the blockchain. Whereas AI creatures, like when we talk about synthetic life forms, we have like blockchain based life form, AI based life forms. So AI based life forms are another type of synthetic creature which have more decisional autonomy, but not necessarily operational autonomy. And today, I guess we need to wait still a few months, maybe years before we can actually run an AI model on a blockchain. You know, you have like algorand things like this. And so the moment in which we can, like right now, they are distinct. Say operational autonomy if you choose blockchain, but very hard to have anything intelligent running on a smart contract, or decisional autonomy if you choose AI, but really hard to have operational autonomy with AI. So I think the day in which we managed to run AI model on a blockchain based infrastructure or sufficiently decentralized infrastructure to provide operational autonomy, then I think we can have some very interesting type of life forms which eventually can evolve into something that we want to be happier, afraid of."
+      },
+      {
+        "role": "user",
+        "content": "While we wait for the file to load, can you tell us about the different skills that different plantoids have?"
+      },
+      {
+        "role": "assistant",
+        "content": "I take the benefit that finally it has been processed so I can show you the seeds that we have just generated right now. It's ipfs, so it's very slow. We can take a question in the meantime. So different plantoids have different skills. Yeah. So this plantoid is a poet and it's also an illustrator. Right. Another Plantoid, Plantoid 13 is like DJ Plantoid. So it's actually doing experimental music. So every plantoid has their own artistic skill set. They all specialize into a particular thing. And you can, I mean, the artist is the one that will design. So the design of this seed, of course, like the goal, because humans like profit. And the people will feed the plantoid because they want a cool nft. So the cooler the NFT is, then the more the plant will get money and therefore the more it will be able to reproduce. So again, it's this kind of like fit for the environment. Like what does the world currently like and then the planetoid is evolving to constantly attend to the preference of the external world. So here is the seed chilling dream."
+      }
+    ]
+  }
+]

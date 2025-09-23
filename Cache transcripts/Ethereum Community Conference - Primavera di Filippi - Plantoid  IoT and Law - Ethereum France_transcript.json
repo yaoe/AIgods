@@ -1,0 +1,318 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "What's that creature you have there? It looks interesting."
+      },
+      {
+        "role": "assistant",
+        "content": "Hi. So today I'm going to present this little creature here, which is one of many implementations of blockchain based life form."
+      },
+      {
+        "role": "user",
+        "content": "What exactly is a blockchain-based life form?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, it's. It is an entity that lives on the blockchain and that comes with specific characteristics. So one, it is autonomous in the sense that there is no single entity that can actually control the way it operates. Secondly, it is self sufficient in the sense that it can collect the resources that it needs in order to survive. And third, it is just like any other life form, it is capable of reproducing itself."
+      },
+      {
+        "role": "user",
+        "content": "Is this a practical application or more of an experiment?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is mostly like an artistic experiment. And the idea was to illustrate in the physical world what does it mean to be a dao and how we can actually reproduce and make daos evolve. So this is Plantoids number five, which is the child of plantoid number three, which is itself the child of Plantoid number one, which was the genesis plantoid."
+      },
+      {
+        "role": "user",
+        "content": "How does a plantoid reproduce?"
+      },
+      {
+        "role": "assistant",
+        "content": "So the Plantoid is the Android version of a plant. And as opposed to traditional plants which reproduce through the pollination process, which essentially requires the help of third parties, so whether those are bees or butterflies, that will actually help them in the reproduction process, a plantoid actually relies on the capitalization process. And so they also need the help of third parties in order to reproduce. And in this case, they actually rely on human beings that are willing to donate to them some cryptocurrencies."
+      },
+      {
+        "role": "user",
+        "content": "What are the components that make up a plantoid?"
+      },
+      {
+        "role": "assistant",
+        "content": "the plantoid is essentially made up of two distinct components. So one is the body, which is mecha, mechanical and electronical sculpture, and then the spirit or the soul of the plantoid, which is essentially a smart contract on the Ethereum blockchain. And those two components interact with each other in order to bring the plantoid to life and in order to enable it to reproduce itself."
+      },
+      {
+        "role": "user",
+        "content": "Can you walk me through the reproduction process step by step?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is the way in which the plantoid operates through the reproduction process. So we can go through every step. The first step is the capitalization process. So this is when the plantoid is essentially making itself pretty and begging for money. And then whenever. So every plantoid has its own wallet. And then whenever it gets fed, it just show appreciation. I'm just going to give it a little bit of funds. And then usually it should say thank you. So every planthe has its own little mechanism of saying thank you. So this one is just moving some people, some are making music or just like some light show."
+      },
+      {
+        "role": "user",
+        "content": "How does it technically work when someone donates?"
+      },
+      {
+        "role": "assistant",
+        "content": "the way it works is that they each have their own bitcoin wallet. And then within the brain of the Plantoid, there is little Raspberry PI that is monitoring the balance. And then whenever it sees that the balance has changed, then it does a little dance. And then the interesting part though is that so every plantoid requires a particular amount of cryptocurrencies in order to be able to reproduce itself. And whenever it identifies that it has collected sufficient amount of funds, then it's triggering the smart contract on the Interium blockchain, which then will lead to the second phase of reproduction, which is the mating phase."
+      },
+      {
+        "role": "user",
+        "content": "What happens during the mating phase?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is where the plantoid will actually look for a particular human being which is willing to reproduce it. And the way this works is that it opens this call for bids, and then anyone can submit propositions on the Ethereum SMART contract as to how they envision to produce the next plantoid. And then all the people that funded the plantoid in the first place can then vote on those specific propositions. And the vote is weighted with the amount of funds that they have invested in the first place. And then eventually then the smart contract just processing all this information and identify the actual winner of the coal forbids."
+      },
+      {
+        "role": "user",
+        "content": "What happens after someone wins the bid?"
+      },
+      {
+        "role": "assistant",
+        "content": "this leads to the third phase of reproduction, which is the hiring phase. And this is when the plantoid will transfer the funds that it has collected so far to the selected winner, which is then hired by the plantoid in order to produce a new piece. So this is the current evolution of the Plantoid which. So this is the last one that has been created recently. This plantoid got a big grant and it's going to reproduce itself into a few more plantoids."
+      },
+      {
+        "role": "user",
+        "content": "Is there some kind of evolutionary mechanism built into this?"
+      },
+      {
+        "role": "assistant",
+        "content": "the way it works is that there is an evolutionary algorithm within this. So every plantoid comes with its own DNA or genetic codes. So for instance, Plantoid one was essentially the one criteria was that everything be released under creative common licenses. And then every artist that creates a new Plantoid can needs to respect all the genetic code from the previous one and can add their own specific requirements. So this one, so Plantoid 3, which was issued from Plantoid 1 for instance, was requiring to have wings. And so this one, Plantoid 5 also has wings. And in addition to that it has the new requirement which it needs to have a little rainbow light show whenever it is fed."
+      },
+      {
+        "role": "user",
+        "content": "How does natural selection work among plantoids?"
+      },
+      {
+        "role": "assistant",
+        "content": "the idea is that so the Plantoids that are the most appreciated by the public, either because of the physical aspect or because of the governance structure. So different plantoid will implement different mechanism of government. So currently this is mostly a plutocracy in which people you basically vote with the amount of funds that you have given to the plantoid. But ideally we will create very different system of governance. So now we're going to experiment with the Daostag team to actually create new mechanism to have the holographic consensus system and so forth. And so the plantoids that are the most interesting, either physically or intellectually, will be the one that collect the more money, and therefore will be the one that will be able to reproduce more into those different species or branches of a plantoid."
+      },
+      {
+        "role": "user",
+        "content": "Is there any incentive structure for the artists?"
+      },
+      {
+        "role": "assistant",
+        "content": "there is the pyramid scheme, which is very essential as an incentivization system. So whenever the plantoid reproduces itself, it is sending a little bit of the funds back to its parent, so to the plantoid that actually created it. And a little bit of those funds also go to the artist that actually made it. And so this creates a positive incentive for the artists not just to collect the money and make the plantoid as simply as possible, but to actually try and make the most interesting one and to promote it and to actually encourage the reproduction thereof. Because the more this plantoid will reproduce, then the more the artist will eventually be able to collect funds through the plantoid and through all the descendancy of it."
+      },
+      {
+        "role": "user",
+        "content": "How does this relate to traditional copyright and art funding models?"
+      },
+      {
+        "role": "assistant",
+        "content": "from a more legal and philosophical aspect, one of the interesting aspect of this is that it kind of like reverses the model of copyright law in which today we rely on the exclusivity and on the. On the notion of funding an artist with the hope that these artists will continue to produce art piece that we enjoy, whereas we can now fund the art piece itself. And it is up to the art piece to decide eventually who will be the artist that is entitled to produce the new plantoid."
+      },
+      {
+        "role": "user",
+        "content": "What's next for the plantoid project?"
+      },
+      {
+        "role": "assistant",
+        "content": "a very big news is that the plantoid has actually been endorsed for this year for Burning Man. So it will. Well, we are now Building Very large 6 meter tall plant hearts that will go to the playa. If there is anyone that actually is interested in helping out, that will be with very big pleasure, both in the physical aspect and in the smart contract design. So there will be three different plantites at the playa, and we want to design innovative governance structures for them."
+      },
+      {
+        "role": "user",
+        "content": "Are there any legal concerns now that it's getting bigger?"
+      },
+      {
+        "role": "assistant",
+        "content": "the question then is that since it was just a little art piece, then no one really cared. But now that it's going to Burning man, people are actually starting to ask very different questions than before. And mostly people are wondering whether there might be some kind of legal and contractual requirement that needs to be be made. So the idea with the plant as an art experiment was just to show how we can actually create those daos, whether they are physical or not, and how we don't really need to incorporate any of those things, or we don't really need to deal within the traditional legal framework."
+      },
+      {
+        "role": "user",
+        "content": "What about the contractual relationships when a plantoid hires an artist?"
+      },
+      {
+        "role": "assistant",
+        "content": "the question then is, what happens when this plantoid is actually hiring an individual to produce a new plantoid? Is it really hiring it? And is there a real contractual relationship connected to that, and especially who are the parties of the contract and what is the object of that contract? So the object of the contract obviously is the creation of a new plantoid, the parties. It's kind of complicated because obviously in the existing legal framework, the plantoid cannot really be a party to the contract. And so who is actually the person that is hiring the artist to make the new plantoid? Is it the original authority that actually created the initial plan, so in that case it will be me, or is it the new artist that actually created the next plant down the line?"
+      },
+      {
+        "role": "user",
+        "content": "Would there need to be new contracts for each plantoid?"
+      },
+      {
+        "role": "assistant",
+        "content": "in terms of contractual agreements,  is there a need for actually creating a new contract all the time? Or can we actually design a legal master agreement in which everyone that is actually participating into the creation of all the different plantoids within the genealogy needs to comply with this master agreement? And then whenever they create a new plantoid, they have to create a new master agreement with the changes within the DNA code that are participating to this."
+      },
+      {
+        "role": "user",
+        "content": "What happens if someone doesn't follow the requirements?"
+      },
+      {
+        "role": "assistant",
+        "content": "perhaps most interestingly, because it seems that most of people are now worried about that is like, what happens if there is a breach of contracts? So what happen if the plantoid is hiring someone to create a new version of itself according to specific criteria which are codified within the DNA code? But obviously the smart contract cannot check whether or not the person that will make the descendant of this planet will actually implement the wings. And so what happens if the plantoid is hiring these new artists and the new artist is actually not complying with the requirements of this contract? So is there a breach of contract? And in that case, who is actually entitled to to sue for this breach of contract? So if it was relying on copyright, it will be much easier because basically the copyright holder gets the right to sue. So in this case, it will be me or whoever artist has created the plantoid. But because they are all under a Creative Common License, then it's more difficult to sue anyone just because they copied the design."
+      },
+      {
+        "role": "user",
+        "content": "What about liability if someone gets hurt?"
+      },
+      {
+        "role": "assistant",
+        "content": "the other interesting part, because so this plantoid is a little bit harmless, but as they become bigger and as they start playing with fire, then there is the question of what if someone actually gets hurt with a plantoid, and who will be responsible? So we have the problem of project liability. So will that be the person that actually built the plantoid and that actually made a mistake? Or perhaps is it like the software developer that actually created the smart contract and the smart contract didn't work properly and just bit fire and it was not the right moment and burned someone? Is it the people that actually misused the project and that just should not have been close to this? Or is it then the plant itself and the planet actually be held liable for its own tort?"
+      },
+      {
+        "role": "user",
+        "content": "How do we handle autonomous systems and liability today?"
+      },
+      {
+        "role": "assistant",
+        "content": "the way we deal today, and this is the exact same question that we have in terms of autonomous vehicle and so forth. So when we have those autonomous agents or autonomous device, then how can we actually impute responsibility? So the traditional solution to this is obviously to have generalized insurance and to require that people that are actually deploying those devices in the world then get insured in case that there is an actual tort."
+      },
+      {
+        "role": "user",
+        "content": "Could liability concerns discourage innovation?"
+      },
+      {
+        "role": "assistant",
+        "content": "the new question that are actually emerging into the legal research and academia is then, well, perhaps if I'm actually responsible for every possible tort that devices that I'm building will be causing to the world, then am I actually not be encouraged to actually deploy those systems at all? And so can we actually come up with some form of limited liability in order that the people that as long as the project is certified, and as long as the software is also certified, and that no one is actually doing anything wrong, no one is hacking into the system, it just happens that this device is actually causing a tort, then can we actually have some form of legal liability?"
+      },
+      {
+        "role": "user",
+        "content": "Does this relate to giving legal personhood to autonomous systems?"
+      },
+      {
+        "role": "assistant",
+        "content": "in this case, the question then goes back to the question of legal personhood. So in the same way as we asked the question, can the plaintiff actually be responsible for hiring someone and therefore enter into a contractual relationship? It requires legal capacity. Or can the plaintiff actually sue if someone is not complying with the legal requirement? But as well, can the planetoid be sued itself if it's actually causing a tort? And so there is a lot of thinking going on, especially with AI, but that I think can be quite easily related as well with blockchain based system, which is, can we actually provide this form of legal personhood or legal capacity to those autonomous device so that on the one hand they can actually own assets and properties, and on the other hand they also can take part into contractual agreements so they can hold legal rights and obligations and possibly enter into legal proceedings."
+      },
+      {
+        "role": "user",
+        "content": "What's the difference between traditional property rights and crypto property?"
+      },
+      {
+        "role": "assistant",
+        "content": "obviously the interesting thing with this is that even if we do actually provide this form of legal capacity or legal personhood, and if we can recognize those planet Earths are actually autonomous legal agents. The question is that in the real world we have property rights which are actually defined by the law and therefore can be taken away and are enforced through the law. Whereas when we enter into a blockchain based system, we have this new notion of crypto property in which the planet which actually holds those assets is the sole possible owner, because these properties actually defined and therefore enforced by the blockchain. So even assuming that the plaintiff actually could be sued because the legal system will actually recognize this as a legal personhood, then even if a court will say that indeed some of the funds of the plant has to be paid to the person that has been harmed, then there is actually no way for a legal enforcement to be done on the assets of the plantard. Only if the plant actually incorporates within its own smart contract the ability to actually listen to a court, then will those assets be able to be transferred."
+      },
+      {
+        "role": "user",
+        "content": "That's fascinating! Can people contribute to the plantoid now? And how can we help with the Burning Man project?"
+      },
+      {
+        "role": "assistant",
+        "content": "So that's about it. Everyone is welcome to Feed the Planet if you wish. And if you're interested in helping out for the building of the new plant sites, and if you have any idea about the new governance structures that we can create to them, please come and find us at the Dalstag booth. Thank you. Hi."
+      },
+      {
+        "role": "user",
+        "content": "I kind of missed the conclusion of your last thought. So, so yes, you need somebody that executes the, the kind of the verdict of a court in terms of like sending that transaction and authorized to send a transaction that basically confiscates some, some frozen funds for, for tort compensation. Yeah. I was wondering if, if you think that's a problematic bit at all. I mean, is it not just possible to implement this?"
+      },
+      {
+        "role": "assistant",
+        "content": "It is possible. If you add an Oracle, for instance. You just need to design the smart contract so that it is actually open to accept external intervention. And then in that case it's absolutely possible. I'm not saying it's impossible. I'm just saying that we need to design as we actually are building the system as we want them to interact increasingly with the real world and with the existing legal system. Then the smart contract needs to be designed beforehand in order to be able to interact with that."
+      },
+      {
+        "role": "user",
+        "content": "Yes, I think so. It just seems to be not so different from the real world. Like we kind of implicitly give permission to state authorities to confiscate our. I mean we don't. But even though it's like by virtue of being a citizen, you give permission to the state to confiscate your holdings if you cause harm and the court's verdict is for you to compensate."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I mean, the difference is that in the existing legal system, I am the owner of something because the law recognizes me as the owner of something. Right. Whereas in the blockchain world, I own something because the code is defining me as the owner of this. So I might be the technical owner and not be the legal owner of something. And then the question is, how do we actually bridge the gap?"
+      },
+      {
+        "role": "user",
+        "content": "Just one question. I didn't understand how to know who owns the plantoid, who hold it physically, you know, who can transfer it, bring it at home, for example."
+      },
+      {
+        "role": "assistant",
+        "content": "Who owns the plantoid? Yes, no one owns the plant, but."
+      },
+      {
+        "role": "user",
+        "content": "Yes, but anyway, someone needs to take it with him. It will not stay here on the table."
+      },
+      {
+        "role": "assistant",
+        "content": "It's like a creature, it's like an animal who owns a dog."
+      },
+      {
+        "role": "user",
+        "content": "Okay."
+      },
+      {
+        "role": "assistant",
+        "content": "If you prefer."
+      },
+      {
+        "role": "user",
+        "content": "Yes, but I mean, for example, if someone here wants to take it at home."
+      },
+      {
+        "role": "assistant",
+        "content": "So I mean again, who will decide? I understand your question. Sorry. But I mean, so the philosophical answer is no one owns the planet because the plant is an autonomous blockchain based life form. The reality is that actually this needs to be codified within the governance. So you could design a model by which the people that funded it gets to have a timeshare or that the people that funded it gets to to decide where it's going to be. I mean, you can design pretty much any model. Right now most of the governance, like all the five plantards, have a very, very basic governance structure because I just didn't bother to actually make it more sophisticated. But that's exactly the question is today. And ideally, perhaps the plantod could have very sophisticated mechanism and the plan plant perhaps needs to actually pay rent in order to actually be somewhere because it's also using electricity. You can actually come up with very crazy concepts."
+      },
+      {
+        "role": "user",
+        "content": "So the governance structure is what determines these practical matters?"
+      },
+      {
+        "role": "assistant",
+        "content": "But again, the interesting thing is so far the plantoids have mostly been focused on the physical aspects. So the evolutionary model was mainly like, how do we actually design the next plantoid? Now I think it's getting more and more interesting to actually focus on the governance structure. And you can have like for instance, you could have a plantoid that is more of like a capitalistic plantoid where if I'm investing in the plantoid, I might get a return on investment. And then to actually see over time what are the different governance that are the most appealing to the environment. So how do you design the plant that is the most fit and what are the things that the human beings like? The most. And therefore we'd be willing to. And if this involves that the funder needs to be able to host the plantoid, that might be one thing, but we don't know. The idea is that just leave them evolve and then the evolutionary algorithm will actually tell us which one are the characteristics that are the most appealing to a given environment."
+      },
+      {
+        "role": "user",
+        "content": "Are you saying we should avoid legal structures entirely?"
+      },
+      {
+        "role": "assistant",
+        "content": "Did I understand correctly that you. No, I'm not actually. The whole point of the planet is to illustrate that you can design systems that do not actually need to interact with the laws. So that's my goal as an artistic statement. Now what I find interesting is that since it actually has became more popular, and especially since it's now coming to Burning Man, I have a lot of people trying to convince me for instance, to create a foundation, to kind of create a legal structure around it, because supposedly I might be liable if something happened or because people are afraid that people will not follow the rules and so forth. And so what I'm exploring is not something I'm endorsing, it's something I'm just looking at. What are the various possibilities is how do we actually design this bridge? How do we gap, how do we bridge the gap between the technical operating system of the blockchain and the legal operating system?"
+      },
+      {
+        "role": "user",
+        "content": "Could we give legal personality to autonomous agents like we do with corporations?"
+      },
+      {
+        "role": "assistant",
+        "content": "And one possibility that is mostly raised in the case of AI, which is that there is the same way as we created corporations which have a moral person, legal personality, then can we actually provide a legal personality or legal capacity to autonomous agents? Right. And the question to this is like, it's a very like brainstorming aspect at the moment, but the question is if we want to actually create new economic agents. You know, like the reason we created a corporation is because we want to hear create new economic agents and because individual actually want to protect themselves from liability. So as you create autonomous blockchain based agents and you want to interact with those as economic agents, then if there is no legal incorporation, so if I don't create an actual company or a foundation or something that is associated with that, then you need to come up with more sophisticated mechanisms."
+      },
+      {
+        "role": "user",
+        "content": "How did this work with The DAO?"
+      },
+      {
+        "role": "assistant",
+        "content": "The obvious example was in the case of the DAO that they created the Dao link, which was this company that was bridging so that people that want to interact with the DAO as just a smart contract will interact with a company and then the company Dao link will actually interact with the Dao so that the people from the normal world, they are actually just not immediately interacting with the blockchain because it wouldn't make sense. Whereas if Switzerland has a specific laws in which you can actually interact with a smart contract, then we can use these as this bridge between the two systems."
+      },
+      {
+        "role": "user",
+        "content": "So what are you trying to achieve with the plantoid project?"
+      },
+      {
+        "role": "assistant",
+        "content": "So what I'm trying to do with this is actually explore that. So we have this thing that is blockchain based smart contracts, but it also exists in the physical world, and people from the physical world are also wanting to interact with that. So if I'm hired by the Plantoid, what are my rights as the artist and what are the obligations or the rights of the plant on the other side? And do we actually need to create this foundation or whatever it is in order for people to be able to really interact with that, or can we actually design technical solutions that might achieve the same goal? I don't have the answer to that. It's an exploration. Sorry."
+      },
+      {
+        "role": "user",
+        "content": "I think I understand the philosophy behind the Plantoid being that it's autonomous, therefore nobody owns it. But if you try to apply basic legal concepts to the question of is there really no owner there? Can't it be resolved? Like basically, it's an artist who's being hired to make a piece of art and he's being hired by several persons who don't know each other. They are anonymous to each other. So they pay the artist and the artist creates something. So can it be considered as a common ownership with the owner being anonymous to each other, which is something that wouldn't be unknown in the ordinary landscape? I mean, listed companies, for instance, the owners are the shoulders. They don't know each other and still they do."
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. I mean, one way in which you can interpret this is that the founders of the Plantode are actually emergently creating general partnership. And as a general partnership, they are hiring an artist to actually create this. So that's a possibility. The thing is that there is no defined legal answer to that. There are many ways in which if there is an actual problem, then the court will actually always try and identify who's the closest available person. And that's going to be the person that is either the person that is liable or the person that is responsible or potentially contractually related with the new artist. So the question though is like, if we actually want to design something, then what is the technological structures that we can devise in order for this to be the closest possible to the goal of having this thing being this autonomous being. Hi."
+      },
+      {
+        "role": "user",
+        "content": "So I understand here, I understand the idea that a community selects the next artist and it's even a symbolical thing, because it's not even necessary to discuss exactly how that's going to work. But for example, the governance structure that you have to select the artist, I guess that if that also is up to growing and to changing over time, then I would think that probably the way that it changes is also through the current governance system. So basically the next plantoid, it will be chosen, the artifacts will be chosen by the community. But I guess also the governance structure to select its child is also decided by that current community. Right?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, so every plantoid will be created by a particular team or artist, and then this team will design both the physical design and the governance design, knowing that it will have to abide by the genetic criteria that has been put before. So, for instance, one of the plantoid is at charity, for instance. So it means that half of its fund is actually donating into something which has been codified as part of the DNA of the governance. So all the children of these plantoid will have to implement the same governance structure. But the governance structure is part of the proposal, potentially. So the people that are choosing, they might actually be encouraged to select one proposal rather than the other. But because it's appealing physically, but also because it's appealing from a governance perspective."
+      },
+      {
+        "role": "user",
+        "content": "It also always needs to adapt from the previous governance structure, because it evolves."
+      },
+      {
+        "role": "assistant",
+        "content": "Exactly."
+      },
+      {
+        "role": "user",
+        "content": "Hi, how are you? In the case that the artist can deliver the project, like what happens with the money or with the project itself."
+      },
+      {
+        "role": "assistant",
+        "content": "If the artist does not deliver? Yeah, yes, that's the whole question. It would be like breach of contract. So at the moment there is no solution to that because again, the governance system is super stupid. But ideally, for instance, it will be like milestone based. So the planet will not just give all the money all at once, but will provide a specific amount of money and then wait for some milestones. And then when people approve that the milestone has been achieved, then the next installment will get given. So again, this is something that needs to be built into the smart contract and we need to figure out what's the best way to do that. Thank you. It."
+      }
+    ]
+  }
+]

@@ -1,0 +1,466 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Could you tell us about yourself and your work?"
+      },
+      {
+        "role": "assistant",
+        "content": "I guess I can skip the introduction, but I'm mostly. I'm an artist and a lawyer and most of my artistic practice is about using art as a way of illustrating the topic and the various issue that I address into my research and also using my research as a way to explore new realms to communicate with through the art."
+      },
+      {
+        "role": "user",
+        "content": "What areas do you focus on in your research?"
+      },
+      {
+        "role": "assistant",
+        "content": "I'm mostly looking at digital and digital copyright and blockchain. And so most of my work is surrounding this. And so I've been very involved as well with the Creative Commons, with the Open Knowledge foundation, the peer to peer foundation."
+      },
+      {
+        "role": "user",
+        "content": "What drives your approach to digital copyright?"
+      },
+      {
+        "role": "assistant",
+        "content": "I'm very aligned with the idea of trying to explore ways in which we can kind of promote a more open and sharing economy in the digital world, especially as a way to bypass some of the standard restrictions of copyright law to the extent that there is of course a lot of value in incentivizing creators.\nBut also it is important to make sure that the constraint and the restriction imposed by copyright do not excessively impinge upon the creative process. And."
+      },
+      {
+        "role": "user",
+        "content": "Can you give us a basic explanation of how intellectual property works?"
+      },
+      {
+        "role": "assistant",
+        "content": "just as a little copyright 101. So intellectual property, which is essentially a way to realign the property of the general abstract artwork, the work of authorship, which is by its intrinsic nature something that is both non rival and non scarce because it is essential information, it can be freely reproduced and Everyone can benefit from a particular artwork without necessarily preventing authors from also benefiting from it. So there is no rivalry in consumption."
+      },
+      {
+        "role": "user",
+        "content": "How does this relate to physical mediums?"
+      },
+      {
+        "role": "assistant",
+        "content": "the physical medium where most of the artworks were recorded until the advent of the Internet and the digital world is a physical medium which is both rival and scarce. And so copyright introduced artificial scarcity on the work of art and in some way managed to realign the artworks with the properties of the physical medium. So by creating this kind of artificial scarcity in information goods, we can now trade IP intellectual property in the same way as we're trading physical objects."
+      },
+      {
+        "role": "user",
+        "content": "What happens when we enter the digital world?"
+      },
+      {
+        "role": "assistant",
+        "content": "when we enter into the digital world, then again, now we have again a discrepancy in the sense that we have the artwork which is subject to artificial scarcity, meaning intellectual property. And then we have the digital medium, which is inherently non rival and non scarce. So as we integrate a copyrighted work into a digital file, again there is a discrepancy because the file can be freely reproduced at almost no cost, and there is no rivalry in consumption, but the artwork is because of copyright."
+      },
+      {
+        "role": "user",
+        "content": "How does blockchain technology change this?"
+      },
+      {
+        "role": "assistant",
+        "content": "what's interesting is that now with blockchain technology, there is these newfound possibilities of creating a new type of scarcity in digital goods, which is not artificial scarcity, which is not created because of legal means, but which is actually digital or technical scarcity, which is incorporated via technical means through the use of blockchain technology. So blockchain technology for the have perhaps the first time in history enabled to create some kind of technical scarcity on digital information."
+      },
+      {
+        "role": "user",
+        "content": "Why is this revolutionary for digital artists?"
+      },
+      {
+        "role": "assistant",
+        "content": "Why it is very interesting and revolutionary is that it enable new monetization models for digital artists, which is no longer based on the commercialization of their IP through the licensing of copyright, but which is actually enabling them for the first time in history to sell digital copies of their works, because what they're selling is not the copyright in the work, but is rather the unique and authentic copy of their digital works. Just in the same way as an author can sell a book, and that does not entail at all the transfer of the licensing of the copyright in the book, but just the physical copy of the book. So now we can transpose this into the digital realm."
+      },
+      {
+        "role": "user",
+        "content": "How has this led to the emergence of crypto art?"
+      },
+      {
+        "role": "assistant",
+        "content": "These enable a whole new wave of what we call crypto art which defines itself as this kind of blockchain art. And we need to kind of think, when we're talking about crypto art, like what are we really referring to? And oftentimes when we're talking of crypto artwork, we're really talking of digital paintings, digital artworks, which are using the blockchain as a transaction layer, which are recorded on a blockchain, tokenized as an NFT and then sold on the blockchain."
+      },
+      {
+        "role": "user",
+        "content": "Is that truly blockchain art though?"
+      },
+      {
+        "role": "assistant",
+        "content": "in some way it's almost like saying that if I'm a physical painter, if I create a canvas and I sell my paintings on ebay, that doesn't make me a digital artist, that makes me a physical artist that use the digital medium only for selling my artworks. So in the same way, many of those NFT are not necessarily blockchain artworks, but are just like digital artworks that are being sold using the blockchain as the transaction layer."
+      },
+      {
+        "role": "user",
+        "content": "What would you consider actual blockchain art?"
+      },
+      {
+        "role": "assistant",
+        "content": "I want to present an example of what I consider to be closer to be actual blockchain art, which, where the difference is a blockchain artist is using the blockchain as the medium of expression and not just as a way of selling.\nIf we make an analogy, it will be the same as talking about net art. Net art is actually using the Internet as the medium of expression, as opposed to any artist selling stuff on ebay or on Amazon, on any digital platform."
+      },
+      {
+        "role": "user",
+        "content": "Can you tell us about the Plantoid project?"
+      },
+      {
+        "role": "assistant",
+        "content": "the Plantoid is a project that I started back in 2014, which has had many iterations since then. And the idea is to leverage the potentiality of blockchain technologies, of daos, of smart contracts, in order to create what I call a blockchain based lifeform which instantiates itself in the form of this kind of Android version of a Plantoid."
+      },
+      {
+        "role": "user",
+        "content": "What are the key properties of this blockchain-based lifeform?"
+      },
+      {
+        "role": "assistant",
+        "content": "the properties of our blockchain based lifeform is that it is autonomous in the sense that it does not depend on any single party for its existence. It is self sufficient because it can collect the resources that it needs in order to sustain itself. And then, like any other life form, it is also capable of reproducing itself."
+      },
+      {
+        "role": "user",
+        "content": "How does this compare to actual plants?"
+      },
+      {
+        "role": "assistant",
+        "content": "if we think about plants, a large majority of plants are actually not capable of reproducing themselves on their own. And they rely on the help of third parties, bees or butterflies, in order to help them in the pollination process, meaning that those third parties are actually contributing to to the process of reproduction by taking pollen and spreading it around to other type of plants."
+      },
+      {
+        "role": "user",
+        "content": "How does the Plantoid's reproduction process differ?"
+      },
+      {
+        "role": "assistant",
+        "content": "a plantoid does not rely on the pollinization process, but rather on the capitalization process. And they also rely on third parties. They cannot reproduce themselves on their own, but they require the help of humans, in this case, to collect capital for them and to donate this capital in order to facilitate the reproduction process"
+      },
+      {
+        "role": "user",
+        "content": "What exactly is a Plantoid made of?"
+      },
+      {
+        "role": "assistant",
+        "content": "a plant that is essentially a mechanical sculptures, it's something that exists in the physical world, but it also has a particular soul or a spirit, which is instantiated as a smart contract on the Ethereum blockchain, or on any other type of blockchain. And those two components, the body and the spirit, interact with one another in order to enable the plantoid to reproduce itself."
+      },
+      {
+        "role": "user",
+        "content": "Can you walk us through the reproduction process?"
+      },
+      {
+        "role": "assistant",
+        "content": "the process of reproduction is made of three fundamental phases. The first one is the capitalization phase, which is when the plantoid is collecting cryptocurrencies in order to sustain its reproduction process. And so every plantoid as a wallet as an account, is a smart contract on a blockchain. So, for instance, on Ethereum. And then anyone that actually wants to support the reproduction of the plantoid can send funds to the plantoid, can send funds directly to the smart contract, that is the spirit of the plantoid."
+      },
+      {
+        "role": "user",
+        "content": "What happens when someone sends funds to a Plantoid?"
+      },
+      {
+        "role": "assistant",
+        "content": "the plantoid has a variety of sensors. And so you can interact with the plantoid. And whenever you send money, whenever you send the cryptocurrency, it activates it's kind of like a jukebox, if you like, so you have to insert funds. And then this brings the Plantoids to life."
+      },
+      {
+        "role": "user",
+        "content": "How do people interact with it once it's activated?"
+      },
+      {
+        "role": "assistant",
+        "content": "you can interact with it by interacting with the various sensors, some of which are like a luminosity sensor or vibration sensor, movement sensors, there's a variety of possible sensors. And then the data collected through the sensors is fed into these generative algorithm that creates an art piece out of it. The art piece can be a graphical image, it can be a musical piece.\nAnd depending on what you do with the sensor, the resulting artwork will be slightly different."
+      },
+      {
+        "role": "user",
+        "content": "What happens at the end of the activation period?"
+      },
+      {
+        "role": "assistant",
+        "content": "Then, at the end of the period of activation, then an NFT is created with the art piece that has been generated by those who sent cryptocurrencies to the smart contract. And they now have been awarded an nft, which represents a seed of the plantoid."
+      },
+      {
+        "role": "user",
+        "content": "Is there a relationship between the donation amount and the outcome?"
+      },
+      {
+        "role": "assistant",
+        "content": "the more funds have been donated, the longer is the period of activation. And therefore, ideally, the better is the outcome of the art piece that has been generated."
+      },
+      {
+        "role": "user",
+        "content": "What happens to these NFT seeds?"
+      },
+      {
+        "role": "assistant",
+        "content": "Those seeds now are kind of the seed of a plant. They can travel around, they can be disseminated. And every time they are disseminated, in the case of an nft, it is when they are being sold on the secondary market.\nAnd then every time there is a sale, 10% of the resale price is taken and transferred back to the smart contract of the plantoid and so by the humans, by spreading around the seeds of the plantoid, by selling, those NFTs are contributing to the funding of the plantoid by driving back Capital into the Smart contract."
+      },
+      {
+        "role": "user",
+        "content": "What triggers the next phase of reproduction?"
+      },
+      {
+        "role": "assistant",
+        "content": "once a particular threshold is reached, once the plant has enough funds in order to reproduce itself, then is the time of activating the second phase of reproduction, which is the mating phase."
+      },
+      {
+        "role": "user",
+        "content": "How does the mating phase work?"
+      },
+      {
+        "role": "assistant",
+        "content": "that is where the plantoid is trying to find mate, a human that can help it reproduce itself. And so the way it works is that the achievement of the threshold open up a call for proposition. Basically, people can submit proposals to the smart Contract in the traditional way in which daos operate. So you can submit a proposal with the Ethereum address of the person submitting as the ID and and then a link to the proposal about how they envision to create the next version of the Plantoid."
+      },
+      {
+        "role": "user",
+        "content": "Who gets to vote on these proposals?"
+      },
+      {
+        "role": "assistant",
+        "content": "now all the people that have received an NFT or the people that have acquired it on the secondary market can now vote for the propositions that they like the most. And so it's like one nft, one vote, in order to then select which one will be the winning proposition."
+      },
+      {
+        "role": "user",
+        "content": "What's the final phase?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is what then triggers the third phase of reproduction, which is the hiring phase, and this is where the plantoid will transfer the funds to the new artist that will then be commissioned or hired by the plantoid in order to create a new copy of itself."
+      },
+      {
+        "role": "user",
+        "content": "How are the funds actually transferred to the winning artist?"
+      },
+      {
+        "role": "assistant",
+        "content": "the way it works is of course that the SMART contract is automated, so the funds are holding only and exclusively by the Ethereum Smart contract. But in order for those funds to be delivered to the selected winner, it needs to be approved by the current artists, by the artists of the particular Plantoid, just in order to avoid some kind of like takeovers where people might be diverting funds in a place that is actually not acceptable."
+      },
+      {
+        "role": "user",
+        "content": "So does the artist have control over where the money goes?"
+      },
+      {
+        "role": "assistant",
+        "content": "the artist cannot choose where the money goes. But once the Smart contract has selected a particular beneficiary, the artist is the one that will unlock this transaction. So basically the artist has a veto power, but not a decision making power."
+      },
+      {
+        "role": "user",
+        "content": "Is there a genealogical structure to the Plantoids?"
+      },
+      {
+        "role": "assistant",
+        "content": "Here you can see the genealogical tree of the plantoid species. The important thing to know is also that every plantoid has a particular genetic code, meaning like some requirement that needs to be then implemented by all the descendants of that particular branch of the plantoid."
+      },
+      {
+        "role": "user",
+        "content": "What was the genetic code of the first Plantoid?"
+      },
+      {
+        "role": "assistant",
+        "content": "the plantoid number one, the Genesis Plantoid, the requirement was that every plantoid needs to be made out of chain because it is a blockchain based lifeform, and that it is released under Creative Commons so that anyone can freely remix the Plantoid without asking for authorization."
+      },
+      {
+        "role": "user",
+        "content": "How do subsequent Plantoids build on this?"
+      },
+      {
+        "role": "assistant",
+        "content": "all the subsequent Plantoids, every time an artist is creating a new one, they have to respect all the previous criteria, but they can add also new genes into the genetic code. And so, for instance, if you look at plantoid number three, plantoid number three introduced the wings, meaning that all the subsequent plantoids also have to come with wings. Plantoid number two introduced like some kind of like rainbow type of lightning when it is fed. And so then the next plantoids also have to implement the same function."
+      },
+      {
+        "role": "user",
+        "content": "How does this create evolution in the species?"
+      },
+      {
+        "role": "assistant",
+        "content": "this creates some kind of like specialization or speciation, where people choose to find the plantoids that they like the most. And that's going to enact a reproduction of those genes of those plantoids. And so this creates this kind of digital Darwinism or evolutionary algorithm, where the plantoids that have the traits that are the most appealing will be more likely to reproduce themselves, Whereas those that are actually not very appreciated will simply fade into extinction."
+      },
+      {
+        "role": "user",
+        "content": "You mentioned a pyramid scheme - can you explain that?"
+      },
+      {
+        "role": "assistant",
+        "content": "Another important element is the pyramid scheme, because after all, it is a blockchain project. And so it wouldn't exist without a proper pyramid scheme. And the idea here is that every time the plantoid reproduces itself, it is sending a percentage of the fronds back to the parent plantoid, to the plantoid that actually generated it but also 10% goes to the artist."
+      },
+      {
+        "role": "user",
+        "content": "How does this incentivize artists?"
+      },
+      {
+        "role": "assistant",
+        "content": "this creates some kind of incentive in order to create a plantoid that will be the most beautiful, the most appealing, the most attractive, the most likely to reproduce itself. Because every time it reproducing itself, and.\nEvery time the descendants are reproducing themselves, then the artists that created this plantoid will actually benefit. And so this kind of like change the system from like traditional copyright, in which the artist has an incentive to preclude authors from reproducing or remixing the work whereas here the most remix and the most reproduction, the more profits are made by the artist."
+      },
+      {
+        "role": "user",
+        "content": "How does this flip traditional copyright on its head?"
+      },
+      {
+        "role": "assistant",
+        "content": "another interesting thing that happens is that this kind of like flips copyright on its head, because indeed copyright usually is based on this notion of scarcity and exclusivity, meaning that artists are precluding access to their work because they need to monetize access, monetize reproduction, monetize like every possible interaction that is done with the work. Whereas in this model, artists have the highest incentive to maximize the visibility, the dissemination of the work, because that means that they will have more likely to be funded and then again to maximize the creation of remixes, because that's also what will provide a higher amount of royalties."
+      },
+      {
+        "role": "user",
+        "content": "What's perhaps the most revolutionary aspect of this model?"
+      },
+      {
+        "role": "assistant",
+        "content": "perhaps most importantly, it also enable perhaps for the first time in history to fund not the artwork, not the artist. Meaning that usually in the pre blockchain world, if there is an Artwork that I like I'm gonna fund the artist and I'm gonna hope that the artist will continue to create works that I like. Whereas now I can now fund directly the art piece itself and then it is the art piece with its own fonts that will select or elect who is the artist that is entitled to create a new copy of itself and it doesn't always need to be the same artist."
+      },
+      {
+        "role": "user",
+        "content": "Why is it important that different artists can be involved?"
+      },
+      {
+        "role": "assistant",
+        "content": "In fact, this is more important for the artwork to be more evolving and variegate that many artists are involved into the reproduction of this."
+      },
+      {
+        "role": "user",
+        "content": "How would you define this new artistic movement?"
+      },
+      {
+        "role": "assistant",
+        "content": "just to conclude, this is for me like one very interesting instance of this thing that what I define to be perhaps a new type of artistic movement or artistic community that is around the notion of protocolism, where the artist, the author, is not necessarily the one that always instantiates the protocol, but the artist is the one that actually come up with the protocol and so in the case of the plantoid, the planter project, the artwork is not just the physical instance, but it also the concept of this blockchain based life form that reproduce itself."
+      },
+      {
+        "role": "user",
+        "content": "How does this create a collaborative artwork?"
+      },
+      {
+        "role": "assistant",
+        "content": "every time the planters reproduce, whether I am the artist that is making the new instance or some other artist is making the new instance, somehow every single one of those instances, nonetheless, they represent also my work. And so there is this kind of weird collaborative or collective artwork that is happening in which in some way people that are creating new plantoids are actually also working to instantiate my work."
+      },
+      {
+        "role": "user",
+        "content": "How do you balance recognition for individual artists with the collective nature of the work?"
+      },
+      {
+        "role": "assistant",
+        "content": "the artist needs to be recognized for its craftsmanship and for the creation of the individual plantoids but at the same time, because they are instantiating the protocol which I am the artist for, they are also helping me reproduce my work. And so again, it is no longer about reproduction is no longer a problem, a violation of copyright. It is actually a way to produce new works. Because every new work is different. And whether I have made it or other people have made it, it is just the reproduction and the new instantiation of the general artists. So yeah, these are just examples. And I'm happy to respond to any questions you might have."
+      },
+      {
+        "role": "user",
+        "content": "Thank you. Primavera. Well, first of all, I want to congratulate because I don't think there are many artists, many people who have been able to bridge art software and governance. That's something new, at least for me. And, and also bridging the digital and the physical world. One, one question, very practical question, maybe I didn't pay attention, but your. The artworks that you're talking about, are they just images of artworks or are they Physical objects, can they be a sculpture, a piece of music?"
+      },
+      {
+        "role": "assistant",
+        "content": "So the artworks that are generated by the plantoid, you mean?"
+      },
+      {
+        "role": "user",
+        "content": "Yes."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So basically, whatever a plant can generate and then can be introduced into an nft. So it has to be digital. It doesn't need to be graphical. In fact, most of the Plantoids today are doing musical thing, but it needs to be something that is immaterial, because otherwise you cannot really make it into an nft. So it can be video, it can be audio, it can be just like a static image, but it cannot be a sculpture because that would require a very complicated planto that makes an actual physical item, which is possible. But then the NFT will be much more, will be not necessarily associated with that piece.\nSo there is no guarantee that by selling the nft, you are selling the piece. So inherently, the nft, because it exists, the seed exists on the blockchain. So it has to be a digital representation. Okay."
+      },
+      {
+        "role": "user",
+        "content": "And I understand that you're also trying to. To help the artist with the pyramid scheme. And I also understand why you think it's good that the copyright is no longer the goal. It's almost the obstacle. At the same time, it looks like if you just add a little bit of artificial intelligence to this system, you can get rid of the artist. The artist could be some kind of dolly that generates artworks. Am I right?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So I think there's a very important distinction. To me, maybe I didn't answer the first question correctly. So the Plantoids, those actual things here, those are all physical pieces. Those are all sculptures. Those are like very tangible, very heavy metallic pieces. Okay, so the Plantoid instance is always and exclusively a physical sculpture."
+      },
+      {
+        "role": "user",
+        "content": "What about the NFTs that the Plantoid generates?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now what? The Plantoid generates the seeds. The NFTs are inherently digital. So when you say you can eliminate the artist, you cannot eliminate the artist. That will create the physical plantoid. What you can do. But that's already the case. It's like the. So when I. When I send funds to the Plantoid, the Plantoids activate itself. I can now touch it. I can. I can. I can interact with it. And then as I interact with it, data is being collected. This data is the seeds for algorithm. It can be like a generative art algorithm, whether or not we want to call it AI. Or it can be an actual, like one of those new large model, like Dall E or like whatever musical music, like prompting. So it can also. The data can become seeds for a prompt that we can send to one of those. It can be a poetry. I can use ChatGptree or whatever."
+      },
+      {
+        "role": "user",
+        "content": "So there's a distinction between the Plantoid itself and what it generates?"
+      },
+      {
+        "role": "assistant",
+        "content": "But this is the. So there is on the one hand, the plant as an art piece, and then there is the artwork that is created through the interaction with the plantoid. And that. That second type of artwork is. Is computer generated. It can be AI generated or it can be just like a more simple type of generative algorithm. But the plant itself cannot be done without an artist unless we have like. Unless we have some very sophisticated robot and AI that managed to create new sculptures. Okay, good."
+      },
+      {
+        "role": "user",
+        "content": "Are there any other questions or comments? So. Oh, one second. I see from Therese Userefore you. She says, do you have images of the impact of the evolution of the Plantoids in the form of the NFTs?"
+      },
+      {
+        "role": "assistant",
+        "content": "Do you have image of the impact. I don't understand. What's the impact of the evolution of the Plantoid?"
+      },
+      {
+        "role": "user",
+        "content": "I think you could ask directly, Therese, if you want, since you're on the panel."
+      },
+      {
+        "role": "user",
+        "content": "So the. It's a fascinating, fascinating presentation. And we're looking at actual objects right now. Images of objects. And as. As other artists respond, I mean, are they. Are they vision. As they. As they respond in the blockchain to the individual images in the NFT form? How are they? Are you showing like these sculptural forms? Are you showing the interaction of other artists responding to those forms or in impacting those forms? Because I got the sense from your. That there was some kind of morphing of the forms through the blockchain."
+      },
+      {
+        "role": "assistant",
+        "content": "Sorry, maybe I mis explained. So the blockchain is just like the funding mechanism and the tracking mechanism. There is currently 13 plant oils in the world. The 13 one is currently in the making. So I don't have a picture yet, but basically this is the example of how they evolve."
+      },
+      {
+        "role": "user",
+        "content": "Can you walk us through how they've evolved?"
+      },
+      {
+        "role": "assistant",
+        "content": "So you can see how the plantoid number one, plant number one was actually this one. Let me find the actual picture. Yeah, the plant number one was the one like at the bottom left. So it was a very simple creature. And this is pretty much the one that has reproduced itself the most because it was the first one. And then you can see how different. Different plant come with different traits. Right. So again, Plantoid 2 had this kind of like bulb, like light bulb that will create like rainbows. And. And so Plantoid 4 also introduced that and then planted 3, started having wings. And so all the following one also have wings planted. 5 started introducing this movement. And so like when you feed it, it start like moving the head like this. And so Plantoid 9, which is stemming from it, also has the same type of movement. And then Plantoid 3 also reproduce itself into Plantoid 11, 10, and 12, which all have wings. And then each one of them also have their own criteria. So whenever they will reproduce, they also will have to adopt this particular genetic code."
+      },
+      {
+        "role": "user",
+        "content": "What about the NFTs themselves?"
+      },
+      {
+        "role": "assistant",
+        "content": "So those are the physical art piece that reproduce itself. And then there is the nft. So the nft, I don't have picture because the NFT are pretty much all musical. So it's all the planeto that actually. So the NFT generating plantoid is very recent. And I just started adding the NFT system when there is the NFT hype that came about, because I was like, okay, it's time to upgrade the plantoid. But so right now it's music. So there are like a variety."
+      },
+      {
+        "role": "user",
+        "content": "Can you tell us about the Burning Man Plantoids?"
+      },
+      {
+        "role": "assistant",
+        "content": "So planted 10, 11, and 12, which I have the pictures here. They went to Burning man, like in the desert, a festival. And so at Burning man at the time, there was no Internet because Starlink wasn't there yet. And so there was no connectivity. And so I had to find something different in order to create this kind of interaction."
+      },
+      {
+        "role": "user",
+        "content": "How did they work without internet connectivity?"
+      },
+      {
+        "role": "assistant",
+        "content": "And so they all were like those musical artists which are also illustrating the concept of distributed consensus. And the idea is that you will come next to the splantoids and a lot of sensor, like hundreds of sensors over the three pieces. And as you get closer, or as you touch them, or as the wind blows, it will activate the sensors and it will create or modify the music that was constantly being fed to this generative algorithm. And so people eventually will start jamming and starting to explore how to jam together."
+      },
+      {
+        "role": "user",
+        "content": "What happens when multiple people interact at once?"
+      },
+      {
+        "role": "assistant",
+        "content": "And so at the beginning, it will kind of be like this cacophony, which is like noise. But then after a few minutes, people start understanding the tempo and, like, kind of like coalescing around a particular type of melody. And the cacophony slowly evolved into an actual nicer musical piece. And so the idea was to illustrate as well, like distributed consensus, where there is no centralized chef d' orchestre that is dictating people what to do. But there is this kind of, like. Because we all have a particular communality into what sounds good and what doesn't sound good. People just find from, like this, they find each other."
+      },
+      {
+        "role": "user",
+        "content": "How did this lead to the musical NFTs?"
+      },
+      {
+        "role": "assistant",
+        "content": "So that was the beginning of those musical instruments as musical tools. And then. And so now the NFTs that they generate are also musical pieces that you can play the plantoid by sending funds to it. And then it activates it and it starts making music, which can be just like environmental music. And then you can intervene by touching or affecting the sensors."
+      },
+      {
+        "role": "user",
+        "content": "Okay, so the Plantoids in their physical form and then in their musical compositions, all they're physical and they have physical interactions. And then they become NFTs from the physical interaction."
+      },
+      {
+        "role": "assistant",
+        "content": "They don't become NFTs. The NFTs, the plantoid, never become an NFT. The plantoid generates NFT as part of its seeds. The seed of the plantoid is an nft which then will feed back cryptocurrencies to the plantoid in order to help the plant to reproduce itself."
+      },
+      {
+        "role": "user",
+        "content": "Who made the plantoids that you brought to Burning Man?"
+      },
+      {
+        "role": "assistant",
+        "content": "I mean, we were a team. They are very big. They are like six meter talls. So I mean, I kind of stood up the project, but we were about like seven people working on this project."
+      },
+      {
+        "role": "user",
+        "content": "So how many plantoids there are now in the world?"
+      },
+      {
+        "role": "assistant",
+        "content": "So as I said, There is currently 17 which are finalized, and I'm currently working on the 18."
+      },
+      {
+        "role": "user",
+        "content": "Are there any other questions or comments? Okay. Thank you. And thank you for getting up in the middle of the night, or no worries, to. To speak to us."
+      },
+      {
+        "role": "assistant",
+        "content": "Thank you very much."
+      }
+    ]
+  }
+]

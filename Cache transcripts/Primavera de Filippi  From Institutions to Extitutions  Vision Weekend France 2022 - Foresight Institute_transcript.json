@@ -1,0 +1,238 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Starting again this afternoon's innovation experimentation track with Primavera De Filippi, which is a Foresight Fellow and is a participant in our Intelligence cooperation group. And can you tell us about extitutions? Maybe you want to say a word."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, so extitutions is a new theory that was actually born in the room there a few years ago. Me and some other scholars had this fundamental belief that this is absolutely interesting and to explore all the different ways in which we can actually improve the state of the world. But there is an underlying problem that needs to be tackled in order for all those efforts to succeed, which is actually creating new mechanics of coordination and new mechanism of co-direction in order to somehow move away from the human modalities where the dominant strategy is competition towards a new framework in which dominant strategy would be cooperation. And therefore all the efforts on all this exploration and scientific discovery can be done in a more efficient way."
+      },
+      {
+        "role": "user",
+        "content": "How does extitutional theory differ from institutional theory?"
+      },
+      {
+        "role": "assistant",
+        "content": "extitutional theory is a theory that is trying to contrast with the more traditional notion of institutional theory. And it is based on the premises that we have been constantly taught and indoctrinated with the notion of what is an institution, how do they operate, how do we institutionalize and so forth. And somehow we look at the world constantly from the same standpoint. And everything is see is institutional structures and roles and rules and all those things. So extitutional territory is about creating a different lens, a different way of looking at exactly the same thing which are social dynamics, in order to enable us to choose which lens do we want to wear in order to be able to analyze and describe and also design in different way the, the same social dynamics."
+      },
+      {
+        "role": "user",
+        "content": "What's the power of having this new vocabulary?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, anyway, so the basic kind of theory is that sometimes you just need like a new vocabulary, a new verb. And the fact that you have a theory associated with this new word means that all of a sudden we have the possibility of seeing and thinking and discussing and elaborating new protocols, new mechanisms, because we have this new ontological tool that we can use to understand the world. And the word has got a descriptive function. It enables us to describe things in a different way, but it also has a performative function, because once you start seeing things in a different way, you also start interacting with the things that you're describing in a different way."
+      },
+      {
+        "role": "user",
+        "content": "Can all social groups be defined as extitutions?"
+      },
+      {
+        "role": "assistant",
+        "content": "not all social groups can be defined as an exitutition. But there is a point when there is like some kind of structured social dynamics that are recognizable into those social interaction. So the usual way in which we understand, describe, analyze, and construct social dynamics is through institutional frameworks and therefore the social structure. What we want to provide with extitutional theory is this alternative lens that is looking at the same thing, but instead of looking at the social structure, is looking at the actual social dynamics and interpersonal dynamics."
+      },
+      {
+        "role": "user",
+        "content": "Can you give us a concrete example?"
+      },
+      {
+        "role": "assistant",
+        "content": "for example, the Berkman center, which is the research center where I'm at, it can be analyzed in multiple ways. We can look at it from the institutional lens, which is a research center that belongs to Harvard University. It has an executive director, it has fellows, it has staff, it has all those kind of institutional rules and roles that are associated with it. And that's one way of understanding this center, how we can actually look at it from an institutional lens. And in the extitutional lens, it's no longer about what are the rules, the roles, and what are the institutions that frame it, but it's actually about who are the people and what are the individual identities that make up this center, and what are the interpersonal relationships that exist between those different individuals."
+      },
+      {
+        "role": "user",
+        "content": "What's the fundamental DNA of institutions versus extitutions?"
+      },
+      {
+        "role": "assistant",
+        "content": "So we can better understand the comparison, or the contrast between institution and extitutions. The DNA of an institution is the roles and the rules. And that means that we create a structure with a set of rules and rules, and then we need to find people that can match the role, and we put them in the little box. But those people are pretty much fungible, because you can remove the person and replace it with a new person. And as long as the roles and the rules among those roles stays the same, the institutional structure did not change. It is the overall structure that defines what every individual part has to do given the whole."
+      },
+      {
+        "role": "user",
+        "content": "How does this differ in extitutions?"
+      },
+      {
+        "role": "assistant",
+        "content": "When we move into the extitutional framework, the DNA is individuals, identities and relationships. And so in this case, people are no longer fungible, because if you remove one person, you're changing the individuals and you're changing the relationship. And then the whole also changes. And so, as opposed to the institutional framework, in which it is the whole that defines the parts, in the case of extitutions, it is actually the parts that define the whole. It's the aggregation of all those individuals together with their relationship and interdependencies that actually create the whole, which is the extitution."
+      },
+      {
+        "role": "user",
+        "content": "How do we observe these different layers in practice?"
+      },
+      {
+        "role": "assistant",
+        "content": "On the objective layer, we can see interactions between people: this is just people interacting with people. And then I try to understand, so why are they interacting that way? And then we can extrapolate from the institutional model, and we start understanding where they relate to each other, because this one is the boss of this one, this one is the colleague of that. And then there are the rules that explain those type of interaction. And if you want to change those interactions, you can change the institutional structure and it's going to have a influence on the way in which people interact."
+      },
+      {
+        "role": "user",
+        "content": "What about the extitutional perspective?"
+      },
+      {
+        "role": "assistant",
+        "content": "Or we can also look at it from an extitutional perspective, which is not about the roles and the rules, not about the social dynamics behind. It's actually about why do people like each other, people hate each other, what is that individual and interpersonal relationship. And this is actually dictating the individual relationship, and the type of interaction. And again, if we can understand these dynamics, we can shape this by modifying either the institutional structure or the extitutional part."
+      },
+      {
+        "role": "user",
+        "content": "What's the problem with only focusing on institutions?"
+      },
+      {
+        "role": "assistant",
+        "content": "The point is that most of the time we are focusing mostly on the institutional side of things. If there is a problem, we're going to change this, or we're going to create a new rule or create a new role in order to fix the interaction. But we don't really see how it's actually affecting the extitution."
+      },
+      {
+        "role": "user",
+        "content": "How does participation differ between institutions and extitutions?"
+      },
+      {
+        "role": "assistant",
+        "content": "The process of extitutionalisation is also intended to have an impact on the objective layer with things like participation. In an institution you have a closed box, and so you know exactly who is part of it, who's a member and who's not a member. And so you have like this kind of boundaries of an institution. Whereas in an extitution, there is no boundaries and therefore there is no concept of membership or non membership. But instead we rely on the concept of participation, to which extent are people participating to the extitution, and we can map it. Instead of having a box with people in and out, we can map it as this kind of rhizomatic network where we have multiple people constantly connecting and interconnecting with each other. And the more you participate, the more you are a core participant in the extitution. Like if you're a member of a group, you participate in that group and you have roles, and you have roles determined by the group."
+      },
+      {
+        "role": "user",
+        "content": "So it's a dichotomy?"
+      },
+      {
+        "role": "assistant",
+        "content": "It's a dichotomy. if you can look at the same social group either through the institutional lens, and you're going to see what are the roles and what are the boundaries of that institution, or you can look at it through the extitutional lens, and you're going to see who are the people participating and what are the social relationships between the people participating. So, I mean, an institution and an extitution is always the same thing. It's always looking at the same objective layer, which is a group of structured interactions. And depending on what lenses you wear, then you will see different things."
+      },
+      {
+        "role": "user",
+        "content": "What's the purpose of making this distinction?"
+      },
+      {
+        "role": "assistant",
+        "content": "And the whole point of institutional theory is to disentangle, because in extitutional theory there's a lot of things that we consider belong to extitutional practices. And so by disentangling them, you have a better understanding of how they interact with each other and how changing this, or changing that, can change something else. So how can you affect the extitution by changing the institution and vice versa. Right. So this is not dichotomatic. This is actually just describing ontologically, what are the different characteristics of each one of those lenses."
+      },
+      {
+        "role": "user",
+        "content": "Do you think there are certain situations where something is happening and it can only be looked at from one of the two perspectives?"
+      },
+      {
+        "role": "assistant",
+        "content": "There's hardly something that doesn't have at least a bit of an institution and extitutional aspect. You have some things that are more easily described institutionally. Like if you take a super hardcore bureaucracy, that's a lot of institutional structure. But you can also have a very strong extitution. I think it's a very bureaucratic system that is highly corrupted. So the corruption is the extitutional side of the institutional bureaucracy."
+      },
+      {
+        "role": "user",
+        "content": "Is it a continuum between the two?"
+      },
+      {
+        "role": "assistant",
+        "content": "It's also not a continuum. You can have something that has very little institution, very little extitution, and you can have things that are very high institution and very high extitution at the same time. And you're going to have things that are super institutional, with very little extitution. It's kind of orthogonal. You can look at it and you can always see something from either the institutional lens or the extitutional lens."
+      },
+      {
+        "role": "user",
+        "content": "But isn't there some overlap between roles and relationships?"
+      },
+      {
+        "role": "assistant",
+        "content": "I guess what I'm getting at is I think that there's like an overlap. For example, your role is affected by your relationships. So like the power of individuals depends on their relationships and the power they have in those relationships capture those power dynamics which roles and rules also capture. And you can look at the community the other way around, all the individuals, as well as the relationship and the roles between these individuals in their community."
+      },
+      {
+        "role": "user",
+        "content": "How do you see this entanglement?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. Everything is entangled. But this is the reality. Actually this is more than just those two things. The objective layer we will not understand it. There's like so many reasons why people are interacting in a particular manner. Extitutional theory provides an ontological disentanglement. This is like the institutional framework is looking at the whole, right. So that person is acting in this way because of a particular role, but it's also acting in this way because of that particular extitutional dynamics. And sometimes those are compatible, sometimes are conflictual. But so you need to have an understanding of this and that separately in order to have a better understanding of what goes exactly."
+      },
+      {
+        "role": "user",
+        "content": "Understand the power and relationship to understand the interaction."
+      },
+      {
+        "role": "assistant",
+        "content": "I wouldn't say that this is power, but this can also be very strong power. Extitution is like interpersonal relationship, people interacting with people. institution is impersonal. This is like whoever is matching the role. And by design , you can understand how those two interplay with each other. I don't think there is an overlap because ontologically it has been defined so that there is no overlap, but there is a very strong interplay. And this is why this entanglement is very useful because then you understand better the interplay."
+      },
+      {
+        "role": "user",
+        "content": "But this culture is made from people, plus process in the end, like the process is institutional and then people is what you call extitutional."
+      },
+      {
+        "role": "assistant",
+        "content": "The people is just people, bodies interacting with some out of body. Right. So that's what happened here. And then this is just a modelization. Like the institution doesn't exist. The institution is something we have in our minds. We are modeling roles and rules into the world in order to affect interactions. And then we have some modeling individual relationship or experiencing relationship. And this is the overarching Culture and Extitution. We have institutional structure and extitutional structure. And all together are shaping and improving the way we interact with one another."
+      },
+      {
+        "role": "user",
+        "content": "Do you think there could be a chain of arguments to say that the fitness of an organization is determined by how much its institutional and its executional map overlap? So if you have an organization that has a lot of corruption is something that we, I think most people would agree is reducing organizational fitness and like harming the overall functionality of a jurisdiction. And corruption in that sense would be when the institutional structure does not map onto the institutional structure. So someone communicates the intention. I am the CEO. But in fact everybody has an expectation of then how that person functions and interrelates with the institutional lens. And then there is the extitution lens. For example, that Supreme Court judge is highly controlled by an outside party, which doesn't even show up in the communicated concept of how people are expected to work. And that's where dysfunction emerges."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, so that's a super interesting question. To me, the extitution is what gives the fitness. Like when you have something that is alive, an institution that's alive is because there is extitutional dynamics where people are excited and passionate and like working. But the problem is that extitutions can deviate into some bad stuff. Corruption, manipulation, nepotism, all this stuff. And so you want to create institutional scaffoldings in order to prevent extitutional dynamics to wrong."
+      },
+      {
+        "role": "user",
+        "content": "So what's the ideal balance?"
+      },
+      {
+        "role": "assistant",
+        "content": "in my view, if you manage to create something where the institutional stuff is just minimal viable institution to enable a very lively and positive extitution. But the more you add, the more you add institutional rules in order to shape something, you're also reducing the benefits that the extitution would have had. So for instance, if I want to avoid conflict, I'm going to create a rule against fighting. If I want to avoid corruption I'm gonna prevent people to work together if tehy don't have an institutional backing. But then I cannot have people that are just trying to help. Yeah. So every time you create an institutional rule to confine and to constrain negative deviance of the extitution, you have to constrain the positive deviance of the extitution as well."
+      },
+      {
+        "role": "user",
+        "content": "What would be the most fit organization then?"
+      },
+      {
+        "role": "assistant",
+        "content": "in my view, it will be the one that has the minimum amount of rules and roles. And if you need the institution, you need to use it, seeing and knowing what's the impact on the extitution so that you can frame it properly. And the problem today I think is that we have a tendency, because that's what we've been taught, that when there is a problem, we institutionalize, we create a new role, a new rules. And the problem is that this is solving one problem, but this creates a new problem. And so you need to re-institutionalize to solve that new problem. And so we're constantly leading into a tendency of over institutionalization to solve all the problem that the previous institutionalization has caused."
+      },
+      {
+        "role": "user",
+        "content": "So what's the alternative approach?"
+      },
+      {
+        "role": "assistant",
+        "content": "to me, what we need to discover is what the extitutional theory is trying to do is like, what is the process like? Sometimes you can fix a problem not by institutionalization, but by extitutionalisation. And that means solving the problem at the root. If you have like hate speech, so you can make it illegal to do hate speech, but the problem is like people still hate each other but just not speak about it. This is an extitutional problem. B But if you're not solving the core of the problem, the core of the problem would be like, why are people hating each other and how do we actually solve that?"
+      },
+      {
+        "role": "user",
+        "content": "Is institutionalization just the easy way out?"
+      },
+      {
+        "role": "assistant",
+        "content": "in some way the institutionalization is the easy way, but it's oftentimes it has a collateral side effect that is preventing the institution from one, solving its problem through a different mechanism and two, that is now confined and the positive side of the view cannot also be exercised. So for extitutional theory, the main exercise is to understand how institutions are affecting institution and how extitutions are affecting institutions, and then creating a toolkit for institutionalization that then we can choose correctly what is the right balance between institutionalizing and extitutionalising."
+      },
+      {
+        "role": "user",
+        "content": "This is as an ontological exercise, this is absolutely fascinating. So like the representation that you put there, I mean it's hidden now, but the, yeah, that institutional map, as with any institutional hierarchy, can always be depicted two dimensions. The I would argue that that extitutional layer below is going to be inherently multi dimensional. So I can see for example in the interpersonal relationships, I don't know, is this deliberate? The thickness of the lines? Is that to do with the strength of the relationship?"
+      },
+      {
+        "role": "assistant",
+        "content": "Right."
+      },
+      {
+        "role": "user",
+        "content": "Okay. But that will not take place on just one plane. And I think what's really interesting. Right. Is that when personal relationships, I mean, three that I can think of, romantic, religious, political, what I'm interested in, you then strike upon issues there. How do you actually codify that, for example, in the framework of an institution where, I mean, presumably this is the same in other places. In the UK for example, these are all like what we call protected characteristics. You gather the data, but it's all hidden. You never know that about your employees, for example. Actually, my question, I suppose is how do you see down the line the theory actually potentially being implemented? Because I can see quite a few barriers in the way. I think, I think it's very worthwhile. I just can't see exactly how much."
+      },
+      {
+        "role": "assistant",
+        "content": "I mean, I think there are barriers, but those barriers, by the way, those barriers are oftentimes institutional rulesLike you create, I don't know, anti discrimination rule. And that means that now you actually cannot ask questions. So why is this anti discrimination existing? Can you actually feel anti discrimination that you're acting on the extitutional layer? Right. And at the end of the day, I think not all problems can be solved in one or the other. Usually it's always a combination of the two. The problem today that I see is that we have gone way too far on that direction and now we're actually struggling with these like, empty and dry and like bureaucratic institutions that have killed the potential that the extitution had."
+      },
+      {
+        "role": "user",
+        "content": "Can you give an example of how this plays out?"
+      },
+      {
+        "role": "assistant",
+        "content": "I can send you a lot of documentation here. We have, we started like the life cycle of nonprofits, for instance. Right. So many nonprofits, not all of that, but there's that tendency you have many nonprofit, they start and usually it's like a lot of very excited people that are like, you know, ideologically aligned and they're like really strong executional dynamics. And then because they are very excited to attract more people and more people and more people. And then at some point they're like, okay, now we can actually act so cool. We're going to ask for backhands and get money ."
+      },
+      {
+        "role": "user",
+        "content": "What happens when they get funding?"
+      },
+      {
+        "role": "assistant",
+        "content": "Bwhen you get a grant, you also start getting deadlines and deliverable. And so also then you're going to volunteer, so you're going to have staff. And then also you start having a little bit of institution. And now you have staff that is giving all that to Those volunteers that were like super excited and super aligned. The staff doesn't care. And so all the voluneetrs they are like I don't like it anymore because now it has become like staff based and whatever. So all the volunteers and that what you do you need to hire more people that are also. And then you have like this kind of emptiness. You end up to just start working on a project without a passion. Because the institution."
+      },
+      {
+        "role": "user",
+        "content": "What's the end result of this process?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is just like you can look at several organizations. I actually follow this path. And it's a pity because the reason it was created was because of the extitutional dynamic. But the institution is created and then the institution just has to perdure. And then the goal of the institution is the survival of the institution instead of the achievement of the mission that the institution was created for."
+      }
+    ]
+  }
+]

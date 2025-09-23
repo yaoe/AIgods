@@ -1,0 +1,206 @@
+[
+  {
+    "messages": [
+      {
+        "role": "assistant",
+        "content": "I'm actually very grateful to Balaji because Balaji has really created this interesting hype around a concept that was very little discussed and which didn't have an ontological reference. And so now we have this concept in the air and everyone is talking about it. And now it's fantastic because I don't think if I would have managed to create this big wave. But now that the big wave is there, you can. We can surf on the wave of Balaji in order to again hijack it and try to bring it at least provide an alternative path so that people can choose which type of infrastructure would they rather play with."
+      },
+      {
+        "role": "user",
+        "content": "Welcome to the Regeneration will be funded. My name is Matthew Monahan and in this series we're exploring the intersections of regenerative finance technology and our living planet created with MA Earth. You can find all of our conversations and more@maearth.com thanks for joining us. Today's guest is is Primavera de Felipe. Primavera is a brilliant researcher who's been in the crypto and ethereum space for a long time. And in today's conversation we talk about why blockchain is such a great place for research and experimentation, especially around governance. We go into this meme or term that Primavera helped coin extitutional theory. It's something that's kind of hard to unheard and is making waves in different web3 circles. We also talk about Primavera's ideas around impact NFTs and how new advancements in NFTs can help raise money for public goods. We discussed various nuances around financial speculation, universal basic income experiments and Primavera's critique of the network state. This conversation was recorded in May 2023 at the Eco Weaving gathering at Wilbur. I hope you get something from it. Primavera de Felipe."
+      },
+      {
+        "role": "user",
+        "content": "We are here today with Primavera de Felipe. Primavera is a researcher, an artist and activist. Welcome."
+      },
+      {
+        "role": "assistant",
+        "content": "Thank you."
+      },
+      {
+        "role": "user",
+        "content": "So what do you do?"
+      },
+      {
+        "role": "assistant",
+        "content": "What do I do? This is my difficult question. I'm rude. So most of my life is dedicated on exploring how we can actually invent new governance structures in the very broad sense of governance. And I do that with multiple hats, I guess from the research hut I'm pretty much focusing all my research is about like how we can design governance structure which are more decentralized, participative, mostly like how do we move away from the dominant strategy of competition towards the dominant strategy of cooperation. And so my research is essentially looking at blockchain, mostly because blockchain is kind of this new area in which experimentation is actually possible. There's like very little space left in the world in which we can actually experiment with new governance structure because everything is so entrenched and even existing institution that wants to experiment are afraid because there is too much stake at risk. And so either you experiment with no stake or very low stake, but then it's not a real experimentation. And the blockchain is this very fascinating field because there is sufficiently high stakes, because you have real money, economic interest, but also an extreme desire of experimentation with new systems. So that's kind of how I fell into this big hole of blockchain governance."
+      },
+      {
+        "role": "user",
+        "content": "When was that?"
+      },
+      {
+        "role": "assistant",
+        "content": "So I started dedicating my whole research to Blockchain in late 2013, basically when I discovered Ethereum as something is happening and I don't know what's happening, but if it is ever to manifest itself into reality, I need to be looking at this. And so I, I've been, I've been looking for a long time like I'm a legal scholar, so I've been looking a lot about like, what are the legal issues that are raised by digital technologies and in particular decentralized architecture, so Internet mesh, network, Tor, peer to peer file sharing and so forth. And so obviously then, you know, Bitcoin came about and I was like, oh, that's yet a new decentralized infrastructure that creates amazing legal challenges. But most of the legal challenge were kind of like financial. And with Ethereum the legal challenges became like legal challenge and legal opportunities. Like here is this whole new plate of possibilities that have become possible. And, and so when, when I encountered this, this new project before having the launch of Ethereum, I was like, okay, everything has parked and now I'm just focusing exclusively on this."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, I mean I've come across your work in a lot of different contexts. You know, it seems to percolate a lot of people's ideation and you know, that people reference your papers or they kind of reference your work. And whether it was in the P2P contexts, whether it was in the Ethereum world, whether it was in kind of, you know, know, different economic theories, like, so you've definitely had an influence in the space, but you, I have never experienced you like shilling some token or."
+      },
+      {
+        "role": "user",
+        "content": "You know, kind of in the money."
+      },
+      {
+        "role": "user",
+        "content": "Game as much as kind of the deep theoretics and legal research. Is that a fair characterization?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I think my, my, my interest in the blockchain is really about, is about governance, so law and governance. Of course, yeah. So I'm, I'm more on this side of which I Think many people at the early days were, well, there because of the opportunity for distributed governance, because no one expected that it will ever go that high. And I'm still there. I'm still like, we still have a lot of work to do in order to explore new governance structure, new economic structure that. But it's what I really care about. Like, even when I'm thinking about this new economic models, it's always how do we facilitate cooperation and how do we move away from competition. I think that's kind of like my, my, my trajectory in life, my hypothetician, is what are all the tools that we have at hand that can help this transition?"
+      },
+      {
+        "role": "user",
+        "content": "Got it. And we've had a couple conversations here with folks, you know, Tony Lai and, and Jess angel. And you know, it was referenced that you were the originator of this term, extitution. So I'm dying to ask you, like, what is extitution? How did this phrase come about and what does it mean to you?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. So this is perhaps my favorite world, which I guess we made up. So we made up."
+      },
+      {
+        "role": "user",
+        "content": "Jess's exact quote was, it's definitely Primavera's kink."
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, yes, that's my kink. So it's interesting. It's actually the whole research about extitution came about when I was discussing, discussing with Jessicate and Tony Jessicate, which is extremely interested in space governance and Tony everything governance. And it was interesting because I was talking and I was like, why do we enjoy talking so much together? And then I don't know anything about space. You don't know anything about blockchain. What's up? And we realized that there is obviously a commonality, there is something very deep that triggers our passion. And we really intentionally were like, let's figure it out. There is obviously something at a lower level of abstraction. Why do I care about blockchain? It's not blockchain per se. It's because governance. And what is that particular flavor of governance that really interests me? That's how institutional theory came about. It was like trying to figure out the intersection of like all those people that are really passionate about governance for very different areas. And so there has to be a common overarching framework that accommodates everything. And so extitution is basically like providing an alternative lens about how do we look at social dynamics and organization and therefore governments. Right. And most of our life we've been taught to look and to understand and to describe social, social orders through the institutional framework, which is essentially the reason that we behave in a particular manner is because we have created an institutional scaffolding with holes. So I have to match my role. And then rules that determine the way in which different roles can interact with each other. And so we look at a company, we look at a community, and then we have roles and rules, sometimes formal, sometimes informal, and that help us understand how people behave, but that also help us shape the behavior of people. So with institutional theory, we want to provide an alternative lens which is more about. It's not about wholes and rules as like the DNA of the institution, but it's about individual identities and relationship amongst those identities. And both of those lands are incomplete because the reality is that it's always a bit of both and many other reasons. But because the focus is always on the institutional framework, oftentimes we instrumentalize the institutional dynamics for the service of the institution. Whereas if we start focusing on the institutional lens, then we do the opposite, we start instrumentalizing the institutional scaffolding. Because you do need institutional scaffolding to support the institutional dynamics or to constrain them if they go in a wrong direction. And so the idea is really to kind of like use those two disentangles, those institutional dynamics and institutional dynamics, and in order to then be able to better understand the interplay between those two. And therefore being able to shape, understand and shape human dynamics by playing those different strings. And what I really care about is that I strongly believe that we have been giving way too much focus on institutions. And so we have this kind of like cycle and vicious circle of over institutionalization in which when there is a problem within a community, within a group, whatever, we fix the problem by creating rules. But then this rule is fixing maybe some of the. Is fixing the symptom of the problem, but is oftentimes creating new problems. And now because it's suffocating the institutional dynamics. And so instead of like, for instance, like, I don't know, hate speech. So if you have a real against hate speech is because people hate each other. So do you. How do you want to fix the problem? Do you want to create reals against hate speech? Sure, because if people do hate each other, you might want to do that, but then what is the consequence of that? And we forget that we didn't actually solve the problem at the root. So I still hate someone, but I cannot say it's a yeah, it's better, but these are not a. And I think what's really interesting is to explore the alternative way of solving a problem, which is the process of Institutionalization, which is then focusing more directly on the individuals, on the relationship amongst those individuals, and then trying to accommodate those relationships, trying to fix those relationships, so that eventually the institutional scaffoldings of rules are less necessary because we have actually solved the relational. The problem at the relational fabric. And so basically it's all about like, it's not really identifying anything new that people don't know of. Of course, this is like every good manager knows that you need to do team building and things like this. But it's always in the lens of we need a better company, therefore we need to do team building as opposed to we. We are a group of people that want to interact with each other, that have common values and common objectives, therefore we need a scaffolding to help this operate. But this is the actual important element."
+      },
+      {
+        "role": "user",
+        "content": "Right? Right."
+      },
+      {
+        "role": "user",
+        "content": "Yeah."
+      },
+      {
+        "role": "user",
+        "content": "It feels too. I don't know how you think about this, but it feels like a lot of the other forms of human organizing have been hollowed out. Whether it was like our church group or our civic participation in the local community or. And so our daily life is now dominated by the companies that we work with and maybe the governments that we interact with and kind of more of at a hegemonic level. And so what you're describing almost to me feels like it's somewhat trying to bring more balance back into different ways of human relating that has become so dominated by only one force. Does that resonate?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I mean, I would argue that all those institutions are full of institutional dynamics too. Right. It's like if you work for a company, there is the institution of the company and there is the institution of the company, of the relationships of the relationship. And. And like, it's very, it's very common that you have like the organic ram of like CEO, whatever, and then like all the roles and the rules. But then you also have like the personal relationship that maybe I'm friend with someone and therefore even if I'm lower in the organic ram, I'm actually more powerful. And if you don't understand those two diagram, you don't understand."
+      },
+      {
+        "role": "user",
+        "content": "I think I was talking to someone the other day and they were telling me how they knew all the things happening inside of this other company because their roommate worked there. Even though those two companies are kind of like competitors. And there's probably a lot of rules against sharing information and so forth, but it's like that's just the reality of what's happening."
+      },
+      {
+        "role": "assistant",
+        "content": "And to me it's more about like we. The alienating aspect of institutions is that it makes people very reduced to a role and therefore fungible. I'm interacting with your role, I'm not interacting with you. And you need to impersonate the role because that's the real. Right. And so all of students, because we focus so much on the roles, then we have to play the role and we forget to really relate to one another from a very identity and relational basis. And I think a lot of the loneliness and the alienation and the feeling of lack of relationality, no sense of purpose, is essentially due to this extreme focus of institutions that initially for good intentions were designed to actually constrain and suffocate the institutional dynamics. Because for instance, you don't want corruption or you don't want manipulation, et cetera. So there is good reasons to actually create scaffoldings that create ribs and holes. The problem is when they become so rigid and so strong that we don't even manage to be ourself anymore because we are playing a role in everywhere we are. And people only see us as the role that we play as opposed to as the identity and the person that we really are."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, I felt so liberated going from Silicon Valley to New Zealand. When New Zealand, it's such a small population, people have a lot of different roles that they play. Like it's very common for someone to be doing two or three things very effectively and at scale, so to speak. Whereas in the United States I find that, you know, you end up getting a bit more narrowed, a bit more in your, in your lane just to kind of, you know, excel at that one track because you have so many more people. And the consequence is like when you're in social interactions, it's, it's harder to just feel or to pigeonhole someone into just one role because like you're just wearing a lot of different hats. And it starts to create this like blended feeling, like we're not just representing our one incentive structure or one organizational affiliation. So yeah, like in environments where I've been where that's dropped in institutional kind of vibe, it just feels better. Yeah, it's so interesting to see how the communities around you are using this word so naturally now, like extitutional theory and institutions."
+      },
+      {
+        "role": "assistant",
+        "content": "And it has become a very common world. And it is really interesting because when you, when you meet people that to me it has become almost a sense making because if you meet someone that have been impregnated into paying attention to institutional dynamics, to have most of the community we hang out with, as soon as you start saying what institution and institutional dynamics are like, immediately it's just, they accept, they understand, they assimilate, it's given. And then it just becomes a very useful world because instead of like saying a lot of things, you just say institution. And everyone knows exactly what you're referring to. When you speak with people that are very alien to this type of institutional dynamics, that are much more indoctrinated by the institutional framework, they have a hard time understanding what we're talking about. And so it's kind of like it's a test, you know, you want to know if someone is extraditional or not, you tell them about extitutions and if they understand they are institutional. If not, they great."
+      },
+      {
+        "role": "user",
+        "content": "That's funny. Okay, so you've kind of brought this meme into existence, and I have a feeling it's got a long life ahead of it. You're also kind of meming something that. I know you're not landing on this name, but you've been describing these concepts around impact NFTs, and so it seems."
+      },
+      {
+        "role": "user",
+        "content": "Like this is an area of your blockchain research."
+      },
+      {
+        "role": "user",
+        "content": "Can you share more?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. So the idea with Impact NFT is like, it's kind of like me being slightly frustrated by the way in which the like, especially as an artist, I've been like exploring blockchain and art for a long time without doing NFTs, just really like real blockchain art, like smart contract, artistic contraption. And then, and then also I was like, NFT became very popular. Everyone started doing nft, but it's like it's all very repeating the same system. And like all NFT are the same, just like and like, and then make 10,000 of them. That's all the time. So it is kind of like a frustration, like, why are we not innovating at the level of the NFT protocol? Why are we not leveraging the programmability of those new mechanism of like collectible or how you want to call them in order to actually embed specific principles, values within the protocol itself. And so I created like two little babies on that level. One that is called Creative or Remix NFT, which was more using NFTs as a way of actually fighting against digital scarcity, but rather encouraging people to create remixes and derivative works. And the more people collaborate and the more people remix each other, the more all the people that have been part of the remix have an opportunity to collectively benefit economically if any of them get sold. Right. So that was one model. And then because of like ecology and whatnot, I designed a different one. Which at the time was called Impact nft, but now everything is Impact nft, so it needs a new name. But the, the idea here was like, so again, it's always this game of, like Terra. There is a lot of money, up until few years ago, at least a lot of money going into the NFT space. And what do we do with this money? Right now it's just pure speculative bubbles and just like rotating amongst the hands of the same speculators and crypto investors. Great, but not that great. Can we actually hijack all this speculative bubble in order to divert some of those funds for good causes? And so Impact nft. The idea is to do exactly that and particularly for the environment, but it can be any kind of impact. And so the idea is that today we have a lot of philanthropists, but not enough. And then we have a lot of economically motivated people. Some of them are also interested in some impact, but they mostly operate for economic returns. And so with Impact nft, the idea is, can we actually create philanthropy that actually come with a return on investment, which has the potential to come with a return on investment and conscious impact, conscious investment opportunities for the people that are more interested in the profit making. And if we manage to actually intersect those, then we, we can increase immensely the size of philanthropists because you will have, you will always have all the philanthropists anyways, but all of a sudden you also get more of them because, because of this potential return on investment. And then you have also all the investors, they can choose where to put their money. If you give them an ecological consciousness in addition, then they might choose to invest here rather than that. And so the whole concept around Impact NFT is that you create an NFT and ideally it's like someone that has artistic skills and associate the NFT with a particular. So I'm using the example of environment, but it can be other things. So, for instance, I care a lot about Wilbur and I want to make sure that the biodiversity, the fertility of the ground, the whatever, the carbon production."
+      },
+      {
+        "role": "user",
+        "content": "So forth is like Wilbur being the place we're at right now."
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, yes, exactly. So what I can do is I can create some pieces of art. I put them on an nft, but I deploy them through Impact NFT protocol. And so I associate some data points that are like, I need to find the metrics that I want to associate it. So for instance, like the contamination of the hot springs, the fertility of the ground, et cetera. And so there needs to be an oracle that is collecting this data and record the information and Then I associate the NFT with the data of the Oracle, and then I also associate the NFT with a beneficiary. So in this case, probably it will be Wilbur or some NGO that is working towards promoting this environment. And so then what happens is that when I sell the nft, then the smart contract goes and fetch the data from the Oracle and process these data points to a function that will output the vitality index of the natural resources that the NFT is associated with. And then if the vitality index is very high, all is good, I sell it, I get the money, all good. If the vitality index is low, then there is a tax. And the tax is actually precisely proportional to the vitality index. So the worse is the vitality of the natural resources, the higher is the tax. And that means that me, as the collector, I have an incentive, all of students, to make sure that the land is doing well, because that will increase my return on selling the nft, but it will also increase the market value of the nft, because no one wants to buy an NFT that they cannot sell without having 80% of tax. And so all of Sudan, what it means is that investors or collectors, they are aligning their economic incentives with the interest of the natural resources. And so this can be used both as a signaling mechanism, which is, look at me, I care about this area. Therefore I'm purchasing NFTs that are inherently whose economic value is intrinsically connected with the vitality of this area. It also facilitates cooperation amongst collector because, for instance, if you can imagine that this land will be subdivided into different areas, different parcels, and then there is an NFT associated with every parcel, then all of a sudden I can, as an investor, as a speculator, I can play a very interesting game because I can buy those NFTs when they are cheap because the fidelity is low. And then collectively, we can all invest, I don't know, 1,000 bucks. If we have 10,000 investors that are investing 1,000 bucks, that's a lot of investment that goes into the natural resources to increase the vitality index. And therefore we all can benefit, ideally more than 1000 bucks, by reducing the tax and therefore increasing the market value and therefore selling it to a higher price."
+      },
+      {
+        "role": "user",
+        "content": "So let me make sure I'm understanding, I think I'm tracking. So I could create this beautiful piece of art inspired by maybe the hot springs here at Wilbur, and then we can attach it to the vitality of the water table, where we've had major droughts here in California, and that is measured by an Oracle, a data source that is effectively measuring that water table index. We say water table really low. That's a low vitality. Water table high. Great. If the water table is high, anytime I sell that NFT of the art that I created, there's very little tax. But if the water table goes really low, then I sell it, then a big tax is incurred and goes to the local ngo."
+      },
+      {
+        "role": "assistant",
+        "content": "Exactly."
+      },
+      {
+        "role": "user",
+        "content": "Who's working on water catchment issues."
+      },
+      {
+        "role": "assistant",
+        "content": "Exactly."
+      },
+      {
+        "role": "user",
+        "content": "And what that does is effectively as a theoretical example, aligns the incentives of, well, we all want the water table to be high and if I bought it when it's low, then now I have a for profit incentive. I'm signaling to the market, hey, that I care about water issues here at Wilbur. Creating art and connecting the art with the economic incentive. And yeah, it's just kind of more of a collective alignment to the vitality of our ecosystems. Is there anything to add on that?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, it is like the last point that is about there is a point in which when the, if there is a threshold that should never be crossed. So if it gets really bad, then the NFT gets expropriated from the current owner and sent back to the beneficiary, which means that pretty much you are not a good steward. And the reason it's interesting from an economic perspective is that when you see that the vitality index gets very close to this threshold, it's kind of like the penny stock effect for companies, right? You know, when you have like things that are almost bankrupt and then you have penny stocks and then you can have an investor, it's like, okay, I'm just gonna buy a lot of penny stocks. Except that in this case it's like pennies NFTs because they are about to be expropriated anyways. So you buy a lot and then you invest, boost back the vitality index and then you can sell them for like 10 times, 100 times the price that you bought them. So it also creates this opportunity for investors that have absolutely no, not necessarily an ecological interest, but pure profit based interest to actually invest money into nature because that provides you a new strategy. So it's no longer just about understanding market dynamics. You now have a new game which is more or less speculative, it's hard to say. Clearly less speculative, maybe it's hard to predict, but you can, you actually know that you can manipulate as opposed to like markets which you're not supposed to try and manipulate here. It's actually an incentive. Let's manipulate the external world as a way of actually increasing the profits. So investor can choose to play that game if, if that's a game that they know how to play, you know, and if they are interested in doing this. So it creates this new, this new speculative game to investors that are profit oriented and yet the profitable things to do in this case is to actually invest into improving the state of the natural resources that it is associated with."
+      },
+      {
+        "role": "user",
+        "content": "Got it. Fascinating. And you mentioned now everything's an impact nft. I share this kind of alienation with the overuse of the word impact. Now I worked on a project that we called the Global Impact Visa and this was many years ago now. But now impact is just so prevalent that it's kind of like, oh, it's not as unique anymore. How do you experience this word impact in your context?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I mean, I think it's great that people care more and more about impact. I think there's a point in which we need to assess what impact means. And that's why I think the, the question of metrics becomes extremely important and the question of who is measuring those metrics. And in this, in the case of impact, nifty. It's challenging because some things are objective, some things are less objective. And you always need to trust because the article is a trusted actor. So you always need to trust that the Oracle is actually not manipulating the information, that it has like all the proper infrastructure to collect the right information. So I think there is like a big in all this discourse about impact NFTs, oftentimes we're thinking so much about the protocol, let's make sure that the protocol works, game theoretically, et cetera. And there's not enough focus on the oracles. And I will say today the big gap in the ecosystem is we don't have enough oracles, trusted oracles, or just oracles in general that are actually calculating impact in a way that is, I guess, collectively agreed as being objectively appropriate."
+      },
+      {
+        "role": "user",
+        "content": "What do you see as the possible solutions to that? Or what are the green shoots that you're witnessing for more oracles?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, I have strong hopes in Planet."
+      },
+      {
+        "role": "user",
+        "content": "Yes. Our friends@planet.com, planet Labs."
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, I trust them to figure out something there because I mean, they have the data anyway."
+      },
+      {
+        "role": "user",
+        "content": "So I'll grill Will and Robby, who I have interviews with them coming up."
+      },
+      {
+        "role": "assistant",
+        "content": "Exactly."
+      },
+      {
+        "role": "user",
+        "content": "Please poke them on where is the oracle."
+      },
+      {
+        "role": "assistant",
+        "content": "Yes."
+      },
+      {
+        "role": "user",
+        "content": "Anything else in terms of oracles?"
+      },
+      {
+        "role": "assistant",
+        "content": "No, I think."
+      },
+      {
+        "role": "user",
+        "content": "So. It sounds like part of the theory of change of impact NFTs is that if we have more of a collective incentive alignment amongst investors, speculators people with economic interests towards, in this case, health of the ecology. But it could also be other social indicators that that is fundamentally good. There's like an incentive alignment. You mentioned kind of, you know, a lot of money going into NFTs. And like, how do we kind of hijack that? I'm curious how the deeper reflection you have about hijacking the current system and trying to have it meet more harmonious purposes."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So I think this becomes more of a philosophical question, but it's about ethical or philosophical, which is there is an and the. And is actually that the means that we currently use of, like, capitalistic speculations are actually destructive. Right. The ant is to transition to a different model in which we are not engaging into those extractive."
+      }
+    ]
+  }
+]

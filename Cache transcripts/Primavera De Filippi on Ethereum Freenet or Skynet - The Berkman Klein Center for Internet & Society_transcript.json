@@ -1,0 +1,270 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Could you tell us about what you'll be discussing today and the main question you want to explore about Ethereum?"
+      },
+      {
+        "role": "assistant",
+        "content": "today we're going to talk about Ethereum and we will try and figure out what is the impact that this new technology could have on society. So whether it might actually lead to the establishment of Ansaria. Okay, so we will try to figure out whether this new technology at the Realm could lead to the establishment of free and decentralized society, or whether it might instead promote a more dystopian vision of society. So can I use this thing? Maybe it doesn't work. Okay, I will try and scream. Okay, so just before I begin, I would like to say that because of the technicality of this talk, then I actually would really appreciate it if you can interrupt me at any moment just to make sure that no one actually get lost before I reach to the really interesting legal part."
+      },
+      {
+        "role": "user",
+        "content": "Before diving into Ethereum, could you explain Bitcoin and how it works as a foundation?"
+      },
+      {
+        "role": "assistant",
+        "content": "to begin with, before we can actually understand anything about Ethereum, then we first need to understand a little bit about Bitcoin and how it actually works. So it all begins in 2009, as Satoshi Nakamoto, which is a pseudonymous entity which is supposedly the creator of Bitcoin, released a white paper that described the implementation of what he defined as a decentralized currency based on a cryptographic ledger. So this sounds extremely interesting, but exactly what does it mean? So, first of all, there is the concept of decentralized database, which in Bitcoin lingo, it's called the blockchain. And so the easiest way to explain what is the blockchain is to think of a public ledger which records every transaction that has ever been made and that will ever be made on the Bitcoin network. And a copy of this public ledger is distributed to every single user connected to the network, which all agree to abide to a certain set of rules or procedures. Basically the Bitcoin protocol, which is such that once a transaction has been recorded on the blockchain, then it can never be deleted. And then there is the idea of digital token, which is essentially the basic unit of transaction and so when this is combined with a transaction system that operates on top of this decentralized database, then we obtain something that is pretty much equivalent to a decentralized currency or a payment system. And then there is encryption, which is basically there to ensure the integrity and the security of the overall system by preventing anyone from recording a transaction unless it actually has the proper authority to do so."
+      },
+      {
+        "role": "user",
+        "content": "How has Bitcoin performed and what's its current status?"
+      },
+      {
+        "role": "assistant",
+        "content": "when we combine all those three characteristics, then we have Bitcoin, which is essentially a decentralized cryptocurrency, which is not regulated by any governmental institution or financial institution, but that is regulated only and exclusively through its code, through its protocol. So I will actually not go into the technical details of the Bitcoin protocol, which is quite complex, but it is important to say that the code of Bitcoin is actually open source, which means that anyone can actually take a look at it and try and figure out whether there are any flaws in the implementation. And so, after some years of struggles and testing and experimentation, then Bitcoin actually went from being worth less than $1 in 2009 to over $1,000 just a few months ago. And nowadays Bitcoin is actually accepted by many online vendors, such as Foudler or Otherstock, for instance. And there is also a growing number of Bitcoin ATMs that are actually being deployed all over the world. And the most recent one actually just opened in Harvard Square at Clover. So, if you want to check it out, Bitcoin basically proved that it is indeed possible to have a working decentralized currency system."
+      },
+      {
+        "role": "user",
+        "content": "What's the really interesting aspect of Bitcoin beyond just the currency itself?"
+      },
+      {
+        "role": "assistant",
+        "content": "the actual really interesting thing about Bitcoin is not actually the currency itself, but is rather the underlying technology, the cryptographic ledger or the blockchain, which could potentially be used and adapted to a variety of different applications that do not actually necessarily have to do anything with money. And so we come back to Ethereum, which basically builds upon the technology of Bitcoin in order to create a next generation smart contract and decentralized application platform. So, again, this sounds really interesting, but what does it exactly mean?"
+      },
+      {
+        "role": "user",
+        "content": "So what exactly is Ethereum and how does it differ from Bitcoin?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, so if Bitcoin is a decentralized cryptocurrency, then Ethereum can be regarded as the platform on which decentralized cryptocurrency can be built. And so it has been defined by some people as cryptocurrency 2.0, which is slightly inaccurate in the sense that Ethereum actually can do so much more than being just a cryptocurrency. And so, just like Bitcoin, Ethereum actually implements a decentralized database, a system of digital tokens, an encryption scheme. And in addition to this, it also creates a Turing Complete scripting language which allows anyone to actually deploy their own application on top of the blockchain. And so, instead of actually adding additional features on top of the Bitcoin protocol, then Ethereum actually took a step back and it actually eliminated every feature from the Bitcoin blockchain in order to make it easier for people to create new applications by implementing only those features that they actually need as an extra layer on top of the blockchain."
+      },
+      {
+        "role": "user",
+        "content": "What kind of applications can be built on Ethereum?"
+      },
+      {
+        "role": "assistant",
+        "content": "if Bitcoin actually allowed for the deployment of these decentralized cryptocurrencies that operate independently of any centralized entity or government, then Ethereum could potentially lead to the deployment of decentralized applications that operate autonomously on the blockchain. So of course, Eterao makes it really easy to implement new and alternative cryptocurrencies, but it also allow to create much more sophisticated application, such as, for instance, communication system like Bit Message, or decentralized social networks like Twister, or even decentralized cloud storage like something like Dropbox. But the particularity is that all those applications are completely decentralized in the sense that they do not actually depend on any centralized entity or third party. Now, because there is in fact no such third party to interact with, then the interaction between the application and its user is completely determined by the underlying code of those applications, which in Ethereum slang are called contract. In fact, smart contract, which basically describes all the rules and the procedure that the user have to abide to in order to interact with those applications."
+      },
+      {
+        "role": "user",
+        "content": "Can you explain what a smart contract is and how it works?"
+      },
+      {
+        "role": "assistant",
+        "content": "a contract is an agreement between two or more parties to do something or not to do something in exchange of obtaining something else in return. Now, the problem is that every party has actually to trust the other party that it will actually comply with its obligation in order to fulfill the contract. Now, in the case of smart contract, then the situation is slightly different, because they actually remove the need for being any trust between the parties to the extent that they are self enforceable and so basically self enforceable. So basically the idea is that the contract and the code are basically merged into one thing. And so the contract is defined by the code and is also automatically being enforced by the code which defined it. And so the most common analogy for a smart contract in the physical world will be the case of a vending machine. So you put money into the vending machine, and assuming that you have inserted the right amount of money, then the Machine will deliver the project that you've asked for. And so in this sense, you don't need to trust the machine, and at the same time the machine does not need to trust you, assuming that the machine is actually open source and open harder. I was going to say, you often do need to trust these things, and."
+      },
+      {
+        "role": "user",
+        "content": "But doesn't that still require some level of trust in the machine?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, of course, but you don't need to trust the intention of the machine, because basically the whole interaction is defined and enforced by the technical infrastructure of the machine. And so the interesting thing about Ethereum is that you can also have decentralized applications that interact directly with other decentralized applications, basically eliminated the need for any kind of human interaction. And this leads to the most interesting aspect of Ethereum, which is the concept of decentralized autonomous organization, which basically are just a more sophisticated kind of smart contract, which implements a constitution that basically stipulates the rules and the procedure for the governance of this organization, and that also implements a system of equity which allows people to invest into those organization by purchasing some of their shares."
+      },
+      {
+        "role": "user",
+        "content": "Can you give an example of how these decentralized autonomous organizations would work?"
+      },
+      {
+        "role": "assistant",
+        "content": "as an example, we can take the case of ICANN for the management of internal domain names. And so instead of entrusting an organization to operate according to a certain set of rules or principle, then it is possible to encode those principles directly into the code of a decentralized application, like it has been done with namecoin. Or it is possible to incorporate those principles within the constitution of a decentralized autonomous organization that will then be bound to operate according to those principles, because it simply has no choice to do otherwise."
+      },
+      {
+        "role": "user",
+        "content": "What makes distributed autonomous organizations so special and what legal challenges do they raise?"
+      },
+      {
+        "role": "assistant",
+        "content": "to come back to the legal issues, then what is actually so special about distributed autonomous organization? And why do they raise so many legal challenges? So, first of all, they are autonomous in the sense that once they have been deployed on the blockchain, then they no longer need their creator, and in fact they no longer need to listen to them. And then they are self sufficient in the sense that they can actually charge users for the resources and the service that they provide in order to then be able to pay authors for the resources that they need, such as processing power or bandwidth, for instance. And then finally, they are decentralized in the sense that they do not subsist on a centralized server, but they are encoded directly on the blockchain, which is distributed through the whole network. And so their code is actually being executed in a decentralized manner by every single node in the network. And so because of those three characteristics, then distributed autonomous organization are actually really difficult to regulate. Because there is in fact no specific entity to regulate, and also because of the self enforcing properties of their code, then distributed autonomous organization might actually challenge some of the most basic principles of our current legal system."
+      },
+      {
+        "role": "user",
+        "content": "Let's start with contract law - how do smart contracts challenge traditional legal frameworks?"
+      },
+      {
+        "role": "assistant",
+        "content": "there are in fact a lot of legal challenges which are raised by Etterum. And I will here focus on on a few of them that I thought would be the most interesting. But I will actually be really happy to discuss anything that might come into your mind afterwards during the discussion. So, to begin with, contract law, as I said, smart contracts are specific because they are transparent in the sense that their code is publicly available on the blockchain, so everyone can actually take a look at those and understand exactly how they're going to work. And on the other hand, they are self enforceable, which means that they remove the need for there being any trust between the parties, because the contract will be executed no matter what, independently of the will of those parties. And so as opposed to traditional contracts where parties are actually free to decide whether or not to completely fulfill the contract or to only comply with certain obligations, or whether to breach the contract and then just pay for compensations or damages, then in the case of Smart Contract, then the parties actually have no choice but to implement the contract because the contract has been incorporated into the code, then it is not possible to breach the contract unless one actually manage to break into the code. And so this raised some really interesting question with concern to the distinction between what is technically binding versus what is legally binding. So for instance, in contract law there is a variety of situation that might either invalidate a contract, for instance, if it has been agreed upon under coercion or undue influence, or that might at least limit the enforceability of some of its provision to the extent that they go against the interest of consumer or consumer protection law. Now, smart contracts are actually not directly affected by those provisions to the extent that they operate within their own closed technical framework that might not necessarily implement those kinds of legal safeguards. And so basically, in this sense, it is potentially possible with Smart Contract to bypass the actual legal framework of contract law."
+      },
+      {
+        "role": "user",
+        "content": "What about property law? How does Ethereum handle property rights differently?"
+      },
+      {
+        "role": "assistant",
+        "content": "when we come into the context of property law, then the situation is actually quite similar in the sense that Ethereum implements its own technical framework that operates outside of the legal framework of property law. And in particular, Ethereum implements two important features that significantly differ from traditional property rights. So the first one is the concept of smart property, which basically relies on smart contracts and digital token in order to implement a decentralized trust free asset management system. So the idea Here is that it becomes possible to transfer the ownership of something directly via the blockchain by transferring a particularly designed coin or a token which has been linked to that particular asset. And so this actually allows for the creation of so called cryptographically activated assets, such as, for instance, a smartphone that can only be used with a particular set of coins or tokens, or a smart car that can only be driven by the person who actually owns that particular token. And so instead of transferring the property of the car, then it become possible to just transfer that particular token in order to achieve pretty much the same result."
+      },
+      {
+        "role": "user",
+        "content": "What about crypto property? How does that work?"
+      },
+      {
+        "role": "assistant",
+        "content": "the concept of crypto property is extremely interesting to the extent that it allows for cryptographic or algorithmical entity to own a particular set of resources or currency just as if it was their own property. And so, as opposed to traditional property rights, which have been defined by the law and which therefore can also be taken away by the law, crypto property rights are different because they are both defined and automatically enforced by the code. And so this means, on the one hand, that they cannot be seized by the law, but it also means that once they have been stolen, for instance, then there is pretty much no possibility of recourse. And so to come back to Ethereum, this basically means that distributed autonomous organization have total and absolute sovereignty over their own resources, which cannot be seized by anyone unless this has been specifically provided for within the code of this organization."
+      },
+      {
+        "role": "user",
+        "content": "This brings up Lawrence Lessig's famous concept - could you elaborate on that?"
+      },
+      {
+        "role": "assistant",
+        "content": "this brings us back to what Lawrence Lessig had identified over 10 years ago. Basically that on the cyberspace, code is law. And so I think nowadays we all have understood that. But then the question is, if code is low, then how can the law actually regulate the code so that it regulates our behavior in a way that is compliant with the law? And so, well, this brings up a much more fundamental question, which is, how do we actually want to regulate distributed autonomous organization? So should they be regulated in the same way as traditional corporations or organization? Or do we actually need a distinct body of law that will better account for the specificities of those distributed organizations? And so this is actually really interesting because as I was researching the question then most of the material that I found was actually related to the regulation of intelligent robots, which was actually quite surprising at first. But then I realized that it makes complete sense to the extent that they both share this commonality of being both autonomous and self sufficient."
+      },
+      {
+        "role": "user",
+        "content": "Can you give us a concrete example of the liability and responsibility issues?"
+      },
+      {
+        "role": "assistant",
+        "content": "this leads to the third critical legal point, which is the question of liability and responsibility. So let's take the example of a distributed autonomous organization which delivers a copyrighted song to everyone who transfer the equivalent of $1 to it. And so the question here becomes, who is actually in charge of, and who is responsible for the activities of this distributed autonomous organization? Assuming that, of course, the copyrighted song has not been cleared, so it is a copyright infringing sum. So the most obvious answer will be that it should, of course be the creator of this distributed organization. Now, the problem with this is that it might actually be extremely difficult to identify the creator to the extent that the distributed autonomous organization has been deployed anonymously on the blockchain. And secondly, even though the creator could actually be identified, then there is the problem that the CREDO might no longer have any kind of control over that distributed organization, which will then continue to operate autonomously as long as it has sufficient funds for it to operate on its own."
+      },
+      {
+        "role": "user",
+        "content": "What about holding users or the organization itself liable?"
+      },
+      {
+        "role": "assistant",
+        "content": "perhaps it should actually be the users that should be held vicariously liable for the services that they are paying for. Now, the problem here is that this will only apply to the extent that user actually knew, or at least had good reason to believe, that the distributed autonomous organization is actually doing something wrong, which in this case might for instance, not be the case if they are not aware that the copyrighted song that they are purchasing is actually an infringing song. And so perhaps it should then be the distributed autonomous organization itself that should be held liable for for its own actions. Now, the problem here is that we then encounter a much bigger problem in terms of law enforcement, because it is virtually impossible to obtain an injunction or to recover damages from a distributed autonomous organization. And so we found ourselves into some kind of legal limbo, in the sense that we cannot actually rely on traditional legal means in order to regulate the code of this new technology. And so the question then is, do we actually need to?"
+      },
+      {
+        "role": "user",
+        "content": "What do supporters of Ethereum argue about the need for traditional legal regulation?"
+      },
+      {
+        "role": "assistant",
+        "content": "the supporter of Ethereum will actually argue that we don't. Because if Bitcoin can be regarded as a decentralized alternative to counteract the corruption and the inefficiencies of the financial system, then Ethereum could actually constitute a decentralized alternative to the legal system as a whole. And so this relates to this kind of anarchic idea of decentralized law, basically, where everyone is able to implement their own set of rules into a particular contract, to create an interconnected system of contractual rule interacting with each other in a way that is transparent, that is always predictable, and that does not require any kind of trust between the parties. Now, the flip side of this is, of course, that Ethereum could actually be taken over by big corporation, by financial institutions, or even by governments in order to try and recreate the same economic structure and political order that we have today, except that this time it will be actually much, much more harder to actually escape from this system. And so this could potentially lead to a really totalitarian society which is almost exclusively regulated by self enforcing contracts which dictate the rules to which the society has to abide without any kind of constitutional constraints."
+      },
+      {
+        "role": "user",
+        "content": "What's your final question for us to consider about this technology?"
+      },
+      {
+        "role": "assistant",
+        "content": "I would like to conclude with this quote from Yochai Bankler which basically says that there are no perfect freedoms, just different set of constraints. And so the question that we have to ask ourselves is would we rather be living in a world in which we are constrained by the rules of law, which we cannot really control, which are universally applicable, but which are also more flexible, which are issued from a democratic process and which are not perfectly enforceable? Or would we rather live in a society that is dictated by the rules of the code, which even though they are consensus based, once they have been agreed upon, then they become automatically enforced without leaving people with any kind of recourse? And so this is my final question and I will actually really enjoy hearing what you think about that."
+      },
+      {
+        "role": "user",
+        "content": "I have concerns about DAOs - they remind me of AI corporations in science fiction that outcompete humans. But I'm also wondering about the practical enforcement capabilities. What can smart contracts actually enforce?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So I think there is this big issue when we start interacting with the physical world, obviously, because then you can have the smartest property as you want. But of course, if you actually like break the system on the physical world, then the system cannot break up. So there is actually a lot of people that. So that was the title of my presentation. There's a lot of people that actually describe Ethereum as the potential initiator of a Skynet. Right, A Skynet. Yeah. So. And I was actually really curious and I started exploring this. But to some extent it's like the smart contract that we're talking about are essentially just mediator. So they don't really. There is no kind of artificial intelligence in the course. On the contrary, they're like just like really sharp pieces of code which are basically just mediating the interaction between me and another person. So I don't think they can have any kind of like. So most of them is really just like contractual. So you can have futures, for instance. There is actually people that are starting to come up with like really original ideas and I actually have the list of really interesting ideas. But yeah, so essentially it's really just, if I want to create a contract with you and I don't want to trust either you or a third party, then I'm gonna create this smart contract on the blockchain. And so I'm gonna say, so I'm gonna give you this amount of money upon the completion of this contract, and then it basically acts as an escrow, but which is. As an escrow. Escrow, which is trustless escrow. Because it's basically just code and I can see the code and I know exactly what's going on. Now the thing is that Ethereum is actually still like in beta testing, so there is actually no real world application that is. Yeah, I mean, there is like the test net, so you can test it, but there is nothing really like fundamentally."
+      },
+      {
+        "role": "user",
+        "content": "Could there be a standard way of giving courts control or intervention rights in these agreements?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So I mean, the interesting weird idea behind Eterreum is basically to create alternative frameworks, alternative contractual frameworks. So I want to contract with you and I'm going to issue or design a contract that is going to regulate our interaction. Okay. Now of course there is always the question that you cannot really codify everything into A piece of code and there is always arbitration necessary or there is like things that are just, you need human judgment. And so they have come up with the design of actually you can have, you can be for instance a judge, an arbitrator and you incorporate your smart contract into the blockchain and you start. So I can create a contract and say if there is some kind of disagreement or if we reach that point in the contract, then we have to interact with that other smart contract which is going to ask that one judge to actually decide for one direction or the other. So you could design really complex and really sophisticated system of alternative dispute resolution system or you could in fact rely on a court system. The idea is instead of the underlying justification for those kind of contract is that so you have to trust eventually this judge. But you could have for instance different 10 or 100 different kind of judges which are specialized into a particular field and which are on reputation. So I for instance, with my contract, I trust this judge and we both agree that this is a good judge. So we're gonna apply our dispute resolution system to that judge. You could hope."
+      },
+      {
+        "role": "user",
+        "content": "This reminds me of current issues with mandatory arbitration clauses. How does Ethereum relate to these concerns about losing legal rights?"
+      },
+      {
+        "role": "assistant",
+        "content": "And that's. So that's the really interesting thing about Ethereum is that it is like. So I spoke with a lot of the people developing it and it is mainly justified under this aspect of like providing freedom and getting rid of like those big corporations and government and things like this. And they really like believe in the fact of decentralized everything and asserting freedom through decentralization. Now the problem is that of course because those contracts are self enforceable and because they are so strict, then once a person enters into that contract, then the freedom of the gray area, the freedom of actually just changing your mind is constrained. And so it's kind of like shifting. You provide much more freedom at the beginning because I can actually choose my legal framework, I can choose what kind of contractual framework I want to be subjected to. But then of course you have the issue of asymmetries of power. And then to that extent, even though I am theoretically free to choose the legal framework that I like the best, most likely, if I want to interact with that big smart contract or Dio, then that dio will impose me from going through that contractual framework which might actually not be the one I seriously agree to. So it's."
+      },
+      {
+        "role": "user",
+        "content": "What about bugs in smart contracts? If contracts are enforced by code and can't be changed, isn't that a problem?"
+      },
+      {
+        "role": "assistant",
+        "content": "There is one thing is that in fact those contracts are really, really, really simple. Those are like really just like five lines. And you can have a contract. Of course. You can build more complex. No, no, of course, of course. But so entire also. So they are open state in the sense that you can pretty much look at the code. So most likely if there is a buggy contract, it's eventually completely going to be and nobody's going to want to transact with that contract. Maybe the first person that's actually enter into the contract and that will service. So there is of course this risk. Yeah, but theoretically. So under an ideal world in which everyone is actually looking at the code and eventually they're gonna build upon more sophisticated and like basically on the same concept of like libraries. So you can have basic libraries and construct new contract based on those libraries. So eventually, theoretically it's always for sure there will always be a bug. But theoretically you can identify them and kind of sort them out."
+      },
+      {
+        "role": "user",
+        "content": "This is happening across multiple projects beyond just Ethereum, right? Like Napster changed everything?"
+      },
+      {
+        "role": "assistant",
+        "content": "I don't know, I mean, I think it's just like, it's like Napster, right? So it created a new technology which, well not Napster itself, but like BitTorrent or whatever. You have this new decentralized technology which can be used for fantastic things. On the other hand, of course you can also use for massive copyright infringement. So and I actually, I spoke again, I spoke with the people from Ethereum, whether they were actually considering, you know, how what would be the implication of this technology if it's used for bad things or for good things. And I mean of course everything can be used for good things and bad things. So they are focusing kind of. So the technology is not really neutral in the sense that it is designed in such a way that will have an impact on what is the consequence on society and the way. So from my understanding the way that they are pushing this technology is that it's just like a really neutral platform which is however infrastructurally designed to be as decentralized as possible in order to try and avoid as much as possible concentration of powers. And they consider that if you actually manage to maintain this level of decentralization, then there will be more likely to be better usages of it or like less like monopolistic abuses on it."
+      },
+      {
+        "role": "user",
+        "content": "How does self-enforcement in smart contracts affect freedom and the ability to handle complex real-world situations?"
+      },
+      {
+        "role": "assistant",
+        "content": "There is also the problem that self enforcement can also be so at the same, it's convenient in many ways, but it also has this risk that in fact how can you really codify the complexity of the world into like 10 or 15 links or as complex the software can be, it's extremely complex to really identify all the possible outcome that might come up. And so in some way by creating something that is self enforceable, you are creating this kind of restriction which are exempt restrictions as opposed to being exposed. And so as opposed to the standard legal system which allows you to do whatever, like doesn't constrain you in terms of capabilities, but will then punish you if you're actually infringing the boundaries of the law by creating self enforceable contract, then you're actually constraining beforehand the ability of people to do anything. And so if you codify the contract in such a way that is too constraining, then it means that you will be limited from doing things that might actually be legitimate to do even before they can actually do it. So you're actually in the sense of freedom, you're actually limiting the freedom beforehand, even though it's like a constant based constraint. Yeah. And because everything is open state, so basically you can pretty much know everything you're getting into. And if you don't like it, you can add or remove or whatever, for example."
+      },
+      {
+        "role": "user",
+        "content": "It seems like Ethereum might not actually reduce the burden on the legal system. What's your take on its efficiency as an alternative?"
+      },
+      {
+        "role": "assistant",
+        "content": "So I think Ethereum actually is just intended to be this technology. This is completely true in the sense that Ethereum as a platform could be subverted into something that becomes this really centralized power. So for instance, you could have the state actually deciding, so installing whatever state dao on Ethereum and saying that every contract has to go through there and then the state actually has complete control. Now the way in which it is justified by the Ethereum team is that you basically. So it's not necessarily like a complete outside system, but it's. So you have kind of a hierarchy of norms. Okay, so you have like the most basic norms and then you have like which are general, you know, which are applied to everyone, but which are not really specific and those probably cannot really be codified into ethereum because just hold on, like any son. And then you have like more closed system and it becomes more and more specific and then it applies to a smaller group of people. And so the way they define it is the idea is for instance, let's take contract, the framework of contract law. So what they want to provide is to provide a choice between different legal framework for contract law. So this means that if I decide I want to, so if I abide to a really libertarian ideology of contract law, maybe I will not be willing to. So I would rather enter into a contract with you which doesn't have any kind of like special legal safeguards as opposed to another person that has a completely different vision of contract law which will decide to enter into this particular legal framework of contract law. Of course then there will always be the issue when you reach a higher level of norms, then you will always need some kind of either court or judge or some kind of arbitration which requires something that is either a human judgment or whatever. And so the idea is to. So right now we have the non controllable part of legal norms which is quite wide. And then you have basically the contract that I enter between you and me that are creating those specific fields and they want to basically widen that and reduce the amount of norms that cannot be changed by providing alternative legal frameworks for property law, contract law, et cetera. And that's where it makes sense. But then yes, in the end it doesn't make sense to the extent that of course you will always be a human, you will always need to interact with other humans and you will always need like a human judge or an arbitrator. Of course, building on the idea of."
+      },
+      {
+        "role": "user",
+        "content": "What about enforcement limitations? It seems like the system can only enforce what it can control digitally?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, so Ethereum is not necessarily. It incorporates like some kind of monetary system, but it's really just like in addition to this monetary system which is used to create shares and stuff, it's really just about the contract. So you can interface with anything that can interface with a blockchain based technology. And that's where you have the idea of smart property that comes in. So you can have Bitcoin for currency, you can have smart property. And it's all the concept of tokens, transfer of tokens and as much as you can come up with an idea of how the possession of a particular token might actually have an impact on. You just have to create an application that is dependent on this particular token. So as of now there is not much in fact because when those applications."
+      },
+      {
+        "role": "user",
+        "content": "But if these systems place themselves outside the legal framework, don't they also lose legal protections?"
+      },
+      {
+        "role": "assistant",
+        "content": "So I think it's not scary. I mean it is actually a bit scary. But I mean. So for instance, with the house they actually. It's really interesting if you go and you read the Terreum forum, they come up with like all the most incredibly crazy idea, but. But they actually come up also with the idea you don't own a house anymore, you just own a token. And because of the Internet of things and you have every device in the house that is actually reacting to that particular token. So you could just transfer the token. And this means that yeah, it becomes like having access. So if you give the key to the house, of course you're not giving the ownership to the house. But the more and more we are moving towards this kind of technology, technosol, whatever, smart property, right then it actually makes more and more sense. So right now it's not scary at all. Of course, like right now it does."
+      },
+      {
+        "role": "user",
+        "content": "Given human inability to predict the future and unintended consequences, is there a way to have flexibility in a decentralized system?"
+      },
+      {
+        "role": "assistant",
+        "content": "So I think it's just a matter of whether you want to. So do you want to incorporate the human element in the system? Which means you do now need to trust that human element. So whenever there is like if it's everything is on the computer, of course, course you don't need any trust because you see what the code is doing. But the code is by definition really limited. And so I mean you can imagine that maybe in like 10 years then people will have come up with layers and layers of contract basically recreating contract law into realm. Why not? Right? But even then contract law is like even the whole contract law framework, which is extremely, extremely complex. It requires a judge at some point, it requires like some kind of human arbitration. Now the thing is that, and then maybe the question becomes like, so what's the point with Ethereum, right? Like so if you actually reincorporate all those same arbitrator and judges and whatever, then you're basically recreating the legal system into the Ethereum system. Okay, again, I think I think my most obvious answer I will give to that is, I completely agree with you. But the one advantage I can see is that you can choose your system. Okay? So you can have, let's say we reproduce the whole legal system, but we can reproduce a lot of variety of different legal system with different features, which always will involve a human which always will involve function, kind of trust or not. But you can experiment with new things. You can try a completely libertarian one, a completely communist one, and they can coexist. And I, for instance, could enter into a libertarian contract with you and enter into a communist contract with S.J. you know, so this allows, to some extent, it does allow beforehand more freedom of choice for the people. Whether or not it actually is going to lead to the same thing or not, I don't know."
+      },
+      {
+        "role": "user",
+        "content": "How could DAOs implement governance systems that allow for flexibility and modification?"
+      },
+      {
+        "role": "assistant",
+        "content": "So on the other hand there is also deposit, so the distributed autonomous organization can implement this kind of constitution which implements a system of governance. And so for instance you could have a system that says that there are these particular types of person or perhaps according to how many the stakeholders, according to how many shares you have, you have different kind of voting and therefore you can actually modify the code according to, to whatever mechanism of governance has been established."
+      },
+      {
+        "role": "user",
+        "content": "What are the benefits of experimenting with governance on Ethereum?"
+      },
+      {
+        "role": "assistant",
+        "content": "I agree with that. But this is actually a good one because in fact the one interesting aspect of a Tehran is in fact that it actually allows for experimentation like really easily. Today it's actually hard to experiment because you need to be go through this really long legal process and you need to wait years to find out what's going on and then you have like a lot of various lobbies. Whereas on Ethereum perhaps Eterum is never going to become anything actually relevant to our world, who knows. But it does provide this interesting platform where we can experiment with innovative model of governance. And this I think is really interesting and also because it also. So in terms of this governance system, it's a system that is completely transparent and doesn't allow for any kind of corruption. And so you can, well, I mean you cannot corrupt the Dio because the Dio is actually just following the rules. So if you design the rules in a way that it cannot be corrupted, then you create this DAO that people can trust because they can see how it's going to operate. And so you move away. The human bias is moved on the edge. And the dio is just this central structure that human interact with according to predefined rules. So on this aspect, I think it's actually quite interesting to see what kind of types of dio and organization will be deployed on the blockchain to see, see whether they have any working mechanism or not."
+      },
+      {
+        "role": "user",
+        "content": "Why would a state adopt something like Ethereum when they already have centralized systems?"
+      },
+      {
+        "role": "assistant",
+        "content": "I personally don't think a state would ever adopt something at the term. On the other hand, I think it's interesting to look at it by analogy with Bitcoin. So Bitcoin was in fact designed to avoid the financial system. Now the question is, so if the state is unhappy with that technology, it has many ways in which it can try and react to. It can ban it or try and regulate it in some way, or it can just accept it and then try and see what it can do with it. And so with Bitcoin, if you actually look at it, even though it's actually theoretically a really decentralized platform, in fact, you have the centralized cluster which are the exchanges. And so the state doesn't actually need to regulate the Bitcoin network, it just have to regulate those intermediaries. Now the scary thing about Bitcoin, and I do believe this might also be the scary thing about Ethereum, is that so Bitcoin as whatever the ideology behind it could be this decentralized alternative to the financial system. But when you look at the current implementation of the system, so you have this, you have the state that can actually regulate the exchange. And basically the transparency of Bitcoin become actually a powerful tool for the state to actually manage, to control everything what's going on. And so you can regulate the exchange to actually oblige. And that's actually the case in order to register to an exchange, you have to give various documents of identity. So you pretty much know who is the person that owns this wallet on the exchange. And so by regulating the main actors, then you basically obtain this power of it's not surveillance, but it's actually transparency that you can trace back every kind of transaction that is done on the Bitcoin network and the state can actually know exactly what's going on."
+      },
+      {
+        "role": "user",
+        "content": "How could this same pattern apply to Ethereum?"
+      },
+      {
+        "role": "assistant",
+        "content": "With Ethereum, the flip side is the same in the sense that of course you can look at it as if it's like this decentralized alternative to the legal system. But if the state actually step in into the system and create those centralized clusters which become the cluster to which everyone maybe don't have to. In the same way as with Bitcoin, you don't have to interact with any exchange, but the majority and the mainstream of the population eventually will interact with those. Right? And so with Ethereum, you have the Same risk, you create those cluster of power within this decentralized network which is, is a completely transparent network, which means that there is a possibility for pretty much the state to control and to have, not to control, but to have knowledge of everything that is going on and in fact also to control. Because if there is this centralized dao that is regulated by the state and the state has power to, you know, change the rules because he has the government power over it, then you actually create a system that is like absolutely totalitarian and really repressive. Potentially much worse than the current state. No, I'm not saying that the state wants Ethereum to flourish, but I think that if Ethereum does flourish, the most likely reaction of the state will be to step in and to actually control it. Because in spite of the, of it being a decentralized platform, it is actually quite easy to control because the state has power over the citizen, over its own citizens. So it can force the citizen to actually interact with a particular dio on the blockchain and therefore have control over all those people that interact with this dio. Right."
+      },
+      {
+        "role": "user",
+        "content": "But aren't blockchain technologies interesting precisely because they can be decentralized, even if they often aren't?"
+      },
+      {
+        "role": "assistant",
+        "content": "But in the same way as like there is some strange discussion going on about like what about we implement a cryptocurrency that is actually, you modify slightly the platform that is actually completely government backed. So the government decide when to issue the currency. You get rid of like the creation of money by mining. And then you can actually recreate a system that is pretty much the same as the system we have today in a cryptographically enforced way. Now I think it's. I personally think it's really unlikely that the government will ever like reclaim a Bitcoin technology or technology. But the question is, so you have centralization which is really useful for coordination and et cetera, but then you have the transparency of those blockchain technology which are really attractive to people. And so when I interact with something, I want to know what's exactly going on. And the idea beyond all those blockchain based applications is that you want to get rid of this trust within this centralized entity and you want to move this trust into this decentralized, transparent and trust free technology, which is obviously something that a state doesn't really have an interest in. Now the question is the rest of the society might in fact, because they want to escape from decentralization because they do not trust the state. Right. And so you have those new technology that are being developed originally. The underlying ideology is often to actually escape from decentralization of the state. Now the question is how can the state react to that? Because there are those, all those legal challenges that are in fact raised by those technology. And so it is really difficult to ban those technologies because they are on the Internet, they are decentralized, etc. And then you have this issue of distributed autonomous organization that I have no idea what the law can do about them, but then you have the risk. And this is, this is a risk that is being discussed a lot in the Bitcoin community, that in fact we designed those decentralized platform. But they could be co opted by centralized entities. And this cooperation, it doesn't mean that the decentralized entity actually see an advantage indeed and would have created them to begin with. But because they are there, they need to somehow find a way to cope with it. Okay."
+      }
+    ]
+  }
+]

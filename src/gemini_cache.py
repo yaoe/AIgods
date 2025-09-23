@@ -69,7 +69,7 @@ def get_gemini_cache():
         return create_new_cache();
 
 
-        
+
 
 def create_new_cache():
 
@@ -87,7 +87,7 @@ def create_new_cache():
     # else:
         docs = []
         # Directory containing the JSON files
-        json_directory = "../../PI-LLM/Drafted Transcripts/"
+        json_directory = "./Cache Transcripts/"
 
         # Iterate over each JSON file in the directory
         for filename in os.listdir(json_directory):

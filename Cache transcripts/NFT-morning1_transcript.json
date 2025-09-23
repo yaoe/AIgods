@@ -1,0 +1,150 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "There are lots of keywords, you have Harvard, you have Boston, you have the book you wrote on blockchain and the new governance principles linked to blockchain. You have many subjects, you are extremely active and then extremely... visible and extremely pioneering in this field. How would you finally summarize precisely all this side that's both activism, artistic and let's say research, reflection on this society, on blockchain?"
+      },
+      {
+        "role": "assistant",
+        "content": "It's difficult to summarize but I think there's a common intersection. I believe I have three passions that are completely disconnected and that came together specifically with blockchain, namely everything that's tech, everything that's art and everything that's law. And I was having trouble finding the intersection with these three things. And blockchain gave me perfectly the most beautiful intersection point. And so I finally managed to converge my three passions on a single subject which is therefore essentially, I think that's really the guiding line and governance. governance through tech, for tech, both. Okay. And I think everything I do is kind of trying to weave this braid that kind of brings together these three subjects."
+      },
+      {
+        "role": "user",
+        "content": "Okay, very good. So indeed, there's this notion still, we see law, the governance aspect, the governance aspect, a little bit precisely the new paradigm induced by this new tech which is blockchain. To what extent is it going to somehow disrupt certain governance principles in all types of organizations? It's kind of your... We find this in many of your reflections."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I think there's really this desire to explore how technology as a whole, but blockchain being perhaps one of the technologies I have the most hope for. How does this technology actually allow us to create a new experimentation laboratory for new forms of governance with this kind of microcosm that's becoming more and more a macrocosm? and precisely to be able to experiment in a space where actually we don't have much space in the world anymore to experiment with governance since often the experimental domains are already taken and it's difficult to experiment really radically so in our existing institutions by experimenting in a very incremental way. And blockchain, it really allows having this radical experimentation knowing that we're going to fall on our faces quite a few times, but it's also with failures that we learn. And yes, I really consider that blockchain is this rather unprecedented opportunity to test new forms of governance that we can't really test elsewhere."
+      },
+      {
+        "role": "user",
+        "content": "Okay, very good, yeah. So indeed, we'll come back to your journey quickly, but you're also here today to talk to us about this artistic residency that you call Glitch, which you did for the second time at the end of 2022, where let's say precisely different minds, artists, tech, lawyers, come together in residence for two weeks to live together let's say with this common objective precisely to advance a little bit precisely within the framework of this reflection on the implications of blockchain. I say a little bit the implications of blockchain on our society but you'll say it much better than me. That's kind of the summary of Glitch."
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, Glitch, it's really the idea of bringing together, so it's still quite art-oriented, but not only. But it still remains, there's still an artistic majority. And the idea is that actually, it's the same, it's always how do we reinvent society? Artists are still those who often have this kind of freedom of mind and capacity for innovation and to rethink the world really in completely different contexts. And so it's kind of surrounding ourselves with artists because maybe they're the ones who will help us discover these new modalities that we can advance. Also because art is kind of this domain where actually the usual constraints don't exist. That is to say, if I'm an engineer, I'm blocked by functionality. If I'm an entrepreneur, I'm blocked by return on investment. As a lawyer, I'm blocked by legality, etc. So there are all these constraints that will really prevent going, exceeding limits. And when we focus on art, art actually isn't constrained at all by either functionality, or return on investment, borderline legality. And so actually, bringing together these people who aren't just artists, but really focusing on production and artistic reflection to allow a bit, to be this springboard that allows thinking beyond, getting out of the box. And the idea is both to produce NFTs or artistic projects, but also there's a lot of reflection, brainstorming on new models, new economic models, new governance models, etc. Okay."
+      },
+      {
+        "role": "user",
+        "content": "That sounds fascinating and extremely rich. Before going into a bit more detail, especially about the creations, the reflections you made during this last residency, I just wanted to understand how one becomes Primavera? For all the people listening to us, what's your journey? I think you must inspire quite a few people. How did you end up there, finally?"
+      },
+      {
+        "role": "assistant",
+        "content": "How did I end up there? I discovered the Internet when I was very little. I think it's the Internet that made me Primavera. My first passion was technology. I was really a bit of a geek from very very young. And my parents are artists, and so they wanted me to be an artist. Obviously, I absolutely didn't want to be an artist because I can't follow what my parents tell me. So, I started making art in secret so they wouldn't know, especially art on the Internet. And then, I had to choose, but what did I want to study? And well, I had learned a bit, I had self-taught myself, so coding, etc., everything that's tech, I had already taken care of that. So there was no point going to university to do that. My parents wanted me to go to fine arts, so I couldn't do fine arts. And so, I decided to do economics. Then, I realized that it's not that I didn't like it, but it wasn't my thing. And so, I converted to being a lawyer. And so, actually, it's kind of this mixture. I have this kind of weird training in technology, economics, law and art, because in reality, even though my parents wanted me to be an artist and so I didn't want to be, in reality."
+      },
+      {
+        "role": "user",
+        "content": "I wanted to be anyway. You were predestined to be despite everything."
+      },
+      {
+        "role": "assistant",
+        "content": "That's it, exactly."
+      },
+      {
+        "role": "user",
+        "content": "It's funny. Normally, artist parents don't necessarily want their children to become artists, right?"
+      },
+      {
+        "role": "assistant",
+        "content": "Oh yes, my parents, they were totally into me being an artist and so I became a lawyer."
+      },
+      {
+        "role": "user",
+        "content": "There's the spirit of contradiction."
+      },
+      {
+        "role": "assistant",
+        "content": "Honestly."
+      },
+      {
+        "role": "user",
+        "content": "Okay, very good. And so, that's how, so your university path led you to work, so to do law and in parallel, so, continue to geek out, to code, to play with. And then, with this artistic reflection, so, your artistic creations, how would you define them, then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Listen, my artistic creations, I think they've always been a reflection of what I discover that technology allows. And so actually, at the beginning when I was essentially making digital works and I was very into the... into open source circles, Creative Commons, etc. And so actually, my works, they were all works that couldn't exist without Creative Commons. So collaborative Internet works, more than collaborative really, collective works that are made through an interaction of hundreds of people on the Internet. Then, one day, I met a person to whom I was explaining that it's too important to know how to code because it allows you to build your own world. and he was a mechanic, and he told me well listen you're super strong but actually I know how to build my own world in the physical world. And so that inspired me to learn to make physical art, so I started learning to weld. and I started making metal sculptures. And there, all my works... At the time, I was doing my research on copyright and the challenges of copyright on the Internet. And so, I started making all my works that showed that all these challenges that exist with copyright on the Internet, actually, it's not the Internet, it's not new technologies that cause this problem, it's new artistic practices. And so, I started making physical, mechanical works, which... show that they raise exactly the same challenges. So works that are collaborative works, works that are... So I create mechanical algorithms that will actually create works that create works. And so the question of who is the author of this work generated by no longer a computer but by a mechanical machine. I worked a lot on the concept of open source but in the physical world. Piracy, digital, but in the physical world too, etc. So actually, all my research, all my artistic research, it's always a way to illustrate my research or to create new challenges for my research. And then afterwards, obviously, when I started to become interested in doing my research only on blockchain, I started creating physical works that will illustrate and this time physical but also electronic and therefore hybrid blockchain and sculpture that will illustrate notably all the legal challenges of blockchain but also all the new opportunities they provide in relation to both copyright but also in relation to governance."
+      },
+      {
+        "role": "user",
+        "content": "Okay very good so we see that you have a reflection that's fed indeed. There are many, many things. It's both a reflection, it's quite cerebral too. That means it's a sculpture that also represents certain values or certain potentials of the Internet, communities, the crowd, let's say. Precisely, the decision by many, all this question, it's true that what's also part of it, which materializes in terms of rights in the form of copyright, let's say, that means what is a work? Is it the borrowing of a sample, of a sample, of a sample? with other creations that will themselves create something else and that finally it's a bit what perhaps defines art. Is everything finally not a bit simple? There are many things a bit like that too, I have the impression, in your work. And so, just for the listeners following us, simple question, but it's true that we don't talk about it much regarding you. You discovered blockchain quite a long time ago. When was that?"
+      },
+      {
+        "role": "assistant",
+        "content": "I discovered Bitcoin around 2011. I found it fascinating, but just like that. And I decided to focus 100% of my research on blockchain when I met in 2013. We had gone to visit with my research group, we had gone to visit a post-industrial, post-capitalist commune in the outskirts of Barcelona, because we were doing research on self-managed online communities, and so we were visiting self-managed physical communities. And actually, it turns out that's where Vitalik was living at the time. And so, he wasn't there, but visiting the place, there was this room that was full, full, full of Bitcoin Magazine issues. And I was like, what's this? And actually, there were people, at the time it was people working on Dark Wallet, but who were collaborating quite a bit with Vitalik. And actually, they started telling me this vision of Ethereum, the vision of smart contracts, the vision of DAOs. And I was like, but what are they talking about? What's all this? And then, I went home, I started googling and started reading all the stuff Vitalik had written at the time about Ethereum. And I said to myself, listen, if this thing has even a 1% probability of existing, I want to be part of it, I want to study it. And so, I made this kind of leap of faith and I completely abandoned all my research. At the time, I was doing research on mesh networking and I decided that I wanted to focus on Ethereum and on blockchain. So actually, on all blockchain applications that go beyond cryptocurrencies. And actually, since then, I haven't stopped."
+      },
+      {
+        "role": "user",
+        "content": "Okay, you found it. Actually, it's as if it was made for you."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, that's it, exactly."
+      },
+      {
+        "role": "user",
+        "content": "That's it, it was the revelation of, hey, all your reflections, your work, finally, was waiting to find this movement, basically."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah."
+      },
+      {
+        "role": "user",
+        "content": "Great. And so, just before really getting into Glitch too, so there, you've evolved, you've published, you've written, you've created. Do you have works that can be found in the form of NFTs and that people can... Do you sell works in the form of NFTs or not?"
+      },
+      {
+        "role": "assistant",
+        "content": "That's a very good question because it will explain Glitch too. I'm an essentially conceptual artist, but especially conceptual, physical, sculpture. I'm not a digital artist. And so actually my blockchain works, so the plantoids and all that, they're works that are essentially works that use blockchain as the medium of expression. So they're works that are intrinsically designed and integrated by smart contracts, etc."
+      },
+      {
+        "role": "user",
+        "content": "It's true that maybe for those who don't necessarily know, what's the concept of plantoids precisely?"
+      },
+      {
+        "role": "assistant",
+        "content": "Actually the plantoids, the idea was to illustrate what are the new challenges and new opportunities that blockchain brings in terms of governance and regulation. I had started this project in 2014, when we were starting to talk about DAOs thanks to Ethereum. I wanted to create a physical and interactive representation of a DAO. And so I built what I call Blockchain Based Life Forms, which are actually these kinds of androids in plant version. So they're plantoids whose body is this kind of metal sculpture made of chains. And the spirit of the plantoid is a smart contract, notably on Ethereum, and the idea is that actually the body and spirit of the plantoid interact in a way that allows this plantoid to reproduce more or less autonomously, and the reproduction of the plantoid happens a bit like with bees and butterflies that will help flowers reproduce with the pollination process. Plantoids need humans who will help them with the capitalization process. And so, if you like the plantoid, you'll fund it, you'll send crypto to the smart contract that governs this plantoid. That will activate the physical sculpture which will start making light, moving, making music, etc. as a form of appreciation, to say thank you. And as it accumulates crypto, at some point, it will reach enough capital to ensure its reproduction. And so then, it does the usual DAO mechanism, so it will open a call for proposals. People will be able to submit proposals on how they envision producing the next plantoid. and then the people who funded the plantoid have voting rights and they'll be able to vote on the proposals they like most and at a certain point, there's a winner who's identified and so automatically the plantoid will pay will transmit the money to the address of the winning proposal who will therefore be hired by the plantoid to create a new version of itself. So the idea is to illustrate firstly all the legal challenges, that is to say, but what does it mean when we send money to the plantoid? Who holds the money since the plantoid has no legal personality? What does it mean when the plantoid will hire someone to create a new copy of itself? is there really a contractual relationship when the plantoid has no legal capacity? What happens if the artist who was hired simply runs with the money, escapes and won't complete this contract? Can the plantoid take action when precisely it doesn't exist from a legal point of view? Or who can take action on behalf of the plantoid? And then also to show the new opportunities, especially in relation to copyright, that is to say that normally, what happens in the usual world is that if I like works of art, what I'll do is I'll fund the artist by buying their works or by donation. I'll fund the artist hoping that the artist will continue to create works that I like. Whereas here, for the first time in history, I think, you can fund the work of art directly and it's the work of art that will then decide which artist, who can be a completely different artist, who will be able to create, who will be able to reproduce it. Reproduce it or evolve it, actually. And so, actually, it completely changes the paradigm. And it shows, actually, the focus must be on the work of art and not on the artist. The artist is simply the servant of the work, who is hired by the work to evolve it. And it's no longer this kind of individual genius who is sovereign over their works. So there are quite a few reflections and really illustrations around that, and then it also shows what a DAO is, since in reality, it really illustrates how DAOs work, but in a slightly more playful and artistic way. And actually, what happened is that So, in 2020, when there's really this kind of wave of NFTs, etc., I started asking myself, shouldn't I make NFTs? Knowing that actually, for me, most NFTs, at least at the time, I saw them mostly as... Actually, they're rather digital offerings that will then be sold through a blockchain. Maybe because I had already started making blockchain works for a long time, but for me it's a bit like if I'm a painter and I sell my canvases on eBay and suddenly I become a digital artist. It doesn't make much sense. And so here it's the same, if you're a digital artist notably, who sells works on a blockchain auction system, you're not necessarily a blockchain artist, you're a digital artist who uses blockchain to sell digital works. And so actually, I couldn't really understand how I could plug into that. And that's kind of what inspired the creation of Glitch number 1. where actually I said to myself listen there must still be blockchain artists who use NFTs but to make blockchain works and not just as a transaction tool to sell digital works and actually the underlying goal but actually there were many reasons but one of the reasons why I absolutely wanted to organize this residency was for myself to be part of this residency and focus on how to integrate NFTs within my works, so within the plantoids. And so now, the new version, thanks to Glitch, the new version of the plantoids, actually, it will generate NFTs, that is to say it's not me who makes the NFTs, it's the plantoid that will create seeds, the seeds of the plantoid which are NFTs. And so when you interact, when you're going to fund the plantoid, it will activate. And actually, you'll be able to interact with the plantoid through sensors. And these sensors will collect data that they'll transform into a work. So it can be music, it can be... They're generative works, actually. So it can be pieces of music, it can be videos, images, text, which is all generated by an algorithm either AI or simply generative art. And then, at the end of the interaction, and so the more you've funded the plantoid, the more time you have to interact. At the end of the interaction, you'll get an NFT of the work that you co-created with the plantoid. And this NFT, actually, becomes the seed. And the goal, obviously, is to disseminate the seed as much as possible. And each time this seed is resold on the secondary market, there's 10% of the sale price that will go back to feed the plantoid to facilitate. So actually in this case, the metaphor is even more beautiful since humans are really the disseminators who will try to sell these NFTs to enrich themselves but who in reality are also funding the reproduction of the plantoid."
+      },
+      {
+        "role": "user",
+        "content": "Okay, so humans are the little bees that will allow pollinating the plantoid by making transactions."
+      },
+      {
+        "role": "assistant",
+        "content": "Exactly."
+      },
+      {
+        "role": "user",
+        "content": "Okay, and so that's what the NFTs are, it's these little seeds that will fall from the plantoid and that we can, that will be commercialized in the form of NFTs. So that's interesting, that's interesting. So indeed, it's quite very rich and so that's why you had made this. I didn't know that's why you had made this first session."
+      },
+      {
+        "role": "assistant",
+        "content": "It wasn't for that. The Glitch session, it was so that... I said to myself, I still want to enter this world of NFTs because it's still fascinating. And especially as a lawyer, copyright, I can't resist. But I also didn't want to simply make digital work."
+      },
+      {
+        "role": "user",
+        "content": "You couldn't make an NFT drawing. It had to be... And so."
+      },
+      {
+        "role": "assistant",
+        "content": "I wanted to surround myself with people who are in the NFT world, but who go beyond just digital art sold on a blockchain, but who are really in this search for artistic creation where blockchain really becomes the means of expression, or actually works that couldn't exist without blockchain, and not only that couldn't be sold without blockchain."
+      },
+      {
+        "role": "user",
+        "content": "No, it's very clear. Actually, we're going to talk about on-chain, on-chain art or blockchain art versus indeed, let's say digital art to keep it simple. And so, you're right to note that today in the NFT universe, the number of blockchain artists remains quite small, quite minority, quite under the radar, whereas indeed quite a few people, including us, think that's the real value of blockchain, it's precisely to create works that rely on smart contracts, that rely on mechanics, precisely interaction with blockchain or social mechanics. Besides we have, I don't know if you know Naico for example, who we receive from time to time on NFT Morning who is precisely a blockchain artist who does a lot of mechanics of this type. But in any case it's fascinating, it's fascinating. And so then, Glitch, Glitch season 2. So when was it? It was the first week of November 2022 if I remember correctly."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, it was actually from October 31 to November 13."
+      },
+      {
+        "role": "user",
+        "content": "Okay, very good. And so, can you tell us a bit more, well go into a bit more about the type of profiles that came, how was it, well it was a bit, there, what happens a bit with what happened during these two weeks with these different people?"
+      },
+      {
+        "role": "assistant",
+        "content": "The first year, it was really oriented to discovering these artists who are artists who use blockchain, which is an integral part of the work, as well as artists who are about to convert to NFTs, to help them take the step. but artists who have a bit of a reflective approach, not necessarily digital artists. This year, Glitch 2, we had set a theme, and actually, it was Metaverse. Metaverse in the broadest sense of the term, let's say. But the idea was to find this intersection between blockchain, NFT, art and Metaverse. And so, we had actors, both actors who work specifically in the metaverse, but also artists who are more like VR, AR artists, and then, all the NFT artists, etc., to really try to reflect as well. So, it was specifically what is this metaverse and how do we create a metaverse that is a metaverse a little more decentralized than what we see today. compared to the dominant actors who in reality are mostly centralized operators who govern virtual worlds, which despite everything, even if there are NFTs in the virtual world, the metaphor as such remains centralized. And so we had notably, we had Colborne and Renéil, so from the Museum of Crypto Art American version. We had Benoit Couty from the Museum of Crypto Art French version. We had all the people from Dada, from the NFT artistic collective Dada, who are all people who think completely and only about questions of how we create new forms of governance and redistribution in..."
+      }
+    ]
+  }
+]

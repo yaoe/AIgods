@@ -1,0 +1,282 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Welcome to Future Squared, the podcast all about corporate innovation, entrepreneurship and self empowerment. Future Squared brings you a double dose of innovation inspiration every week to help you and your company stay relevant in an era of rapid change and 10x your results in both your professional and personal life. Each week I'll bring you corporate innovators, entrepreneurs, authors, keynote speakers and thought leaders such as Steve Blank, David Allen, Brad Feld, Tim Harford, Karen Dillon, Jenny Blake, Neil Patel, Rand Fishkin, Pascal Finnett, Ryan Blair and Ash Moriar, to name just a few. While every Friday I'll bring you Fast Fix Friday some quick, digestible insights to help you end your week on a high as you head off for the weekend, Future Squared is brought to you by Collective Campus, an innovation hub school and consultancy based in Melbourne, Australia and Singapore that works with companies to help them adopt the mindset, methods and tools to navigate change and survive and thrive in an era of rap rapid disruption. If your organization needs help coming up with ideas, testing and turning ideas into reality, incubating teams, driving cultural change, or connecting and partnering with startups, then visit www.CollectiveCamp.us and without further ado, here's today's podcast."
+      },
+      {
+        "role": "user",
+        "content": "Welcome back to Future Squared. I'm excited to bring you today's guest Primavera de Felipe Primavera is a permanent researcher at the national center of Scientific Research in Paris. She's Faculty Associate at the Berkeman center for Internet and Society at Harvard Law School where she is investigating the concept of governance by design as it relates to online distributed architectures. Most of her research focuses on the legal challenges raised and faced by emergent decentralized technologies such as Bitcoin, Ethereum and other blockchain based applications, and how these technologies could be used to design new governance models capable of supporting large scale decentralized collaboration and more participatory decision making. Primavera obtained her Master's degree in Business and Administration from Bocconi University of Milan and a Master degree in Intellectual Property Law at the Queen Mary University of London. She is involved in several organizations dedicated to promoting the free culture and open data. She's just penned a new book with Aaron Wright called Blockchain and the Law the Rule of Code, which explores the topic of blockchain, including the regulation of cryptocurrencies, smart contracts, ICOs and distributed autonomous organizations. So that will form the basis for our conversation today and you can expect to learn a treasure trove of things in this conversation, including whether the blockchain should be regulated and how, why we need to rethink organizational structures to create more value for society via the blockchain, what the distributed autonomous organization might look like, and what the impact of the blockchain might be on traditional professional services firms such as legal firms and accountancy firms. There was so much more I wanted to explore in this conversation with Primavera. But blockchain is one of those rabbit hole topics and we could only cover so much in the one hour we had. I would have loved to explore not only the downsides of ICOs, but also the upsides around liquidity, business continuity and the democratization of early stage startup investment. But with that, I should wrap up this introduction and get into the conversation with the one and only Primavera de Felipe."
+      },
+      {
+        "role": "user",
+        "content": "Welcome to the show Primavera."
+      },
+      {
+        "role": "assistant",
+        "content": "Thank you."
+      },
+      {
+        "role": "user",
+        "content": "It's a pleasure to have you on the program. And you're joining us. I think you're the first guest to join us from Paris, France."
+      },
+      {
+        "role": "assistant",
+        "content": "Yes."
+      },
+      {
+        "role": "user",
+        "content": "At 9pm on a Sunday night. So thank you for giving up the time. I was actually last in France, when was it? 2016, for the European Championships. And I think France then looked very different to today because every time I went out, the city was just full of drunk Europeans celebrating their victories or their losses."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I guess it's a little bit quieter by now."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, I can imagine. So, Primavera, you've been investigating this concept of governance by design as it relates to the blockchain and online distributed architectures. And you've also been exploring the legal challenges raised and faced by technologies like Bitcoin and Ethereum. Perhaps I'll take a step back for our audience's benefit. How do you define governance by design?"
+      },
+      {
+        "role": "assistant",
+        "content": "It's a little bit of a difficult question, but I guess it's codifying specific governance rules into a technological infrastructure so that you can predefine the way in which specific actors can actually coordinate themselves."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, so rather than governance by hierarchy or centralized control."
+      },
+      {
+        "role": "assistant",
+        "content": "Exactly. So it's using the technology as a way to mediate the interaction between different people. You can codify within this technological structure also some kind of payoff structure. So you can create like incentivization or disincentivization mechanism so that there is this kind of self governing mechanism that actually emerge out of the structure."
+      },
+      {
+        "role": "user",
+        "content": "So similar to I guess the Bitcoin architecture where people are incentivized to mine for Bitcoin."
+      },
+      {
+        "role": "assistant",
+        "content": "Exactly."
+      },
+      {
+        "role": "user",
+        "content": "Fantastic. How did you come to work on this topic, Primavera?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, I've been researching for a long time."
+      },
+      {
+        "role": "user",
+        "content": "How long is a long time?"
+      },
+      {
+        "role": "assistant",
+        "content": "I guess it's. I mean, since ever since I got into the Internet. I've been investigating the decentralized architectures, initially more from a technical level and then from a legal economical perspective. And I was very interested in looking at how new technologies actually enable different forms of coordination, and especially like large scale distributed coordination. So from peer to peer file sharing to Bitcoin to Ethereum, et cetera."
+      },
+      {
+        "role": "user",
+        "content": "And that's exactly the nature of your forthcoming book, Blockchain and the Law, the Rule of Code, which you co wrote with Aaron Wright. It explores this topic and explores the regulation of cryptocurrencies, smart contracts, initial coin offerings, distributed autonomous organizations, all sorts of good stuff. So first up, congratulations on the book."
+      },
+      {
+        "role": "assistant",
+        "content": "Thank you."
+      },
+      {
+        "role": "user",
+        "content": "What are you hoping people who pick up a copy of this book will read? And I guess more importantly, what are you hoping it will do insofar as their views and behaviors are concerned?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, I think the book has actually a dual function in a way. So one is to really provide this broad overview of how does blockchain technology work, and then what are the various verticals in which this technology might actually have a significant impact? And for every single one of those verticals, we have actually looked at the dual function of this technology. Because in one way, this technology can actually support specific function and specific regulatory objectives. At the same time, it is also creating this new platform which actually escape or can bypass specific laws and regulation. So we've been looking at those different, like this dual side of the technology for those various verticals. And the idea is really to provide this kind of neutral and global comprehensive overview of what the technology can do or cannot do. And then, and I would say this is perhaps the most fundamental part of the book, we look at to which extent this technology constitute a new mechanism of regulation or governance, and on the other side, how we can actually regulate it. So it's on the one hand, it's a technology that tries to escape from the regulation, but still there is new intermediaries, there is new choke points that can actually be leveraged in order to actually regulate the mechanism of this technology. And on the other hand, there is also the possibility of using this technology as a regulatory technology, so as a tool to actually implement specific regulatory objectives into code."
+      },
+      {
+        "role": "user",
+        "content": "Excellent. And taking a step back there, you mentioned you explore a number of different verticals. What might some of those verticals be?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, so the most obvious one obviously is financial applications. So cryptocurrencies, legal contracts, smart contracts and so forth, and how they can be applied in order to create those smart securities and derivatives and so forth. And then we've been looking Also at how blockchain technology can actually be used also just as a as a form of certified and tamper resistant data store in which we can actually identify data and ensure the integrity of this information as well as how they can become those resilient and tamper resistant information system that actually take and build upon the initial peer to peer file sharing, but becomes even more difficult to control because there is actually no intermediary structure and they can be actually incentivized through those cryptocurrencies mechanism. And then of course there is the vertical of organizations. So how can we actually use those technology internally in order to modify the structure and increase the transparency or the accountability of existing organizations, but also how we can create those new so called decentralized autonomous organizations which are actually a completely new organizational structures. And then finally we look also at the Internet of things. So how we can create those blockchain enabled devices which incorporates some of the properties of blockchain technologies and embed them into this IoT mechanism for smart contract based machine to machine communication or human to machine communication."
+      },
+      {
+        "role": "user",
+        "content": "Excellent. So I wanted to deep dive a little on the organizational vertical. So I had a conversation with Tim O'Reilly in December and he was a big advocate of shifting our mental maps as far as the way the world works is concerned, to maps that are conducive to getting the most out of today's technology and creating more good for society. Of course, similarly, you've suggested in your book that in order to get the most out of blockchain, we need to explore new organizational structures. So what might that look like?"
+      },
+      {
+        "role": "assistant",
+        "content": "So, well, I mean, at the first level there is really just how can existing organization actually transition or upgrade themselves by improving for instance, mechanism of corporate governance and the internal control of those organization. And so in this case, blockchain technology could enable those organizations to operate more efficiently, for instance, by relying on smart contracts in order to coordinate people's action within this organization, as well as for instance for automating the ongoing operations of those companies, potentially reducing the operational cost, but also improving the control mechanism and the transparency and the auditability and so forth. And then there is obviously the possibility to actually create those new blockchain based organizations which can be incorporated as a real organization or can just exist essentially just on the blockchain. And the advantage of this is obviously that there needs to be like all the paperwork is essentially transition into just these code based systems. And in this case the blockchain really becomes this form of governance by design in which we can codify specific rules. And then so taking the example for instance, of Bitcoin, which can be defined perhaps as the most basic and the first actual form of a blockchain based organization, where the objective of this organization is to create a decentralized payment system. And the way this organization operates doesn't require any kind of CEO or director or whatever, like board of directors. But it's like the rules, the protocol. The rules are codified into this protocol. And these protocols are such that they provide incentivization for people to actually contribute to the network. And they contribute, in the case of Bitcoins, by providing hashing power in order to validate transaction and in order to maintain the security of the network. And they get compensated because of their services to the network. They get compensated with bitcoins through the mining process. And then those bitcoins can have this kind of dual function. So they have both an intrinsic value because they can be used by those people in order to use the network in order to actually benefit from the service provided by this organization. Because in order to send bitcoins, one needs to spend a little bit of bitcoins as part of the transaction fees, or they actually have an extrinsic value, because in that case they can sell those bitcoins on the market to the people that did not actually contribute to the organization, but that nonetheless would like to benefit from their services. So in this case it's kind of interesting because it creates this self governing mechanism by which through the technical protocol of Bitcoin and the specific payoff structure that has been designed on top of it, then we actually have naturally people coordinating themselves and contributing to the operation of this organization without ever having to rely on any external third party that will manage. That will manage the activity of those people."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, yeah. So this, obviously it's a radical shift from today's organization. I mean, what you've talked about there, effectively the business on a blockchain can exist ad infinitum. Its code can obviously be reproduced. It's liquid insofar as the transfer of financial securities, or if you want to call them securities, is concerned. And the survival of the business on the blockchain isn't dependent on key people. Like if, for example, in Jim Collins's Built to Last, he talks about how great organizations often had one or two key people at the helm. And if they step down, and when they did step down, the share price of that company and the performance of that company over time started to dwindle. Whereas in this case, the more people that are collaborating, the more successful that the platform or the organization is likely to be. Which I guess you could point to some open source projects that have been around for a while now, like Wikipedia, Mozilla, WordPress and so on as examples of what's possible when lots of people come together."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. With the addition that in the case of blockchain based organization, oftentimes there is these additional economic incentives which is such as to keep attracting and motivating more and more people to actually join the service. And it's interesting because it means that as the organization grows then this means that there is obviously more demand to use this organization, which also means that therefore the value of the tokens which are issued by the organization will also increase and therefore more people will come and contribute. And so as the demand grows, the contribution also grows. And so you have this really self regulating mechanism which I believe might lack in specific open source project because at some point there needs to be an institution or someone funding the development of, funding the hosting of Wikipedia works because there is a big machine behind that is actually like the Wikimedia foundation that is actually hosting the service and so forth. Whereas in the case of blockchain based organization, the people, the nodes, the people participating to the organization are themselves providing all the necessary resources and get therefore rewarded with those tokens."
+      },
+      {
+        "role": "user",
+        "content": "So it's obviously got this built in positive feedback loop. Yeah, yeah. So is there, and excuse my ignorance on this question, Primavera, but is there a risk or people who enter later at a disadvantage to those who say started, say mining or working earlier?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, obviously the one that starts earlier my benefit from having more of those tokens of course, essentially. Well, it depends on the protocol obviously. But in the case of blockchains like Bitcoin and Ethereum and so forth, the earlier you get into the network then the more likely you are to receive those bitcoins. Whereas today because the network is so large, it's obviously much harder to get those bitcoins. Now of course this is kind of a natural thing in the sense that those early adopters, the early contributors, are also taking a much higher risk in some way. You can look at it in the same way as like early investor in a startup which are putting money and they get much more equity than the later one because obviously they are taking all the risk at that point. So in the same way, when you are in a decentralized blockchain based organization, early contributor will probably earn more token than the later one. But that's also because one, they are contributing at the time in which no one else is contributing and they are obviously incurring a much higher risk."
+      },
+      {
+        "role": "user",
+        "content": "No, that makes, that makes perfect sense. I mean, no risk, no reward. High risk, high reward. So one thing you did touch on briefly a few moments ago, Primavera, was that of internal controls. And I guess as somebody who spent a bit of time working at big financial audit organizations such as Ernst and Young and KPMG many, many years ago, I guess I was keen to understand what you think the implications will be on such organizations who effectively more than 50% of their revenue is based on compliance activities and ensuring that listed companies are complying with Sarbane, Oxley and all these different regulations that they need to comply with. So do you feel that the blockchain will effectively replace a lot of internal or external audit controls or will it supplement it?"
+      },
+      {
+        "role": "assistant",
+        "content": "I think it will definitely support it in the sense that of course you cannot automate everything on a blockchain. So some things could be automated within the blockchain based infrastructure, other things cannot. However, the interesting thing is that today there is always the question of when you make an audit, you need to make sure that the information that is provided by the company is accurate and legitimate information. And so there needs to be like all this system of oversight. If a company starts adopting blockchain technologies, it becomes extremely interesting in the sense that I cannot claim I have done a transaction without actually doing it, or vis versa, I cannot do a transaction and do not disclose that because everything is recorded into the blockchain and, and the actual execution of the transaction cannot be hidden by the specific company. And so in terms of auditing, it's interesting because on the one hand you have a much more transparency. You can record every single step of the process on a blockchain, knowing that it becomes impossible later on to retroactively go and manipulate the information. In terms of auditing, you can just rely on this very transparent and certified audit trail that the company provide in order to verify whether there is indeed compliance. Knowing that the information that is provided by the company is actually absolutely correct, it cannot have been manipulated by the company itself."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, that makes a lot of sense to me. I guess for a lot of our listeners, the, I suppose operate under this predisposition towards technology being hackable. And obviously when it comes to the blockchain, especially if it is a legitimate, public, decentralized structure, you've got transactions being potentially validated every 10 minutes, it's hosted on potentially thousands of computers, and that if you wanted to hack it, you need to go in there and hack the entire history of the blockchain, and that would be visible by all of the participants on that network. But it seems to me that so many people I speak to, particularly in corporate leadership positions, seem to just default to. But anything that is created by people can be hacked. So, I mean, what are your thoughts or what do you say to people who still have their doubts insofar as using the blockchain, say, to verify compliance with, say, a regulatory act is concerned?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I mean, well, so potentially everything can be hacked. But in terms of track history, I will say that at least the bitcoin blockchain has proven not to be hackable. After nine years of existence. And considering the amount of money that is involved in this network, that's quite impressive. Now, of course, the problem is not really. I mean, the protocol is basically math is like math and cryptography. So as long as this is correct, this is correct. However, and I mean, these happen all the time. The hacks happen at the edges of the network. So it happens because people are not being careful with their private keys. It happens because some online exchanges or whatnot actually do not implement the proper securities. And there is always obviously the problem of garbage in, garbage out. So the blockchain technology can provide a certified audit trail of whatever is going on. But if the information that is recorded on the blockchain is actually bogus, then it will record this bogus information. Now, again, the interesting thing here though, is that whenever we're talking about transactions, then you actually cannot, because mathematically you will not be able to record a transaction on the blockchain, where you're spending more money than what you actually can. Or any attempt at actually creating a transaction, if you don't really want to do, will execute itself. And so whenever we talk about recording information on the blockchain, obviously we need to be careful that the information recorded is correct. But whenever we talk about transactions, then it is definitely very difficult to hack."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, that makes sense. And I like what you said there about people not being careful with their private keys, which is similar to today, where a lot of technical or a lot of it breaches, I think something like 70% of breaches are the result of social engineering rather than some sort of technical wizardry."
+      },
+      {
+        "role": "assistant",
+        "content": "Yes."
+      },
+      {
+        "role": "user",
+        "content": "And you mentioned there that sometimes the exchanges may be at fault. And we've seen some high profile breaches in the last couple of years. Obviously There was the $55 million stolen from the Dow in 2016. There was the loss of $280 million in funds on the parity platform last year. Now, usually when stuff like this happens with what is still, I would say, early stage technology, regulators, incumbents, they're all up in arms and they'll always point to such breaches as to why we shouldn't transition to using them. And I guess that's similar to what the horse and buggy lobbyists did when the cars came along in the early 20th century and they were pointing at the cars and saying how well, they're always breaking down and they're hurting their owners and there's no way to fill the gasoline. So I guess this is just a normal sort of pushback that we should expect to see from incumbents who've found success with the current sort of societal structure."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, and I mean, those are obviously like very bad flows, which by the way are flows in the code of the software that was deployed on the blockchain and not actually flows in the blockchain protocol. So that wasn't a hack of the blockchain. Right. But I mean, seriously, I think the best analogy is actually E commerce back in the 90s in which everyone was stealing credit cards from everyone, mainly because the security practice was not really well understood yet. So I think today, obviously there will be a lot and you have to learn by mistakes. There will be a lot of hacks, there will be a lot of frauds and scams, and we're seeing them already, but it's kind of part of the process in order to indeed identify what are the vulnerabilities and then start learning what are the proper practice in order to achieve, implement a safe and secure system."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, that makes perfect sense. And I guess I touched on internal controls and what the impact would be on auditors. I guess I wanted to hop, skip and jump over to legal services. And given that blockchain technology enables the creation of decentralized currencies and more importantly, self executing digital contracts. There's a lot of talk about smart contracts at law firms. I've dealt with a lot of law firms in my work, and senior partners, senior associates. It's a very, very hot topic now because smart contracts might effectively serve to cut out middlemen such as lawyers, bankers, accountants, and so on. Do they pose a threat to law firms or is this an opportunity or is it somewhere in between?"
+      },
+      {
+        "role": "assistant",
+        "content": "It's probably somewhere in between in the sense that, I mean, like every technology, there are some tasks that can be automated by the technology, and those are usually the very basic and routine tasks. On the other hand, this obviously actually makes it possible for the profession, to identify what is the real added value and to actually focus on that. So for instance, I was, I was talking with like accountants about that and they were actually really afraid about what is the future of accountants because of blockchain technology making it possible to reconcile ledger so easily and so forth. And then they were telling me that in the past, the job of accountants was actually to transcribe numbers and to make calculation, to make sure that, you know, everything equals to the right number. And then eventually the spreadsheet come in. And obviously all these tasks are completely automated by the spreadsheet. And now accountants are actually doing some more critical work and more creative things. And so it's the same thing with smart contracts. We now have this technology can actually automate some things. But smart contracts are very limited nonetheless. They can do specific conditions that are predefined, that are entirely foreseeable, and that can really be formalized into this strict language of code. But there are many things that they cannot do, such as we still need a lawyer to actually identify which clause to put into the smart contract, what is the right structure of the smart contract, and so forth. And so to some extent, law firms will definitely. Well, on the one hand, they will just focus on those more interesting tasks, which is the larger picture of how do we actually design the contract and the smart contract. But secondly is like, obviously there will be a lot, at least in the short term, a lot, a lot of legal question being raised around the validity, the legal enforceability and so forth of those smart contracts. And here there is a huge opportunity to actually, for law firms to actually focus on understanding the legal implications of those new technologies and to actually provide services. Because there will always be issues like whenever a smart contract is like, the smart contract can only incorporate the core clauses of an agreement because that's the one that have been predefined. And it doesn't make any sense to just create this extremely complex smart contract that will encompass every possible edge cases. Right? And so in some way you can see the smart contractors basically just flipping the burden around in the sense that today, let's say as a random statistic, about 80% of contracts actually never get enforced, simply because the cost of enforcement is higher than the actual consideration of the contract. And so by default, people will just give up in the context of a smart contract automatically because there is an automatic execution of the terms of the contract. Then 80% of the contract will be enforced and there will be perhaps this 20%, which will maybe require an intervention because it has Executed in a situation in which it should not have."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, that was something I was going to ask you that the conditions in a smart contract, if the extenuating circumstances change, it will still execute. So what happens in that situation?"
+      },
+      {
+        "role": "assistant",
+        "content": "So in that situation, basically it's theoretically not possible to revert the operation, the transaction. However, there are various ways. One is if the parties agree, they will just create a new contract, a new smart contract that will basically compensate for that execution and therefore revert back to the initial place. Or obviously if one of the party does not agree about that, then, well, simply one needs to actually make an appeal, go to the court and actually have the judge analyze the situation. And if they realize that indeed that contract should not have executed, then will require one of the two parties to actually provide the necessary damages. So it doesn't really change much, it's just that the default is the execution, as opposed to the default being the non execution."
+      },
+      {
+        "role": "user",
+        "content": "Right. Is there scope for hybrid contracts primavera where you have your blockchain based contract, but in the event that circumstances change, you revert to your traditional, say company law contract or something along those lines?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, absolutely. And I would say there is two kind of hybridization. So the first one is indeed to create a smart contract where we have the basic and most common core clauses that we want within the contractual relationship and then incorporate by reference into the smart contract and actually real legal contract, which is much broader, which actually benefit from the flexibility and the ambiguity of the natural language and therefore might apply much better to the edge cases. And so whenever the smart contract fails, because there is something that is unforeseen, or because there is something that is at the margin, then we can always rely on the legal agreements in order to actually enforce the execution of the contract and not the smart contract and vis versa. There is also the possibility of creating a hybrid contract in the sense that everything is actually codified into a smart contract. But because because of the knowledge and the awareness that there might be cases in which the smart contract might be unable to actually know how to proceed, how to execute, because it requires a particular subjective judgment, for instance, then we can embody within the smart contract specific condition by which it will require an external party. And that can be just a person, it can be a specific arbitrator, or it can be a judge, or whoever, the party will decide that will need to actually record specific information within the blockchain in order to enable the smart contract to continue to execute. So it's kind of like there is a point in which for Instance, if it's like a commission, I need to know whether the person that I have commissioned to do a particular work has actually done the work in the way I've said it should have been. And so at this point, I will need either we agree and therefore both I and the person I commission will sign and will say, yes, we are both satisfied. If one of the two parties do not agree because there is a conflict between them, then there needs to be a third party that will come and arbitrate the conflict. And so in this case, it's a hybrid because incorporates input from the external world and plug it into the blockchain infrastructure in order for the smart contract to be able to execute."
+      },
+      {
+        "role": "user",
+        "content": "Okay."
+      },
+      {
+        "role": "assistant",
+        "content": "So it goes both ways."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, it goes both ways. That makes perfect sense. I guess something that came out in what you were saying there as well. You mentioned earlier that 80% of contracts today don't get enforced. And I think that's an interesting point because so many people, when they talk about emerging technologies, be it blockchain or something else, will always point to the risks. But there seems to be a sort of ignorance when it comes to, I suppose, forgetting about the risks of today or today's costs or today's challenges. Similarly, when people talk about the Bitcoin and the power consumption, they forget about the power consumption of all of today's large financial institutions. And, you know, when it comes to risks, we quickly forget about the global financial crisis. And it just seems to me that oftentimes people who are, say, incumbents will always point to the risk, the challenges, the threats, the security breaches, and completely disregard that. Today is not perfect by any stretch of the imagination."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, absolutely. And like every technology, it's going to resolve some things and it's going to create new risk. And then perhaps a new technology will come back and we'll try to resolve those problems, but we'll create new problem with coming. So I don't think we will ever come with a perfect system, that's for sure."
+      },
+      {
+        "role": "user",
+        "content": "Of course, of course, there's so many unknowns when it comes to the universe. And it's like what people say about science. Science isn't about being right. It's about figuring out what's wrong and getting closer to what's less wrong over time. And you also mentioned there that with smart contracts and the impact on law firms, that it's about freeing people up to create real added value rather than monotonous tasks. And you're talking about the evolution of the accountants over time, which I guess is Similar to say, the evolution of human beings. I mean, we were hunter gatherers and over time we evolved and we created industry and trade. And today, I mean, I'm not sure about you Primavera, but I haven't planted any vegetables in a very long time. So that's something I don't have to worry about today. I can just walk down to my local grocery store. So it is about freeing people up to do the absolute best work. And I guess on that point I had a conversation with Alec Ross who wrote Industries of the Future last year. I think he might, actually might have been two years ago now. And his concern, well, it wasn't really a concern. I mean, he was for this and he basically said that as we automate more, as we use decentralized technologies, as we use more artificial intelligence and the like, that there will still be a need for human beings, of course. But he said there won't be room for mediocrity. And he was pointing to things like contract review in large firms where if you have contract review automation software in place, that the output of that would be reviewed by say a senior associate and they'd spend 30 minutes on it instead of an associate spending hours and hours on it, which may be the case today. I mean, do you have, have you thought about this question of the impact on human beings insofar as will there be enough work to go around or will it be a case where it will I suppose be a matter of survival of the fittest, where there will be no room for mediocrity and only exceptional human talent will occupy these role?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I mean, I think we need to distinguish between blockchain technologies and automation, artificial intelligence and so forth, which I think actually raise very different questions. Blockchain technology is not much about automating in terms of taking some of the very fundamental job of people in. It's really more about providing an infrastructure for mediation, for coordination and for certification and authentication. So in my view, what there will be no place for with blockchain technologies is not necessarily mediocrity. It's more unjustifiable ransack seeking. Right. So in the case, to go back to the example of the legal profession, obviously the problem today is not that there are mediocre lawyers. The problem today is that there are lawyers which are actually asking very large amount of money for basically just providing the same boilerplate over and over again. So this is a big margin that they are doing on something that's seriously is not really justified. So it's not a matter of Whether there is mediocrity or not, it's a matter of how much can you actually leverage this knowledge that lawyers have, when all of a sudden there is a new technology which actually makes it possible to do the same thing, but on a technological level, and ideally is done in a much more open sourced way, because actually no one will trust a smart contract unless they can see the code of this smart contract. And so in some way, it's like the concept of disintermediation and cutting the rent that does not actually have an added value. Now, of course, lawyers will always have an added value and they will always be necessary, but not for the boilerplate and not for the things that are actually not providing actually any added value. You just write it once and then you can just cut and paste it to all the contracts. So for me, I'm not discounting the problem of automation in other fields, and mostly with artificial intelligence and other kind of automation things, but in the case of blockchain, I think it's actually much more interesting to focus on the question of hand seeking."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, no, that makes perfect sense. Primavera. I'm conscious of time, so I wanted to jump across to some of the key legal challenges you've uncovered in your work on this topic."
+      },
+      {
+        "role": "assistant",
+        "content": "Well, so again, there are two levels of legal challenges. So one is how do we actually regulate this technology? And the other one is what happen once we use blockchain technologies as a regulatory technology. Those are two very different problems. So the first one is basically trying to identify when we have this decentralized network, then how, like as a regulator, as a government, how can we actually ensure that laws are being respected? And this is similar to the questioning that was actually happening back in the 90s with the advent of the Internet, when, you know, when it seemed that there is this transactional network and completely decentralized, and that there would be like this kind of digital anarchy and like we don't know how to actually regulate this. And then very soon it has become quite obvious that actually it's really easy to regulate the Internet by just looking at the intermediaries which are operating on the Internet. And by regulating the intermediaries, we can indirectly regulate all the users that operate on these platforms. Now the interesting thing about the blockchain is that to some extent it actually disrupt the figure of the intermediaries. And so those questions are coming again. How do we actually regulate a decentralized network, a transnational and decentralized network, if there is no intermediary operating those networks? And so what we actually look within the book is what are those new, new actors? What are the new intermediaries that are emerging on which we can actually exert pressure? And so we look basically at Lawrence Lessig for mechanism of regulation, which is made of the law on the one hand, but then also the market, so economics and then social norms, and then of course, architecture or code in the case of digital technology. And so all of those forces can actually be used in order to regulate a particular subject of the law. And the big question with blockchain technology is that this subject is actually, well, either it disappears or it's actually multiplied into an indefinite number, how small? Small dots. And so the question then becomes, what can we do in order to regulate this technology? And we will go through a variety of possibilities. So one is regulating end users. So this means that we can impose law and regulation on the people that are actually using the networks, which obviously has some limitation to the extent that many of those networks are actually pseudonymous, so it's difficult to even know who those users are. And secondly, as we have seen, for instance, with copyright law, incriminating end user is usually really problematic and difficult to enforce in any ways. And then more interestingly, there is the possibility of regulating intermediaries. And so what are those new intermediaries? Well, obviously there is the transportation layers. So essentially the Internet service providers, which can be requested by a government, for instance, to try and filter out or block specific packets or traffic which is directed towards a particular blockchain based network. There is also the information intermediaries, so search engines or social networks and so forth, which are actually providing access to specific blockchain based network. And so obviously it is possible to prevent those intermediaries from listing those blockchain based network, which then will make them much harder for people to actually identify and connect to. And therefore, most likely they will have a much lower user base and therefore a lower security and so forth. And then there is those new, those two intermediaries are not new. They existed already with the Internet. And then there are those new blockchain specific intermediaries which are actually emerged with the advent of those new technology. And those are essentially the exchanges. So those new platforms on which one can exchange cryptocurrencies for fiat currencies. There is the wallets, the online wallets that provide basically the service, pseudo banking to the people that do not actually want to secure their own system and to store all their currency on their computer. And then there are all the miners. So the miners and the mining pools which are actually quite centralized intermediaries and which could potentially be regulated eventually. Obviously they are like in very different countries, mostly China. So this is difficult, for instance, for the US or for Australia to actually impose specifically specific regulation on miners that are not locally within their jurisdiction. But nonetheless those are like very large intermediaries that can be potentially regulated if there is at least an international coordination by different governments and can be required to ignore specific transactions which come from a particular account on which are directed to a particular blockchain based application and so forth. And then of course there is the possibility of regulating the operators that are actually building the infrastructure or that are building the software. So this will mean making people potentially liable for any software deployed on top of a blockchain based network which might actually be considered as illicit or having illegitimate usages, as well as perhaps the manufacturer of the mining devices. Right. So potentially asking them just, just at the time, back in the, at the time of the, the crypto wars, right, where the US government was asking device manufacturer to, to, to embed specific backdoors in order to enable the government to actually get and get through the cryptography. And in the same way they could for instance, require those manufacturers to incorporate specific backdoors into the device in order to enable the government to actually take control over those systems. And then finally there is of course the social norms. So, so how can governments basically create specific incentivization or desensitization by creating social norm by which it is okay to use a particular network or it is not okay to use a particular network and creating this kind of peer pressure in order to influence the behavior of people. And finally there is the playing with the market lever. So basically instead of trying to intervene through a particular low, imposing the intermediaries is actually playing into the market. So becoming an actual market player and for instance, purchasing a lot of currency, becoming itself a miner and increasing the transaction cost and so forth in order to actually manipulate to some extent the economics of those blockchain based network and therefore dissuade or encourage specific behaviors."
+      },
+      {
+        "role": "user",
+        "content": "Right."
+      },
+      {
+        "role": "assistant",
+        "content": "Essentially by changing the market dynamics."
+      },
+      {
+        "role": "user",
+        "content": "Yeah. So clearly governments aren't short when it comes to intermediaries and mechanisms to regulate the blockchain. So I guess my question then becomes something that's prompted by a conversation I had with Kevin Kelly late last year where he said that sometimes, well, oftentimes, regulating something prematurely can often cut short the realization of its absolute potential for value creation. And you co wrote a paper called Decentralized Blockchain Technology and the Rise of Lex Cryptographia, in which you say that the widespread deployment of blockchain technologies will lead to an expansion of a new subset of law, Lex cryptographia. As a result, there'll be increasing need to focus on how to regulate the blockchain. But I guess my question really is about when should we regulate the blockchain? Is it too early? I imagine if we tried to regulate the Internet, say in 1994 and imposed all sorts of limitations or whatnot on ISPs and everything else, that we may have a very different Internet today. What are your thoughts on when is the right time or how do we approach this delicate question?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, I mean, first of all, I think we should never regulate the technology. We should actually regulate specific usages of that technology. And essentially, yeah, we should actually try and see what are the potential usage of this technology. I think we are very early on at this point, but obviously one, there is a particular usage which either does not actually fit into existing legal frameworks and therefore cannot as such be regulated just by analogy or because it's like it's actually something different. Then there will be a need of regulation for two possible reasons. One is because if we like, it's really difficult for startups or companies to actually operate outside of any regulatory framework because they actually do not have any legal certainty. So I might do something and I don't know how it's eventually going to be regulated. So I'm not going to do it because it's a big risk. So on the one hand, you need some kind of regulation in order to support the exploration and the innovation by providing specific guarantees. So for instance, like the sandbox approach and so forth, in order to help companies and startup experiment and identify what are the potential usages of this technology. On the other hand, there is also the problem of bringing those technology so either bringing them within one regulatory framework or bringing them outside of a regulatory framework. And so as an example, today we have this very large question around ICOS initial coin offerings, where we have those tokens and we have those new fundraising practices which potentially have huge opportunities because they actually create a new way of actually bootstrapping projects. At the same time, they are to some extent being abused because there is actually a lot of scams that actually there is definitely no consumer protection and investor protection at all. And the question here is, what are those tokens? And it's a very interesting question because those tokens can be perceived as many things at the same time. And so the way we like a particular analogy that I like to use is that it's kind of the blockchain in that particular respect is a little bit of a platypus in the sense that it is a new creature, it is something new, but it's also something that looks like many different things. It can look like a duck, it looks like a marmot, it looks like anything. And therefore every body of law will actually see it as what they are designed for. And so today, a particular token issued through an ICO might be regarded as a security according to securities law. It might be regarded as a commodity, it might be regarded as actual currency, and therefore be subject to the money processor, et cetera. And so in this case, the problem is this one thing that is actually not exactly like anything before is actually subject to so many regulations that it's actually really difficult to do anything. And so in some way, it's really difficult to know when is it too early and when is it too late. Because even in order for those new practice to actually appear and to be able to deploy and to experiment, then Termite needs at least some level of regulation, preliminary regulation, just to enable this technology to merge. And then after that, once we actually start seeing what are the usages, what are the implications and so forth, then it might require yet another round of regulation in order either to bring it into a particular regulatory framework or perhaps if necessary, to create a new specific, like, specific regulatory framework for this particular asset class."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, and what you said there as well, about cryptocurrency, it looks. Well, the platypus analogy, Andreas Antonopoulos said something similar where he spoke about this concept of skeuomorphic design, which means a shadow of its former self. So when you create elements in design, you give a reference to some previous form. So, for example, the contact database in an iPhone is a leather bound book. It's supposed to put you in a familiar frame of mind. And similarly with Bitcoin, even though it's not actually a coin, it's called Bitcoin. And the image people associate it with is this circle with the B and the lines through it. And I guess, therefore it lends itself to being regulated or being perceived as a number of different things, like you rightly pointed out, securities and commodities, which I found was interesting. And just on ICOs, I know you shared something on Twitter the other day by Joy Ito, who's the director of MIT's Media Lab, and he said something like, ICOs are to cryptocurrencies what Trump is to American democracy, not what the founders of the Institution envisioned. Yes, yes, it's definitely a very quotable line. So, Primavera, look, you've left us with a lot of value bombs. I'm just conscious we're out of time and it's 10pm over there in France. So I don't want to take up too much more of your time. I think our listeners will have to go back and listen to this one two or three times to extract as much value out of it as possible. But have you got three minutes for our lightning round?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, yes, yes."
+      },
+      {
+        "role": "user",
+        "content": "Fantastic. This is when we finish up with a little bit of fun. So we've been very serious today, Primavera. So let's have some fun. Question number one is if you could work for any company at any stage of the company lifecycle, so we could be going back to Apple in the late 70s, who would it be and why?"
+      },
+      {
+        "role": "assistant",
+        "content": "Sorry, I'm going to cheat. And actually I think if I were to work for any company, it will be a company that does not exist yet and probably it's going to be a blockchain based organization."
+      },
+      {
+        "role": "user",
+        "content": "How did I know you'd say something like that? Great, great answer. Question number two. If you could ask anybody a question, dead or alive, who would it be and what would you ask?"
+      },
+      {
+        "role": "assistant",
+        "content": "I will ask whoever knows who is Satoshi Nakamata."
+      },
+      {
+        "role": "user",
+        "content": "Fantastic. We've got very, very blockchain heavy answers here."
+      },
+      {
+        "role": "assistant",
+        "content": "Sorry about that."
+      },
+      {
+        "role": "user",
+        "content": "No need to be sorry. Thank you so much for giving up some time. Primavera people can find you on Twitter yaoeo. They can obviously pre order a copy of the book Blockchain and the Law. It comes out on April 9th. They can check out your TED talk on TED. So I'll add that to the show notes. Is there anywhere else they should go to connect with yourself and or find out a little bit more about your work?"
+      },
+      {
+        "role": "assistant",
+        "content": "I think that's, that's most of it."
+      },
+      {
+        "role": "user",
+        "content": "Most of it. Fantastic. My research was conclusive then. Fantastic. Well, thanks again, Primavera. I hope you enjoy the rest of your Sunday evening and have a great week ahead."
+      },
+      {
+        "role": "assistant",
+        "content": "Thank you. You too."
+      },
+      {
+        "role": "user",
+        "content": "Thank you so much. Hi guys. Steve again, if you're picking up what we're putting down, the team and I would really appreciate it if you took just a minute of your time to like share or subscribe or if you're feeling really generous, do all three on iTunes, SoundCloud, Stitcher or Google Play. It would mean a lot. If you'd like to join the conversation online, we're building a Facebook community for Future Squared where you'll be able to connect with fellow listeners as well as my good self, to talk about past episodes as well as proposed guests and questions for future episodes of the show. You can find the Facebook group over@facebook.com futuresquared podcast. I'd love to see you there. Until next time, Future Squared is out."
+      }
+    ]
+  }
+]

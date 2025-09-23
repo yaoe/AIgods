@@ -1,0 +1,638 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "What have you been investigating in your research?"
+      },
+      {
+        "role": "assistant",
+        "content": "I'm working at the CNRS and at Harvard University. And it has been many years now that I'm investigating the legal challenges and the opportunities of decentralized technologies. And over all those years, there is this one thing that I keep seeing."
+      },
+      {
+        "role": "user",
+        "content": "What pattern have you observed?"
+      },
+      {
+        "role": "assistant",
+        "content": "It is this constant struggle or this cycle between new disruptive technologies being developed with the promise of creating those new that could promote individual freedoms and autonomy. And then eventually, as they become more and more mainstream, this technology being co opted by established powers in order to further their own interest and eventually to replicate the very same social, economic and political order from the past."
+      },
+      {
+        "role": "user",
+        "content": "Does blockchain escape this pattern?"
+      },
+      {
+        "role": "assistant",
+        "content": "when it comes to blockchain technologies, in spite of the great opportunities that they provide in terms of disintermediation, transparency and trust, then I'm afraid that in fact they do not actually escape to that real."
+      },
+      {
+        "role": "user",
+        "content": "Can we start with the history of the Internet?"
+      },
+      {
+        "role": "assistant",
+        "content": "before we dive into the blockchain, let's take a look first at a short history of the Internet. So back in the 80s and early 90s, the Internet was seen as this tool that could promote individual, individual freedoms and political autonomy, or rather as a means that could enable us to escape from the control of states and corporations. And some people even went as far as saying that the Internet or the cyberspace is an independent space that simply could not be regulated and that the state actually did not have the right nor the capacity to actually impose its sovereignty on over this new space."
+      },
+      {
+        "role": "user",
+        "content": "Did those Internet dreams materialize?"
+      },
+      {
+        "role": "assistant",
+        "content": "But then most of those dreams and promises actually did not materialize in the same way as we would have hoped for. And in fact, as the opportunities of the Internet began to be understood by those established powers, both in the public and in the private sector, then the architecture of the Internet actually started to change and became more and more concentrated in, and now controlled by a very few number of large online operators."
+      },
+      {
+        "role": "user",
+        "content": "How does modern surveillance compare to Orwell's vision?"
+      },
+      {
+        "role": "assistant",
+        "content": "in fact, if we look at what is happening today with the Snowden revelation, with the new Intelligence act which has recently passed in France, and with the new Security bill in the uk, then it might seem that the Big Brother as depicted by George Orwell in 1984 might actually have turned into reality. But in fact, reality is quite different because the mechanism of surveillance and vision by George Orwell were clearly visible and massively intrusive, whereas modern surveillance by intelligence agencies is almost invisible. And yet it is so much more intrusive."
+      },
+      {
+        "role": "user",
+        "content": "What about corporate surveillance?"
+      },
+      {
+        "role": "assistant",
+        "content": "in fact, today even corporations are surveying us, even though they don't need to, because we are already giving them most of the data they need. But as more and more of this data gets concentrated into those large data centers which are controlled by just a few online operators. Then we are now being simultaneously surveyed and controlled by both governmental agencies and corporations."
+      },
+      {
+        "role": "user",
+        "content": "What has the Internet become?"
+      },
+      {
+        "role": "assistant",
+        "content": "the Internet, which was originally seen as this powerful and disruptive technology that could promote democratic values and individual freedoms, has now been turned into this tool for mass surveillance and control."
+      },
+      {
+        "role": "user",
+        "content": "What's the next step then?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, we're going to create our own currency. Back in 1999, Neal Stephenson first envisioned the creation of an anonymous and decentralized cryptocurrencies. And exactly 10 years later, Bitcoin came out. A decentralized virtual currency that can be traded on a peer to peer network without the need for any banks or other financial institutions."
+      },
+      {
+        "role": "user",
+        "content": "How does Bitcoin work?"
+      },
+      {
+        "role": "assistant",
+        "content": "Bitcoin was first deployed in 2009 by a pseudonymous entity called Satoshi Nakamoto, as opposed to traditional fiat currencies like the euros or the dollars, which are issued by central banks and controlled by a state. The issuance of Bitcoin is defined, defined by a computer protocol which precisely stipulates the total amount of bitcoins that will ever be created. 21 million. And the speed at which those bitcoins will be generated. And Today, it is 12.5 bitcoins every 10 minutes, more or less."
+      },
+      {
+        "role": "user",
+        "content": "How is Bitcoin like gold?"
+      },
+      {
+        "role": "assistant",
+        "content": "bitcoins somehow replicate, or at least simulate, the characteristics of gold. Gold cannot be created out of nothing. It must be extracted from the ground. And then as time passes and the reserve of gold gets depleted, then the harder it becomes to find new gold. In the same way, bitcoins cannot be created out of thin air. New bitcoins are generated every time a computer identifies a solution to a mathematical problem whose difficulty increases with the network size. This means that the more people are investing computational resources into the network, then the harder it becomes to generate new bitcoins."
+      },
+      {
+        "role": "user",
+        "content": "What's this mathematical problem like?"
+      },
+      {
+        "role": "assistant",
+        "content": "this mathematical problem is actually similar to that of finding the solution to a padlock. So one needs to try every single combination in order to find the right solution. But once the solution has been found, it is really easy for the authors to verify that it is correct."
+      },
+      {
+        "role": "user",
+        "content": "How can we trust a virtual currency?"
+      },
+      {
+        "role": "assistant",
+        "content": "How can we be sure that the people using Bitcoin will not try and replicate their Bitcoins in the same way as people can replicate digital content? Today, Bitcoin actually relies on another technology, which is the blockchain. And this technology makes it possible to transfer value in a secure and decentralized manner without the need to rely on any Intermediary operator or trusted authority."
+      },
+      {
+        "role": "user",
+        "content": "How does blockchain work exactly?"
+      },
+      {
+        "role": "assistant",
+        "content": "SInstead of delegating to a centralized operator, the task of verifying every transaction, with Bitcoin, the history of all transactions is stored on a common database, and this database is shared amongst all the network participants, which all contribute to verifying and validating the transactions. And because everyone holds one copy of the blockchain, then it is virtually impossible to cheat, because if one tries to modify even a single one of those transactions, then the fraud will be immediately detected by all the other network participants."
+      },
+      {
+        "role": "user",
+        "content": "How are transactions secured?"
+      },
+      {
+        "role": "assistant",
+        "content": "once they have been validated, those transactions are stored in a chronological order inside a block of transactions which incorporate a reference to the previous blocks. And this reference is an integral part of the mathematical problem which I have mentioned before. This means that the only way to validate transactions on the Bitcoin blockchain is to identify the right combination that will enable the system to attach a new block of transactions to the previous chain of blocks."
+      },
+      {
+        "role": "user",
+        "content": "Why is the blockchain secure?"
+      },
+      {
+        "role": "assistant",
+        "content": "the blockchain is in fact just this long chain of transactions that reference each other. And the longer is the chain then the higher is the security of the network, because the modification of a single one of those transactions will invalidate the reference to the previous blocks, which will inevitably break the chain."
+      },
+      {
+        "role": "user",
+        "content": "What ideals does Bitcoin bring back?"
+      },
+      {
+        "role": "assistant",
+        "content": "because Bitcoin actually rely on this peer to peer network in order to operate independently of any government or central bank, then it somehow managed to bring back and to revive the same ideals of freedom and autonomy which are reminiscent of the early Internet days."
+      },
+      {
+        "role": "user",
+        "content": "Is Bitcoin just the beginning?"
+      },
+      {
+        "role": "assistant",
+        "content": "Bitcoin is just the first application of this new technology. And the blockchain can be used into a variety of different applications which extend way beyond the realm of finance."
+      },
+      {
+        "role": "user",
+        "content": "What is blockchain at its core?"
+      },
+      {
+        "role": "assistant",
+        "content": "At the most basic level, the blockchain can be described as a decentralized, secure and append only database, which is whose security is ensured by cryptographic primitives. And this is why the blockchain has been referred to by the economist as the trust machine, because it completely eliminates the need to rely on any trusted authority as long as people can actually trust the underlying technology."
+      },
+      {
+        "role": "user",
+        "content": "What can blockchain be used for?"
+      },
+      {
+        "role": "assistant",
+        "content": "this technology can be used, for instance, in order to ensure the integrity and the authenticity of data. Because the source of all data recorded on the blockchain is certified and authenticated by the private key of the party registering it. And secondly, because once information has been recorded on the blockchain, it becomes visible to all and no one can any longer delete it or even just modify it."
+      },
+      {
+        "role": "user",
+        "content": "How is this useful for property records?"
+      },
+      {
+        "role": "assistant",
+        "content": "This is particularly useful in the Context of notarization services. So today, for instance, real estate property is recorded on a public registry managed by a trusted authority, the government. And tomorrow, with a blockchain, the title to any kind of property could be recorded on a blockchain and associated with a particular token on that blockchain, so that the ownership could be transferred or verified in a much more secure and decentralized manner."
+      },
+      {
+        "role": "user",
+        "content": "Would we still need intermediaries?"
+      },
+      {
+        "role": "assistant",
+        "content": "Aunder this model, for instance, the real estate property will no longer need to be mediated by an artery when it is transferred from people, because the blockchain actually constitutes the proof that the transaction has occurred."
+      },
+      {
+        "role": "user",
+        "content": "Which countries are experimenting with this?"
+      },
+      {
+        "role": "assistant",
+        "content": "there is already a few countries which are actually experimenting or exploring the opportunities of this technology in order to provide more transparent and reliable governmental records. So the pioneer in this field is the Republic of Ghana, followed by countries such as Sweden or Georgia, which are already experimenting with the implementation of land registries on the blockchain. And perhaps the most advanced in this case is the case of the State of Estonia, which is providing blockchain based notarization services to all its electronic residents."
+      },
+      {
+        "role": "user",
+        "content": "What about supply chain applications?"
+      },
+      {
+        "role": "assistant",
+        "content": "there is also a variety of applications which are using the blockchain in order to record the provenance of goods along with all the steps that they have gone through before they reach the consumer. And here the blockchain is useful in order to guarantee the authenticity and the source of goods, as well as to increase the transparency of the supply chain."
+      },
+      {
+        "role": "user",
+        "content": "What about governance structures?"
+      },
+      {
+        "role": "assistant",
+        "content": "perhaps the most interesting aspect of the blockchain is that it actually enabled us to experiment with new governance structures and with distributed governance models which are much more transparent and less hierarchical."
+      },
+      {
+        "role": "user",
+        "content": "How does Bitcoin's governance work?"
+      },
+      {
+        "role": "assistant",
+        "content": "instead of relying on a traditional centralized and top down organization in order to operate the Bitcoin network, network actually adopted a much more open and decentralized approach, inspired from the open source model. So anyone can contribute their own computational resources to the network which actually operate thanks to the contribution of hundreds or thousands of people which are collectively in charge of managing, maintaining and securing the network."
+      },
+      {
+        "role": "user",
+        "content": "Is this really that special?"
+      },
+      {
+        "role": "assistant",
+        "content": "of course, there is nothing so special about that. You might say people have been doing that for many years already. And the Internet has already shown us that open and decentralized collaboration makes it possible to achieve things that will be extremely difficult to achieve internally within a single company or organization."
+      },
+      {
+        "role": "user",
+        "content": "How have businesses adopted this model?"
+      },
+      {
+        "role": "assistant",
+        "content": "the success of this model has actually inspired a few economic actors to experiment with new business models that rely on the power of the crowd in order to produce value. And this is for instance, the business model adopted by most of the Internet giants like Facebook, YouTube or Twitter, but also by those new crowdsourcing organizations such as Uber or Airbnb."
+      },
+      {
+        "role": "user",
+        "content": "What's the problem with this model?"
+      },
+      {
+        "role": "assistant",
+        "content": "the problem with this model is that the value created by the crowd is often not equally redistributed between the contributor and the platform operators, and it is instead concentrated into the hands of those large intermediaries which ultimately dictate the yields of those platforms."
+      },
+      {
+        "role": "user",
+        "content": "Could blockchain make these platforms obsolete?"
+      },
+      {
+        "role": "assistant",
+        "content": "what if I told you that blockchain technologies could actually make those platforms obsolete? By eliminating the figure of the middleman, it becomes in fact possible to replace the model of traditional centralized organization with a system of distributed and bottom up cooperation."
+      },
+      {
+        "role": "user",
+        "content": "How would this work?"
+      },
+      {
+        "role": "assistant",
+        "content": "Athe model of open source collaboration can be generalized and applied into many new fields of activities, from decentralized payment system to decentralized marketplaces or even decentralized social networks."
+      },
+      {
+        "role": "user",
+        "content": "How have organizational structures evolved?"
+      },
+      {
+        "role": "assistant",
+        "content": "in fact, if we look at the way in which organizational structures have evolved over the past 20 years, we can see a general trend from traditional centralized operators providing a service to a passive set of consumers, to centralized intermediaries which aggregate the value of multiple people in order to provide a service to a much more active set of consumers. And then finally, to reach those fully decentralized networks which also aggregate the contribution of multiple people, but that do not require any centralized operator to manage the flows of contributions."
+      },
+      {
+        "role": "user",
+        "content": "What kind of organizations does blockchain enable?"
+      },
+      {
+        "role": "assistant",
+        "content": "The blockchain enables the emergence of new decentralized and community driven organizations which are operated by the community and for the community, and where every community member is at the same time a contributor and an actual shareholder in the organization."
+      },
+      {
+        "role": "user",
+        "content": "Does this work in practice?"
+      },
+      {
+        "role": "assistant",
+        "content": "How does this work in practice? Well, we often say that the model of Wikipedia is quite special because it does work in practice, but it doesn't really work in theory. And the model of decentralized blockchain based organization is also quite special, but for the opposite reason, because it does work in theory, but it actually does not really well in practice."
+      },
+      {
+        "role": "user",
+        "content": "Why doesn't it work well in practice?"
+      },
+      {
+        "role": "assistant",
+        "content": "the reason for this is that most of those theories actually have a tendency to conflate the notion of decentralization at the technical or at the infrastructural level with the notion of distribution of power."
+      },
+      {
+        "role": "user",
+        "content": "Can you give an example with Bitcoin?"
+      },
+      {
+        "role": "assistant",
+        "content": "let's take the example of Bitcoin. The Bitcoin protocol is an extremely elegant mathematical protocol which is designed to operate in a completely decentralized and autonomous manner independently of any centralized operator. But if we look closely at the governance of Bitcoin, we can see that it is actually not so decentralized as it should be."
+      },
+      {
+        "role": "user",
+        "content": "Why isn't Bitcoin's governance decentralized?"
+      },
+      {
+        "role": "assistant",
+        "content": "First, because there is a very few number of developers which actually have the knowledge and the power to actually make decisions as to how the protocol should evolve. And secondly, because the validation system, although it is decentralized in theory, has over the years evolved into a very concentrated system which is controlled by those large mining pools which are today basically co opting the whole network."
+      },
+      {
+        "role": "user",
+        "content": "What's the reason for this concentration?"
+      },
+      {
+        "role": "assistant",
+        "content": "The reason for this is essentially that the distributed consensus model of Bitcoin is fundamentally based on market dynamics. And so, over many years of operation, the economic incentives which are inherent into the Bitcoin protocol have actually turned this market into a highly concentrated and oligopolistic market."
+      },
+      {
+        "role": "user",
+        "content": "What about the DAO example?"
+      },
+      {
+        "role": "assistant",
+        "content": "the dao is a decentralized blockchain based investment fund, which was deployed on the Ethereum blockchain and which managed to raise over $160 million in just one month of existence."
+      },
+      {
+        "role": "user",
+        "content": "How did the DAO work?"
+      },
+      {
+        "role": "assistant",
+        "content": "the way this decentralized organization works is actually quite simple. People can send money to the fund and they will receive some tokens in exchange, and those tokens will enable them to participate into the governance of this organization.\nAnd then anyone can submit proposals as to how they envision to spend this money. And all the token holders can then express their voice as to whether they think that this proposal should be funded or not."
+      },
+      {
+        "role": "user",
+        "content": "What was the governance structure?"
+      },
+      {
+        "role": "assistant",
+        "content": "And so,as a decentralized organization, the DAO did not actually come with any CEO or any other kind of leadership figure. And its governance was actually defined only and exclusively by the code deployed on the blockchain, which stipulated the rules and the procedures that everyone had to abide by."
+      },
+      {
+        "role": "user",
+        "content": "Was it truly decentralized governance?"
+      },
+      {
+        "role": "assistant",
+        "content": "again, if we look at the actual governance system adopted by this decentralized organization, we can see that it's actually based on a really traditional model, which is essentially a plutocracy, because the more money people will invest in the fund, then the more influence they will have into the governance of this organization."
+      },
+      {
+        "role": "user",
+        "content": "What does this show us?"
+      },
+      {
+        "role": "assistant",
+        "content": "This is quite important because it actually shows that there is still an important gap in that we now have this really powerful decentralized technology. But we still need to figure out some kind of distributed governance structure that we can actually plug on top of this technical infrastructure. And of course, it is always possible to deploy a centralized governance system on top of the centralized infrastructure.\nBut then we cannot enjoy the full benefits of decentralization. And the closest thing to decentralization or to a decentralized governance system that we know today is actually the free market. But as we all know, the market can quite easily be manipulated by powerful actors, and it might not always lead to the most effective outcome for a democratic society."
+      },
+      {
+        "role": "user",
+        "content": "What happened when the DAO got hacked?"
+      },
+      {
+        "role": "assistant",
+        "content": "perhaps the most interesting aspect of all this actually emerged when the DAO got hacked. Has an individual actually identified a vulnerability in the code and managed to exploit it in order to drain over $60 million from that fund."
+      },
+      {
+        "role": "user",
+        "content": "What debate did this create?"
+      },
+      {
+        "role": "assistant",
+        "content": "this created really interesting and animated debates within the Ethereum communities between the people that actually believed that this attacker was in the wrong and that the money should actually be restored back into the fund. Because even if there was a vulnerability in the code, the intention of the code should actually prevail over the actual word, the code, and then those instead that actually felt that the attacker was in the right because it actually did not steal anything, since the code actually allowed for this money to be taken."
+      },
+      {
+        "role": "user",
+        "content": "How was this resolved?"
+      },
+      {
+        "role": "assistant",
+        "content": "because the Ethereum community actually did not really come to a consensus, it eventually split into two separate networks, one in which the money has actually been given back to the original owners, even though this actually required violating some of the most basic principle of the blockchain, which is the immutability and the irreversibility, and the other network in which the money has actually been left to the attacker on the grounds that the code is the law and that no one should actually have the power to intervene over the execution of this code, in spite of its flaws and limitations."
+      },
+      {
+        "role": "user",
+        "content": "Can blockchain enable a collaborative economy?"
+      },
+      {
+        "role": "assistant",
+        "content": "this brings us back to this question as to whether the blockchain can actually provide the necessary infrastructure for a more collaborative economy or decentralized society. And while of course, by eliminating the figure of the middlemen for the disintermediation, the blockchain has the potential to enable people to collaborate and to interact more directly and in a more decentralized manner. If we look at the real world applications of the blockchain today, we can see that they actually promote a really individualistic approach to collaboration, as they rely on these trustless technologies that enable people to interact with each other, even if they don't know, and therefore they do not trust each other."
+      },
+      {
+        "role": "user",
+        "content": "Is a trustless society appealing?"
+      },
+      {
+        "role": "assistant",
+        "content": "This is actually quite different from the original conception of the sharing of the collaborative economy. And in fact, the prospect of living in a perfectly trustless society, which is regulated by code and where everyone's interaction is mediated through this trustless technology, might not be the most appealing one."
+      },
+      {
+        "role": "user",
+        "content": "What's your conclusion about technology and society?"
+      },
+      {
+        "role": "assistant",
+        "content": "A to conclude, I would like to insist on the fact that while technology can actually be a really powerful tool to promote democratic values and individual freedoms, it cannot by itself constitute the basis for a free and decentralized society. And what we need to figure out today is actually how, how can we create a system that will also distribute the power on top of this technology?"
+      },
+      {
+        "role": "user",
+        "content": "What's the big challenge with blockchain?"
+      },
+      {
+        "role": "assistant",
+        "content": "the big challenge today with the blockchain, I will say, is that we need to design or identify a New layer of trust or a distributed governance systems that will actually enable people to cooperate and to engage in trustless and trusted interaction while maintaining the benefits of decentralization."
+      },
+      {
+        "role": "user",
+        "content": "Let's have a seat. So are there any questions already? To Primavera. We have some microphones around here, so I don't see any questions. If you have any questions, please raise your arm. It's hard to. Ah, Tenga. Rena, please. Yeah, the mic is coming. Hold on a second."
+      },
+      {
+        "role": "user",
+        "content": "Hi, I'm Rena Tangens from Digita. Thanks for bringing in the issue of trust, but I think you will have this discussion now. I just wanted to correct a quote you attributed when you have nothing to hide, you have nothing to fear, to Joseph Goebbels. And this is wrong, actually. It sounds nice and sounds like a good story, but actually it's from Upton Sinclair, the author, and he wrote that in the Profits of religion in 1917. So I just didn't want this to be spread any further. Thanks."
+      },
+      {
+        "role": "assistant",
+        "content": "Thank you."
+      },
+      {
+        "role": "user",
+        "content": "All right. Collaboration. Okay. Thank you so much. Yeah. If you have any questions, please raise your arm. We just. Fire away. Primavera. Just. I have to get this right. Okay. As far as I understand it, the blockchain is more or less a register, a public register of transactions, cryptographically verified. So if I send you money, it's public, it's verified that I send you money and that you got money. And you can transfer those techniques on other social fears. Like you can buy stuff, I can sell you stuff. You mentioned the land register. So if I buy land, I don't need the government institution, but it's automatically registered in this cryptographically verified register, correct?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah."
+      },
+      {
+        "role": "user",
+        "content": "I cannot go back and change it because it's cryptographically assured that no one can change it afterwards. And it stays public all the time."
+      },
+      {
+        "role": "assistant",
+        "content": "This is the bitcoin blockchain."
+      },
+      {
+        "role": "user",
+        "content": "Yeah, this is the blockchain."
+      },
+      {
+        "role": "assistant",
+        "content": "The bitcoin blockchain."
+      },
+      {
+        "role": "user",
+        "content": "So. And then you say, well, we cannot change it. It's all public. Every transaction is public. It's not only finance, it's commerce, it's governance. You said, well, this might eliminate intermediaries like government institutions or Facebook or Twitter. And it might eliminate trust as well, because we don't need those institutions anymore. We have the technology that, well, Primavera sold Philip her castle in France. And it's public and everyone knows it. But how can this technology make us more independent? How can this help us reclaim autonomy? It sounds like a nightmare."
+      },
+      {
+        "role": "assistant",
+        "content": "So the first thing I Think that needs to be distinguished is that what I described was the Bitcoin blockchain. And like the perfect transparency of all transactions is inherent to a blockchain that is public to everyone and that actually does not try to hide the transaction. So it is quite possible to use private blockchains which will not be accessible to everyone and in which the information will only be accessible to those who actually have access to this blockchain. And secondly, there is also some public blockchain which have inserted or added some features that will actually preserve the anonymity of the transaction. So you cannot know where it's coming, where it's going, and the content of the transaction. But this is still, this is really new and experimental in terms of how it's enabling us to reclaim autonomy."
+      },
+      {
+        "role": "user",
+        "content": "How does blockchain enable autonomy?"
+      },
+      {
+        "role": "assistant",
+        "content": "I guess the main idea is that today, in order to interact with each other, in order to, to cooperate in any kind of endeavor, we do need to rely on some institution or some operator that is actually coordinating everything, that is managing people, because those people actually do not know each other, therefore do not trust each other. And so we have this trusted intermediary which is helping us to coordinate ourselves and to collaborate. But oftentimes those intermediary operators, even though it is a trusted authority, might actually maybe abuse of its powers, the blockchain, actually enable us to basically cut the head of these intermediaries. So you can now use the technology for people to coordinate each other without the need of relying on any trusted authorities."
+      },
+      {
+        "role": "user",
+        "content": "Can you give a concrete example?"
+      },
+      {
+        "role": "assistant",
+        "content": "Bitcoin is the example for currency today. I would not send money to people. Like, we don't have a system without the blockchain. We didn't have a system where we can transact money. Because I could send $10 here and $10 there. If there is not a centralized bank that will assess whether or not I have the money. You have no way to know whether this digital file that I sent you is actually valid. So Bitcoin, through this whole mechanism of cryptography and whatnot, managed to actually resolve that problem. So now it is possible to have a decentralized payment systems that do not require a centralized operator."
+      },
+      {
+        "role": "user",
+        "content": "Could this model work for other things?"
+      },
+      {
+        "role": "assistant",
+        "content": "the same model could be adopted into many different things. So whenever we need to interact and to cooperate. So the case of the DAO is another example. So instead of having one management or one company that is actually taking all the money in and then managing it according to how the people decide to interact, in this case, you just delegate to the technology the task of coordinating things.\nAnd so people can to some extent reclaim the autonomy over how they want to govern this infrastructure without having to delegate the power of this management to a centralized operator."
+      },
+      {
+        "role": "user",
+        "content": "Take another example we talked about in the other panel about the power of the big five and how to reclaim autonomy from their power. Google, Facebook. Let's imagine a society where the blockchain is everywhere and all the big five companies are based on a blockchain technology. How would that help us reclaim autonomy? How would that look like? That would probably help us lose even more autonomy than we have. Again, it's not the blockchain. The blockchain is a new technology and it can be used in many different ways. Of course, the day, and I think."
+      },
+      {
+        "role": "assistant",
+        "content": "The day is coming quite soon, the day in which we have the big five or we have banks, or we have governments that are actually looking at how this technology can be used for their own interest, then it's going to become a technology that is actually probably quite dangerous in terms of privacy and autonomy. On the other hand, it is also a tool that enables us to experiment with new governance structures which could enable us to actually bypass the centralized intermedia."
+      },
+      {
+        "role": "user",
+        "content": "So it's like the Internet?"
+      },
+      {
+        "role": "assistant",
+        "content": "it's really exactly the same as the Internet. The Internet is this powerful and amazing technology which could, if used correctly, could actually enable us to reclaim autonomy. But the way in which it has evolved today is that it has been co opted by the big five and by the states and corporations and it has shift from all the potential that we will see in terms of autonomy and democracy. It has become now this really controlling tool and the blockchain. Now we are still really early on and so the beautiful promises and dreams of the blockchain are still really strong. But the day in which we will actually see how the blockchain is being used by corporation and by the government, I think we will see a very close analogy with the way in which the Internet has changed."
+      },
+      {
+        "role": "user",
+        "content": "So this was a question on Twitter as well. How can we, I mean, if blockchain is such a decentralized and democratic technology, how is it that banks and insurance companies are the institutions that put most of the money into blockchain and research? And how can you, what would you say? How can you, can you prevent blockchain being corrupted by all those known and traditional powers?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, so the way in which the banks are looking at the blockchain today is not at all as a decentralized technology. It actually just has a really secure and cryptographically ensured technology. So they actually are creating private blockchains which they control. The mining, the validation system is controlled by the bank."
+      },
+      {
+        "role": "user",
+        "content": "What are banks interested in?"
+      },
+      {
+        "role": "assistant",
+        "content": "The Advantage though is that you can for instance create consortium. So in the same way as like the Bitcoin is just completely public, so anyone can join and then anyone can contribute to the validation. You can also have like more closed system, but which still do not rely on one single operator, but it's a consortium of operators, so no one really trusts each other within those different operators. But as long as no one can take over more than 50% of that consortium, then you can actually trust the system. So the banks are actually more interested in that aspect as opposed to the decentralization. The decentralization, they don't even want to look at it, obviously."
+      },
+      {
+        "role": "user",
+        "content": "Is this like Internet vs intranet?"
+      },
+      {
+        "role": "assistant",
+        "content": "So again, it's kind of comparing the Internet and the intranet. So every company has its own Internet and it's not a public Internet, but they are using the same technology in order to create their own internal things. And the same thing with the blockchain, you can use it on a public technology, you can use it on a private system. It actually doesn't change anything and it's normal. And even though Bitcoin was the trigger and was the start of everything and had really strong ideological principle about decentralization, disintermediation, about trying to get rid of the financial system, it's kind of ironic that in fact today banks and governments are actually the two main players which are looking and investing a lot of money into how to use this technology for their own interest."
+      },
+      {
+        "role": "user",
+        "content": "And what can we do as a society to let's assume blockchain as decentralized system has advantages and can help us reclaim autonomy. What can we do as a society to prevent blockchain going the same way the Internet went?"
+      },
+      {
+        "role": "assistant",
+        "content": "I think the important thing is we need to actually learn from the past. So we should actually look at what happened with the Internet and see that it didn't really go the way we were thinking and try not to repeat the same mistake. And in terms of what action we can do, I think that it's actually really important that people and civil society start now to actually experiment and to comprehend how to use this technology."
+      },
+      {
+        "role": "user",
+        "content": "Why is civil society involvement important?"
+      },
+      {
+        "role": "assistant",
+        "content": "Because today in fact most of the money that is invested in the blockchain is like startups and banks and they are mostly looking at the financial application or basically like profit making things which are mostly different from the original decentralized vision. So I think that if we actually want to create a system that could potentially disintermediate Facebook or Google, then it has to be something that is done by the civil society, like as a collaborative effort and ideally"
+      },
+      {
+        "role": "user",
+        "content": "How could this compete with existing platforms?"
+      },
+      {
+        "role": "assistant",
+        "content": "Today, one of the beautiful dreams, if you want, of the blockchain, is that today it's pretty much almost impossible to compete with Facebook because it's just like it would require so many resources that no single competitor could actually do that. On the other hand, if you actually take the collaborative and decentralized approach, then it's more like the Wikipedia model. So if everyone is actually contributing to this alternative platform, and then this alternative platform needs to have some kind of competitive advantage. And the nice thing about the blockchain is that you always have the token. So you actually have the kind of economic incentives to attract people in."
+      },
+      {
+        "role": "user",
+        "content": "Could this create a gravitational force?"
+      },
+      {
+        "role": "assistant",
+        "content": "And eventually you can imagine that it's starting to grow and then the network can kick in. And once once you get this platform which has actually attracted sufficient amount of people, then it will keep attracting more and more people. And if we figure out how to play the game in terms of privacy enhancing, in terms of autonomy, and potentially in terms of this kind of economic incentive that can be designed within the system, then it might be possible to create this such as strong gravitational force that eventually the decentralized aspect, just like Wikipedia, managed to compete and to completely eliminate Encarta, we could imagine potentially. But we have to really do it now. And it's really important that we start focusing on those kind of applications as opposed to letting the corporation that will very soon do a lot of of new platform and application based on the blockchain. And this is actually the really dangerous effect."
+      },
+      {
+        "role": "user",
+        "content": "I want to talk to you about one thing. You said, well, okay, getting rid of intermediaries in terms of Facebook, Google, etc. It's quite convincing and has some appeal to many people. But when you talk about getting rid of intermediaries in terms of government, it's a little bit a different animal because you said, well, transferring trust on the software. So we have, let's say the blockchain, lots of data. We have software analyzing this data and deriving decisions based on this data automatically, autonomously, maybe with some artificial intelligence self learning systems. And now you have the question of accountability. I mean, if we have institutions, we vote, we, we live in a democracy and we can get rid of those who, I don't know, didn't make the right decisions. But once we have this software installed and we can't even look into algorithms today, let alone we have a whole software and the software built upon it, and what do we vote for? How do we get accountability in these systems? Do we vote for algorithm A versus Algorithm B or a smart contract? How do you get accountability in these systems."
+      },
+      {
+        "role": "assistant",
+        "content": "I really don't think that blockchain will replace government. I think they can be used by governments and by using this system they can actually highly improve the transparency and the accountability of those existing institutions. I really don't think, in fact that the blockchain like I think it's a utopian dystopian vision to actually imagine a state or even just an organization that is only managed purely by blockchain code. Because as we have seen with a really simple system, which is the dao, which was really basic, I mean, we cannot predict anything, we have no idea how those organizations will evolve and things like this."
+      },
+      {
+        "role": "user",
+        "content": "How should governments use blockchain?"
+      },
+      {
+        "role": "assistant",
+        "content": "But the really interesting thing of the blockchain is actually within an existing institution or within an existing organization using those technology in order to basically if you give an incorruptible system to a state, then it actually help people trust the state more. So in the case of land registry, that's the idea. It's not about eliminating the state as the oversight, but it's about asking the government to actually use this technology so that it basically cannot change the data anymore or to actually use it in order to provide more transparency. In terms of the voting system, you can actually use a voting system using the blockchain as a technical infrastructure. But that doesn't mean that it's going to replace the whole institution.\nIt's just a tool in the same way as we use the Internet in order to communicate, but we're not replacing it everything. And the main problem I think today is like, so you have a lot of ideas and really interesting visions of how you could indeed create those decentralized autonomous organizations. But for instance, I mean, even if you try to disintermediate like Uber, so you have a few blockchain based applications that wants to provide the same service as Uber, but without Uber. Right, but, but of course you have the coordination and you have the transactional level that can be really easily replaced with a blockchain. But then there is all the governance that comes around it that definitely we probably do not want an algorithm or have a smart contract on the blockchain to regulate this. And this is what I was mentioning at the end is that we have this technology which is really powerful and.\nWe need to understand what are the limits and where does it actually make sense to use it. But then what we're really lacking today is this layer of governance that can be put on top of those infrastructure. Because if you actually want to enjoy the full benefits of those decentralized organization it's not enough to have a decentralized infrastructure if you don't have a decentralized governance system. And it's not by using an algorithm. An algorithm is not necessarily a decentralized governance system. It's just centralized governance in the hand of, of an algorithm. So the fact that you don't have an institution as an intermediary doesn't change the fact that you still have an intermediary. It's just code. So the really beautiful vision of the blockchain is actually when we manage to combine decentralization at the infrastructural level and the distribution of power on top of this decentralized infrastructure.\nBut I think we're kind of starting to figure out the infrastructure, like the decentralization of the infrastructure. But I think we're really far, we're really just starting now to try and look at what kind of distributed governance model we can use on top of this. And today if we look at the majority of the blockchain based applications, it's basically market, because that's what we know. So most of the blockchain based applications are basically market driven and the market oftentimes concentrates. And so we end up again with centralization on top of this decentralized infrastructure."
+      },
+      {
+        "role": "user",
+        "content": "And what is the alternative model?"
+      },
+      {
+        "role": "assistant",
+        "content": "We have to figure it out. I don't have an answer to that. But the main problem is that we do not have a distributed governance model that is actually able to protect itself from this form of economic or institutional decentralization. And so the whole promises of the blockchain in terms of, of full decentralization and full disintermediation will not work until we do actually identify a distributed governance model."
+      },
+      {
+        "role": "user",
+        "content": "Any questions so far? And what do you think? I mean, one lesson we've learned from the Internet is that protocols are political. So the way you design the technology, it really has impacts on our life. In terms of encryption, in terms of privacy, do you see any, in this very early stage of blockchain, do you see any technological technical requirements that states should put upon blockchain to ensure certain outcomes?"
+      },
+      {
+        "role": "assistant",
+        "content": "I mean, I think we're really, it's so early that it's actually really hard to even understand what is the impact of those different technological choices. Bitcoin might be perhaps the most, the only one that really, we had like eight years to look at it, so maybe we can more or less look at this. And in fact, bitcoin is really interesting because it has these. And that's the whole thing with trustlessness. So if we want a trustless technology, we just assume that we cannot trust anyone. So if you look at Bitcoin, it's amazingly elegant, mathematically really beautiful system. But again, it only works as this closed system. And whenever you put it into the real world, then it's getting pulled by all direction from economic incentive, political powers, et cetera. And then this perfectly designed system actually breaks down and the, the entropy towards centralization actually kicks in."
+      },
+      {
+        "role": "user",
+        "content": "What's the problem with Bitcoin's design?"
+      },
+      {
+        "role": "assistant",
+        "content": "I think one of the big critics that we could give to Bitcoin is that because it is designed as if we cannot trust anyone, then it's actually this extremely expensive mechanism of everyone working and working and expending a lot of electricity in order to try and resolve a problem that doesn't serve any purpose. But this is what actually guarantees the security.\nThe problem with this design is that we actually, because we are assuming that everyone is potentially a cheater, we don't trust anyone. But we're also losing, in fact, probably like 90% of the people will not be cheater. But we just have to design the most trustless system just because there might be this 5 or 10% of people that might be cheater and we cannot know who they are. And so this approach to our trustlessness actually create a really inefficient system. Even though it is actually elegant, but it's in terms of energy consumption, it's a little bit ridiculous. And so the problem is like on the one hand, do we really, how much do we really need this trustlessness?"
+      },
+      {
+        "role": "user",
+        "content": "It sounds horrible, to be honest, to live in a trustless society."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So it has a lot of interesting potential. But I think we need to, like today there is just so much insanity actually around the blockchain. And just everyone wants to use a blockchain for no reason. But it does actually have amazing properties. And I think those properties are like the transparency. They are the accountability, the immutability, the irreversibility, et cetera, which can be extremely useful in some very specific things. And we need to focus on those. And then eventually maybe we can build the blocks and figure out how by combining all those things, we can actually manage to create fully decentralized organizations. But now there is just this jump towards directly going there and obviously we don't really know what we're doing and then things break. So I think there is, there's a lot of cultural work maybe to do. Like the technology still needs to evolve and still needs to be fully understood to its potential. We especially need to understand the limitation of it. But then there is this really important social and cultural effort that needs to be added."
+      },
+      {
+        "role": "user",
+        "content": "On top, we have one question from Twitter. Someone is asking, since you're getting rid of of all the intermediaries, which of course saves a lot of money in terms of banking, etc. But on the other hand, you need a lot of electricity to calculate all the bitcoins, all the blocks. Isn't it more expensive in terms of energy consumption?"
+      },
+      {
+        "role": "assistant",
+        "content": "I think it depends. So the bitcoin model is extremely expensive. There are other models which are less. That's so expensive, but also less secure. So it's a matter of how much security and trustlessness you want and how much energy or consumption you're willing to engage. I don't think the blockchain is presented as something that is more efficient. In any case, it's something that is more secure, that is trustless, et cetera. But in terms of efficiency, I don't think anyone is really claiming that. I hope not."
+      },
+      {
+        "role": "user",
+        "content": "Okay, any questions left? Yes, please. Peter Shah. Hold on a second. We need to."
+      },
+      {
+        "role": "user",
+        "content": "Well, thank you very much for this very interesting presentation. From my point of view, it is a very fascinating technology, but if we transfer this technology in the real life, there are so many questions. Well, the first and from my perspective, the most important question would be do we want a society working with like a blockchain algorithm? I would say no. No, of course not. We are a society and there must be a common control on what is going on. We need laws, we need rules legitimated by democratic elections and so on. And perhaps this algorithm might be used to make some procedures in our society more trustworthy and more accountable. But on the other hand, we need a clear understanding, a better understanding where it is useful to use these technologies, for example, for privacy protection. I could imagine that blockchain makes sense to combine policies with specific data and to combine it in a way that cannot be broken. There are also other fields, but in general I would say there must be the rule of law and democratic society. And perhaps we need this discussion."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, absolutely. And I think the issue is like, every time you go to an extreme, then it just goes insane. So all this vision of having everything decentralized and everything regulated by code. Personally, I think it's even more scary than what we have today. I will rather have Facebook deal with my things than an immutable and irreversible piece of algorithm that has been deployed on the blockchain."
+      },
+      {
+        "role": "user",
+        "content": "So where's the balance?"
+      },
+      {
+        "role": "assistant",
+        "content": "On the other hand, I think it's interesting to look at the continuum and try to find where do we want to locate ourselves and how the idea is really, I mean, it's not about replacing institutions. I think some institutions, we want them, we want to keep them. It's more about helping those institutions transition into a model that is actually more transparent and more accountable and more secure. So if Facebook were to adopt blockchain technologies not in order to self regulate everything, but in order to actually provide more accountability as to how it's using the data and what are the algorithms that are going on, then that would be great."
+      },
+      {
+        "role": "user",
+        "content": "How will blockchain be integrated?"
+      },
+      {
+        "role": "assistant",
+        "content": "And I think like, I mean, the world will not be there and there. It's going to be somewhere in the middle. I don't know, we can try and push it more on that side or this side, but I think eventually the blockchain will just be. It's basically just a database anyhow. So it's just going to be impregnated into like all the technical system that we have today, but it's going to provide new properties and new functionalities."
+      },
+      {
+        "role": "user",
+        "content": "How can technology support the rule of law?"
+      },
+      {
+        "role": "assistant",
+        "content": "of course we want to maintain the rule of law, but the question is then how can this technology not replace it? Like, there is no way we want to replace the rule of law with technology, but how can it actually support it? And how can we actually achieve the same regulatory objectives that we have today? But sometimes you need like these really complex layers of laws which then need to be enforced and etc. And perhaps we can identify ways in which the technology could actually enforce those law automatically. But it doesn't mean that we just get rid of the institution around it. It's just that we plug the technology within the institution so that the institution becomes more accountable.RetryClaude can make mistakes. Please double-check responses."
+      }
+    ]
+  }
+]

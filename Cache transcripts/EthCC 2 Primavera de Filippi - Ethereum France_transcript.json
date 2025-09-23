@@ -1,0 +1,294 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Can you tell us about your book and research focus?"
+      },
+      {
+        "role": "assistant",
+        "content": "Hi everyone. So this presentation will be about some of the ideas that I presented in my book, Blockchain and the Law. So I'm a legal researcher at the CNRS here in Paris and at Harvard University. And most of my research is looking at this interface between blockchain technologies and the legal system. And so most of the book is looking at how do we actually what is the interplay between the rule of law and the rule of code."
+      },
+      {
+        "role": "user",
+        "content": "Is blockchain just another technology that we can regulate normally, or is it fundamentally different?"
+      },
+      {
+        "role": "assistant",
+        "content": "it all starts with the question of whether blockchain technologies, in terms of an actual technology, a technological instrument that we can use and regulate, whether it is actually something that is completely different and therefore that we need to think about new ways of looking at it from a legal perspective, or whether this is just an incremental innovation that to some extent just might require some legal reform in order to address."
+      },
+      {
+        "role": "user",
+        "content": "What makes blockchain technology unique from a legal perspective?"
+      },
+      {
+        "role": "assistant",
+        "content": "to try and understand how the legal system can actually look at this technology, let's look at like, what are those unique characteristics of blockchain technologies that actually distinguish itself from traditional code? So, well, the first one is a blockchain is a decentralized database that operates on a peer to peer network. And just like the Internet, a blockchain is a transnational network that of course, do not account for national boundaries. And because a blockchain is replicated on the node of every computer in the network, it is also highly resilient. And because all those nodes follow the exact same protocol, then it is almost impossible to unilaterally change or tamper with the data that is stored on this decentralized database."
+      },
+      {
+        "role": "user",
+        "content": "What other characteristics should we consider?"
+      },
+      {
+        "role": "assistant",
+        "content": "many blockchain are inherently transparent in the sense that anyone can see what everyone else is doing on that network. And then because every transaction is cryptographically signed by the key of the party executing it, then one cannot later deny having executed a specific transaction. And then most blockchain are also inherently pseudonymous, at least in the case of public blockchain. And this means that people do not need to identify themselves in order to participate into the network, and they just need to create an account in order to obtain an address that will then identify them in a pseudonymous manner. And then finally, and most importantly, then we have those blockchains that make it possible not only to record information, but also to store and to execute software code that will run with a guarantee of execution, in the sense that no one can unilaterally modify, influence, or stop the execution of that software."
+      },
+      {
+        "role": "user",
+        "content": "How do these characteristics affect regulation compared to regular internet code?"
+      },
+      {
+        "role": "assistant",
+        "content": "in terms of regulation, then how does those characteristics actually make a difference so to which Extent does the code that is being deployed on a blockchain actually differ from the code that we usually find on the Internet? And so on the Internet back in the 90s, then, when people started reflecting about what kind of regulation could apply or could not apply to Internet code, then we had this notion of lex informatica, which essentially reflected the idea that on the Internet, code is increasingly assuming the functionality the same function of law, in the sense that private actors are actually using their own pieces of code in order to regulate behavior. And so to some extent, code becomes the law of the Internet."
+      },
+      {
+        "role": "user",
+        "content": "But the internet can still be regulated through its operators, right?"
+      },
+      {
+        "role": "assistant",
+        "content": "of course, on the Internet or on traditional software code,  the code remains under the control of those specific online operators which are themselves subject to the rule of law. And so there is a form of indirect control of the law over the code. And then on a blockchain, then code also becomes one of the most important means to actually regulate behavior. The the difference is that this time, given the specificity of blockchain code, then it can be used to actually create those form of smart, contract and self executed code based rule, which to some extent will and can ignore the traditional rule of the law. And so the only law that actually matters in the context of a blockchain based system, it's the code."
+      },
+      {
+        "role": "user",
+        "content": "What are the main implications of this shift?"
+      },
+      {
+        "role": "assistant",
+        "content": "this has two important implications. One is that blockchain technology actually reduce the needs of intermediaries or trusted authority, because it actually shift the trust away from those centralized operators and towards the underlying technology. And so this means that as long as people can actually trust the technology, then they no longer need to trust anyone else. And the other one is that it creates increasing opportunity for automation and autonomy of those code based system, because once they have been deployed on the blockchain, then they no longer need to obey or listen to the rules, even of the operator that have actually deployed this code. And so the system can actually be designed to operate autonomously and independently of the will of the party who have initially deployed them."
+      },
+      {
+        "role": "user",
+        "content": "So there's a potential conflict between traditional law and blockchain code?"
+      },
+      {
+        "role": "assistant",
+        "content": "from a legal perspective, the interesting aspect of this is that this creates a potential conflict between the rule of law and the rule of code. And so what is explored in the book is what is this interplay between those two types of regulations? So to which extent one rule of code or rule of law can actually overtake the authority, can blockchain based system be actually forced to comply with the law? Or can they instead be used to escape from existing regulatory framework to the extent that they exist within their own technical framework?"
+      },
+      {
+        "role": "user",
+        "content": "This reminds me of early internet narratives about cyberspace being unregulatable. What happened there?"
+      },
+      {
+        "role": "assistant",
+        "content": "if we back up a little and we look at the narratives from the early Internet days, then we might remember some of the claims of the early Internet pioneers, like John Perry Barlow or Timothy May. We saw the cyberspace as an independent space that simply could not be regulated, because governments simply did not have the right or the capacity to exert the sovereignty over it. But of course, over time, we realized that those visions, those ideas, did not actually materialize in the same way as many of us would have hoped. And as soon as the opportunities of the Internet and the commercial interest actually became to be understood by new and established market players, then the network architecture actually started to change and slowly turn into a more and more concentrated system which is today controlled by a few incumbents."
+      },
+      {
+        "role": "user",
+        "content": "So the internet became regulatable after all?"
+      },
+      {
+        "role": "assistant",
+        "content": "in just a few years, the Internet, which was initially seen as this powerful tool to promote freedom and individual autonomy, has eventually become a powerful tool for surveillance and control. And in fact, after the initial fear of crypto anarchy faded away, then it soon became clear that it's actually not that difficult to regulate the Internet, because even though direct regulation via the law can be difficult, because code is increasingly replacing the law as a means of regulation, by then governments can actually use the law in order to regulate the code by exerting pressures on those centralized operators which actually operate and deploy this code."
+      },
+      {
+        "role": "user",
+        "content": "Can the same regulatory approach work with blockchain?"
+      },
+      {
+        "role": "assistant",
+        "content": "the question is whether the same solutions can actually be applied in order to regulate a blockchain based system. And the problem is that in the context of a blockchain, we lose this one of the most effective tools of regulation, which are the intermediaries operators. And if there is no intermediary operators, then it becomes much harder to leverage the traditional means of regulation that were available on the Internet, because one can no longer easily identify what is the actual object and subject of regulation."
+      },
+      {
+        "role": "user",
+        "content": "Are blockchain advocates making similar promises to early internet pioneers?"
+      },
+      {
+        "role": "assistant",
+        "content": "if we look at the early narratives and promises provided by early blockchain advocates, we can see that those are actually quite similar to those narratives that were promoted by the early Internet pioneers. And so the question that we ask ourselves is whether blockchain technologies could actually succeed where the Internet has failed? Can it become this new tool of this intermediation and individual emancipation that the early Internet pioneers were advocating for? And can it help materialize the early visions of the cypherpunks leading to this whole new wave of crypto anarchy?"
+      },
+      {
+        "role": "user",
+        "content": "How does the concept of regulation differ between cyberspace and blockchain?"
+      },
+      {
+        "role": "assistant",
+        "content": "when talking about the regulation of the cyberspace, then, at the time of the Internet, people introduced the notion of unregulability to highlight the complexity that is inherent in the regulation of such a global and transnational network like the Internet. And in the blockchain space, then people, people like to refer to the notion of illegality in the sense that this is not legal or illegal, but it operates outside of the purview of the law. So the idea is that a blockchain actually implements its own technical framework that operates according to its own rules and that cannot be touched or affected by existing regulatory frameworks."
+      },
+      {
+        "role": "user",
+        "content": "Are there already blockchain applications that conflict with existing laws?"
+      },
+      {
+        "role": "assistant",
+        "content": "we can already see a few applications of blockchain technologies that are in direct conflict with existing regulation. And those applications oftentimes leverage the pseudonymity of Bitcoin and other cryptocurrencies in order to facilitate money laundering or to set up decentralized marketplaces for the trading of illicit goods or service. And then more recently, we actually found out that the tamper resistant features of a blockchain can actually be abused to store illegitimate content on a blockchain, such as copyright infringement or hate speech or links to child pornography, and potentially also prevent the excesses of specific rights that might require the deletion of specific content, such as, for instance, the right to be forgotten."
+      },
+      {
+        "role": "user",
+        "content": "How does this distinction between code and law play out with property rights?"
+      },
+      {
+        "role": "assistant",
+        "content": "this distinction between the rule of code and the rule of law is actually quite apparent in the context of property. So traditional property rights are defined by the law, and therefore they can also be taken away by the law. And so if I've acquired a particular piece of property in a way that turns out to be illegitimate, then a court order or a judge can actually declare that I am not the legitimate owner of that property and potentially seize it from me. And when we move into a blockchain based system, then we have this concept of cryptographic assets or blockchain based property that actually do not follow the same rules. And so the ownership of those assets is not defined by the law, but rather by the code. And therefore it can only be taken away by the code. And so if I illegitimately acquire a Bitcoin, then regardless of what the law says, then no one has the ability to unilaterally seize that asset unless the code specifically provide for that."
+      },
+      {
+        "role": "user",
+        "content": "What about contracts? How do smart contracts differ from traditional contracts?"
+      },
+      {
+        "role": "assistant",
+        "content": "the same applies in the context of contracts. Traditional legal contracts are created according to specific rules which are defined in contract law and which are meant to create some kind of binding agreements between parties. But those contracts need the intervention of a third party authority that needs to interpret the wording of those contracts in order to understand what is the actual meaning of the parties. And this is what will actually be enforced by the law. And when we move again into blockchain based system, then with the smart contract, we have contractual relationships which are actually defined by code rather by the law. And of course this does not really account for the real intention of the parties, but only account for the wordings of the code. And the benefit of course, is that those systems do not actually require any third party enforcement, because the provision of the Smart Contract will be automatically enforced through the technology itself."
+      },
+      {
+        "role": "user",
+        "content": "The DAO hack seems like a perfect example of this clash. What happened there?"
+      },
+      {
+        "role": "assistant",
+        "content": "of course, we have the best example of this clash between the rule of law and the rule of code, which was provided by the dao, where a flaw in the code of the Smart Contract led to about $150 million being taken away from a Smart Contract. And the main challenge here was that regardless of what legal system, what a judge will actually say, regardless of the ultimate decision, if there had been a dispute, then because there was no centralized authority, then the only way to actually act and remediate on this issue was through affecting the actual code of the Smart Contract or the underlying protocol. And so this of course raised these very interesting debates within the Ethereum community whether or not this act qualified as a theft in the sense that it actually went counter to the original intentions of the parties, or whether it could be regarded as some kind of legitimate action, because it did not actually go counter the actual wording of, of the Smart Contract."
+      },
+      {
+        "role": "user",
+        "content": "So traditional legal remedies couldn't help?"
+      },
+      {
+        "role": "assistant",
+        "content": "regardless of what we think it would have been, then the interesting thing to observe is that this issue could not be resolved by relying on the traditional legal system, because basically there is no enforcement capacity that could actually take place, mostly because of the autonomy and theoretical immutability of the code that actually made it impossible for one third party, such as a government or a judge, to actually seize the assets. And so the only way to actually remediate the thought was to address the code level of the problem, which is taking a coordinated action in order to change the underlying code of the Ethereum blockchain."
+      },
+      {
+        "role": "user",
+        "content": "Does this mean blockchains exist in complete isolation from the traditional world?"
+      },
+      {
+        "role": "assistant",
+        "content": "this actually shows something that is very important, which is that no blockchain is an island in the sense that it does not actually subsist on its own, but actually it exists within a much larger ecosystem. And this ecosystem can actually affect and influence the operation of a blockchain. And so, even though we cannot rely on traditional means of regulation, as blockchain system actually become more widely adopted and progressively become part of a global infrastructure, then we might actually see governments or other actors trying to find and identify those new avenues for impacting the operations of those systems."
+      },
+      {
+        "role": "user",
+        "content": "What are these new avenues for regulation?"
+      },
+      {
+        "role": "assistant",
+        "content": "hat are those avenues? Well, we have the traditional intermediaries in the sense that most blockchain based system are actually built on top of the existing Internet, which are controlled by traditional Internet service provider. And those operators of course could leverage the tools that they have at their disposal in order to try and affect the operation of those networks. For instance, by applying some form of packet filtering technique are other ways to actually limit or slow down access to a blockchain based network. And then we also have the traditional informediaries which are actually providing access or helping us find the right infrastructure. And those could actually also be used to limit the adoption of those technologies by making them harder to find. And, and we actually have seen these already during 2017, during the ICO insanity, as Google and Facebook actually started to ban every ad that was related to a token sale."
+      },
+      {
+        "role": "user",
+        "content": "Are there new types of intermediaries emerging in the blockchain space?"
+      },
+      {
+        "role": "assistant",
+        "content": "we have of course the cryptocurrencies exchanges which are using to buy and sell those token based assets. And of course, even though there is some decentralized exchanges that are being built, most of the exchanges today are centrally operated by companies which are incorporated in a particular jurisdiction and therefore those exchange must comply with the rule of the law of that jurisdiction. And of course we are seeing this with all the know your customer and anti money laundering interventions. And then we have the mining pool or the miners and the transaction processor. And we have seen that in the last few years there has been a growing consolidation of the system into a few large mining pools which have become identifiable intermediaries which can also be regulated by the country in which they exist. And we have seen both in the US and in China, we are seeing some, some initial form of intervention where some states in, in the US are starting to increase taxes for mining pool or perhaps reducing the amount of electricity that they will actually let use, for instance in, in Washington State."
+      },
+      {
+        "role": "user",
+        "content": "What about more direct forms of regulation?"
+      },
+      {
+        "role": "assistant",
+        "content": "one obvious and traditional one has been to criminalize end users. And in that case that will mean that governments might prevent people from running a blockchain based node or even prevent them from transacting with an illicit smart contract. And of course this has a lot of issue because first of all it is very hard to identify users on a pseudonymous network. And secondly, as it has been shown in the past, it is usually a very bad idea to actually target end users, as we've seen with the case of copyright law, for instance, with the war against piracy, because this might actually justify very draconian regulations which are actually intended against the end user, but eventually actually affect the whole population of the Internet."
+      },
+      {
+        "role": "user",
+        "content": "Could governments target developers or hardware manufacturers?"
+      },
+      {
+        "role": "assistant",
+        "content": "we also have the possibility of actually imposing liability on software developers or hardware manufacturers. And again, we have seen this in the past as the US was trying to fight against cryptography by trying to impose specific backdoors or kill switches. And again, there is very bad consequence about doing this in the sense that this often can create vulnerabilities because any backdoor that's interesting to a system becomes a security vulnerability. And also because all of students, then we are giving a lot of power to those centralized authorities."
+      },
+      {
+        "role": "user",
+        "content": "Are there market-based approaches to regulation?"
+      },
+      {
+        "role": "assistant",
+        "content": "there is the possibility of actually manipulate or affect the operation of a blockchain by using the market forces. And so to the extent that the usability of the adoption of a blockchain mostly is related to the actual usage of the tokens that are used to execute transaction, then we have the obvious issue of the 51%. So if one government or a group of government could try and actually take over a network, but there are also other mechanisms, such as just market manipulation, in the sense that it could be possible to affect the stability of a token in order to actually reduce the appeal and the usability of those things. And, and this is obviously something that government could have the resources to do."
+      },
+      {
+        "role": "user",
+        "content": "What about controlling key nodes rather than the entire network?"
+      },
+      {
+        "role": "assistant",
+        "content": "we have this more specific mechanism of intervention which relates to the notion of blockchain neutrality as an analogy to network neutrality. And this is actually affecting the way in which those specific specific super nodes, such as Mining Pool or the blockchain node that actually have more power, such as the exchanges or the Blockchain Explorer. And the idea is that if we can control, we don't actually need to take over the whole network. We just need to have exercise control on the super nodes. And then automatically, if a particular exchange, like if Coinbase or Kraken or Blockchain Explorer are adopting a particular fork of a blockchain, then automatically most of the users that depend on the services will also follow that fork. So those, those operators, even though they don't have the actual power, technical power to actually affect, decide or take over the network, they actually have extreme influence to dictate which one of the forks will be used."
+      },
+      {
+        "role": "user",
+        "content": "How important are social norms in blockchain governance?"
+      },
+      {
+        "role": "assistant",
+        "content": "we have social norms which actually the DAO hack has shown that can actually play an important role. And this means that we can either try and directly affect the social norms within a particular network through the direct engagement and actually direct effect to shape the governance of this network are indirectly through the various regulatory levels. And we have seen the importance that social norms can play in the operation of a blockchain. When we compare especially for instance, the social norms of the BITCOIN network, which has this collective desire of actually achieving near perfect immutability. So the notion of code is low, as opposed to Ethereum, which actually focus perhaps more on the notion of distributed consensus rather than code is low. And this means that it might be more willing to modify the blockchain if some transaction needs to be reverted in order, because it will have a negative impact on the community as a whole, or because this might have a more socially beneficial outcome."
+      },
+      {
+        "role": "user",
+        "content": "Is there a shift from \"code is law\" to using code for regulatory compliance?"
+      },
+      {
+        "role": "assistant",
+        "content": "another thing that we are observing is this shift from code is law, so using code as a means to regulate behavior, to the notion of code as law, which means that we can use blockchain technology as a regulatory technology to achieve specific policy or regulatory objectives. And this basically means using blockchain based system or smart contract as a system to ensure compliance with the law, whether this is in terms of transparency, accountability, or providing real time auditability to a system, but also the possibility, for instance, for a government or some actor to actually require specific actors or institutions to interact with a particular smart contract as part of a regulation in order to ensure, for instance, automated compliance or tax reporting."
+      },
+      {
+        "role": "user",
+        "content": "So blockchain can lead to very different outcomes depending on how it's designed?"
+      },
+      {
+        "role": "assistant",
+        "content": "essentially, the idea is that depending on the architecture and the deployment of the system, then blockchain technology can lead to very different outcomes. They can create socially beneficial platforms which might enable more transparency, accountability, individual autonomy and participation. They can create more unregulatable and autonomous code based systems that actually operate outside of the purview of the law. Or if they are used by governments or corporations, they also have the ability of creating some form of more totalitarian system with a set of code based and sales executing rules that will automatically be enforced by the technology."
+      },
+      {
+        "role": "user",
+        "content": "This sounds like the idea that \"architecture is politics\"?"
+      },
+      {
+        "role": "assistant",
+        "content": "essentially, it all boils down to the idea that architecture is politics and that technology is neither good or bad, but it is also not neutral. And so the design of the infrastructure will have very significant and political consequence. And so it becomes extremely important to actually understand how the technology work and how it can be designed in, in order to try and foresee what are the legal, the social and the political implication of those technologies."
+      },
+      {
+        "role": "user",
+        "content": "How does governance play into all of this?"
+      },
+      {
+        "role": "assistant",
+        "content": "these, of course, highlight the importance of the issue of governance, which I believe will actually play a crucial role in defining the way in which blockchain technologies will evolve. And so, before I conclude, I would like to focus on the various aspects that, that could influence the governance of blockchain based systems."
+      },
+      {
+        "role": "user",
+        "content": "Can you explain the different types of blockchain governance?"
+      },
+      {
+        "role": "assistant",
+        "content": "first of all, we can distinguish between governance by the infrastructure, so what we call on chain governance in the concept of a blockchain, which basically refers to all the rules that are baked into the technology and which are automatically enforced by the technology. And the focus here is actually on the enforcement of of rules as opposed to the elaboration of those rules. And then we have governance of the infrastructure, which the blockchain community calls off chain governance. And those are all the social and institutional rules that are used to elaborate the rules that then will be embedded into the code and then all the procedures that are necessary in order to define and potentially modify those rules that will become then on chain governance. And while the first one doesn't need any form of third party enforcement because the technology is enforcing those rules, governance of the infrastructure obviously require all the traditional mechanism of enforcement and surveillance to make sure that those rules are actually being followed."
+      },
+      {
+        "role": "user",
+        "content": "What about rules that come from inside versus outside the community?"
+      },
+      {
+        "role": "assistant",
+        "content": "another important distinction is the distinction between endogenous and exogenous rules, where endogenous rules refer to the rules that are developed by the community and for the community, whereas exogenous rules are those rules that are imposed on a third party of a particular community."
+      },
+      {
+        "role": "user",
+        "content": "How do these governance concepts apply to blockchain systems in practice?"
+      },
+      {
+        "role": "assistant",
+        "content": "if we look at how those things can refer to blockchain based system, then we can see that initially most of the focus was actually on on chain governance, which is all the governance rules that can be baked into the technological framework. And this is like all the blockchain protocol, the consensus protocol, the governance structure of a particular smart contract. And then eventually it became obvious that the governance by the infrastructure is not sufficient. And it is also important to focus on the governance of the infrastructure, which is the definition and the modification of on chain rules. And so those are all the process that exist outside of the blockchain. So the Ethereum improvement protocol, the community dev calls the meetings and everything that actually does not have an instantiation into the protocol or the code of a smart contract. And those are things that are defined by the community and that must be enforced also by the community."
+      },
+      {
+        "role": "user",
+        "content": "Can you give examples of how Ethereum handled governance decisions?"
+      },
+      {
+        "role": "assistant",
+        "content": "we have like those two examples in which the Ethereum community had to face two important governance decisions. The first one was the DAO attack, which actually led to an intervention and a decision to actually change the code of the, of the protocol. And the other one being the parity bug, which actually again raised this question, which in this case was like much more of a could not be defined as an exceptional decision, but actually will become a process, will actually formalize a form of chain governance and eventually led to the decision of no intervention."
+      },
+      {
+        "role": "user",
+        "content": "What about external rules that affect blockchain governance?"
+      },
+      {
+        "role": "assistant",
+        "content": "in terms of the exogenous rules, then we have, when the governance by the infrastructure being all the software hardware components that are affecting the blockchain system eventually operate outside of it. So this is like all the protocol of the Internet and all the software or hardware applications on which a blockchain is operating, which are actually often forgotten when we discuss the overall governance of a blockchain based system. And then we have all those non technical rules that come from outside the blockchain community and in particular laws and regulations which also are often forgotten or ignored by many people in the blockchain community."
+      },
+      {
+        "role": "user",
+        "content": "Where can we learn more about all these topics?"
+      },
+      {
+        "role": "assistant",
+        "content": "And so yeah, and then if you want to hear more of all those things, you can read this book that tries to address all those questions. Thank you."
+      }
+    ]
+  }
+]

@@ -1,0 +1,302 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Welcome to the Metaview Podcast. Hear these non fungible conversations. They will yield you great knowledge and perspective. But beware, they might also make your brain go boom. So watch your step because this rabbit hole goes deep. Good luck and have fun."
+      },
+      {
+        "role": "user",
+        "content": "Primavera de Filippi to the Metaview Podcast."
+      },
+      {
+        "role": "assistant",
+        "content": "Thank you."
+      },
+      {
+        "role": "user",
+        "content": "Would you care to introduce yourself a bit for the the people who don't know you yet?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. So I'm a legal scholar. I'm a researcher at the CNRS in Paris and at the Bachmann Klein center at Havant. And most of my research focus since 10 years now is on the legal challenges and the governance of blockchain technologies and how they are somehow affecting specific domains of societies from like copyright, creativity, governance, etc."
+      },
+      {
+        "role": "user",
+        "content": "Okay, and is that kind of what got you into web 3 or what was it that drew you in?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, it was mostly like the legal."
+      },
+      {
+        "role": "user",
+        "content": "Questions and Inside Web 3. So then would you say you're most interested in like in the dao side, the governance side, since you are, you have this previous interest in governance and the peer production?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, I think I'm specifically looking at not just daos, but like the governance of blockchain systems, including blockchain networks and DApps and DAOs and then also more on the creativity. I'm looking also at like NFTs and yeah, copyright and stuff like that."
+      },
+      {
+        "role": "user",
+        "content": "Okay, I'm gonna jump ahead to, to Governance by Design. Since we, yeah, we already touched on governance a bit. I want to ask you what is that and. Yeah, tell us more about that."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I mean, the idea with Governance by Design is kind of like this interplay between trust and confidence where we can either design institution and then having the governance plug on top of it, or we can actually think, since the conceptualization of the system, what is the governance that we want and embedding those governance structures into a technological architecture so that by design we have more confidence about the way in which the governance will be administered. At least, of course there is no predictability on the outcome, but at least there is a very strong guarantees on the manner in which the governance is being undertaken."
+      },
+      {
+        "role": "user",
+        "content": "Makes sense. And can you share some good examples of that?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, I will say Daos is a very interesting laboratory of experimentation for governance by design, where DAOs, more so than other blockchain system, you can really embed specific governance structures and you can experiment with alternative mechanism of governance within different DAOs and you know, compare and contrast and then also looking at what are the various governance primitives that can help instantiate different outcomes. So you know, the various technological bricks that can be embedded into a dao."
+      },
+      {
+        "role": "user",
+        "content": "Can you share more about the some good governance primitives?"
+      },
+      {
+        "role": "assistant",
+        "content": "Sure. I mean, like, so you have like the most basic thing of like, okay, do we want to implement some quadratic voting versus conviction voting versus meritocratic token, gated governance system, soulbound tokens, I don't know, like all those, those are all primitives. Right. And then you can combine those primitives together in order to create slightly more sophisticated systems where you might have, you know, multiple by chambers where you have like a plutocratic chamber and a more meritocratic council that can veto or validate the decision. So I mean there is like an infinity of possibilities, but basically identifying the primitives and then deciding how those primitives can be combined into like larger architectures of governance up to the point in which we have a workable system."
+      },
+      {
+        "role": "user",
+        "content": "And how much of all that would you say is something that existed before in like production and decentralized organizations, before the dao space and the blockchains versus how much of that is really something that the crypto space came up with?"
+      },
+      {
+        "role": "assistant",
+        "content": "I mean, I don't think the crypto space invented any of those governance primitives. I mean, maybe token gated is something that was not so common, but I think the crypto space has innovated on the implementation of those primitives in an infrastructure that, because it is governance by design, does not require monitoring and sanctioning when those primitives are not being followed upon. And that's the usual challenge. It's like, how do we. You can design the coolest governance structure, but then you need to make sure that people are actually playing by the rules. And so you need like an additional layer of governance about monitoring, verifying and potentially enforcing and sanctioning if rules are not followed, which is also a very complex governance structure to put into place. Whereas via the blockchain infrastructure, because those rules, the administration of the governance is directly embedded into a technological system that is automatically enforcing them, then all of sudden this additional layer of monitoring and sanctioning can be reduced, almost eliminated. And I think that's where these eliminate the needs of those more institutional frameworks which have a tendency towards centralization in order to facilitate monitoring and enforcement."
+      },
+      {
+        "role": "user",
+        "content": "It makes sense. So you would say that none of this stuff is necessarily new, but more so like a better way to do it because there's less, less need for trust and rules are more so enforced by the system. Let's go into the art side of things. I wanted to ask you about Plantoids. I Found it like a super cool experiment from a few years ago. So yeah, tell us what are plantoids?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, so plantoids are blockchain based life forms. So it's basically an artistic attempt at instantiating a dao into the physical world. And so plantoids are this kind of mechanical plants. The body is in the physical world. The spirit of the plantoid, the soul, is a smart contract on Ethereum. And the idea is to create this type of autonomous entity which is trying to replicate itself, trying to reproduce like any other life forms, but that is also autonomous and self sufficient. And so the way this works is that so every plantoid has its own smart contract system. And the physical mechanical body is connected with this smart contract. So it's monitoring the blockchain and is reacting when the smart contract receive transactions. And so when you feed the plantoid, meaning when you send crypto to the smart contract, the physical body of the plantoid activates itself. And then you can interact with the plant and you can interact via a variety of sensors or like you can talk to it via AI, you can touch it, you can play with it. And every interaction that you're having with the plantoid is actually collecting data. And then this data gets fed to either a generative art algorithm or to a generative AI model. So that via the interaction that you had with the plantoid, the plantoid will generate an artwork that is customized to you because of the interaction. And then this artwork will be minted as an NFT and will be transferred back to you. And so you as a human pollinator, you provide crypto to the plantoid and then the plantoid gives you in exchange a digital seed. And then whenever you're selling this digital seed on the secondary marketplaces, the royalties 10% goes back to feed the plantoid. And so this creates this kind of symbiotic relationship where the more you're speculating on the digital seeds of the plantoids, the more you're actually helping the plantoids in the reproduction process. And then there is a point in which the plantoid has accumulated enough funds to ensure its reproduction. And this is when it becomes a dao and it opens a call for proposals so that people can submit proposition about how they envision to produce the next plantoid. And then all the people that are in possession of One of those NFTs, one of the digital seeds, they can vote on the proposition that they like the most. And the selected winner will then be declared as the new artist that is entitled to create a new plantoid. And then the plantoid will transfer the funds that it has collected until now to the selected winner, who will then be quotation mark hired by the plantoid in order to reproduce itself. And so the idea with all this is that on the one hand is to use art as a way of actually conveying this nice concept of autonomous blockchain based entities, but also to highlight all the legal questions that are surrounding those blockchain based entities, meaning who owns the cryptocurrencies that are received by the Planto Smart contract, even though there is no legal person. And then is the commissioning by the plantoid to the artist to create a new plantoid? Is it an actual legal contract? And if it is, who are the parties of the contract? Because the plantoid doesn't have legal capacity and so is not recognized as a legal system by the ECS system as a legal entity. What happens if the person that was commissioned by the plantard just runs with the money and doesn't deliver on the contract? Who can sue on behalf of whom, etc. So the idea was to just create this kind of very legally contentious art piece that is actually an illustration that there is a lot of legal questions that still need to be resolved."
+      },
+      {
+        "role": "user",
+        "content": "I love it. And how did you come up with the idea?"
+      },
+      {
+        "role": "assistant",
+        "content": "Myself back in 2014, brainstorming with many people, what would blockchain based lifeform look like? And then slowly every time evolving the idea into something more sophisticated. So the first one was just a bitcoin eating plant and then it has evolved into an Ethereum Dao and then it has evolved into an NFT generator. So there is many spaces of Plantoids that are evolving as the technologies evolves."
+      },
+      {
+        "role": "user",
+        "content": "And when did you say the first one was made?"
+      },
+      {
+        "role": "assistant",
+        "content": "The first one was made in 2014."
+      },
+      {
+        "role": "user",
+        "content": "Yes. So it's been 10 years since the experiment and 10 years is a long time in this space especially. So yeah. What are some of the conclusions of it and is it still going on? And did you find answers to some of the questions around the legal side?"
+      },
+      {
+        "role": "assistant",
+        "content": "No, actually, I think interestingly enough those questions are still open. We don't yet have a proper understanding."
+      },
+      {
+        "role": "user",
+        "content": "And how many plants are there by now?"
+      },
+      {
+        "role": "assistant",
+        "content": "Technically 21."
+      },
+      {
+        "role": "user",
+        "content": "Is it still going? Are people still slowly making them?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I think it's going faster than before, actually."
+      },
+      {
+        "role": "user",
+        "content": "That's super cool. Some more questions about the legal side. I know you wrote the book the Blockchain and the Law and Yeah, I guess just tell us more about it. Like what got you to write it and what are some of the questions that you Tried to answer with the book."
+      },
+      {
+        "role": "assistant",
+        "content": "I mean, so the book was written in 2018. So, I mean, it was written. We started it much earlier than that, but we published it in 2018. So it was really at the time in which there were a lot of new things coming into the scene and a lot of uncertainty about how they should be regulated. I will say that when it comes to cryptocurrencies, when it comes to tokens and ICOs, a lot of things have been relatively well understood and regulated over time. I think when it comes to daos, there is a lot of questions that are still open. When it comes to smart contract as well, it's unclear when does a smart contract qualify as a contract. There is still some uncertainty around, like Defi and all these things. So we are slowly and I guess steadily moving towards a place in which some things are being tackled by regulators and legislators. But I will say that the majority of the things that we were envisioning back in 2018 with the book, I would say actually did materialize. And yet there is no definitive regulatory answer to how they should be interpreted even by the legal system. And I think the question of DAOs remains a very important question. We have had a few case jurisprudence on considering daos as general partnership and potential liability of token holders and so forth. But despite the various attempts at creating legal wrappers for daos like, you know, Wyoming, Vermont and so forth. But that's different, right? Because this is about incorporating a DAO as an actual legal structure as opposed to recognizing a dao as a technical infrastructure. And the latter has not yet been fully understood, I will say, by the majority of legal systems."
+      },
+      {
+        "role": "user",
+        "content": "What do you think is the biggest issue here?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, the biggest issue is twofold. On the one hand, a dao that doesn't have legal recognition cannot engage on its own behalf on a lot of activities that require legal capacity, meaning owning specific assets, entering into contractual relationship and so forth. And so if a DAO wants to, I don't know, rent an office, good luck. If a dao, as a dao, wants to enter into contractual relationship in order to like hire people, it's also very difficult. So there starts to be this kind of like gateways, you know, like opolis work dao and so forth that are putting themselves in the middle so that the DAO interface with this legal entity and then the legal entity is the one actually contracting people. But it's really hard today for a dao to contract, legally speaking, a worker, because Tadao doesn't have legal capacity, so it cannot enter into a contracting relationship. And the other side is, as DAO are operating in the world, the lack of legal personality and limited liability in particular is creating potential liability on all the DAO members independently of whether they would have been liable if there was a legal person that represents the dao. So on the one hand, it's limiting the ability for DAOs to act in the world. On the other hand, it's creating potential liabilities to the members of the DAOs when the DAO act in the world."
+      },
+      {
+        "role": "user",
+        "content": "And what do you think about the latest wyoming legislation about DAOs? Does that change any of it? I know there was one that they made like two years ago or something, and then there's been some noise about the latest one, like about last week or so."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I mean, I think it's important to have this kind of like blockchain based LLC type of structures. But essentially what it is doing is it's enabling a standard corporation to be administered via a blockchain based infrastructure. But to me, there is always something a little bit off when we say that the dao, which operates according to its own technological framework, is wrapped by a legal entity, as opposed to saying that a legal entity is being administered by a dao. But conflating those two things together, I think is a false, is a facade to say, okay, well, actually we provided legal personality to a dao, but actually the legal person, the directors of the legal wrapper, might not have actual power on the way in which the DAO operates. Right. And so it is important to create this wrapper, but it's also important to recognize that the legal wrapper is not the dao, and that the DAO actually, like, you can shut down the legal wrapper, you cannot shut down the dao. You can seize the assets of the legal wrapper if they exist in the physical world, but you cannot seize the cryptocurrencies held by the dao. So there is this kind of fiction by saying that the legal wrapper actually qualify as the legal person of the dao, as opposed to recognizing that there are two entities, a technological entity and a legal entity, which have obviously some interfacing between each other, but one is not the other."
+      },
+      {
+        "role": "user",
+        "content": "Right? Yeah. How do you think this issue should be solved? And I mean, it will never be able. The state will never be able to control the DAO itself."
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. So I have a very specific opinion which is part of the DAO model law that we've drafted together with the team at Koala. And the idea is to play with the concept of functional and regulatory equivalence in order to actually recognize that many of the formalities that are required by existing corporate regulations in order to assign legal personality to a particular legal entity could be fulfilled through registration on a blockchain. And so when you register a dao, when you deploy a DAO on a blockchain, you're essentially registering on this decentralized ledger the existence on a company. The reason that we need registration is because we need to be able to verify the existence of those legal entities. But on the blockchain, you can verify the existence by looking at the blockchain. You can understand the bylaws by looking at the operations and the code of the smart contract. So there is a lot of potential functional equivalent features. And then in terms of regulatory equivalence, it's like, well, you cannot. No regulator can impose any rules on a dao. But if the dao is interested in acquiring legal personality, then the regulator can create a set of constraints or formalities that needs to be matched by the dao. And only then will the regulator assign legal personality to this Darwin. So without actually creating this kind of draconian legal framework that tells here is how you have to be, it's more like an invitation. If you do want legal personality, here is the design that you need to abide by. And if you do, we're going to recognize you as a legal person. If you don't, we're just going to continue to ignore you or treat you as a general partnership."
+      },
+      {
+        "role": "user",
+        "content": "Right. It makes sense. And what state, if any, do you think is closest to having something like that?"
+      },
+      {
+        "role": "assistant",
+        "content": "So we've actually been collaborating with the state of Utah, and they have done, I think, what could be considered the closest implementation of the Dow Model law, which was done like last year. So I think that's a nice little victory for the DAO modelo because it's also a nice track record. But I think that's the only one that is actually even suggesting the possibility of recognizing an actual dao, as opposed to the legal wrapper of a DAO as a legal person."
+      },
+      {
+        "role": "user",
+        "content": "And. Yeah, how soon do you hope people will be able to use this?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, I mean, the bill has passed so theory right here right now, but I don't know of anyone that has actually leveraged these provisions."
+      },
+      {
+        "role": "user",
+        "content": "Interesting. Yeah, we're still. We've been operating a Dao since 2019, and we still don't have any legal entity. And yeah, we've been looking into wrappers and trying to figure out, like, what should we really do to be recognized as a legal entity so we can actually raise money and not worry so much. What would you recommend to somebody like that?"
+      },
+      {
+        "role": "assistant",
+        "content": "I don't know. I think I need to know the context much more in details to give any recommendation."
+      },
+      {
+        "role": "user",
+        "content": "Fair enough. What got you interested in this stuff in the first place? Not just the law, but all of this. And I know you have some background in activism and. Yeah, I would like to go back into what motivates you."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I think for me it's like the blockchain in general and daos in particular are a new way of experimenting with digital organizations which are less focused on intermediary operators and more requiring attention to be given to decentralized or distributed governance. So for me, it's just like an amazing laboratory of experimentation in which we can test new governance structures which are really difficult to test elsewhere simply because there is not much space left for experimenting. And the blockchain is just opening up our new dimensions and actually with people that are very eager to experiment."
+      },
+      {
+        "role": "user",
+        "content": "Makes sense. And yeah, so touching on the research side, I know you have a lot of time in different institute like research institutes and university and yeah, I wanted to ask you about some of the experience with that, like in terms of how it relates to the new field of Desai and. Yeah. Do you think that Desai could solve some of the issues of gatekeeping in the traditional institutions that are like about research? And do you have any faith in Desai and how do you see it going forward?"
+      },
+      {
+        "role": "assistant",
+        "content": "I think this eye is a very broad terminology that encompass a lot of things, but yeah, absolutely. I think that one of the biggest problem we have today is that research is not done in a collaborative manner. And especially when it's about ip, there is a lot of patent tracing and whatever else type of tracing in which people are competing in order to be the first one to find a particular solution to a particular problem. And somehow this actually is slowing down any attempt at finding that solution as opposed to trying to collaborate and then sharing the yield of whatever the solution identified can provide. So I'm actually very hopeful to see developments in the Desai movement that can inject more cooperative approaches to science."
+      },
+      {
+        "role": "user",
+        "content": "And so would you say that the intellectual property side of things, that's something that making more decentralized would help with better research?"
+      },
+      {
+        "role": "assistant",
+        "content": "I mean, I don't know if it's better research. It's just a different approach to research which is more a lot of people collaborating towards incremental innovation as opposed to a lot of people competing for radical disruptive innovations and then excluding others that didn't run fast enough."
+      },
+      {
+        "role": "user",
+        "content": "And you also did a lot of research into beer production. And is that mostly related to research like generating a new knowledge or. Yeah, what. What kind of production are we talking here?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I mean, I've been looking a lot into like, you know, Creative Commons and, I don't know, Wikipedia, stuff like that. So when people are creating projects together and the extent to which distributed collaboration can create outcomes, that will be very difficult for a single company or organization to do on its own. And looking at, of course, the challenges, because obviously centralized governance is always easier, but the reason that those system incentivize many people to contribute is that they are not contributing to one centralized entity, but rather they are contributing to an open and distributed ecosystem. And so there is obviously a lot of interesting governance issues that comes about about how do we maintain a viable and prosperous ecosystem of distributed collaboration. How do you incentivize people to collaborate? And I think that's also where the blockchain comes about. Because with tokenizations, reputation, whatever, like it is possible to create incentives without necessarily having to have a centralized entity that is sending out payrolls to people."
+      },
+      {
+        "role": "user",
+        "content": "That makes sense. How decentralized do you think DAO can still be considered an organization? Can it be just an intellectual property on a blockchain that anybody can access and expand on, or does it need to have actual governance and people that are on the board or stuff like that?"
+      },
+      {
+        "role": "assistant",
+        "content": "I mean, I think it depends on what you define a DAO to be. For me, a DAO is when you start injecting governance into a system. Otherwise it's just a dapp. So I'm not sure. Maybe I didn't answer the question."
+      },
+      {
+        "role": "user",
+        "content": "No, I'm just. Yeah, I was trying to get at like your definition of a dao, because there are just so many different definitions that a lot of different people are using and. Okay, we have 15 minutes left here, so let's get into coordinations, which is kind of this. One of these frontiers, I guess, that a lot of this DAO stuff and decentralized research and all of that production is kind of leading into these sort of spaces and ecosystems. And coordinations was kind of yours, or not just yours, but it was a response to Balaji's network state concept. So, yeah, let's get into that. So what is coordination and how is it different from a network state?"
+      },
+      {
+        "role": "assistant",
+        "content": "So a coordination is not different from a network state. I would say it's a subset. So it's just a different recipe. I think Balaji came up with one, which is what he has described in his book. And the idea with coordination is that is to highlight the fact that there are other recipes that are possible. And one of them, which is the one that we propose, is the coordination, which is essentially, it's not trying to declare independence and exiting from a particular nation state, but it's rather creating additional layers of sovereignties so that people can join specific, I guess, virtual nation or digital communities, which distinguish themselves from traditional digital community because they have a desire of mutualization of resources, collective action, and most importantly, the desire of becoming more and more interdependent and therefore more intertwined and actually adopt mechanisms that facilitate this type of activities."
+      },
+      {
+        "role": "user",
+        "content": "So how would you explain, for example, the difference between a coordination and a dao? Like, a dao can grow into a."
+      },
+      {
+        "role": "assistant",
+        "content": "Coordination, but I mean, a dao can be used as an infrastructure for coordinations. Not all DAOs are coordinations, and not all coordination needs or will use a dao. But clearly a dao is a nice infrastructure if you want to set up a coordination in order to activate this materialization of resources and collective action."
+      },
+      {
+        "role": "user",
+        "content": "Okay, so yeah, coordination can be a dao, but I assume a coordination can also be like a network of daos, rather than just a single dao. But yeah. What would you say are the, like, the components of coordination?"
+      },
+      {
+        "role": "assistant",
+        "content": "Can you elaborate on the question?"
+      },
+      {
+        "role": "user",
+        "content": "What makes a coordination a coordination? Like, what are the most important aspects of community? And that makes a community into a coordination? So you said, like, having shared resources is one of them."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, So a coordination is not a community. A coordination, if anything, is a community of communities. It's a network of collectives. And it's a network of collectives which, instead of sharing resources on a bilateral level, by just exchanging stuff with one another, they choose to create a new type of entity. But that entity is not a new legal structure. It's not a new technological infrastructure. It's just like a collective notion that we are part of the same thing. And then, and that's where daos can become useful, then we can engage into mutualization. And so instead of, like, exchanging bilaterally, we can put resources in common. And then we, of course, need some degree of governance about how we're going to use those resources and what type of collective action we want to get into. But also, and this is, I think the important point is that there is this need or this desire of becoming more intertwined, meaning, like exchanging equity. So I don't know if in the case of daos, if you create a coordination of DAOs, then DAOs can do like token sharing, token exchange. And so then each DAO owns a little bit of the other DAOs, whether those are like economic tokens or governance tokens. All of students, they actually have the capacity to mutualize resources. But also they have less of an incentive to free ride on those resources because they have exchanged their equity. And so that means that I have no longer an incentive to free ride because if I'm harming you, I'm harming myself because I own a little bit of you and vice versa. And so everyone becomes more incentivized to contribute to the whole because they are all intertwined with one another."
+      },
+      {
+        "role": "user",
+        "content": "Makes sense. Yeah. Having the shared ownership to really align the incentives. So what draw you to the coordinations? I guess. What makes you interested in that stuff?"
+      },
+      {
+        "role": "assistant",
+        "content": "Well, I think that we are having a really hard time engaging into global coordination. I think that the existing international ecosystem is actually too separated in different national boundaries and there is a very hard time doing like collective action for like problems that are global problems, climate being perhaps the biggest one of them. But not only. And coordination could provide not the answer, but could facilitate this type of global coordination."
+      },
+      {
+        "role": "user",
+        "content": "Right. It creates another avenue for normal people to, for normal people to engage in setup like without having to climb their own nation state governance and then go into like these interstate organizations and stuff like that."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah."
+      },
+      {
+        "role": "user",
+        "content": "And yeah. Then zooming further out, what do you think is like the ultimate potential of all of this, the coordination DAO technologies, it's like better blockchain law and governance like this. So yeah, all this like your vision for the, the future of humanity, let's say like that."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I think that's a little bit too, too speculative. I don't know. Right now I'm more like, I'm more interested in trying to solve those very basic problems that are governance of DS and ping this to a larger scope with coordination. But I don't know, I just think it's worth experimenting with those things. I don't know exactly how will society look like?"
+      },
+      {
+        "role": "user",
+        "content": "Fair enough. And then do you have any specific hope?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, I do have lots of hopes. I hope that we will manage to create systems that foster cooperation rather than competition that actually allows us to tackle those global problems that we have no idea how to tackle tackle right now."
+      },
+      {
+        "role": "user",
+        "content": "Awesome. And yeah. Do you think this, that both of these systems like will? Yeah, I guess. Then we're getting back into the speculative. Let's just leave it at that. I think that was a good answer. Do you have anything else that you want to add or touch on before we wrap it up?"
+      },
+      {
+        "role": "assistant",
+        "content": "No, I think we covered a lot of grounds."
+      },
+      {
+        "role": "user",
+        "content": "We did, yeah. Went through. Yeah. Definitely. A lot. Yeah. I was afraid that we wouldn't. Wouldn't be able to cover everything, so I hastened through some of the questions. I wish I dug deeper into some of them, but. Yeah, let's not go back. I think we have a good arc here, and I can let you go seven minutes early since you have a hard stop soon anyway."
+      },
+      {
+        "role": "assistant",
+        "content": "Excellent."
+      },
+      {
+        "role": "user",
+        "content": "Yeah. Thank you. Thank you very much for coming on. This was great. Thanks to you, Sam Sa."
+      }
+    ]
+  }
+]

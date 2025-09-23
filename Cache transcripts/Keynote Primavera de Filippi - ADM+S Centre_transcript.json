@@ -1,0 +1,574 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "What will you be discussing today about blockchain and our digital future?"
+      },
+      {
+        "role": "assistant",
+        "content": "I will try to conclude this very enriching day of conversation by trying to present some words about how blockchain web3 metaverse and all these things is actually contributing to shaping our digital future. And in particular, how blockchain technology can help us reimagine or reinvent specific institutions that are key to our society, such as money, law, economics, and many other things."
+      },
+      {
+        "role": "user",
+        "content": "Where did this vision of cryptocurrency begin?"
+      },
+      {
+        "role": "assistant",
+        "content": "it all begins in 1999 with Neil Stephenson, that actually was perhaps the first one to envision the possibility of creating an anonymous, decentralized, peer to peer cryptocurrencies that will operate independently of any governmental structure. And then 10 years later we have Satoshi Nakamoto, which maybe has read the Cryptonomicant and actually launched a bitcoin, potentially as a response to the 2008 financial crisis, where we have observed that some of the trusted authorities or financial institutions that we thought could be trusted actually were not necessarily acting in our interest."
+      },
+      {
+        "role": "user",
+        "content": "What's the core idea behind these trustless systems?"
+      },
+      {
+        "role": "assistant",
+        "content": "the idea of creating this system, these trustless systems, but eliminate the need of trusting the centralized authority. And instead, as long as we trust the underlying technology, as long as we have confidence in the way in which it operates, then we should be fine."
+      },
+      {
+        "role": "user",
+        "content": "What did this enable?"
+      },
+      {
+        "role": "assistant",
+        "content": "what it creates is that it opens up a new window for imagination by showing that anyone can potentially create their own magic Internet money. And in the space of just a few months and years, we have a Cambrian explosion of cryptocurrencies, blockchain tokens that emerge, each one with their own specificity and distinctive features, and kind of like trying to compete with one another for attention in order to increase their value by providing different blockchain with different features or by providing specific services on top of those blockchains."
+      },
+      {
+        "role": "user",
+        "content": "What problem emerged with cryptocurrency volatility?"
+      },
+      {
+        "role": "assistant",
+        "content": "of course those tokens are really useful for speculations, but because of the volatility that comes with them, then there is some issue when we want to use them as an actual unit of account. So stablecoins come about, introducing again some question around the trustlessness of the systems, as we have some stablecoin that actually depend on centralized entity that need to collect via currency that can then be redeemed. And so we introduce new trusted actors."
+      },
+      {
+        "role": "user",
+        "content": "What about algorithmic stablecoins?"
+      },
+      {
+        "role": "assistant",
+        "content": "in the case of algorithmic and stablecoin, then we need to trust that somehow the algorithm will be able to cope with any type of market environment. And of course, as we have seen in the last few months, not all stablecoins are actually stable, as we've seen with the recent crash of Terra Luna, when there are some market situations that actually destroy the peg, then it becomes very difficult to actually maintain it."
+      },
+      {
+        "role": "user",
+        "content": "What other trust issues emerged?"
+      },
+      {
+        "role": "assistant",
+        "content": "more important question with regard to the non algorithmic and stablecoin, there is a few issues that are raised about to which extent is there an actual a full reserve of the fiat currency that should be redeemable against the stable token. So all these trustless system that was introduced with cryptocurrency starts to kind of become a little bit more trusted when stablecoin comes about."
+      },
+      {
+        "role": "user",
+        "content": "What about the FTX saga?"
+      },
+      {
+        "role": "assistant",
+        "content": "we of course has like in the last few weeks the FTX saga, which somehow ironically has shown that what happened is exactly what the cryptocurrency like Bitcoin were originally intended to avoid. So in just the matter of a few years, we managed to actually replicate exactly the same system that we thought blockchain technology will solve. And so somehow something, somewhere, we don't know, something went a little bit wrong."
+      },
+      {
+        "role": "user",
+        "content": "What other innovations did blockchain enable?"
+      },
+      {
+        "role": "assistant",
+        "content": "we don't really have to worry because blockchain technologies not only give us the possibility to create cryptocurrency, but also to create some complicated system where code is low or low is code, but basically creating our own system of contractual frameworks and potentially property rights."
+      },
+      {
+        "role": "user",
+        "content": "How did DeFi emerge?"
+      },
+      {
+        "role": "assistant",
+        "content": "We get all these beautiful innovation because we don't really trust cefi, then we can innovate and we can create defi, which comes with specific properties, mainly providing greater confidence in the fact that no centralized authority can defect or can try to create some kind of fraud and whatnot. And also comes with this permissionless nature and very importantly the composability. So because it is permissionless, anyone can come in and plug themselves onto the system by creating an additional plugin to the overall model and creates this very sophisticated system of defy."
+      },
+      {
+        "role": "user",
+        "content": "Does DeFi always work perfectly?"
+      },
+      {
+        "role": "assistant",
+        "content": "everything works well as long as things works well. And so this principle of Cody's law is actually very powerful in ensuring that we don't really need the law because the code is actually replacing it. But of course, even defi doesn't always escape from issues, whether those are like scams, hacks, crashes. Because of the market and especially because of the composability, we have this kind of systemic risk that emerge because there is this kind of repercussion on all the value chains."
+      },
+      {
+        "role": "user",
+        "content": "How do people react when code fails?"
+      },
+      {
+        "role": "assistant",
+        "content": "all of a sudden, whenever those problems happen, even though we found that code is low, at some point we don't really want code is low because actually code doesn't really work as we wish. And what is interesting is that it actually showed that the market environment actually becomes some kind of constitutive element to the way in which we decide to perceive the notion of blockchain property. And as long as the market is good and we are happy with the outcome, then code is low. But as soon as the market is a bit less good and all the code actually fails us, then the law should actually prevail over the code."
+      },
+      {
+        "role": "user",
+        "content": "What about NFTs and digital property?"
+      },
+      {
+        "role": "assistant",
+        "content": "Another quite revolutionary technology that also touch upon the question of property is NFTs, which is mostly used by artists or people issuing collectible. And what is really interesting with this is that it enabled this new notion that is actually quite revolutionary, the notion of digital property. Because it's actually quite strange to talk about property when we're talking about the digital world because of the immateriality of the medium, then it doesn't really make sense because I get something, I can reproduce it. And so how can we actually create property in a place where there is no scarcity?"
+      },
+      {
+        "role": "user",
+        "content": "How did we solve digital scarcity before?"
+      },
+      {
+        "role": "assistant",
+        "content": "of course, we have solved the problem long ago, because information is also immaterial. And so in the digital world, we kind of solve the problem of scarcity because we want property through artificial scarcity, which is provided to us by copyright law. And so we can now create intellectual property which enable us to transact with information on the Internet in the same way as we will transact with physical property."
+      },
+      {
+        "role": "user",
+        "content": "What layers emerge with NFTs?"
+      },
+      {
+        "role": "assistant",
+        "content": "we can see how there is like, different layer that emerge. So we have like the general work of authorship that as an immaterial entity is not constrained by any type of scarcity, except for the artificial scarcity that we create via copyright law. And then this work can be incorporated into a digital file, which, because of the digital nature of this file, does not, is not subject to any type of scarcity as such. And then today we can now finally encapsulate or reference this digital file into a token, into an nft, which will then represent the unique and authentic copy of this file, which is not subject to artificial scarcity in the legal sense of things, but that is subject to this new type of virtual or, or digital scarcity that actually comes from a technical perspective."
+      },
+      {
+        "role": "user",
+        "content": "How does this lead to Web3?"
+      },
+      {
+        "role": "assistant",
+        "content": "that's how we Talk then of Web3. So we're not just receiving information, we're not just receiving and providing, exchanging information, but now we can also own the content of the digital resources that we're interacting with every day."
+      },
+      {
+        "role": "user",
+        "content": "What's revolutionary about this for artists?"
+      },
+      {
+        "role": "assistant",
+        "content": "what is very revolutionary with this is that with regard to copyright, which was originally the only way in which we could actually create property over those digital contents, now digital artists can, for the first time in history, actually monetize their work without having to rely on the licensing or the transfer of copyright. But what they sell is the actual digital and authentic copy of their works."
+      },
+      {
+        "role": "user",
+        "content": "How do NFT marketplaces function?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is actually very interesting because it creates many new opportunities for new business models and new opportunity for the artist to connect and exchange directly with their fans. But if we look at the practicality of it, how things are actually being made, we can see that the large majority of the trading of NFTs happen on those centralized marketplaces which are slightly starting to look very similar to those traditional trusted intermediaries, but also are kind of acting as some form of gatekeepers."
+      },
+      {
+        "role": "user",
+        "content": "What gatekeeping powers do these platforms have?"
+      },
+      {
+        "role": "assistant",
+        "content": "First of all, because we have way too many NFTs in the world, there needs to be some kind of filter. And so people need to apply in order to be able to join those marketplaces which are the most elitist. But also those marketplace provide the possibility to choose by themselves. They choose what are the licensing rights by which those NFT are actually being exchanged. And they also get the possibility to choose whether or not to actually enforce the royalty system that are embedded into those NFTs."
+      },
+      {
+        "role": "user",
+        "content": "Can they censor NFTs?"
+      },
+      {
+        "role": "assistant",
+        "content": "they also have some kind of censorship power, because even though of course, no one can censor the NFT as such, because it exists on the blockchain, but because those platforms become like the main way in which people are accessing and visualizing those NFTs, if they choose to actually censor them, then it will drastically decrease the market value of those NFTs because. Because they cannot be treated in the same way as the others."
+      },
+      {
+        "role": "user",
+        "content": "Are NFTs revolutionizing the art world as promised?"
+      },
+      {
+        "role": "assistant",
+        "content": "Athis brings us to this question of to which extent is this new technology? Are NFTs actually revolutionizing the art world as it was initially believed? But when we look at how this ecosystem operates, we can see that there is also quite a lot of frauds and scams. There is also a lot of market manipulation because people are engaging into like pumping and dumping those NFTs in order to actually speculate over them."
+      },
+      {
+        "role": "user",
+        "content": "How is the traditional art world entering this space?"
+      },
+      {
+        "role": "assistant",
+        "content": "while there is this very amazing opportunity, and this is actually quite a revolution, this concept of digital property, at the same time we see how this is pretty much replicating the same dynamics that the art market has been doing for a long time, and actually exacerbating those dynamics. And also with the advent of new actors like Christie's or Sotheby's that are established in the art world that are now entering the space, we can see how slowly this is actually being re corrupted."
+      },
+      {
+        "role": "user",
+        "content": "Who determines value in the NFT space?"
+      },
+      {
+        "role": "assistant",
+        "content": "Control is actually coming into this space also from the traditional artwork, with the exception that the people that choose what is Valuable and what is not valuable are no longer the traditional intermediary like the art critics or the institution of the art world, but are usually like crypto collectors or crypto investors, or crypto billionaires, which obviously have a very peculiar taste. And eventually it appears that the most valuable NFTs are things that perhaps most of the art critics will be quite afraid of. And so, once again, maybe something has gone wrong. It's not clear."
+      },
+      {
+        "role": "user",
+        "content": "How do NFTs enable the metaverse?"
+      },
+      {
+        "role": "assistant",
+        "content": "But we should not worry too much because one of the key contribution of this notion of digital property is that it actually enable us to design and to implement this metaverse in an open and decentralized and interoperable way, where interoperability can actually be enforced through the technology."
+      },
+      {
+        "role": "user",
+        "content": "What is Web4?"
+      },
+      {
+        "role": "assistant",
+        "content": "we speak a lot about Web3, but we don't speak enough about Web4. Web4 is the next step. And this is when we add to the read, write and own, we add the space, so the spatial element, which is the metaverse. And that means that all of a sudden we actually can situate ourselves into space. We can actually move from one place to the other and we can have spatial relationship with other people in the metaverse and with specific assets into the metaverse."
+      },
+      {
+        "role": "user",
+        "content": "How do avatars function in this space?"
+      },
+      {
+        "role": "assistant",
+        "content": "this means that all of a sudden we are not just like nicknames behind a screen, but we actually become, we can incarnate ourselves into avatars. And those avatars, of course they can also have a location, but they can also have things, they can own assets, they can dress up, they can hold accessories and so forth. And of course there is now a very big business that is emerging around privatization and selling accessory for avatars. And obviously the luxury brand did not miss the opportunity. And we have brands like Gucci and Balenciaga that are really innovating in this space."
+      },
+      {
+        "role": "user",
+        "content": "Can you give an example of digital vs physical value?"
+      },
+      {
+        "role": "assistant",
+        "content": "This is an interesting anecdote. This Gucci bag, which was sold on roblox for about 4,000 Robux, which is about $4,000 USD dollars. And the same bag, the equivalent of this bag in a physical boutique was actually sold for like 3,500. So people were actually willing to pay more for the digital version of the bug than for the actual physical version."
+      },
+      {
+        "role": "user",
+        "content": "Who owns these digital assets?"
+      },
+      {
+        "role": "assistant",
+        "content": "this raised this interesting question of what does it even mean when we're purchasing assets for our avatars? And who actually owns those assets? Is it our avatar? Is it us on behalf of the avatar? Or is it the centralized metaverse platforms on which this purchase is being done?"
+      },
+      {
+        "role": "user",
+        "content": "What does today's metaverse look like?"
+      },
+      {
+        "role": "assistant",
+        "content": "the problem is that today the metaverse looks a little bit like this. So depending on your age, this might remind you are not something. But back in the 90s, when the Internet was starting to make its first step into the mainstream, we had companies like American Online, CompuServe, that were providing access to the Internet in a very closed and proprietary manner where there was very little communication between the different providers. And therefore, of course, people could not benefit from the permissionless innovation and from all the interoperability that the Internet provides today."
+      },
+      {
+        "role": "user",
+        "content": "How fragmented is the current metaverse?"
+      },
+      {
+        "role": "assistant",
+        "content": "if we look at the landscape of the Metaverse today, it's a little bit the same. We have a few large virtual worlds, operators that are providing access into the Metaverse, but all those virtual worlds are completely disconnected from one another. They do not communicate and there is no interoperability possible."
+      },
+      {
+        "role": "user",
+        "content": "How can NFTs help with interoperability?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is where NFTs actually come to the rescue, because they can actually create this type of adversarial interoperability in the sense that to the extent that the asset does not subsist on the centralized server. So, for instance, in the case of the Roblox bag, I bought my bag for 5,000 bucks, but because it's on Roblox, the day in which I get bored of playing on Roblox and I want to move to Fortnite, well, I'm out of luck because I need to actually abandon my bag because I cannot transfer it."
+      },
+      {
+        "role": "user",
+        "content": "What changes when assets are NFTs?"
+      },
+      {
+        "role": "assistant",
+        "content": "Whereas where the bag is, if the bag is on an nft, then it doesn't exist on Roblox itself, but it exists on this decentralized database that is the blockchain. And that means that on the one hand, the operator of the virtual world has no power to actually take it away or seize it or just destroy it, because it's not under its own control. But also it makes it impossible for any operator to prevent another operator from recognizing the same assets, because they can just but plug into the same database and they can visualize it at the same time."
+      },
+      {
+        "role": "user",
+        "content": "Are platforms implementing this interoperability?"
+      },
+      {
+        "role": "assistant",
+        "content": "whether they want it or not, the movement of, of using NFTs as a way of actually selling digital assets is actually creating interoperability, even if it's against the will of the virtual world's operator. And so there are already a few platforms that are adopting these models. So when we buy things on Decentraland or Sandbox or Cryptovoxel, all those assets are actually NFT assets. And interestingly, though evento they could actually, because nothing prevent them from being interoperable, none of those platforms have yet created a system of interoperability where they will be recognizing each other assets in each other virtual worlds."
+      },
+      {
+        "role": "user",
+        "content": "Why isn't interoperability happening?"
+      },
+      {
+        "role": "assistant",
+        "content": "this comes to the question of like why is that the case? And of course the problem is that the business model of most of those metaverses is about real estate speculation. So there is limited pieces of land, and of course people want to buy them and hold on to them so that they can sell it later. And the goal is, of course, the value of this land is because there is traffic, because there is people that are going to come to this land. And so there is obviously an incentive to enclose and to lock in the user so that they cannot escape with all the assets into another virtual world. Otherwise, of course, it is. It's harder to actually maintain the traffic."
+      },
+      {
+        "role": "user",
+        "content": "What's ironic about virtual world design?"
+      },
+      {
+        "role": "assistant",
+        "content": "we can see the irony in some way where we're actually trying to create virtual worlds that are replicating or simulating the constraints of the physical world. We create virtual worlds that are not only limited in space, whereas the digital world is theoretically infinite, but also virtual worlds that are completely flat, because these enable to discriminate economically between the lands that are right at the center of the metaverse, which will therefore have a much higher value, and then the land that sits at the corner of the metaverse, which will have less traffic and therefore is less valuable. And so again, it seems that somehow on the way something went wrong. We have such incredible opportunity about creating open and interoperable metaverse, and we end up with like flatlands."
+      },
+      {
+        "role": "user",
+        "content": "What about DAOs and new institutions?"
+      },
+      {
+        "role": "assistant",
+        "content": "But again, maybe we don't need to worry too much, because blockchain technology enable us not just to create cryptocurrency, not just to create overarching legal framework, contractual setup and new property rights, but also we can create new organizations, we can use daos, and potentially we can create new institutions, including government institutions."
+      },
+      {
+        "role": "user",
+        "content": "What's the concept of virtual nations?"
+      },
+      {
+        "role": "assistant",
+        "content": "the whole concept here is to again create this concept of everyone can create anything they want. And so we can also create virtual nations where the concept here is the opt in citizenship. So everyone should be able to opt in into any virtual nation that they like the most. And then obviously the concept, very important, of exit based governance, which is if I don't like what's happening in my virtual nation, it's not a problem because I can move to a different virtual nation, or I could actually create my own, because maybe I don't like any only one that exists so far."
+      },
+      {
+        "role": "user",
+        "content": "What's the network state concept?"
+      },
+      {
+        "role": "assistant",
+        "content": "all this discussion is actually becoming more and more popular in the crypto web3 space, perhaps thanks to this book. I don't know if you have read this book, but if you have not read it, please don't read it because it's actually extremely painful to read. But Basically it's offering this new concept of the network state, which is the idea that you can have a collective of individuals with highly aligned values that manage to coordinate around collective action and then will crowdfund territories around the world. So just purchase land a little bit everywhere in order to eventually obtain diplomatic recognition from other states."
+      },
+      {
+        "role": "user",
+        "content": "How does this compare to Stephenson's vision?"
+      },
+      {
+        "role": "assistant",
+        "content": "that's very interesting result of problem with this. But what's most interesting is that it's actually striking similar to what Nil Stephenson had envisioned already 30 years ago in the book Snow Crash with what he called differentiates, which is basically in a world in which governments had gone bankrupt corporation have to step in and provide governmental services obviously for a fee to the citizens which are now consumers. And there are various conditions in order to be able or not to join the franchise."
+      },
+      {
+        "role": "user",
+        "content": "What early attempts at crypto nations existed?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is fiction, but it's actually not just fiction. Already in 2004 we had bit nation that was the first attempt at creating what they called these decentralized, borderless, voluntary nation where the idea would be that again it's this opt in condition and then people can join the nation and that they can obtain specific governmental services such as identity management, such as notarization services, but also of course have your own sovereign digital currency that doesn't depend from any of the fiat currency and then potentially use a DAO in order to have this kind of weird plutocratic governance about how you want your virtual nation to be governed. So this project was interesting. It got a little bit of traction and then kind of got dismissed perhaps because also in 2014 no one really understood what they were trying to do."
+      },
+      {
+        "role": "user",
+        "content": "What other crypto nation attempts followed?"
+      },
+      {
+        "role": "assistant",
+        "content": "But luckily it's not over. So we have other attempt at creating this kind of crypto nation and so forth. So Brook Pierce that in 2017 proposed the idea of creating a crypto utopia, at least for some, because for other people it sounded more like a crypto dystopia with the idea of purchasing a little land in a little town in Puerto Rico and actually turning it into this kind of newly incorporated city that will be all governed by smart contract cryptocurrency and basically living with some with many other crypto bros. So this also got a little bit of criticism, but people keep trying."
+      },
+      {
+        "role": "user",
+        "content": "What about Blockchain LLC's attempt?"
+      },
+      {
+        "role": "assistant",
+        "content": "then we have like Blockchain LLC in 2018 which purchased a large parcel of land in the northern side of Nevada and started actually engaging with negotiation with the state of Nevada in order to create this innovation zone that will basically enable them to create this blockchain based city where you have smart contracts regulating everything and obtaining some kind of economic Benefits in exchange of boosting the technological sector of Nevada. And the negotiation went on for a while and then eventually the government of Nevada didn't seem so interested after all."
+      },
+      {
+        "role": "user",
+        "content": "What's happening with Praxis?"
+      },
+      {
+        "role": "assistant",
+        "content": "Just a few months ago we have praxis that raised $50 million in order to. It's actually not very much, I think for what I want to do, but in order to purchase land somewhere, they don't know exactly where, but probably in the Mediterranean. And again, they don't really want to create a sovereign state, but the goal is really to collaborate with existing nation state in order to obtain some kind of like creating an autonomous economic zone potentially attacks heaven for the crypto millionaires. And then of course to be able to live together with people that all care about crypto who would not want to live in that city. And for those that have been following the FTX saga, those $15 million, actually a large portion was coming from Alameda research, which kind of question where this project is going."
+      },
+      {
+        "role": "user",
+        "content": "What about Akon City?"
+      },
+      {
+        "role": "assistant",
+        "content": "this one is the last one, but I found it very funny. I don't know if you know this person Akon, apparently it's a famous American singer. I didn't know about him until I discovered that he wants to create his own city, the city of the future in Senegal. And this city of course will also be a blockchain city. And the economy of this city will be based on a coin, which is its own coin and that is issuing so people can buy this coin. And if they ever want to go to a city, they will be able to engage with the local economy. So I don't think I need to explain what went wrong here. But yeah, we are still working on that."
+      },
+      {
+        "role": "user",
+        "content": "Are these failures valuable?"
+      },
+      {
+        "role": "assistant",
+        "content": "I actually think that all those experimentalization are absolutely amazing. And the fact that things are going wrong means that there is a lot of experimentation that is actually happening. And it's normal that all those things that are kind of like trying to engage into this radical innovation fails. And it's great that they fail because then we can learn from those failures and then we can build upon until we actually figure out something that does actually work out."
+      },
+      {
+        "role": "user",
+        "content": "Are we creating fast horses or new cars?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now the only problem though is that it seems that if we were to quote Ford, we are kind of using the technology. Are we really using it in order to create new cars or are we using the technology in order to create fast and horses? And this is because as we see those different cycles, it seems that history keeps repeating itself in the sense that Blockchain technology provides this new radical innovation, but then at the same time it gets then instrumentalized by the existing system in order to replicate and potentially even exacerbate itself."
+      },
+      {
+        "role": "user",
+        "content": "How can we bring real innovation?"
+      },
+      {
+        "role": "assistant",
+        "content": "the question then is, how can we bring some kind of real innovation into the space? And there is multiple ways to do this, but there is the possibility of really using it in order to play the same game. It's just that we are creating, we're identifying new strategy to play the game and new actors can win because they have those different strategies, but it's still the same dynamics that are just replicating themselves. Or we can actually try to use the technology to change the rule of the game, to actually change the payoff structure. And therefore the winners will have to identify new strategies that will enable them to win."
+      },
+      {
+        "role": "user",
+        "content": "Should we focus on competition or cooperation?"
+      },
+      {
+        "role": "assistant",
+        "content": "the idea is like, shall we continue to try and innovate in terms of creating more of those market driven speculative dynamics that we already know? Or can we actually try and design system in which cooperation as opposed to competition and like abundance as opposed to digital scarcity could become a dominant strategy?"
+      },
+      {
+        "role": "user",
+        "content": "What cooperative innovations already exist?"
+      },
+      {
+        "role": "assistant",
+        "content": "to be fair, those things already exist. There is actually a lot of innovation that is happening in this space. Gitcoin of course like for like the funding of public infrastructure. But also like we have like this new crypto commons community that are emerging. We have like the decentralized science, regenerative finance. So there is actually a lot of innovation that is happening, happening in the space that is trying to move away from the existing real of the game and creating new type of payoff structure. We have a lot of experimentation with ubi. Probably many of them will fail, but some of them will at least provide interesting insights so that we can build better ones."
+      },
+      {
+        "role": "user",
+        "content": "Who's entering the blockchain space now?"
+      },
+      {
+        "role": "assistant",
+        "content": "all this ecosystem is actually flourishing, especially because now there is a new population of people that are entering to the blockchain space and that are less interested in the money making speculative aspect, but more into to the reinventing some of our institutions."
+      },
+      {
+        "role": "user",
+        "content": "Why is blockchain enabling this experimentation?"
+      },
+      {
+        "role": "assistant",
+        "content": "what's also interesting is that a lot of those things don't really need the blockchain. But for some reason the experimentation is happening today because of blockchain technology. And I think it's because it's very difficult for existing institution to actually innovate in a non incremental manner because there is a lot of stake if they actually make a mistake, which they will, because we're doing new things, the stake is very high and therefore failure is, is not an option. Whereas with the blockchain system you can just experiment, most likely you can Fail. But the stake is sufficiently high that it's not just a game, but it's also sufficiently low that people can engage in those radical innovation without being afraid and therefore without being stuck into the incremental innovation space."
+      },
+      {
+        "role": "user",
+        "content": "Can you give examples of projects changing the rules?"
+      },
+      {
+        "role": "assistant",
+        "content": "I want to give a few examples to conclude, to just show the various initiatives that are trying to really push the boundaries into reinventing the real of the games, always just by discovering new mechanisms and new protocols within the blockchain system. So Dada, which is one of the collective that we're working on, which is actually working really hard. So it's a collective of artists working really hard in really trying to reinvent the economic systems and enabling external speculative dynamics from the NFT ecosystem to come in, but not to contaminate the internal dynamics and to maintain this very cooperative and sharing dynamics within the collective. So creating like this kind of invisible economy that separate the two."
+      },
+      {
+        "role": "user",
+        "content": "What about climate-focused NFT projects?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is a project that I'm working on with Thomas Saracino, which is an amazing artist that is also very strongly climate activist. We designed this model whereby embedding specific values into the protocol of the nft, you can actually change the incentive system and therefore changing the payoff structure and somehow modify the activity of people which still want to get to maximize their return on investment, but they have to do different things in order to do that. And so the idea is hijacking the speculative dynamics that exist in the NFT space in order to redirect them into more productive, such as preserving the planet."
+      },
+      {
+        "role": "user",
+        "content": "How could this connect virtual and physical worlds?"
+      },
+      {
+        "role": "assistant",
+        "content": "here you can imagine if instead of speculating into the usual real estate in a particular metaverse, all the parcels in the metaverse were associated with a particular data coming from an oracle that is associated with the actual vitals of a real physical parcel. And so all of a sudden, instead of just speculating by holding property and just trying to sell it at the right moment, there is an actual connection that ex between the metaverse and the physical world. And so all the people that collect those NFT now have an incentive to ensure that the physical land that the NFT is associated with is also doing well. Because this is going to both enhance the visuals, the visualization of the nft, but also the embedded economic system is such that they can make more money by reselling the land if the land is actually doing well, as opposed to too bad."
+      },
+      {
+        "role": "user",
+        "content": "What about remix culture NFTs?"
+      },
+      {
+        "role": "assistant",
+        "content": "Another example is Remix nft. So this is a work that we're doing with Creative Commons. And here again the idea is like, let's embed specific values into the protocol of an NFT in order to try and figure out whether we can encourage different type of activities. And so here the idea is that all the NFTs are on a perpetual auction, so you cannot hold on to them, you cannot really own that nft, you can just buy it and then you hold it until someone else wants to bid a higher price. But while you're holding it, you have the right to creating derivative works of the system."
+      },
+      {
+        "role": "user",
+        "content": "How does this create collaborative evolution?"
+      },
+      {
+        "role": "assistant",
+        "content": "this creates this kind of like memification engine in which people are trying to buy the NFT for the purpose of remixing it. And the goal is to the earlier you remix, and the better you remix, the more opportunity you have that your remix will become the favorite remix. And so there is this kind of system of like collaboration towards the evolution of a work that no author has actually the possibility to prevent because they released the copyright in preventing the remixes. And the more you actually get, your work gets remixed, the more profits you're going to make."
+      },
+      {
+        "role": "user",
+        "content": "What about non-speculative NFT projects?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is like a new project. So beyond being a legal scholar, I'm also an artist and I love to create blockchain based life forms of many kinds. So this is one new project that I'm doing with some friends which I'm very attached to. And the idea here is again to show that we can create NFT protocol that are absolutely non speculative. And so Amina cannot be owned. There is no way of actually you cannot purchase these NFTs. It's an NFT that exists on the blockchain. And all you can do with the NFT is feed the aminals, you can cuddle the aminals, there is function, you can interact with those aminals. And of course every function requires payment of some amount of cryptocurrencies."
+      },
+      {
+        "role": "user",
+        "content": "How do the Aminals evolve?"
+      },
+      {
+        "role": "assistant",
+        "content": "And the more you feed them, the more you cuddle them, the more the aminals get attached to you. And as they get attached, then you have the right to genetically modify them by proposing new traits. And so you can change the genetic code of the aminals that are very close to you. And what happened is that whenever there's all the cryptocurrency that is collected by the aminals never gets out at the exception of when the aminals reproduce themselves. And then they donate some of their funds to the kids, and then the kids will redistribute the money to all the people that have contributed to its genetic code."
+      },
+      {
+        "role": "user",
+        "content": "What does this eliminate?"
+      },
+      {
+        "role": "assistant",
+        "content": "what's interesting here is that it actually eliminate any possible speculation over those NFT and instead it creates an economic system by which the animals are using cryptocurrency in order to incentivize people to actually help them in their evolution and trying to become the most fit for their environment."
+      },
+      {
+        "role": "user",
+        "content": "What are the two directions blockchain can take?"
+      },
+      {
+        "role": "assistant",
+        "content": "Basically all this is to say that blockchain is a revolutionary technology and it can radically modify some of our institutions and yet it is a technology that can go into many different direction. And we can use it, of course, in order to increase the digital scarcity and the speculative dynamic and creating this kind of market driven governance based on trustless systems, which is actually amazing and super innovative and I'm very glad this is happening. At the same time, there is another direction that I believe is not sufficiently explored, which is the use of blockchain technology for exploring this more common based model where we are actually using blockchain to incentivize people to create more digital abundance. And instead of creating this trustless community, we actually want to reinforce the trust within the community."
+      },
+      {
+        "role": "user",
+        "content": "What needs to happen?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is something that is starting now because of this new population of people that are entering to the blockchain. But we're not enough. There is too much focus on this and not enough on this. It's not that one is better than the other, but we actually need as much variety as possible. And this, we already kind of know how it works. This one, I think is where we will discover a lot of very novel innovations. Thank you. We are going to go to drinks in a minute, but I'll take one or two questions if anyone wants to ask a question of that amazing journey through the good and the bad of crypto and the exceptional, fascinating things we could be doing with it. Who wants drinks? Get this vibe? Yeah, there's one at the back there, all the way up the back."
+      },
+      {
+        "role": "user",
+        "content": "Hi, sorry. Just briefly then I feel like there's a lot of talk around IP NFTs coming in. I was wondering, do you have any thoughts on. Because I know you mentioned reinventing the wheel and stuff like this, but if we bring IP onto an nft, is there going to be any value new created from that or is this just maybe just like a hapless idea?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I mean that's a very fantastic question. I actually eliminated the slides because I thought it would be too long, but I had a slide about what's the problem with the existing model of molecule that is actually just. It's not a problem, but it's like it's, it's not really innovative in the sense that it's just tokenizing IP rights and maybe enabling like a more fragmented ownership of Those ip, right. But it's still relying on the concept of IP and like encouraging actually the exclusivity of intellectual property on science."
+      },
+      {
+        "role": "user",
+        "content": "Are there alternatives to IP NFTs?"
+      },
+      {
+        "role": "assistant",
+        "content": "there is actually a lot of very interesting projects that are not so popular because I think many people don't even understand that this will ever potentially have a success because there is no ip. But there is some project that are actually using tokenization in order to actually incentivize people to collaborate towards creating actual open and decentralized science that actually leads to IP only for the purpose of creating a defensive patent license and then the world economic model in the same way as NFTs."
+      },
+      {
+        "role": "user",
+        "content": "How could this work without patents?"
+      },
+      {
+        "role": "assistant",
+        "content": "To me, like one of the most amazing thing of NFTs is that it shows that we don't need to rely only on copyright in order to monetize. And the same system could be used in order to prove that we actually don't need patents only. We can also design economic system through the tokenization so that the patents only exist as defensive patent license, so that no one else can patent. But all the economic model doesn't come from the licensing and the royalty system of the patents, but had from the tokenization system. So you can actually have an open IP of patents while also maintaining the economic incentive."
+      },
+      {
+        "role": "user",
+        "content": "So IP NFTs don't change the game?"
+      },
+      {
+        "role": "assistant",
+        "content": "Whereas the IP nft, it's great because it's like let's tokenize those IP rights and let's facilitate the fragmentation and the fractionalization of them. But it doesn't really, it doesn't change the rule of the game. It's actually just exacerbating the real of the game and like leveraging further IP rights in order to monetize. Whereas those other system of this size are actually really changing the real of the game. And. And of course it's much more challenging to convince the market that this can work. But for me, this is actually the interesting thing that is worth experimenting with. Okay, question here. You had an interesting slide that I noticed. It went from web 2 to web 3 to web 4. I didn't quite catch what the space component of that Web4 was. Are you able to elaborate on it?"
+      },
+      {
+        "role": "user",
+        "content": "What exactly is Web4?"
+      },
+      {
+        "role": "assistant",
+        "content": "Web4 is a recent terminology. So Web one is you can receive information. Web two, you can also provide and share and exchange information. Web three is basically adding the ownership level so you can own digital assets in a way that usually you could only own them through licensing. And then Web4 is about the space, it's about the speciality."
+      },
+      {
+        "role": "user",
+        "content": "How does spatiality matter in the metaverse?"
+      },
+      {
+        "role": "assistant",
+        "content": "when you think about the metaverse, what is it how do you distinguish the Internet from the Metaverse? The Metaverse usually has some coordinate system, like you have an avatar which can move around. And so all this specialization is important because one, it enable the existence of the avatar and therefore the accessory of the avatar. But also it means that all of a sudden we're not just talking about content. If I have like a picture of a chair, it's just content. If I have an actual chair into a dimensional space, I have a virtual asset, I have virtual property. And that is the very important distinction. It's not just the copyright in the chair, it's the virtual asset of the chair, which incorporate a copyright. So, similar to something like Ready Player One, Is that why we're taking that too? Because we talk about the haptic suits and wearables and how does that, like, we talk about a lot of different types of innovations. I mean, from what I see is when you take all the technology, you need that convergence. So what is, is that what you mean by that space component for Web4?"
+      },
+      {
+        "role": "user",
+        "content": "Could the metaverse become like Ready Player One?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So I mean, again, yes, there is a possibility, which is not marginal, that the Metaverse will start looking more and more like Ready Player one, which is quite a dystopian vision of the metaverse, where you have like one big centralized operator that controls everything. There is another, not marginal possibility that the Metaverse will actually evolve into a much more open and decentralized system."
+      },
+      {
+        "role": "user",
+        "content": "How are NFTs key to avoiding dystopia?"
+      },
+      {
+        "role": "assistant",
+        "content": "to me, this is actually where NFTs are key to this, because as long as the assets do not exist outside of the virtual world operator, then we are stuck into the Redeployer 1 model. And I'm not saying that the fact that NFTs are coming is going to make us escape from that, but at least this is opening a window or a door in which we might try to escape from that model into a different model. And I love the flat earth visual that you showed there too. Final question here."
+      },
+      {
+        "role": "user",
+        "content": "Thanks for the very wonderful talk. So, basically, I'd like to ask you to comment on the concept of the proof of ownership versus the enforcement of ownership. Ownership rights. Right. So basically you can own an nft, but obviously, as long as you're relying on a web to, let's say, marketplace, they can kind of interfere with the value or actually, you know, kind of seize the opportunity that it creates for you. But in the real world, the enforcement of ownership rights are basically held by state governments, by international copyright laws, because what can be done to, I guess, replicate or not replicate, maybe replace the current system with something similar that can enforce the ownership rights."
+      },
+      {
+        "role": "assistant",
+        "content": "So that can enforce on the blockchain."
+      },
+      {
+        "role": "user",
+        "content": "Or no, the actual use case. Basically censorship resistant ownership rights. Right. So basically it prevents, I guess Currently the NFTs live on the blockchain, but they are always handled through Web2 centralized organizations that are kind of held by the IPFs. Yes, but the marketplaces themselves, they are governed still."
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. I mean, it's just a matter of like right now those marketplaces are facilitating the trade. The NFT could potentially be traded outside of the marketplace. It's just that there is no decentralized NFT marketplace that really has appeared yet. But there is no I don't think there is any technical challenge in doing that. It's just that there's probably no demand. But eventually, perhaps when those centralized platforms start removing royalty, actually censoring content and in some way like abusing the rights, then that might actually trigger the emergence of decentralized marketplaces for NFTs."
+      }
+    ]
+  }
+]

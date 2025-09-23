@@ -1,0 +1,382 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "What perspective on blockchain will you be presenting today?"
+      },
+      {
+        "role": "assistant",
+        "content": "Thank you. today I will present a slightly different perspective of the blockchain. And I will try and show how this technology can actually enable the emergence of completely new and different form of organizational structure, which could have a really significant impact on the current form of working and on society in general. I will try and present how the blockchain is actually enabling those new organizational structures which are completely different from the organization that we know today."
+      },
+      {
+        "role": "user",
+        "content": "How have organizations evolved over time?"
+      },
+      {
+        "role": "assistant",
+        "content": "to begin, let's start by looking at a short overview of how organization has been evolving over time. So we start with those large centralized operators which are providing a service or which are creating products and conveying them to a passive set of consumers."
+      },
+      {
+        "role": "user",
+        "content": "What changed with the Internet?"
+      },
+      {
+        "role": "assistant",
+        "content": "with the Internet in particular, we can see the emergence of new form of organizations, decentralized. And in that the value is actually no longer produced by this centralized entity, but rather it is produced by the crowd. And the role of the central intermediary is actually. I don't know if it's me, it's the system. Well, the value that is created. Okay, so. Hello. Yeah, so the value that is created by those intermediaries is, sorry, the function of those intermediaries is no longer to create the value, but rather to coordinate those individuals and to aggregate the value into one service that they can then provide back to active users."
+      },
+      {
+        "role": "user",
+        "content": "What's the problem with this model?"
+      },
+      {
+        "role": "assistant",
+        "content": "we can see that there is obviously some kind of discrepancy in the way in which value is redistributed, because the value which is actually created by the crowd is then extracted and turned into profits by those centralized intermediaries."
+      },
+      {
+        "role": "user",
+        "content": "What's the solution to this discrepancy?"
+      },
+      {
+        "role": "assistant",
+        "content": "the question that comes naturally to mind is how can we actually make those intermediaries obsolete in order that we can then be able to redistribute value in a much more egalitarian way to the people who actually are producing it. And so, of course, you might have guessed the answer is the blockchain."
+      },
+      {
+        "role": "user",
+        "content": "How does Bitcoin demonstrate this?"
+      },
+      {
+        "role": "assistant",
+        "content": "in fact, if we look at Bitcoin, it has shown that it is possible to create a decentralized payment system that operates without the need of any intermediaries or financial operators. And the same technology could potentially be deployed in many other field of activities that could themselves also be disintermediated."
+      },
+      {
+        "role": "user",
+        "content": "Why can blockchain enable disintermediation?"
+      },
+      {
+        "role": "assistant",
+        "content": "the reason why the blockchain could actually provide this tool of disintermediation is that if we think about what is the real function of an intermediary is actually to create trust. It's to enable people that do not know each other and therefore that do not trust each other to interact with one another by passing through this central authority. And then with the blockchain, it then become possible to move the function of trust away from the operator and towards the technology itself, so that people can now interact with one another directly as long as they trust the technology."
+      },
+      {
+        "role": "user",
+        "content": "Where is this approach most useful?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is really useful and really powerful for many kinds of applications in which trust is actually not required as such. And this is the case, for instance, of financial application or the Internet of Things, where trust is actually the trusted intermediary is only necessary in order to ensure that the transaction actually go through. And if we can replace this with the blockchain, then we don't need these intermediaries anymore."
+      },
+      {
+        "role": "user",
+        "content": "Are there limitations to this trustless approach?"
+      },
+      {
+        "role": "assistant",
+        "content": "the problem is that there is a little bit of a limitation to that, because in many of our interaction and social relationship, trust is actually a feature. It's actually something that we are craving for. For instance, when I go to an Airbnb or when I jump into an Uber, I actually want to trust the driver. I want to know that he's a good driver and that he's not going to try to cheat me."
+      },
+      {
+        "role": "user",
+        "content": "How can we address this need for trust in social relationships?"
+      },
+      {
+        "role": "assistant",
+        "content": "This kind of trust is actually something that the blockchain by itself is not able to provide. And so the more we rely on this trustless infrastructure, then the market becomes necessary to build on top of this, a new trust layer that will actually make it possible for people to rely on this trustless blockchain technology in order to engage into social relationship."
+      },
+      {
+        "role": "user",
+        "content": "What solution have you developed?"
+      },
+      {
+        "role": "assistant",
+        "content": "those are the motivations that have driven me, together with some colleagues, to create bugfeed, which is an effort to create a distributed governance system for decentralized applications that can be deployed on the blockchain."
+      },
+      {
+        "role": "user",
+        "content": "Can you give us an overview of how bugfeed works?"
+      },
+      {
+        "role": "assistant",
+        "content": "I will not go into the details, but as a general overview, we can say that if the blockchain can be regarded as some kind of decentralized computer, then bugfeed can be regarded as a form of operating system that runs on top of this decentralized computer and makes it possible for people to really easily develop and deploy decentralized applications in a way that enable them to be interoperable with each other."
+      },
+      {
+        "role": "user",
+        "content": "What are the key ingredients of bugfeed's protocol?"
+      },
+      {
+        "role": "assistant",
+        "content": "this basic protocol of bugfeed is made of three key ingredients. The first one is a particular consensus protocol, which is proof of value, which differs from the proof of work system of Bitcoin in that it is not based on an algorithmically quantifiable action, such as, Such as, for instance, how many resources people are investing into the network, but rather on action that can be evaluated in a peer to peer manner by people that are actually belonging to a particular organization. And then they get rewarded according to the value that they are contributing to it."
+      },
+      {
+        "role": "user",
+        "content": "What's the second ingredient?"
+      },
+      {
+        "role": "assistant",
+        "content": "The second ingredient is a particular reputation system that enabled the emergence of dynamic meritocracies, where the influence that every individual holds within an organization depends on the one hand, how much they contributed to it, and on the other hand of the alignment of this individual with the overall value system of the organization."
+      },
+      {
+        "role": "user",
+        "content": "And the third?"
+      },
+      {
+        "role": "assistant",
+        "content": "And then finally, the third ingredient is a specific system economic model based on the concept of tokenization, which makes it possible for companies or for organization communities to issue their own tokens. And the value of those tokens on the market will ultimately depend on the perceived value of the service that those organizations are providing to the public."
+      },
+      {
+        "role": "user",
+        "content": "What do these ingredients enable when combined?"
+      },
+      {
+        "role": "assistant",
+        "content": "when we combine those three ingredients together, then it becomes possible to create those so called decentralized collaborative organization, which enable people to interact with each other and to coordinate themselves through the blockchain without the need for those centralized intermediaries."
+      },
+      {
+        "role": "user",
+        "content": "Are there other types of blockchain organizations?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now I would like to say that there is of course much more to the blockchain. And another form of organizational structure that the blockchain enables that is really new is exactly the decentralized autonomous organization, which not only get rid of the figure of the intermediary, but also eliminate the need for human intervention in, in the governance of the organization, because the organization is essentially regulated exclusively by the code which has been deployed on the blockchain."
+      },
+      {
+        "role": "user",
+        "content": "How independent are these organizations?"
+      },
+      {
+        "role": "assistant",
+        "content": "o those decentralized organization are both independent in the sense that once they have been deployed on the blockchain, they no longer need their creators and actually they don't even need to listen to them anymore. And they are self sufficient because they can actually charge users for the resources that they provide in order to pay for the resources that they need."
+      },
+      {
+        "role": "user",
+        "content": "Does this sound like science fiction becoming reality?"
+      },
+      {
+        "role": "assistant",
+        "content": "A at first this might sound a little bit scary in that it could in fact enable the emergence of this science fictional skynet where autonomous robots are slowly trying to take over the world. But in fact, I would say that at least in the near future, probably things will be much milder than that."
+      },
+      {
+        "role": "user",
+        "content": "What kind of applications are being discussed?"
+      },
+      {
+        "role": "assistant",
+        "content": "There is already today a lot of discussion about how we can use those new technologies in order to create autonomous or intelligent devices, such as an intelligent coffee maker, or an autonomous car, which is not just a self driving car, but actually that is not owned by anyone and can just drive around providing rides to people in exchange for fees, so that it can then go and purchase gas and perhaps repair itself."
+      },
+      {
+        "role": "user",
+        "content": "Are there many DAOs actually in existence?"
+      },
+      {
+        "role": "assistant",
+        "content": "the funny thing is that there is indeed a lot of discussion going on about those decentralized autonomous organizations, but there is so far not so many decentralized autonomous organizations out there. And so this is why I decided to create one as an artistic experiment. And this is how the concept of the planetoid came out."
+      },
+      {
+        "role": "user",
+        "content": "What exactly is a plantoid?"
+      },
+      {
+        "role": "assistant",
+        "content": "A plantoid is really simple. It's basically the equivalent of an Android to a human. The plantoid is to a plant. So an Android is basically a robot with human appearances. A plantoid is a robot with plants characteristics."
+      },
+      {
+        "role": "user",
+        "content": "How does a plantoid differ from a real plant?"
+      },
+      {
+        "role": "assistant",
+        "content": "there is one important distinction between a plant and a plantoid, and this is in the reproduction process. So most plants are actually not able to reproduce themselves on their own, and they rely on third parties, whether those are bees or butterflies, in order to help them in the pollination process. Now, a plantoid does not actually rely on pollination, but rather on capitalization. And obviously they need the help of humans for that."
+      },
+      {
+        "role": "user",
+        "content": "What are the components of a plantoid?"
+      },
+      {
+        "role": "assistant",
+        "content": "a whole, a plantoid is made of two really basic components. One is the body, which is essentially just a mechanical metallic structure. And then there is the spirit or the soul of the planetoid, which exists on the Ethereum blockchain as a smart contract."
+      },
+      {
+        "role": "user",
+        "content": "Can you walk us through the reproduction phases?"
+      },
+      {
+        "role": "assistant",
+        "content": "let's go through the different phases of reproduction of a planetoid. The first phase is the capitalization, which is essentially when the plantoid is actually begging for people to donate some bitcoins into its wallet."
+      },
+      {
+        "role": "user",
+        "content": "What happens when it collects enough funds?"
+      },
+      {
+        "role": "assistant",
+        "content": "when the planetoid accumulates a specific amount of funds into its bitcoin wallet, then this triggers the second phase of reproduction, which is the mating process. During the mating phases, the Ethereum smart contract opens the bids so that anyone can now submit a specific proposal of how they envision the next version of the planetoid to look like."
+      },
+      {
+        "role": "user",
+        "content": "How is the winning proposal selected?"
+      },
+      {
+        "role": "assistant",
+        "content": "then what happens is that those who have funded the plantoid to begin with now can actually vote on which one should be the selected project by sending a microtransaction to their bitcoin addresses, which will be weighted by the amount of funds that they have submitted in the first place. And eventually the smart contract on Ethereum will process all this information and will come up with who the winner is."
+      },
+      {
+        "role": "user",
+        "content": "What's the final phase?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now this triggers the third phase of reproduction, which is the hiring phase. And that is when the planetoid, together with the artist that created it, will both sign the bitcoin transaction in order to transfer the funds to the selected winner, who will now be in charge of creating a new plantoid. And then the whole process starts over again."
+      },
+      {
+        "role": "user",
+        "content": "You mentioned a pyramid scheme?"
+      },
+      {
+        "role": "assistant",
+        "content": "there is one particular specificity in addition to that, which is the pyramid scheme, which might sound bad, but actually it's a really important incentive structure for the artist. And the idea is that whenever a plantoid accumulates sufficient amount of money to reproduce itself, it's also going to send a little bit of royalties back to its parents and to the artist that created it."
+      },
+      {
+        "role": "user",
+        "content": "How does this incentivize artists?"
+      },
+      {
+        "role": "assistant",
+        "content": "this means that now the artist actually has a really strong incentive to create the most beautiful planoid, because the more this plantoid will reproduce, then the more it will actually earn its royalties from its descendants."
+      },
+      {
+        "role": "user",
+        "content": "Does this create an evolutionary dynamic?"
+      },
+      {
+        "role": "assistant",
+        "content": "we can see that this create a really interesting evolutionary algorithm where we can see different plantoids, different branches of the plantoid, evolving as kind of like a species. And then we might see that some branches are really popular and will reproduce a lot, whereas others perhaps are not so interesting and will just fade away. And eventually we can look and we can see which ones are the plantoid that are the most fit for their own environment."
+      },
+      {
+        "role": "user",
+        "content": "How does this differ from traditional copyright models?"
+      },
+      {
+        "role": "assistant",
+        "content": "the most interesting part of this model is actually that it creates the possibility for new economic or business models, which are completely independent on the current model of copyright. In fact, copyright is currently based on this concept of scarcity and exclusivity. Whereas in the plaintiff model, there is actually an incentive for artists to disseminate to. To the plantoid to the maximum, because the more the plantoid reaches visibility, the more it will be able to collect funds in order to reproduce itself. And there is also, of course, an incentive to encourage and to promote the remix of the plantoid, because the more the plantoid actually create descendants, then the more the artist will earn revenues."
+      },
+      {
+        "role": "user",
+        "content": "What's the most fundamental shift in this model?"
+      },
+      {
+        "role": "assistant",
+        "content": "Now, another really important point of this, perhaps the most important, is that actually it completely shift away from the traditional model where we are funding. We are sending money to an artist in order to create alternative copies of its own work. And instead, here we actually have the ability now to fund directly the art piece, which will then hire people in order to create copies of itself."
+      },
+      {
+        "role": "user",
+        "content": "What concerns do you have about this technology?"
+      },
+      {
+        "role": "assistant",
+        "content": "to conclude on this, I think I would like to end with a few open questions, because of course, it is really fun to talk about mechanical plants and autonomous flowers, but the reality might not always be that beautiful. And this new technology, which are decentralized autonomous organizations, can also be used potentially for malicious purposes."
+      },
+      {
+        "role": "user",
+        "content": "What about responsibility and liability?"
+      },
+      {
+        "role": "assistant",
+        "content": "And so this raises the question of responsibility and regulability. Responsibility, because it is actually really difficult to understand who should be held liable in the case in which a decentralized organization is actually causing damage to someone. Of course, we can say that it should be the creator of this organization, but even assuming that we can identify them and perhaps incriminate them, then this will actually not help in actually stopping the operation of this decentralized organization, which is, of course, autonomous."
+      },
+      {
+        "role": "user",
+        "content": "Should users be held responsible?"
+      },
+      {
+        "role": "assistant",
+        "content": "perhaps we might say that it should then be the actual users which are triggering and constantly transacting with this organization that should be held responsible. But of course, as we have seen with the war against copyright infringement, incriminating end users is often quite inefficient and actually problematic."
+      },
+      {
+        "role": "user",
+        "content": "Could the DAO itself be responsible?"
+      },
+      {
+        "role": "assistant",
+        "content": "A perhaps it should actually be the decentralized organization itself that should be held responsible for its own thoughts. But this raises, of course, the question of regulability, because how can we actually regulate a technology that is autonomous and independent of any third party and that does not actually subsist on any centralized server, if not by regulating the people who are developing it?"
+      },
+      {
+        "role": "user",
+        "content": "What should developers be thinking about?"
+      },
+      {
+        "role": "assistant",
+        "content": "this is why I think it is really important that the developer and the software engineers that are currently exploring and experimenting with this new technology start thinking today about what are the legal, ethical and political implications of those new tools that they are building."
+      },
+      {
+        "role": "user",
+        "content": "Can these tools also be regulatory?"
+      },
+      {
+        "role": "assistant",
+        "content": "those tools, of course, on the one hand, are extremely difficult to regulate or to figure out how to regulate. On the other hand, they can also be used as really powerful regulatory technology tools which could encode values and regulatory objectives directly into the technology itself."
+      },
+      {
+        "role": "user",
+        "content": "What's your recommendation for governance?"
+      },
+      {
+        "role": "assistant",
+        "content": "I would say that it is really important today that we figure out together what kind of governance system or mechanism can be implemented and incorporated directly into this technology so that it can actually be regulated, but without foregoing the potential and the benefits that are provided by the decentralized nature of those technologies."
+      },
+      {
+        "role": "user",
+        "content": "Any final thoughts?"
+      },
+      {
+        "role": "assistant",
+        "content": "to conclude, I will say that of course, if you do like the Planetoid, I will invite you to send some Bitcoin into its Bitcoin wallet. This is not an advertisement. I'm actually not getting anything out of this. This is exclusively for reproduction purpose. But I can leave you with a little video of how people actually interact with the Plantoid in real life. Thank you."
+      },
+      {
+        "role": "user",
+        "content": "Thank you. It was really cool. I'm not supposed to look at the screen, but it's really nice. So actually I'll ask you the. Oh yeah, I can see it here. I wanted to ask you the question I was going to ask you with the technical difficulty, which is how do you bring from. How do you go from being a researcher in the academic into that and especially to try to build a model maybe that changed the way you can finance research at the same time do innovation, maybe."
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, so. Well, the main reason is that after I started looking at all the legal implications and challenge and opportunities of this technology, I soon realized that there is actually so, so much more to it. And I kind of could not restrain myself but actually going and exploring them and as part of, as an academic, I noticed that it's oftentimes really difficult to explain the concept of the blockchain, etc. To people."
+      },
+      {
+        "role": "user",
+        "content": "How does art help you communicate these concepts?"
+      },
+      {
+        "role": "assistant",
+        "content": "And I've been actually relying on the artistic practice as a way to illustrate my research. And so the planet is actually, it's the result of a lot of thinking into how to explain and how to implement what is the most, for me, the most interesting aspect of the blockchain, which is the creation of those decentralized autonomous organizations."
+      },
+      {
+        "role": "user",
+        "content": "What freedom does art give you?"
+      },
+      {
+        "role": "assistant",
+        "content": "in addition to this, it's actually also to show that there are so many opportunities and economic model, et cetera, that can be identified and can be experimented with. And I think oftentimes people are constrained by many limits. So engineers cannot really do something that is not fully functional and entrepreneurs cannot really do something that is not profitable in the short run. Whereas as an artist you actually have the possibility of making things that perhaps do not really make sense as such, but that are pushing the boundaries of the technology to explore what could potentially be done with this."
+      },
+      {
+        "role": "user",
+        "content": "Is the Plantoid just an experiment?"
+      },
+      {
+        "role": "assistant",
+        "content": "I will add that the Plantoid as such is obviously just an artistic experiment, but it's actually my way to try and inspire people into reusing this model for many other kinds of applications. So for instance, the plane Todd itself can be encoded with different governance structures. So for instance, one of the planet that you've seen here is a charitable temple plant tile, which means that 50% of the funds that it receives are actually automatically sent to a non profit organization. So it is possible to implement many different governance structures that will fit different purpose."
+      },
+      {
+        "role": "user",
+        "content": "What's the most interesting application?"
+      },
+      {
+        "role": "assistant",
+        "content": "I think the most interesting thing is actually to combine the two components, which is the point of on the one hand and the backfill model on the other hand, in order to enable those kind of communities driven project. So for instance, we can imagine that we have a community that is thinking about creating a community garden. And so instead of actually creating an association or an organization in order to deal with all the management of this, it is possible to just create a plantoid. But in that case it will be a gardenite, I don't know. And people can directly, people interested in this project can fund it and then those are the people that will actually direct while at the same time incorporating the social operating system of bugfeed so that the more people contribute, the more they will have an influence into how the organization will actually develop."
+      },
+      {
+        "role": "user",
+        "content": "That's really cool. Unfortunately we couldn't have the time to build a plantoid for the conference, but I had the chance to see it being put alive and playing in Sydney in December thanks to Prima. And actually during the weekend at the local Bioacor space aquarium, we will have people who are trying to implement the plantoid, remix it and maybe for next year you will have a plantoid that you can play with. Thank you very much, Primario."
+      },
+      {
+        "role": "assistant",
+        "content": "Thank you."
+      }
+    ]
+  }
+]

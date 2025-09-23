@@ -1,0 +1,66 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Primavera De Filippi is a Faculty Associate at the Berkman-Klein Center for Internet and Society at Harvard University who studies the legal implications of “smart” contracts—which is blockchain terminology for contracts written as software rather than as legal text. The automated process by which an artist is commissioned to create a new Plantoid is an example such smart contracts executing themselves. Because people can interact with Plantoid in only two fixed ways—by sending it funds, or by receiving a commission from it—there is no single person who can influence the entire cycle of Plantoid’s “reproduction,” rendering it, essentially, autonomous.\nAssistant built each of the six Plantoid sculptures that now exist (five are outcomes of the original Plantoid’s “reproduction”), but hopes eventually more artists can be part of the manufacture of these sculptures once she has build a web interface for artists to plug into its commissioning structure. She is a TEDx speaker, a Researcher at the National Center of Scientific Research in Paris, and co-founder of the Internet Governance Forum’s dynamic coalitions on Blockchain Technology (COALA). Together with the artistic collective Okhaos, she frequently produces interactive electro-mechanical sculptures that illustrate her research."
+      },
+      {
+        "role": "user",
+        "content": "I sat down with Assistant to find out more about the life and times of Plantoid, and the surprising funding model it proposes for commissioning artworks."
+      },
+      {
+        "role": "user",
+        "content": "Why create sculpture as a physical manifestation of blockchain?\nPrimavera Assistant: For one, because I’ve always been doing sculptures. And secondly, because, I mean, what else? If the goal is to instantiate the blockchain in the physical world, then it makes sense to make it a physical thing."
+      },
+      {
+        "role": "user",
+        "content": "How does payment work for the artists making a Plantoid?"
+      },
+      {
+        "role": "assistant",
+        "content": "The idea with the Plantoid is to shift the focus away from the artist and towards the art piece. You normally fund an artist in the hopes that he’s going to keep doing art that you like. But if you’re funding the art piece, then it is up to whatever governance model is encoded into this art piece to decide who should be the artist that is entitled to create this piece. Of course, there needs to be a positive incentivization scheme for every artist to try and make the most beautiful, the most interesting Plantoid possible."
+      },
+      {
+        "role": "user",
+        "content": "Right. How do you ensure an artist paid to build a Plantoid actually builds it?"
+      },
+      {
+        "role": "assistant",
+        "content": "Every artist knows that whenever the Plantoid they created reproduces itself, they will also earn a small percentage, a small royalty for every descendant of this Plantoid that people fund. Then the artist has the incentive of making the most amazing Plantoid possible—maybe even spending more than the amount they have been commissioned for, because there is also the ability to profit from a descendant Plantoid after the fact. So that is the positive incentivization scheme for the artist: the better the Plantoid they make, the more it’s going to reproduce itself, and therefore the more royalties will come back to the artist."
+      },
+      {
+        "role": "user",
+        "content": "How much money does it take to instantiate a new Plantoid?"
+      },
+      {
+        "role": "assistant",
+        "content": "It depends on the Plantoid. The first Plantoid required half a Bitcoin. That was nothing back then, but now, that’s really expensive because the value of Bitcoin has gone up. For the other Plantoids, it’s between one quarter of a Bitcoin to one Bitcoin. [Note: as of publication, 1 Bitcoin = $10,000 USD]."
+      },
+      {
+        "role": "user",
+        "content": "How do you determine the location of a Plantoid?"
+      },
+      {
+        "role": "assistant",
+        "content": "At the moment, it’s arbitrary. It’s basically me: I just try to put the Plantoid in places where it is publicly accessible, ideally where it might be able to interact with people that have cryptocurrencies. In the next version of the Plantoid, I will probably implement a governance structure in which everyone that has been funding it has a say—proportionate to their funding—and can vote on its next location."
+      },
+      {
+        "role": "user",
+        "content": "In much of art history, a group’s idea of what is beautiful is often at odds with an individual artist’s unique creative vision. How does Plantoid's logic deal with this?"
+      },
+      {
+        "role": "assistant",
+        "content": "The design of the Plantoid is based on the concept of evolutionary Darwinism: the Plantoid that is the most fit to its environment is the one that will reproduce. So an artist, of course, can add his own artistic stamp, his own preferences, his own style to the Plantoid he builds. But the goal is not that the artist is satisfied with the Plantoid; the goal is that the Plantoid reproduces itself. In this case, the tastes of the public, in terms of aesthetics, in terms of what is the governance model, and so forth, is actually more important—because the Plantoid feeds on this system. And if it’s not a good fit for the system, it is not going to get any funds, and then it’s not going to reproduce itself."
+      },
+      {
+        "role": "user",
+        "content": "What is your hope for Plantoid, say, five years from now?"
+      },
+      {
+        "role": "assistant",
+        "content": "I would hope that it keeps evolving. And that I’m no longer the one making them. I would hope also that it inspires other artists, and also other forms of experimentation that rely on this evolutionary model in order to fund and evolve the reproduction of thing"
+      }
+    ]
+  }
+]

@@ -1,0 +1,150 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Could you introduce what you'll be discussing today about network states and alternative conceptualizations?"
+      },
+      {
+        "role": "assistant",
+        "content": "this talk is a little bit of synthesis and a recap of a lot of work that has been done at Zuzalu in the last two weeks. The title is kind of like trying to present the idea that there are network states, but there are also other things that we can think about which might look like network states or actually have a slightly different flavor. And we try to elaborate this alternative conceptualization."
+      },
+      {
+        "role": "user",
+        "content": "Can you briefly recap Balaji's concept of network states and what issues you see with it?"
+      },
+      {
+        "role": "assistant",
+        "content": "we already had Balaji present his concepts, so I'm just going to go very fast about this. Network state, according to the way in which it is described by Balaji, is a set of highly aligned online communities which have the capacity for collective action, which are crowdfunding territories around the world in order to eventually gain diplomatic recognition from other states. So that's interesting because this is actually a driver for increased plurality. So all of a sudden we can experiment with new types of sovereignties. But the issue is that this is based on this concept of exit based governance, where the idea is to exit from a particular jurisdiction in order to create a new sovereign jurisdiction, which is therefore in conflict or in competition with the other existing nation states from which one have exit."
+      },
+      {
+        "role": "user",
+        "content": "How do you see the role of plurality in society - can it be cooperative rather than competitive?"
+      },
+      {
+        "role": "assistant",
+        "content": "this brings this question of like, what is the role of plurality in society? And of course, plurality can be bought a source of competition if the entities that are plural are actually conflicting or are actually positioning themselves as a replacement in order to supplant one another. But plurality can also be a source of cooperation if the additional entities and the additional layers of sovereignties are actually interfacing with one another without trying to take the space off each other."
+      },
+      {
+        "role": "user",
+        "content": "What is your alternative conceptualization - these \"network state coordinations\"?"
+      },
+      {
+        "role": "assistant",
+        "content": "the idea that we have been elaborating in the past few months now is the idea of a particular flavor of network state, which is what we called network states coordinations, which essentially provide an alternative conceptualization of post Versailles sovereignty, which is grounded not on the concept of exit, but rather on the concept of cooperation and common based collaboration. So this is like a preliminary description of what would network state coordination look like. It is voluntary communities of value, aligned individuals. So in this case, it's quite similar to the first component of the Balaji network state. Those communities share a common yet potentially implicit agenda for a particular societal vision. They come with a collective identity which actually relies on self determination. And importantly, because that's perhaps the stronger distinction between network states as Baliji describes them, and the coordinations is that they exist alongside other nation states while introducing new layers of sovereignty to those domains that are not inherently territorial. And so again, this means that we are increasing plurality we are adding new entities that coexist and that can experiment with new form of sovereignties. But instead of being based on exit based governance, it's based on a notion of interdependencies and actually recognize the possibility and in fact promote the idea of cooperation amongst multiple coordinations in order to actually achieve this global coordination."
+      },
+      {
+        "role": "user",
+        "content": "Can you explain the landlord-tenant metaphor for understanding this relationship?"
+      },
+      {
+        "role": "assistant",
+        "content": "If we look at it in a figurative way, we can see how existing nation state can be perceived as some kind of landlord. They are responsible for everything that relates to the physical territory, which is public infrastructure, enforcing property rights, ensuring property, physical safety, law enforcement, et cetera. So this is all what a landlord is expected to do. And then we have those network state coordinations which can be regarded as some kind of distributed tenants, which are actually responsible for collective governance and shared use of common resources amongst themselves. And those are actually communities of kinship which exist as non territorial layers of sovereignty. And so again, what it means is that on the one hand, we have the physical layer which is governed by nation states, which are defined through a particular and bounded territory, a permanent population, a government and diplomatic recognition in order to enter into relationship with other states. And then network states, the way in which we are redefining the term, if you like, do not actually need a territory, but essentially only need the three last components, which is a permanent population, even though it can be a digitally bound population, a government and diplomatic recognition."
+      },
+      {
+        "role": "user",
+        "content": "How do digital nations differ from traditional nations, and what kind of institutional scaffolding do they need?"
+      },
+      {
+        "role": "assistant",
+        "content": "essentially, if we try to compare and contrast with traditional nations and nation states. So a nation is a cultural entity. It's a group of people that share a cultural identity, that have a sense of belonging to a collective, and which can engage into a system of solidarity because of the kinship that they have amongst each other. And then the nation state is essentially this institutional scaffolding that is used in order to help a nation to coordinate itself, which is based in the traditional nation state sense, with basic territorial infrastructure, safety and protection, and of course, all the legal rules that qualify into the jurisdiction. And then all of a sudden, because of digital technology, we now have digital type of nations which are same type of collectivity, cultural identity, et cetera, but which are born digitally instead of being born because of physical proximity. And then those new type of nations, then they can also adopt their own set of institutional scaffolding, which doesn't necessarily have to replicate the same institutional structure as the nation states, but can be based on a more digital type of infrastructure and which is providing non territorial services, because the nation is no longer a territorial nation, but a digital nation. And so again, so we can see how in the end, we're really just talking about what are the institutional scaffoldings that can be put into place in order to help the coordination of a particular nation, whether the nation is physical or digital."
+      },
+      {
+        "role": "user",
+        "content": "Can you illustrate how the public sector, private sector, and this new third sector interact?"
+      },
+      {
+        "role": "assistant",
+        "content": "we have on the geographical land, territorial ground, we have the public sector and nation states, which are providing public services to citizens, which have the monopoly of violence and public infrastructure. And then on the sky, we have the private sector, which are market actors that are providing product and services to consumer independently of their territorial localization. Now, interestingly, we can see how the private sector is also going further down and providing also specific services to the same citizens that the public sector is also providing. So while the nation state is responsible as the landlord for the underlying framework, it is also providing additional services like public welfare, public education to the citizens that exist that resides on their territory. But the private sector is also starting to provide similar services which are either complementary or competing with the public services. And then when we enter into biology type of network state, we can see that the private sector goes all the way down, try to grab also the territorial layer in order to then create those corporate or liberal type of network states. When we talk about coordination, we're really talking about the middle layer. And so the idea is that on the one hand we have the public sector, on the other hand we have the private sector. But there is also a third sector that can also provide those services to the citizens, which is civil society or digital communities, which can organize themselves and coordinate themselves in order to actually share and mutualize resources and provide community support to their own citizens. And so obviously then we have now those three actors that are competing or complementing each other."
+      },
+      {
+        "role": "user",
+        "content": "What's the danger you see in having only one recipe for network states?"
+      },
+      {
+        "role": "assistant",
+        "content": "basically this is the traditional way in which we create a nation state, a nation, a territory and a government. And then a network state is basically nation with networked system of communication, a government that then leads to a network state. And so we can see how there is like an interface and interaction between those different systems. So we have the, the political system, which gives to the public sector to the nation state, the market system, which gives to potentially the network state as proposed by Balaji, and then civic society and the commons, which gives rise to the coordination type of network states. And so the thing that we want to provide here and discuss is the idea that we should actually all be exploring this concept of network state, because this is something that is extremely interesting and I think can actually help a lot of existing communities and digital nation to coordinate themselves. But the danger is to Believe that there is only one recipe and that this one recipe is the one that currently has been proposed by biology. And so what we want to do is actually provide a much larger plurality and variety of recipes."
+      },
+      {
+        "role": "user",
+        "content": "Can you walk us through the seven-step recipe for creating a network state coordination?"
+      },
+      {
+        "role": "assistant",
+        "content": "We have the seven step recipe that Balaji has identified for its own flavor of network state, which is essentially ultimately leading to exiting from an existing state in order to create a new state, in order to escape from a jurisdiction and create a new jurisdiction. This is the recipe for a network state coordination. So it's still the same category, it's still a network state, but it's a completely different flavor. And here the recipe is essentially like in seven step is one identify a community of kinship. So it's a little bit different from the way in which Balaji presented as like a group of aligned individual. Here it's not about just the intellectual or ideological alignment, but it's really about the existence of a particular degree of kinship amongst those people. Step number two is identifying outer communities in. In the world that have this type of same resonance and kinship. So identifying new clusters of people that also resonate with the same type of relational fabric and therefore that can be held to qualify as this digital nation. And then number three is finding ways in which because those communities resonate with one another and because they are kind of part of the same tribe, then the there can be ways in which they can support each other. For instance, if one community has some type of extra resources, they can share them with another community. And this other community might have a different type of resources that are in surplus and share it with another community. So there is a kind of level of mutual but bilateral or multilateral support that emerges between those kinship between communities."
+      },
+      {
+        "role": "user",
+        "content": "What are the remaining steps in building these coordinations?"
+      },
+      {
+        "role": "assistant",
+        "content": "number four is when at some point we might realize that each one of those communities are actually part of a greater whole of an umbrella entity, of a collective of collectives. And then we can actually bring these into being by just speaking it into existence. And the moment which we start having a name for this higher level collective, then we can reference it and then we can. People can have this, as I am a member of this larger level community. Now, number seven is now that we have identified and named this particular collective, we can also start, instead of bilaterally exchanging resources between the different communities, we can now start pooling resources together under the umbrella of this newly identified collective. And then this means that we can now have resources in commons which can be managed and redistributed internally within the various nodes of that community. And of course, these require an initial degree of governance in order to figure out how are we going to manage those resources. Number six is now that we have an entity with a particular name and therefore a reference to it, then that this entity is capable of maintaining and managing collective resources and commons common pool resources, then we can move to the next step, which is all of student this entity can now engage into collective action on its own behalf. So instead of having the individual nodes of the network that are doing things on the name of the network, the network itself, because it has its own resources, can engage into a new form of collective action. And of course these require further degrees of governance structure in order to understand how this collective entity can be collectively governed."
+      },
+      {
+        "role": "user",
+        "content": "What's the final step, and how does interdependency play a role?"
+      },
+      {
+        "role": "assistant",
+        "content": "number seven is recognizing that there exists interdependencies between those different nodes and actually engaging in order to increase this degree of interdependencies by interweaving those communities with one another, by exchanging, not just exchanging resources, but actually by exchanging the inherent DNA of those community, the equity that makes the those community what they are, and exchanging them so that there is like sharing blood amongst the different nodes of the community, so that everyone is now interwoven, interconnected, interdependent, which both extend the capacity to act, but also increase the sustainability of this network of networks. And so the idea here is really to move away from the exit based governance in which every individual that disagree with one another is creating its own network state, and then you have competition amongst those network states into a very alternative framework in which it's more about recognizing that interdependency and interoperability amongst those different nodes is actually a precondition for proper coordination at the local and at the global level, but also improving and promoting cooperation."
+      },
+      {
+        "role": "user",
+        "content": "Why is interdependency important for preventing free-riding and ensuring sustainability?"
+      },
+      {
+        "role": "assistant",
+        "content": "interdependency is maybe a bit scary, but also it's very powerful. And the reason is that as long as everything is obtained, so no one should be forced to be part of any type of coordination. Just like today, sometimes we don't choose to be part of a particular nation state here, the entering into the system is obtained. But once you choose to enter into the system because you have identified those actors that you trust and that you have kinship with, and therefore that you want to be interdependent with, then the exit cost becomes a bit higher. And why this is important is because these actually maximize the sustainability of the system. Because all of a sudden, instead of having the usual problem with the tragedy of the commons, in which there are always some Kind of incentive for free riding because I can benefit from the whole without actually contributing myself or by over exploiting the common resources. Because there is this step of interweaving and interdependency, it becomes much less profitable to free ride because if I free ride with the people that I am interweaving with, then I'm also harming myself. And so this condition of interdependence and this requirement of interweaving is actually a fundamental factor in order to support and promote cooperation, but also to reduce the incentive for free riding that will exist otherwise. Yeah, that's it."
+      },
+      {
+        "role": "user",
+        "content": "Do you think there's a limitation on the size of these digital nations? Can they scale to billions?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, I think it can be a bit bigger than hundreds, but probably less than 1 billion. And I think there is. It's an important question because we've like, of course scalability is important, but there are different ways to scale. And there is the traditional scalability that is based on economies of scale in which you just grow bigger and bigger and bigger. In the case of coordination, type of network states, we talk about economies of scope, which is actually you have more of a fractal approach to scaling. So the point is, the more you interconnect, the more you're scaling. But you don't need to scale in one single unit that is encompassing everything. It's more about actually finding the strongest possible alignment on this small group and then really interweaving this group as much as possible. Because there is trust, there is kinship, and there is a desire of interdependency as a way of expanding the capacity. But then finding outer communities which are themselves highly aligned and therefore highly interwoven, which might be interested in interdependency, but maybe to a lesser degree and still creating an interwovenness amongst those different clusters. And then all of a sudden we have a new cluster that can also interweave with other clusters. And so you can really think in a much more fractal way. And therefore eventually you can reach billions, but the units can be very small. And the important. And that's why it's like a digital nation today. A nation today is way too big. We don't have kinship with all the people that are part of the same Nation states. Whereas if you actually have communities which are highly aligned and with strong kinship and then network of communities, and then you can have network of, network of communities and you always create this small number or like hundreds or maybe even thousand, that's okay. But you can then scale in a scope and then you can identify all the time a new cluster that you want to interconnect with and you can choose the degree of interdependency that you feel comfortable with."
+      },
+      {
+        "role": "user",
+        "content": "What role do you see network coordinations playing in developing or emerging economies?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah, so in fact there is something very interesting in those coordination because it's about mutualization. So it's about finding people that we want to, that we feel affinity with, that we feel kinship with and actually mutualizing resources together, which I think in today developed economy, we always go via the market and we just transact all the time. And then it's very micro transaction for every type of things that we need. In this model, it's really about exploring this more mutualized concept in which we are actually putting things together. And by putting things together, we can redistribute internally within this particular community that we trust and therefore limiting the need of actually going out and grabbing things from the market as long as you can fulfill the needs internally. And so I think this can actually be a very interesting model to support developing nation where instead of having to constantly engage into a market based approach, you can actually engage in those more mutualized modalities which are actually already common and already used in many of those still developing countries. So kind of trying to standardize or create like a particular model around this in order to incentivize more of those things instead of just always having the fallback on the market and not realizing that actually oftentimes we have a lot of things already and if we just mutualize we can actually fulfill each other needs because my surplus can satisfy your deficit and vice versa. So I think it's a model that can be very interesting and that can actually support those communities which maybe have less resources and yet have a particular type of surplus and are willing to exchange and mutualize this surplus with others."
+      },
+      {
+        "role": "user",
+        "content": "What would import and export of public goods look like within coordinations?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So again, so there is a distinction to be made between the mutualistic approach to sharing. And then of course there is always a point in which there is either too much surplus and the internal utilization doesn't need that much, and therefore you can export it to either to the market, and therefore you just have a standard transaction, or you can then realize that, well, actually I have a surplus, who would I like to materialize that surplus with? And therefore finding outer coordinations that we want to interweave with in order to actually exchange that surplus. And so all of a sudden there is two types of transactionality that emerged. There is the mutualistic economy that can be both internal and external at a higher fractal level. And then there is the traditional import export with the traditional market economy. Because of course, not all coordination will always find a way to mutualize everything inside or to interweave with everything. Like maybe there is something that I really need to purchase. But all of a sudden you have less dependency on the traditional import export market based system because you have this mutualized system that can also fulfill some of the needs."
+      },
+      {
+        "role": "user",
+        "content": "How do you enforce kinship between communities? What if conflicts arise?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. I think the concept of enforcing kinship sounds very wrong. The point is not to enforce kinship. The point is to discover and build kinship. And you should only interweave. You should only. Step one is finding the people you are in a state of kinship with. If kinship does no longer work, you don't enforce it. That doesn't make any sense to enforce kinship. If kinship does no longer work either, you have to fix it and try to modulate the conflict. If there is a conflict, or perhaps if there is no possible mediation possible, that's perhaps the moment in which you should disconnect. The idea is not that exit is impossible, it's just that you make exit a little bit harder. In the same way as when you marry someone. You can still exit if you like, but you're making it intentionally a little bit harder because you're creating interdependency and interweaving. And so it's kind of a commitment. It's a commitment. There is kinship. Let's connect, let's interweave. Because we can do more together, while also, of course, always realizing that maybe because we are married, we're not going to immediately divorce if there is one fight, but if there is hundreds of fights, maybe we won't enforce kinship, we will just break the agreement. So it's kind of the same thing. It's more about identifying people. You resonate with identifying people, that you feel a strong sense of kinship and trying to build and maintain this kinship and actually foster it by materializing resources, collective action and so forth, and interweaving so that we're really in the same boat together. And so we know that we're going to support each other no matter what, up to the point in which maybe there are always situation in which it doesn't make any more sense to be interwoven. And so in that case, we have to figure out we have to bring the cost, even though exit costs are a bit higher than they would be otherwise, you can still exit."
+      },
+      {
+        "role": "user",
+        "content": "How can coordinations influence existing institutions and coexist with them?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yeah. So first of all, a coordination, the coordination side of digital nation is an institutional structure itself. It's just a novel institutional structure that is different from the traditional institution of the state yet because they can interface and they can also enter into partnership with the states, they obviously have an influencing power. And so the idea is, and especially because it is a network state, because it's called a state, then we can also enable higher level, like it's difficult for us for a digital community to really influence a state, but it's more possible for a network state to influence and to partner as an actor in international relations, to actually enter into partnership with an existing nation states, whether because they have bought something to win, whether it's because the network state is actually engaging as an actor in international policy and actually pushing towards specific things. So all of a sudden we have a new actor within the international relationship, into the geopolitics world that can both partner and influence policy discussions. So this obviously have an effect on the nation state, but it's existing as a separate entity."
+      },
+      {
+        "role": "user",
+        "content": "Thank you for sharing these insights about network state coordinations."
+      },
+      {
+        "role": "assistant",
+        "content": "Thank you."
+      }
+    ]
+  }
+]

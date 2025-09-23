@@ -1,0 +1,70 @@
+[
+  {
+    "messages": [
+      {
+        "role": "user",
+        "content": "What led you to start creating blockchain-based artworks? How did you make that transition?"
+      },
+      {
+        "role": "assistant",
+        "content": "At some point I was like, okay, now I'm focusing on blockchain technologies. Nobody understand what I'm doing. Perhaps I can use artistic practice in order to actually illustrate what I'm talking about. It was all informed under this attempt to illustrate in a very simple way, but in an actual artistic manner what is all the potential that comes with those technologies."
+      },
+      {
+        "role": "user",
+        "content": "What were you trying to capture about blockchain technology through your art?"
+      },
+      {
+        "role": "assistant",
+        "content": "I was actually trying to identify what is the real core and the most amazing, at least for me, characteristic of the blockchain. And this is this ability to create those autonomous algorithmical entity which are able to govern themselves and like completely in an autonomous, independent manner. But let's think about something really basic."
+      },
+      {
+        "role": "user",
+        "content": "Can you tell us about the concept of the plantoid? What exactly is it?"
+      },
+      {
+        "role": "assistant",
+        "content": "A plantoid is to a human what an Android is to a man. So it's like a mechanical representation of a plant. What I wanted to give to this plantoid was the ability to be self sustainable, to be autonomous and to reproduce itself so that you can actually create what I've defined as a blockchain based life form."
+      },
+      {
+        "role": "user",
+        "content": "How does a plantoid actually work? What are its components?"
+      },
+      {
+        "role": "assistant",
+        "content": "the plantoid works that you have the body which is like this mechanical structure. And then the spirit of the soul of the planthood subsists as a smart contract on the Ethereum blockchain. And then the planthood, just like any other plants, is trying to be very beautiful in order to attract third parties. Basically, it's begging for money. It keeps accumulating money from the people so people can feed bitcoins to the plantoid. And then the spirit, the smart contract of the plantoid, keeps observing the blockchain."
+      },
+      {
+        "role": "user",
+        "content": "What happens when people fund a plantoid? How does it reproduce?"
+      },
+      {
+        "role": "assistant",
+        "content": "Every plantoid needs a particular amount of bitcoin in order to reproduce. So this one is actually a really cheap one. This one only needs like half a bitcoin to reproduce itself. The bigger one, the one that I have in Sydney, needs like 2 bitcoins, etc. So it depends on all the people that have funded the planetoid in the first place can vote by sending a microtransaction to the unique identifier, which is the bitcoin address of the people submitting the proposal. And this vote will be weighted by the amount of funds that they have sent."
+      },
+      {
+        "role": "user",
+        "content": "Is there any kind of royalty system built into the plantoids?"
+      },
+      {
+        "role": "assistant",
+        "content": "Every plantoid when it reproduces itself, when it accumulates sufficient amount of money, it's also sending a little bit of royalties back to its parent to the plantoid that generated it, and another set of royalty to the artist that created it. So this actually means that every artist has the strongest incentive to create the most beautiful plantoid because it knows that the more this plantoid will be reproduced, then the more royalty it will get because all the descendants will slowly give back."
+      },
+      {
+        "role": "user",
+        "content": "How does this challenge traditional copyright models?"
+      },
+      {
+        "role": "assistant",
+        "content": "This is really important because again, this is completely in contradiction with the traditional model of copyright, which is based on exclusivity and scarcity. In this case, the artist has the highest incentive to disseminate the planet to make it the most visible possible because that's how the planet will get a maximum amount of money and also to encourage the maximum remix, the creation of derivative works, because that's when the descendant will pay back to the original artist."
+      },
+      {
+        "role": "user",
+        "content": "From a practical standpoint, does this model make sense commercially or legally?"
+      },
+      {
+        "role": "assistant",
+        "content": "It actually does not make sense. Technically, the technology is not mature. Legally, it's completely outside of the legal system. Economically, it's completely not profitable. However, from an artistic perspective, you are not bound by all those constraints. I don't need to respond to return on investment. I don't care about the legal aspect of it. Even if it doesn't scale, it's fine. It might take a few more months before it makes sense for anything beyond art."
+      }
+    ]
+  }
+]
