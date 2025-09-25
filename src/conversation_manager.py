@@ -41,7 +41,7 @@ class ConversationManager:
         # Initialize with system message
         system_msg = Message(
             role="system",
-            content=self.personality.get("system_message", "You are a helpful assistant.")
+            content=self.personality.get("system_message", "You are Primavera De Filippi.")
         )
         self.messages.append(system_msg)
         
@@ -131,7 +131,7 @@ class ConversationManager:
 class GeminiConversationManager:
     def __init__(self, api_key: str, personality_config: dict = None):
         self.client = genai.Client(api_key=api_key)
-        self.model_name = "gemini-2.5-flash"
+        self.model_name = "gemini-2.0-flash"
         self.personality = personality_config or {}
         self.messages: List[Message] = []
         
@@ -203,11 +203,19 @@ class GeminiConversationManager:
             if "403 PERMISSION_DENIED" in str(e):
                 logger.error("Cache not found or permission denied. Creating a new cache.")
                 self.cache_name = create_new_cache()  # Create a new cache
+
                 # Retry the operation with the new cache
-                yield from self.generate_response(streaming)
+                # yield from self.generate_response(streaming)
+
+                error_msg = "I'm sorry, I didn't hear what you said. Can you please repeat?"
+                assistant_msg = Message(role="assistant", content=error_msg)
+                self.messages.append(assistant_msg)
+                yield error_msg
+                
+
             else:
                 logger.error(f"Gemini API error: {e}")
-                error_msg = "I'm having trouble responding right now."
+                error_msg = "I'm sorry, I have some stuff to deal with. Please call me back later."
                 assistant_msg = Message(role="assistant", content=error_msg)
                 self.messages.append(assistant_msg)
                 yield error_msg

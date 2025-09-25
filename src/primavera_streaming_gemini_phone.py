@@ -141,6 +141,9 @@ class StreamingVoiceChatbot:
         self.pulse_count = 0
         self.counting_active = False
         
+        # Processing tick state
+        self.processing_tick_active = False
+        
         # Streaming queues
         self.text_queue = queue.Queue()
         self.audio_queue = queue.Queue()
@@ -420,8 +423,8 @@ class StreamingVoiceChatbot:
         logger.info(f"Processing: {transcript}")
         self.is_processing = True
 
-        # play a random acknowledgement sound
-        self._play_random_sound('./Voice samples/acks/')
+        # Start ticking sound to indicate processing
+        self._start_processing_tick()
         
         # Start generating response in background
         response_thread = threading.Thread(
@@ -454,7 +457,9 @@ class StreamingVoiceChatbot:
             # Don't forget the last part
             if sentence_buffer.strip():
                 self.text_queue.put(sentence_buffer)
-                
+
+        #    self._play_random_sound('./Voice samples/acks/')
+
         except Exception as e:
             logger.error(f"Error generating response: {e}")
         finally:
@@ -510,10 +515,16 @@ class StreamingVoiceChatbot:
                 if audio_data is None:  # Shutdown signal
                     break
                     
-                # Play audio with explicit format
+                # Stop processing tick when audio is ready to play
+                self._stop_processing_tick()
+                
+                # Play audio with explicit format, cleaning the end noise
                 logger.info("Playing audio chunk...")
                 logger.info(f"Audio output device: {self.audio_manager.output_device_index}")
-                self.audio_manager.play_audio(audio_data, format='mp3')
+                
+                # Clean audio to remove end noise
+                cleaned_audio = self._clean_audio_end(audio_data)
+                self.audio_manager.play_audio(cleaned_audio, format='mp3')
                 
             except queue.Empty:
                 continue
@@ -580,7 +591,101 @@ class StreamingVoiceChatbot:
             logger.info("===========================")
         except Exception as e:
             logger.error(f"Error debugging audio devices: {e}")
+            
+    def _clean_audio_end(self, audio_data: bytes) -> bytes:
+        """Remove noise at the end of ElevenLabs audio by trimming and fading out"""
+        try:
+            from pydub import AudioSegment
+            import io
+            
+            # Load the MP3 audio
+            audio_segment = AudioSegment.from_mp3(io.BytesIO(audio_data))
+            
+            # Get audio length in milliseconds
+            audio_length = len(audio_segment)
+            
+            # Trim last 0.1 seconds (100ms) to remove end noise
+            trim_amount = min(100, audio_length // 4)  # Don't trim more than 25% of audio
+            if audio_length > trim_amount:
+                audio_segment = audio_segment[:-trim_amount]
+            
+            # Add a 200ms fade out to make it smooth
+            fade_duration = min(200, len(audio_segment) // 2)  # Don't fade more than 50% of audio
+            audio_segment = audio_segment.fade_out(fade_duration)
+            
+            # Convert back to MP3 bytes
+            output_buffer = io.BytesIO()
+            audio_segment.export(output_buffer, format="mp3")
+            output_buffer.seek(0)
+            
+            return output_buffer.read()
+            
+        except Exception as e:
+            logger.error(f"Error cleaning audio: {e}")
+            # Return original audio if cleaning fails
+            return audio_data
+            
+    def _start_processing_tick(self):
+        """Start processing tick sound"""
+        if self.processing_tick_active:
+            return
+            
+        self.processing_tick_active = True
+        tick_thread = threading.Thread(target=self._play_processing_tick)
+        tick_thread.daemon = True
+        tick_thread.start()
         
+    def _stop_processing_tick(self):
+        """Stop processing tick sound"""
+        self.processing_tick_active = False
+        
+    def _play_processing_tick(self):
+        """Play subtle ticking sound during processing"""
+        try:
+            import numpy as np
+            from pydub import AudioSegment
+            import io
+            
+            sample_rate = 16000
+            duration = 0.05  # Very short tick (50ms)
+            frequency = 1000  # 1kHz tick
+            
+            # Generate subtle tick sound
+            t = np.linspace(0, duration, int(sample_rate * duration), False)
+            tick_tone = np.sin(2 * np.pi * frequency * t) * 0.15  # Low volume
+            
+            # Add fade in/out to avoid clicks
+            fade_samples = int(0.005 * sample_rate)  # 5ms fade
+            tick_tone[:fade_samples] *= np.linspace(0, 1, fade_samples)
+            tick_tone[-fade_samples:] *= np.linspace(1, 0, fade_samples)
+            
+            # Convert to 16-bit PCM
+            tick_audio = (tick_tone * 32767).astype(np.int16)
+            
+            # Create AudioSegment
+            audio_segment = AudioSegment(
+                data=tick_audio.tobytes(),
+                sample_width=2,
+                frame_rate=sample_rate,
+                channels=1
+            )
+            
+            # Export as WAV
+            wav_buffer = io.BytesIO()
+            audio_segment.export(wav_buffer, format="wav")
+            wav_buffer.seek(0)
+            tick_wav = wav_buffer.read()
+            
+            logger.info("⏳ Playing processing tick...")
+            
+            # Play ticks every 0.8 seconds while processing
+            while self.processing_tick_active:
+                if self.processing_tick_active:
+                    self.audio_manager.play_audio(tick_wav, format='wav')
+                    time.sleep(0.8)  # Pause between ticks
+                
+        except Exception as e:
+            logger.error(f"Error playing processing tick: {e}")
 
 
 
