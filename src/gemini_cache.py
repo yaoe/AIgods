@@ -87,7 +87,7 @@ def create_new_cache():
     # else:
         docs = []
         # Directory containing the JSON files
-        json_directory = "./Cache Transcripts/"
+        json_directory = "./Cache transcripts/"
 
         # Iterate over each JSON file in the directory
         for filename in os.listdir(json_directory):
