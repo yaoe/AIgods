@@ -248,6 +248,20 @@ class StreamingVoiceChatbot:
 
      
 
+    def _play_random_sound(self, folder_path):
+
+        wav_files = [f for f in os.listdir(folder_path) if f.endswith('.wav')]
+        if not wav_files:
+            print("No .wav files found.")
+            exit()
+
+        selected_file = random.choice(wav_files)
+        full_path = os.path.join(folder_path, selected_file)
+        print(f"Playing: {selected_file}")
+        with open(full_path, "rb") as f:
+            audio_bytes = f.read()
+        self.audio_manager.play_audio(audio_bytes, format='wav') 
+
     def _start_conversation(self):
 
         """Start conversation with Primavera"""
@@ -260,18 +274,7 @@ class StreamingVoiceChatbot:
         time.sleep(3)
 
         # play a random pickup line
-        folder_path = "./Voice samples"
-        wav_files = [f for f in os.listdir(folder_path) if f.endswith('.wav')]
-        if not wav_files:
-            print("No .wav files found.")
-            exit()
-
-        selected_file = random.choice(wav_files)
-        full_path = os.path.join(folder_path, selected_file)
-        print(f"Playing: {selected_file}")
-        with open(full_path, "rb") as f:
-            audio_bytes = f.read()
-        self.audio_manager.play_audio(audio_bytes, format='wav')
+        self._play_random_sound('./Voice samples/greetings/')
 
 
         try:
@@ -416,6 +419,9 @@ class StreamingVoiceChatbot:
             
         logger.info(f"Processing: {transcript}")
         self.is_processing = True
+
+        # play a random acknowledgement sound
+        self._play_random_sound('./Voice samples/acks/')
         
         # Start generating response in background
         response_thread = threading.Thread(

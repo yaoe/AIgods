@@ -47,7 +47,6 @@ env/
 logs/
 
 # Audio files
-*.wav
 *.mp3
 *.m4a
 
