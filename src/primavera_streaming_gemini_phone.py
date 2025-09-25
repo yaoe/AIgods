@@ -26,9 +26,9 @@ from config_loader import ConfigLoader
 try:
     import RPi.GPIO as GPIO
     GPIO_AVAILABLE = True
-except ImportError:
+except ImportError as e:
     GPIO_AVAILABLE = False
-    print("Warning: RPi.GPIO not available, running in test mode")
+    print("Warning: RPi.GPIO not available: {e} — running in test mode")
 
 
 
