@@ -8,6 +8,7 @@ import google.genai as genai
 from google.genai import types
 import os
 import sys
+import re
 
 from gemini_cache import get_gemini_cache, create_new_cache
 
@@ -186,6 +187,12 @@ class GeminiConversationManager:
             )
             
             response_text = response.text
+
+            # Remove text within parentheses
+            response_text = re.sub(r'\(.*?\)', '', response_text)
+            # Cut off text after a paragraph starting with "User:"
+            response_text = re.split(r'\nUser:.*', response_text)[0]
+        
             
             # Add response to conversation history
             assistant_msg = Message(role="assistant", content=response_text)
