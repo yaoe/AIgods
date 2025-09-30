@@ -587,14 +587,13 @@ class StreamingVoiceChatbot:
                 # Clean audio to remove end noise
                 cleaned_audio = self._clean_audio_end(audio_data)
 
-                # Calculate audio duration for appropriate timeout
-                audio_duration = self._get_audio_duration(cleaned_audio)
-                # Add 5 second buffer to duration for processing overhead
-                timeout = audio_duration + 5.0
-                logger.info(f"Audio duration: {audio_duration:.1f}s, timeout: {timeout:.1f}s")
+                # Estimate duration from file size (much faster than parsing on Pi3)
+                # MP3 at ~128kbps = ~16KB/second, add generous buffer
+                estimated_duration = (len(cleaned_audio) / 16000) + 10.0
+                logger.info(f"Estimated duration: {estimated_duration:.1f}s")
 
                 # Play audio with timeout protection
-                success = self._play_audio_with_timeout(cleaned_audio, timeout=timeout)
+                success = self._play_audio_with_timeout(cleaned_audio, timeout=estimated_duration)
 
                 if not success:
                     logger.error("Audio playback failed or timed out - waiting before resuming")
