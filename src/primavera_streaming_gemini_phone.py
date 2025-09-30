@@ -534,24 +534,35 @@ class StreamingVoiceChatbot:
         }
         
     def _tts_worker(self):
-        """Worker thread for text-to-speech conversion"""
+        """Worker thread for text-to-speech conversion with WebSocket streaming"""
         while True:
             try:
                 # Get text from queue
                 text = self.text_queue.get(timeout=1)
-                
+
                 if text is None:  # Shutdown signal
                     break
-                    
-                # Generate audio and queue it
-                logger.info(f"Generating TTS for: {text[:50]}...")
-                audio_data = self.elevenlabs.generate_audio(
-                    text,
-                    self.config.get_voice_settings()
-                )
-                
-                self.audio_queue.put(audio_data)
-                
+
+                # Use WebSocket streaming for faster response
+                logger.info(f"WebSocket streaming TTS for: {text[:50]}...")
+                audio_chunks = []
+                chunk_count = 0
+
+                for chunk in self.elevenlabs.stream_text_realtime(text, self.config.get_voice_settings()):
+                    audio_chunks.append(chunk)
+                    chunk_count += 1
+                    # Log first chunk arrival
+                    if chunk_count == 1:
+                        logger.info(f"First audio chunk received ({len(chunk)} bytes)! Collecting more...")
+                    # Log progress every 20 chunks
+                    elif chunk_count % 20 == 0:
+                        logger.info(f"Received {chunk_count} audio chunks ({len(b''.join(audio_chunks))} bytes)...")
+
+                # Combine all MP3 chunks for playback
+                audio_data = b''.join(audio_chunks)
+                logger.info(f"WebSocket TTS complete: {chunk_count} chunks, {len(audio_data)} bytes total")
+                self.audio_queue.put(('mp3', audio_data))  # Tag as MP3 audio from WebSocket
+
             except queue.Empty:
                 continue
             except Exception as e:
@@ -562,10 +573,18 @@ class StreamingVoiceChatbot:
         while True:
             try:
                 # Get audio from queue
-                audio_data = self.audio_queue.get(timeout=1)
+                queue_item = self.audio_queue.get(timeout=1)
 
-                if audio_data is None:  # Shutdown signal
+                if queue_item is None:  # Shutdown signal
                     break
+
+                # Handle both old format (raw bytes) and new format (tuple)
+                if isinstance(queue_item, tuple):
+                    audio_format, audio_data = queue_item
+                else:
+                    # Old format - assume MP3
+                    audio_format = 'mp3'
+                    audio_data = queue_item
 
                 # Stop processing tick when audio is ready to play
                 self._stop_processing_tick()
@@ -580,20 +599,20 @@ class StreamingVoiceChatbot:
                 self.accumulated_transcript = ""
                 self.current_transcript = ""
 
-                # Play audio with explicit format, cleaning the end noise
-                logger.info("Playing audio chunk...")
+                # Play audio with explicit format
+                logger.info(f"Playing audio chunk (format: {audio_format})...")
                 logger.info(f"Audio output device: {self.audio_manager.output_device_index}")
 
-                # Clean audio to remove end noise
-                cleaned_audio = self._clean_audio_end(audio_data)
+                # Play MP3 audio (both WebSocket and HTTP use MP3 format)
+                # Skip cleaning on Pi3 as it's too slow - play directly
+                logger.info(f"Audio size: {len(audio_data)} bytes")
 
-                # Estimate duration from file size (much faster than parsing on Pi3)
-                # MP3 at ~128kbps = ~16KB/second, add generous buffer
-                estimated_duration = (len(cleaned_audio) / 16000) + 10.0
+                # Estimate duration from file size (MP3 at ~22-32 kbps for 22050Hz)
+                estimated_duration = (len(audio_data) / 3000) + 5.0  # ~3KB per second for lower bitrate
                 logger.info(f"Estimated duration: {estimated_duration:.1f}s")
 
-                # Play audio with timeout protection
-                success = self._play_audio_with_timeout(cleaned_audio, timeout=estimated_duration)
+                # Play audio directly without cleaning (faster on Pi3)
+                success = self._play_audio_with_timeout(audio_data, timeout=estimated_duration, format='mp3')
 
                 if not success:
                     logger.error("Audio playback failed or timed out - waiting before resuming")
@@ -723,14 +742,19 @@ class StreamingVoiceChatbot:
             # Return a default safe duration
             return 30.0
 
-    def _play_audio_with_timeout(self, audio_data: bytes, timeout: float = 10.0):
+    def _play_audio_with_timeout(self, audio_data: bytes, timeout: float = 10.0, format: str = 'mp3'):
         """Play audio with timeout protection to prevent hanging"""
         result = [None]
         exception = [None]
 
         def play_audio():
             try:
-                self.audio_manager.play_audio(audio_data, format='mp3')
+                if format == 'pcm':
+                    # Play raw PCM audio (16-bit, 22050Hz, mono)
+                    self.audio_manager.play_audio_raw(audio_data, sample_rate=22050, channels=1, sample_width=2)
+                else:
+                    # Play MP3
+                    self.audio_manager.play_audio(audio_data, format='mp3')
                 result[0] = "success"
             except Exception as e:
                 exception[0] = e

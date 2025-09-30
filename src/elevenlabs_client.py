@@ -2,6 +2,7 @@ import requests
 import json
 import queue
 import threading
+import base64
 from typing import Callable, Optional, Generator
 import logging
 try:
@@ -12,6 +13,11 @@ except ImportError:
     ElevenLabs = None
     VoiceSettings = None
     stream = None
+
+try:
+    import websocket
+except ImportError:
+    websocket = None
 
 logger = logging.getLogger(__name__)
 
@@ -81,68 +87,109 @@ class ElevenLabsClient:
             logger.info("Falling back to HTTP streaming...")
             yield from self.stream_text(text, voice_settings, voice_id)
         
-    def stream_text_realtime(self, text: str, voice_settings: dict = None, on_audio_chunk: Callable[[bytes], None] = None):
-        """Stream TTS audio using websockets for real-time playback"""
-        if not on_audio_chunk:
+    def stream_text_realtime(self, text: str, voice_settings: dict = None, voice_id: str = None) -> Generator[bytes, None, None]:
+        """Stream TTS audio using websockets for real-time playback with generator"""
+        if not websocket:
+            logger.warning("websocket-client not available, falling back to HTTP streaming")
+            yield from self.stream_text(text, voice_settings, voice_id)
             return
-            
+
+        selected_voice_id = voice_id or self.voice_id
         voice_settings = voice_settings or {
             "stability": 0.5,
             "similarity_boost": 0.75,
             "style": 0.0,
             "use_speaker_boost": True
         }
-        
-        # WebSocket URL for streaming
-        ws_url = f"wss://api.elevenlabs.io/v1/text-to-speech/{self.voice_id}/stream-input?model_id=eleven_turbo_v2"
-        
+
+        # WebSocket URL for streaming - using output_format=mp3_22050_32
+        ws_url = f"wss://api.elevenlabs.io/v1/text-to-speech/{selected_voice_id}/stream-input?model_id=eleven_turbo_v2_5&output_format=mp3_22050_32"
+
+        logger.info(f"Starting WebSocket streaming with voice: {selected_voice_id}")
+
+        # Queue to collect audio chunks from websocket thread
+        audio_queue = queue.Queue()
+        error_holder = [None]
+
         def on_message(ws, message):
             try:
                 data = json.loads(message)
                 if data.get("audio"):
-                    # Decode base64 audio data
+                    # Decode base64 audio data (MP3 chunks from WebSocket)
                     audio_chunk = base64.b64decode(data["audio"])
-                    on_audio_chunk(audio_chunk)
+                    logger.debug(f"Received audio chunk: {len(audio_chunk)} bytes")
+                    audio_queue.put(('chunk', audio_chunk))
                 elif data.get("isFinal"):
+                    logger.info("WebSocket stream complete (isFinal received)")
+                    audio_queue.put(('done', None))
                     ws.close()
             except Exception as e:
                 logger.error(f"Error processing websocket message: {e}")
-        
+                error_holder[0] = e
+                audio_queue.put(('error', e))
+
         def on_error(ws, error):
             logger.error(f"WebSocket error: {error}")
-        
+            error_holder[0] = error
+            audio_queue.put(('error', error))
+
         def on_open(ws):
-            # Send initial configuration
-            config = {
-                "text": " ",  # Initial space to start stream
-                "voice_settings": voice_settings,
-                "generation_config": {
-                    "chunk_length_schedule": [120, 160, 250, 290]
+            try:
+                # Send initial configuration
+                config = {
+                    "text": " ",
+                    "voice_settings": voice_settings,
+                    "xi_api_key": self.api_key
                 }
-            }
-            ws.send(json.dumps(config))
-            
-            # Send the actual text
-            text_message = {
-                "text": text + " ",
-                "try_trigger_generation": True
-            }
-            ws.send(json.dumps(text_message))
-            
-            # Send EOS (End of Stream)
-            eos_message = {"text": ""}
-            ws.send(json.dumps(eos_message))
-        
-        # Create and run websocket
+                ws.send(json.dumps(config))
+
+                # Send the actual text
+                text_message = {
+                    "text": text,
+                    "try_trigger_generation": True
+                }
+                ws.send(json.dumps(text_message))
+
+                # Send EOS (End of Stream)
+                eos_message = {"text": ""}
+                ws.send(json.dumps(eos_message))
+            except Exception as e:
+                logger.error(f"Error in on_open: {e}")
+                error_holder[0] = e
+                audio_queue.put(('error', e))
+
+        # Create and run websocket in background thread
         ws = websocket.WebSocketApp(
             ws_url,
-            header=[f"xi-api-key: {self.api_key}"],
+            header={"xi-api-key": self.api_key},
             on_message=on_message,
             on_error=on_error,
             on_open=on_open
         )
-        
-        ws.run_forever()
+
+        ws_thread = threading.Thread(target=ws.run_forever)
+        ws_thread.daemon = True
+        ws_thread.start()
+
+        # Yield chunks as they arrive
+        while True:
+            try:
+                msg_type, data = audio_queue.get(timeout=30)
+                if msg_type == 'chunk':
+                    yield data
+                elif msg_type == 'done':
+                    break
+                elif msg_type == 'error':
+                    logger.error("WebSocket stream encountered error, falling back to HTTP")
+                    # Fallback to HTTP streaming
+                    yield from self.stream_text(text, voice_settings, voice_id)
+                    break
+            except queue.Empty:
+                logger.error("WebSocket stream timeout")
+                ws.close()
+                break
+
+        ws_thread.join(timeout=1)
     
     def stream_text(self, text: str, voice_settings: dict = None, voice_id: str = None) -> Generator[bytes, None, None]:
         """Stream TTS audio chunks as they're generated (HTTP fallback)"""

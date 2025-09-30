@@ -210,6 +210,50 @@ class AudioManager:
             self.is_playing = False
             logger.info("play_audio() method returning")
             
+    def play_audio_raw(self, pcm_data: bytes, sample_rate: int = 22050, channels: int = 1, sample_width: int = 2):
+        """Play raw PCM audio data directly"""
+        self.is_playing = True
+        self.is_interrupted = False
+        stream = None
+
+        try:
+            logger.info(f"Playing raw PCM: {len(pcm_data)} bytes, {sample_rate}Hz, {channels}ch, {sample_width}B")
+
+            # Open audio stream
+            stream = self.audio.open(
+                format=self.audio.get_format_from_width(sample_width),
+                channels=channels,
+                rate=sample_rate,
+                output=True,
+                output_device_index=self.output_device_index,
+                frames_per_buffer=self.chunk_size
+            )
+
+            # Play in chunks
+            chunks_written = 0
+            for i in range(0, len(pcm_data), self.chunk_size):
+                if self.is_interrupted:
+                    logger.info("Raw audio playback interrupted")
+                    break
+
+                chunk = pcm_data[i:i + self.chunk_size]
+                stream.write(chunk, exception_on_underflow=False)
+                chunks_written += 1
+
+            logger.info(f"Finished playing {chunks_written} raw PCM chunks")
+
+        except Exception as e:
+            logger.error(f"Raw PCM playback error: {e}")
+            import traceback
+            logger.error(traceback.format_exc())
+        finally:
+            if stream is not None:
+                try:
+                    stream.close()
+                except:
+                    pass
+            self.is_playing = False
+
     def play_audio_stream(self, audio_generator):
         """Play streaming audio"""
         self.is_playing = True
