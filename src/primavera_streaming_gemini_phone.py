@@ -279,12 +279,9 @@ class StreamingVoiceChatbot:
         #self._stop_dial_tone()
         time.sleep(3)
 
-        # play a random pickup line
-        self._play_random_sound('./Voice samples/greetings/')
-
-
         try:
-            # Connect to Deepgram
+            # Connect to Deepgram FIRST (before playing greeting)
+            logger.info("Connecting to Deepgram...")
             self.deepgram.connect()
 
             # Start streaming threads
@@ -294,7 +291,12 @@ class StreamingVoiceChatbot:
             self.is_listening = True
             self.audio_manager.start_recording(self.handle_audio_chunk)
 
-            logger.info("Ready! Start speaking...")
+            logger.info("Ready! Playing greeting...")
+
+            # Now play greeting after everything is ready
+            self._play_random_sound('./Voice samples/greetings/')
+
+            logger.info("Listening for user speech...")
 
             # Don't block here - let the main GPIO loop continue checking phone state
             # The conversation will stay active until phone is hung up
