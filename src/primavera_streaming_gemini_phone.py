@@ -827,8 +827,9 @@ class StreamingVoiceChatbot:
                 if self.processing_tick_active:
                     tick_count += 1
                     logger.info(f"🔊 TICK #{tick_count}")
-                    # Use afplay in background to play the tick
-                    subprocess.Popen(['afplay', '/tmp/debug_tick.wav'],
+                    # Use aplay on Linux/Raspberry Pi, afplay on macOS
+                    player_cmd = 'aplay' if sys.platform == 'linux' else 'afplay'
+                    subprocess.Popen([player_cmd, '/tmp/debug_tick.wav'],
                                    stdout=subprocess.DEVNULL,
                                    stderr=subprocess.DEVNULL)
                     time.sleep(0.8)  # Pause between ticks
