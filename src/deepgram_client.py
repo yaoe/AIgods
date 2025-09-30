@@ -103,7 +103,9 @@ class DeepgramClient:
         logger.error(f"Error type: {type(error)}")
         if hasattr(error, '__dict__'):
             logger.error(f"Error details: {error.__dict__}")
-        
+        # Mark as disconnected on error
+        self.is_connected = False
+
     def _on_close(self, ws, close_status_code, close_msg):
         logger.info(f"WebSocket closed: {close_status_code} - {close_msg}")
         self.is_connected = False
@@ -131,7 +133,18 @@ class DeepgramClient:
     def send_audio(self, audio_data: bytes):
         if self.is_connected:
             self.audio_queue.put(audio_data)
-            
+
+    def is_alive(self):
+        """Check if connection is alive"""
+        return self.is_connected
+
+    def reconnect(self):
+        """Reconnect to Deepgram"""
+        logger.info("Reconnecting to Deepgram...")
+        self.close()
+        time.sleep(1)
+        self.connect()
+
     def close(self):
         self.is_connected = False
         if self.ws:

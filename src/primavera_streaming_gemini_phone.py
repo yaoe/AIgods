@@ -155,6 +155,8 @@ class StreamingVoiceChatbot:
         # Threads
         self.tts_thread = None
         self.playback_thread = None
+        self.connection_monitor_thread = None
+        self.monitor_connection = False
         
    
 
@@ -285,13 +287,24 @@ class StreamingVoiceChatbot:
         self._play_ringback_tone()
 
         try:
+            # Check if Deepgram is still alive, reconnect if needed
+            if not self.deepgram.is_alive():
+                logger.info("Deepgram connection is not alive, reconnecting...")
+                try:
+                    self.deepgram.close()  # Clean up old connection
+                except:
+                    pass
+
             # Connect to Deepgram FIRST (before playing greeting)
             # Retry up to 3 times if it fails
             max_retries = 3
             for attempt in range(max_retries):
                 try:
-                    logger.info(f"Connecting to Deepgram (attempt {attempt + 1}/{max_retries})...")
-                    self.deepgram.connect()
+                    if not self.deepgram.is_alive():
+                        logger.info(f"Connecting to Deepgram (attempt {attempt + 1}/{max_retries})...")
+                        self.deepgram.connect()
+                    else:
+                        logger.info("Deepgram already connected")
                     break  # Success!
                 except Exception as e:
                     logger.error(f"Deepgram connection attempt {attempt + 1} failed: {e}")
@@ -308,6 +321,9 @@ class StreamingVoiceChatbot:
             # Start listening
             self.is_listening = True
             self.audio_manager.start_recording(self.handle_audio_chunk)
+
+            # Start connection monitor to auto-reconnect if Deepgram drops
+            self._start_connection_monitor()
 
             logger.info("Ready! Stopping ringback and playing greeting...")
 
@@ -352,6 +368,7 @@ class StreamingVoiceChatbot:
         self._stop_dial_tone()
         self._stop_ringback_tone()
         self._stop_processing_tick()
+        self._stop_connection_monitor()
 
         # Stop listening and clear state
         self.is_listening = False
@@ -553,11 +570,59 @@ class StreamingVoiceChatbot:
         self.tts_thread = threading.Thread(target=self._tts_worker)
         self.tts_thread.daemon = True
         self.tts_thread.start()
-        
+
         # Playback thread - plays audio chunks
         self.playback_thread = threading.Thread(target=self._playback_worker)
         self.playback_thread.daemon = True
         self.playback_thread.start()
+
+    def _start_connection_monitor(self):
+        """Start monitoring Deepgram connection and auto-reconnect if needed"""
+        self.monitor_connection = True
+        self.connection_monitor_thread = threading.Thread(target=self._connection_monitor_loop)
+        self.connection_monitor_thread.daemon = True
+        self.connection_monitor_thread.start()
+
+    def _stop_connection_monitor(self):
+        """Stop connection monitoring"""
+        self.monitor_connection = False
+
+    def _connection_monitor_loop(self):
+        """Monitor Deepgram connection and reconnect if it drops"""
+        while self.monitor_connection and self.conversation_active:
+            try:
+                time.sleep(5)  # Check every 5 seconds
+
+                # Check if Deepgram is still connected
+                if not self.deepgram.is_alive() and self.conversation_active:
+                    logger.warning("⚠️ Deepgram connection lost! Attempting to reconnect...")
+
+                    # Stop listening temporarily
+                    was_listening = self.is_listening
+                    self.is_listening = False
+
+                    # Play ringback tone during reconnection
+                    self._play_ringback_tone()
+
+                    try:
+                        # Attempt to reconnect
+                        self.deepgram.reconnect()
+                        logger.info("✅ Deepgram reconnected successfully!")
+
+                        # Resume listening
+                        if was_listening:
+                            self.is_listening = True
+
+                    except Exception as e:
+                        logger.error(f"Failed to reconnect to Deepgram: {e}")
+                        # Keep trying in next iteration
+
+                    finally:
+                        self._stop_ringback_tone()
+
+            except Exception as e:
+                logger.error(f"Error in connection monitor: {e}")
+                time.sleep(5)
         
     def handle_audio_chunk(self, audio_data: bytes):
         """Handle audio chunk from microphone"""
