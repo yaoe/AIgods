@@ -58,12 +58,12 @@ class DeepgramClient:
         ws_thread.daemon = True
         ws_thread.start()
         
-        # Wait for connection with better error handling
-        timeout = 10  # Increased timeout for slower connections
+        # Wait for connection with better error handling (longer timeout for Pi3)
+        timeout = 20  # Increased timeout for Raspberry Pi 3
         start = time.time()
         while not self.is_connected and time.time() - start < timeout:
             time.sleep(0.1)
-            
+
         if not self.is_connected:
             logger.error("Connection timeout - WebSocket thread may have failed")
             raise Exception("Failed to connect to Deepgram")

@@ -286,8 +286,21 @@ class StreamingVoiceChatbot:
 
         try:
             # Connect to Deepgram FIRST (before playing greeting)
-            logger.info("Connecting to Deepgram...")
-            self.deepgram.connect()
+            # Retry up to 3 times if it fails
+            max_retries = 3
+            for attempt in range(max_retries):
+                try:
+                    logger.info(f"Connecting to Deepgram (attempt {attempt + 1}/{max_retries})...")
+                    self.deepgram.connect()
+                    break  # Success!
+                except Exception as e:
+                    logger.error(f"Deepgram connection attempt {attempt + 1} failed: {e}")
+                    if attempt < max_retries - 1:
+                        logger.info("Retrying in 2 seconds...")
+                        time.sleep(2)
+                    else:
+                        # Final attempt failed
+                        raise Exception(f"Failed to connect to Deepgram after {max_retries} attempts")
 
             # Start streaming threads
             self.start_streaming_threads()
@@ -313,6 +326,12 @@ class StreamingVoiceChatbot:
         except Exception as e:
             logger.error(f"Error starting conversation: {e}")
             self._stop_ringback_tone()
+
+            # Play error sound or busy signal
+            logger.info("Playing error tone...")
+            # Generate a simple error beep
+            self._play_error_tone()
+
             self.conversation_active = False          
       
             
@@ -482,6 +501,47 @@ class StreamingVoiceChatbot:
         """Stop ringback tone"""
         self.ringback_playing = False
         logger.info("Ringback tone stopped")
+
+    def _play_error_tone(self):
+        """Play error/busy signal tone"""
+        try:
+            import numpy as np
+            import wave
+            import io
+
+            sample_rate = 16000
+            duration = 3.0  # 3 seconds of error tone
+
+            # Generate fast busy signal (480Hz + 620Hz, interrupted)
+            t = np.linspace(0, duration, int(sample_rate * duration), False)
+            beep1 = np.sin(2 * np.pi * 480 * t)
+            beep2 = np.sin(2 * np.pi * 620 * t)
+            tone = (beep1 + beep2) * 0.3
+
+            # Create interrupted pattern (0.25s on, 0.25s off)
+            for i in range(len(tone)):
+                if int(i / sample_rate * 4) % 2 == 1:  # Every other quarter second
+                    tone[i] = 0
+
+            # Convert to 16-bit PCM
+            error_audio = (tone * 32767).astype(np.int16)
+
+            # Create WAV in memory
+            wav_buffer = io.BytesIO()
+            with wave.open(wav_buffer, 'w') as wf:
+                wf.setnchannels(1)
+                wf.setsampwidth(2)
+                wf.setframerate(sample_rate)
+                wf.writeframes(error_audio.tobytes())
+
+            wav_buffer.seek(0)
+            audio_data = wav_buffer.read()
+
+            # Play error tone
+            self.audio_manager.play_audio(audio_data, format='wav')
+
+        except Exception as e:
+            logger.error(f"Error playing error tone: {e}")
 
 
 
