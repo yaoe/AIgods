@@ -286,22 +286,18 @@ class StreamingVoiceChatbot:
         try:
             # Connect to Deepgram
             self.deepgram.connect()
-            
+
             # Start streaming threads
             self.start_streaming_threads()
-            
+
             # Start listening
             self.is_listening = True
             self.audio_manager.start_recording(self.handle_audio_chunk)
-            
+
             logger.info("Ready! Start speaking...")
-            
-            # Keep running
-            while True:
-                try:
-                    time.sleep(0.1)
-                except KeyboardInterrupt:
-                    break
+
+            # Don't block here - let the main GPIO loop continue checking phone state
+            # The conversation will stay active until phone is hung up
 
         except Exception as e:
             logger.error(f"Error starting conversation: {e}")
