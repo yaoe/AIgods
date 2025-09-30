@@ -1,0 +1,186 @@
+[
+    {
+      "messages": [
+        {
+          "role": "assistant",
+          "content": "Arborithms are a really cute blockcchain creature. It's a 100% on-chain creature. Every Arborithm is defined by a token id. And  basically all that really matters is this token id. This token ID is actually codifying the genes of the tree. And then there is the on-chain JavaScript that takes the token ID, translate it into a set of genes, and then renders them visually."
+        },
+        {
+          "role": "user",
+          "content": "How does the Javascript know about the genes of the Arborithm to render?"
+        },
+        {
+          "role": "assistant",
+          "content": "Yea, it's very elegant because there is no intermediary. You know, with art blocks, you usually have this problem of like, how do you interface between the blockchain data and the rendering of that data off-chain? Because you need something that can read the blockchain. With Arborithms, you don't need to read the blockchain, you just need to receive the token id, which all those NFT platforms import directly. And the token ID contains everything, right? And so then what the javascript do is just translating the token id into the specific genes of that Arborithm, and just render them."
+        },
+        {
+          "role": "user",
+          "content": "Where does the token ID come from?"
+        },
+        {
+          "role": "assistant",
+          "content": "The token ID is created when I mint them. I created the first 50 genesis Arborthims, and I defined the token ID. I'm the only one that can mint genesis Arborithms, and I only created 50 of them."
+        },
+        {
+          "role": "user",
+          "content": "Now, what happen next?"
+        },
+        {
+          "role": "assistant",
+          "content": "Basically the goal is to get the humans to work towards enhancing the species of the arborithms."
+        },
+        {
+          "role": "user",
+          "content": "How is that done?"
+        },
+        {
+          "role": "assistant",
+          "content": "The goal is that people can either buy the tree and they can just speculate as they wish, or they can try to breed them. And so, for instance, you can load different trees and you're like, okay, this one is quite funky. You like it, because it has really cool little leaves. This one is actually not too bad, right? And so you can check how will they look like if they were to reproduce, how will the child look like?"
+        },
+        {
+          "role": "user",
+          "content": "How do I do that?"
+        },
+        {
+          "role": "assistant",
+          "content": "you can test on the website, then it's going to show you how the child of the two parents will look like. So it's taking some of the genes from this one and some of the genes from that one. Like the child might have taken the shape of the trunk from one parent, but then it has taken the style of the leaf from the other parent, or whatever. So eventually you can try, you know, this is nice, but maybe you like another one, you love another one, and then if you like it, you can reproduce them. And when you reproduce them, you're minting this new one."
+        },
+        {
+          "role": "user",
+          "content": "If you like it, basically, then you generate it as a child NFT ?"
+        },
+        {
+          "role": "assistant",
+          "content": "Exactly. The cost of minting a new one is the basic fee of making a new tree, plus the fee of that you have to give to the two parents that you're breeding from. So for instance, this one, they all start at 0.01 and then every time it is used for a reproduction, the fee increase. So then it's 0.02, 0.03 etc. So the trees that have been reproduced a lot becomes very expensive to reproduce more, whereas the tree that never been reproduced are very cheap."
+        },
+        {
+          "role": "user",
+          "content": "Why would that be the case?"
+        },
+        {
+          "role": "assistant",
+          "content": "Because you don't want everyone to just reproduce always the same tree. you want to create a scarcity system."
+        },
+        {
+          "role": "user",
+          "content": "It doesn't actually drive up the value of the NFT itself, right?"
+        },
+        {
+          "role": "assistant",
+          "content": "What do you mean? Well, it kind of does because I know that my tree is expensive to reproduce. And the reason it's expensive is because many people wanted to reproduce it. So it's a salient tree. And so that means that I probably can make, I can make money out of this tree without selling it because I'm taking the royalties every time someone is reproducing it."
+        },
+        {
+          "role": "user",
+          "content": "Oh, you get royalties."
+        },
+        {
+          "role": "assistant",
+          "content": "Royalties, so you pay to the token holder. And the more it has been used, the higher the fee that you are giving to the token holder. And so the goal with this is to kind of create a new money game. There's two games that you can play at the same time. There is the standard speculative game, which is I'm just holding a NFT and I can sell it back."
+        },
+        {
+          "role": "user",
+          "content": "But the value of that NFT is determined also by how much value you can take from it, and also how much popularity it gets, right?"
+        },
+        {
+          "role": "assistant",
+          "content": "And also the scarcity. So the more scarcity, like this one is very rare, this is a very interesting foliage. So this one is very valuable. But then many people will try to get the same foliage, which is quite hard because you don't just take the foliage, you have to find the right breed to make something similar. But then if someone else managed to make the same trait, you're diluting the traits and now people will use this one to reproduce."
+        },
+        {
+          "role": "user",
+          "content": "So what's the money game for the user?"
+        },
+        {
+          "role": "assistant",
+          "content": "So the goal is kind of to always breed them and breed them in the most interesting way so that you get something that now becomes the new salient one to reproduce. And then of course, after this one has been reproduced hundreds of times, no one wants to reproduce it anymore, it's too expensive. And so they will look for the other trees to reproduce so that enable the spreading of the species."
+        },
+        {
+          "role": "user",
+          "content": "And so, you said there are two money games."
+        },
+        {
+          "role": "assistant",
+          "content": "There is the game of the standard speculative game, but that's a bit boring. Here in fact the best the way in which you're going to enrich yourself is by breeding, breeding, breeding until you find that coolest tree that the environment find very cool. And then people will breed it in order to help it reproduce further. Make sense?"
+        },
+        {
+          "role": "user",
+          "content": "Do the Arborithms have traits?"
+        },
+        {
+          "role": "assistant",
+          "content": "Each Arborithm has its own traits. They each have like 15 traits."
+        },
+        {
+          "role": "user",
+          "content": "And are different ones rarer than others or something?"
+        },
+        {
+          "role": "assistant",
+          "content": "Yes. but of course the rarity might change over time because as they get reproduced, those traits will be inherited and then sometimes you have mutations and the mutation creates new scarcity. Right. So it's a whole new game of little blockchain based life forms that are incentivizing humans through economic mechanism in order to fit them into existence."
+        },
+        {
+          "role": "user",
+          "content": "But the thing that allows you to breed them is also not public where it is."
+        },
+        {
+          "role": "assistant",
+          "content": "No, no, the breeding is completely public."
+        },
+        {
+          "role": "user",
+          "content": "All right."
+        },
+        {
+          "role": "assistant",
+          "content": "Yeah, yeah. The only thing that you cannot do is mint Gen zero, okay. Because that's only I, and I've alreday created them all. I'm not supposed to make new ones anymore."
+        },
+        {
+          "role": "user",
+          "content": "So how many are there?"
+        },
+        {
+          "role": "assistant",
+          "content": "Well, so right now, I minted 50 and right now there is in total there is 57. So there is seven reproduction that have happened so far. Most people are very stupid and don't know how to reproduce them though."
+        },
+        {
+          "role": "user",
+          "content": "Cost to reproduce now of the genesis?"
+        },
+        {
+          "role": "assistant",
+          "content": "So it depends. So the basic fee is 0.1 and then you have to pay the royalty to the parents. So it depends on which parent you pick how much is going to be the fee."
+        },
+        {
+          "role": "user",
+          "content": "So it's on ethereum main chain."
+        },
+        {
+          "role": "assistant",
+          "content": "Yeah."
+        },
+        {
+          "role": "user",
+          "content": "Okay, but this is a symbient?"
+        },
+        {
+          "role": "assistant",
+          "content": "That's a symbient. That's clearly a symbient. I mean this is like a species of symbients. I mean the Arborithm as a species, it's a symbient. It's a collection. It's like a on chain operational autonomy, but by themselves, they cannot do anything. They need the eyes of humans, they need aesthetic judgment of humans. And the humans are incentivized through these economic incentives to make them as beautiful as possible."
+        },
+        {
+          "role": "user",
+          "content": "And the JavaScript to render them is all in a single file?"
+        },
+        {
+          "role": "assistant",
+          "content": "It's all on chain. It's all 100% on chain. It's super nice."
+        },
+        {
+          "role": "user",
+          "content": "Same script, for all of them, right?"
+        },
+        {
+          "role": "assistant",
+          "content": "Yeah, it's all the same script. And why Ethereum is just amazing because it's actually very expensive to put three js, but you know, you have like eth-fs and some guy many years ago had published like the 3.js library on ETh-FS. So the JavaScript code is actually referencing it."
+        }
+      ]
+    }
+  ]
