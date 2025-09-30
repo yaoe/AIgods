@@ -120,6 +120,7 @@ class StreamingVoiceChatbot:
         # State management
         self.phone_active = False
         self.dial_tone_playing = False
+        self.ringback_playing = False
         self.conversation_active = False
 
         self.is_listening = False
@@ -158,14 +159,15 @@ class StreamingVoiceChatbot:
    
 
     def start(self):
-        
+
         """Start the phone system"""
         logger.info("📞 Phone Chatbot System Ready!")
         logger.info("Pick up the phone to begin...")
         logger.info(f"Personality: {self.config.personality['name']}")
-        
-        # Generate the dial tone .wav
+
+        # Generate the dial tone and ringback tone .wav files
         self._generate_dial_tone()
+        self._generate_ringback_tone()
 
 
         try:
@@ -277,7 +279,10 @@ class StreamingVoiceChatbot:
         self.conversation_active = True
 
         #self._stop_dial_tone()
-        time.sleep(3)
+
+        # Play ringback tone while setting up
+        logger.info("Setting up connection...")
+        self._play_ringback_tone()
 
         try:
             # Connect to Deepgram FIRST (before playing greeting)
@@ -291,7 +296,11 @@ class StreamingVoiceChatbot:
             self.is_listening = True
             self.audio_manager.start_recording(self.handle_audio_chunk)
 
-            logger.info("Ready! Playing greeting...")
+            logger.info("Ready! Stopping ringback and playing greeting...")
+
+            # Stop ringback tone
+            self._stop_ringback_tone()
+            time.sleep(0.5)  # Brief pause after ringback stops
 
             # Now play greeting after everything is ready
             self._play_random_sound('./Voice samples/greetings/')
@@ -303,6 +312,7 @@ class StreamingVoiceChatbot:
 
         except Exception as e:
             logger.error(f"Error starting conversation: {e}")
+            self._stop_ringback_tone()
             self.conversation_active = False          
       
             
@@ -321,6 +331,7 @@ class StreamingVoiceChatbot:
 
         # Stop all ongoing processes
         self._stop_dial_tone()
+        self._stop_ringback_tone()
         self._stop_processing_tick()
 
         # Stop listening and clear state
@@ -365,6 +376,46 @@ class StreamingVoiceChatbot:
         if not os.path.exists('sounds/dial_tone.wav'):
             logger.info("Generating dial tone...")
             subprocess.run([sys.executable, 'generate_dial_tone.py'])
+
+    def _generate_ringback_tone(self):
+        """Generate ringback tone (the tone you hear while waiting for someone to answer)"""
+        if not os.path.exists('sounds/ringback_tone.wav'):
+            logger.info("Generating ringback tone...")
+            import numpy as np
+            import wave
+
+            sample_rate = 16000
+            duration = 2.0  # One ring cycle: beep-beep (0.4s each) + silence (1.2s)
+
+            # Generate two short beeps at 440Hz and 480Hz (typical ringback frequencies)
+            t_beep = np.linspace(0, 0.4, int(sample_rate * 0.4), False)
+            beep1 = np.sin(2 * np.pi * 440 * t_beep)
+            beep2 = np.sin(2 * np.pi * 480 * t_beep)
+            beep = (beep1 + beep2) * 0.3  # Mix both frequencies, moderate volume
+
+            # Add fade in/out to beeps
+            fade_samples = int(0.01 * sample_rate)
+            beep[:fade_samples] *= np.linspace(0, 1, fade_samples)
+            beep[-fade_samples:] *= np.linspace(1, 0, fade_samples)
+
+            # Create silence
+            silence = np.zeros(int(sample_rate * 1.2))
+
+            # Combine: beep + beep + silence
+            ringback = np.concatenate([beep, beep, silence])
+
+            # Convert to 16-bit PCM
+            ringback_audio = (ringback * 32767).astype(np.int16)
+
+            # Save to file
+            os.makedirs('sounds', exist_ok=True)
+            with wave.open('sounds/ringback_tone.wav', 'w') as wf:
+                wf.setnchannels(1)
+                wf.setsampwidth(2)
+                wf.setframerate(sample_rate)
+                wf.writeframes(ringback_audio.tobytes())
+
+            logger.info("Ringback tone generated")
             
 
     def _play_dial_tone(self):
@@ -400,6 +451,37 @@ class StreamingVoiceChatbot:
         self.dial_tone_playing = False
         # time.sleep(2)  # Let it finish
         print("dialtone is over")
+
+    def _play_ringback_tone(self):
+        """Play ringback tone in loop (the tone while waiting for answer)"""
+        if self.ringback_playing:
+            return
+
+        self.ringback_playing = True
+
+        def play_loop():
+            while self.ringback_playing and self.phone_active:
+                try:
+                    # Only play if phone is still active
+                    if not self.phone_active or not self.ringback_playing:
+                        break
+
+                    # Load and play ringback tone
+                    with open('sounds/ringback_tone.wav', 'rb') as f:
+                        audio_data = f.read()
+                    self.audio_manager.play_audio(audio_data, format='wav')
+
+                    # No gap needed - the silence is built into the tone
+                except Exception as e:
+                    logger.error(f"Error playing ringback tone: {e}")
+                    break
+
+        threading.Thread(target=play_loop, daemon=True).start()
+
+    def _stop_ringback_tone(self):
+        """Stop ringback tone"""
+        self.ringback_playing = False
+        logger.info("Ringback tone stopped")
 
 
 
