@@ -319,6 +319,46 @@ class StreamingVoiceChatbot:
         """Handle when phone is hung up - complete shutdown until pickup"""
         logger.info("📞 Phone hung up - shutting down everything!")
         self.phone_active = False
+        self.conversation_active = False
+
+        # Stop all ongoing processes
+        self._stop_dial_tone()
+        self._stop_processing_tick()
+
+        # Stop listening and clear state
+        self.is_listening = False
+        self.is_processing = False
+        self.is_ai_speaking = False
+        self.accumulated_transcript = ""
+        self.current_transcript = ""
+
+        # Stop recording
+        self.audio_manager.stop_recording()
+
+        # Interrupt any playing audio
+        self.audio_manager.interrupt_playback()
+
+        # Close Deepgram connection
+        if self.deepgram:
+            try:
+                self.deepgram.close()
+            except:
+                pass
+
+        # Clear queues
+        while not self.text_queue.empty():
+            try:
+                self.text_queue.get_nowait()
+            except:
+                pass
+
+        while not self.audio_queue.empty():
+            try:
+                self.audio_queue.get_nowait()
+            except:
+                pass
+
+        logger.info("✅ System reset - ready for next pickup")
 
 
 
