@@ -788,25 +788,25 @@ class StreamingVoiceChatbot:
                 if text is None:  # Shutdown signal
                     break
 
-                # Use WebSocket streaming for faster response
-                logger.info(f"WebSocket streaming TTS for: {text[:50]}...")
+                # Use HTTP streaming for better quality (WebSocket has voice oscillation issues)
+                logger.info(f"Streaming TTS for: {text[:50]}...")
                 audio_chunks = []
                 chunk_count = 0
 
-                for chunk in self.elevenlabs.stream_text_realtime(text, self.config.get_voice_settings()):
+                for chunk in self.elevenlabs.stream_text(text, self.config.get_voice_settings()):
                     audio_chunks.append(chunk)
                     chunk_count += 1
                     # Log first chunk arrival
                     if chunk_count == 1:
-                        logger.info(f"First audio chunk received ({len(chunk)} bytes)! Collecting more...")
-                    # Log progress every 20 chunks
-                    elif chunk_count % 20 == 0:
+                        logger.info(f"First audio chunk received ({len(chunk)} bytes)!")
+                    # Log progress every 50 chunks
+                    elif chunk_count % 50 == 0:
                         logger.info(f"Received {chunk_count} audio chunks ({len(b''.join(audio_chunks))} bytes)...")
 
                 # Combine all MP3 chunks for playback
                 audio_data = b''.join(audio_chunks)
-                logger.info(f"WebSocket TTS complete: {chunk_count} chunks, {len(audio_data)} bytes total")
-                self.audio_queue.put(('mp3', audio_data))  # Tag as MP3 audio from WebSocket
+                logger.info(f"TTS complete: {chunk_count} chunks, {len(audio_data)} bytes total")
+                self.audio_queue.put(('mp3', audio_data))  # Tag as MP3 audio
 
             except queue.Empty:
                 continue
