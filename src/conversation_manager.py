@@ -9,6 +9,9 @@ from google.genai import types
 import os
 import sys
 import re
+import signal
+import threading
+import time
 
 from gemini_cache import get_gemini_cache, create_new_cache
 
@@ -139,6 +142,42 @@ class GeminiConversationManager:
         # Get cache name for Primavera context
         self.cache_name = get_gemini_cache()
         
+    def _generate_with_timeout(self, conversation_context: str, timeout: float):
+        """Generate response with timeout protection using threading"""
+        result = [None]
+        exception = [None]
+        
+        def generate_response():
+            try:
+                response = self.client.models.generate_content(
+                    model=self.model_name,
+                    contents=conversation_context,
+                    config=types.GenerateContentConfig(
+                        cached_content=self.cache_name
+                    )
+                )
+                result[0] = response
+            except Exception as e:
+                exception[0] = e
+        
+        # Start the generation in a separate thread
+        thread = threading.Thread(target=generate_response)
+        thread.daemon = True
+        thread.start()
+        
+        # Wait for completion with timeout
+        thread.join(timeout)
+        
+        if thread.is_alive():
+            # Thread is still running, timeout occurred
+            logger.warning(f"Gemini API call timed out after {timeout} seconds")
+            return None
+            
+        if exception[0]:
+            raise exception[0]
+            
+        return result[0]
+        
     # def _get_cache_name(self):
     #     """Get cache name from file or create new cache"""
     #     cache_file = "../cache_name.txt"
@@ -160,8 +199,8 @@ class GeminiConversationManager:
         self.messages.append(msg)
         logger.info(f"User: {content}")
         
-    def generate_response(self, streaming: bool = True) -> Generator[str, None, None]:
-        """Generate AI response using Gemini"""
+    def generate_response(self, streaming: bool = True, timeout: float = 30.0) -> Generator[str, None, None]:
+        """Generate AI response using Gemini with timeout protection"""
         if not self.messages:
             return
             
@@ -177,21 +216,29 @@ class GeminiConversationManager:
         conversation_context += "Assistant:"
         
         try:
-            # Generate response using cached Gemini model with full conversation context
-            response = self.client.models.generate_content(
-                model=self.model_name,
-                contents=conversation_context,
-                config=types.GenerateContentConfig(
-                    cached_content=self.cache_name
-                )
-            )
+            # Generate response using cached Gemini model with timeout protection
+            response = self._generate_with_timeout(conversation_context, timeout)
+            
+            if response is None:
+                # Timeout occurred
+                error_msg = "I'm sorry, I was a bit distracted. Can you please repeat?"
+                assistant_msg = Message(role="assistant", content=error_msg)
+                self.messages.append(assistant_msg)
+                yield error_msg
+                return
             
             response_text = response.text
 
-            # Remove text within parentheses
-            response_text = re.sub(r'\(.*?\)', '', response_text)
+            logger.info(f"PRE-FILTERED RESPONSE: {response_text}")
+
+            # Remove text within parentheses or asterisks
+            #response_text = re.sub(r'\(.*?\)', '', response_text)
+            response_text = re.sub(r'\(.*?\)|\*.*?\*', '', response_text)
+
+
             # Cut off text after a paragraph starting with "User:"
-            response_text = re.split(r'\nUser:.*', response_text)[0]
+            #response_text = re.split(r'\nUser:.*', response_text)[0]
+            response_text = re.split(r'(?:\r?\n|^)User:.*', response_text)[0]
         
             
             # Add response to conversation history
@@ -219,6 +266,12 @@ class GeminiConversationManager:
                 self.messages.append(assistant_msg)
                 yield error_msg
                 
+            elif "timeout" in str(e).lower():
+                logger.error(f"Gemini API timeout: {e}")
+                error_msg = "I'm sorry, I missed what you just said. What was it?"
+                assistant_msg = Message(role="assistant", content=error_msg)
+                self.messages.append(assistant_msg)
+                yield error_msg
 
             else:
                 logger.error(f"Gemini API error: {e}")

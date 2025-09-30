@@ -4,6 +4,7 @@ import queue
 import numpy as np
 import wave
 import io
+import time
 from typing import Callable, Optional
 import logging
 from pydub import AudioSegment
@@ -85,7 +86,7 @@ class AudioManager:
                     
         finally:
             if stream:
-                stream.stop_stream()
+                # Only close, don't stop (stop_stream can hang)
                 stream.close()
                 
     def _amplify_mic_volume(self, audio_data: bytes, amplification_factor: float = 3.0) -> bytes:
@@ -111,7 +112,8 @@ class AudioManager:
         """Play audio data"""
         self.is_playing = True
         self.is_interrupted = False
-        
+        stream = None
+
         try:
             # Convert audio to PCM for PyAudio
             if format == "mp3":
@@ -128,20 +130,20 @@ class AudioManager:
                 )
             else:
                 raise ValueError(f"Unsupported format: {format}")
-            
+
             # Convert to 16-bit PCM at our sample rate with proper channel handling
             audio_segment = audio_segment.set_frame_rate(self.sample_rate)
             audio_segment = audio_segment.set_channels(1)  # Force mono
             audio_segment = audio_segment.set_sample_width(2)  # 16-bit
-            
+
             # Increase volume by 6dB (approximately double the volume)
             audio_segment = audio_segment + 6
-            
+
             logger.debug(f"Audio format: {audio_segment.frame_rate}Hz, {audio_segment.channels} channels, {audio_segment.sample_width} bytes/sample")
-            
+
             # Get raw PCM data
             pcm_data = audio_segment.raw_data
-            
+
             # Play through PyAudio with error handling
             try:
                 stream = self.audio.open(
@@ -162,23 +164,51 @@ class AudioManager:
                     output=True,
                     frames_per_buffer=self.chunk_size
                 )
-            
+
+            logger.info(f"Starting playback of {len(pcm_data)} bytes...")
+
+            # Calculate how long the audio should take to play
+            playback_duration = len(pcm_data) / (self.sample_rate * 2)  # 2 bytes per sample (16-bit)
+
             # Play in chunks, checking for interruption
+            chunks_written = 0
             for i in range(0, len(pcm_data), self.chunk_size):
                 if self.is_interrupted:
                     logger.info("Playback interrupted")
                     break
-                    
+
                 chunk = pcm_data[i:i + self.chunk_size]
-                stream.write(chunk)
-                
-            stream.stop_stream()
+
+                # For very short audio (like ticks), use blocking write to ensure it plays
+                if playback_duration < 0.5:
+                    stream.write(chunk)  # Blocking write - ensures audio plays
+                else:
+                    stream.write(chunk, exception_on_underflow=False)
+
+                chunks_written += 1
+
+            logger.info(f"Finished writing {chunks_written} chunks, closing stream...")
+
+            # Close stream directly (don't call stop_stream as it can hang on some systems)
             stream.close()
-            
+            stream = None
+
+            logger.info("Audio playback completed successfully")
+
         except Exception as e:
             logger.error(f"Playback error: {e}")
+            import traceback
+            logger.error(traceback.format_exc())
         finally:
+            # Make absolutely sure stream is closed
+            if stream is not None:
+                try:
+                    # Only close, don't stop (stop_stream can hang)
+                    stream.close()
+                except:
+                    pass
             self.is_playing = False
+            logger.info("play_audio() method returning")
             
     def play_audio_stream(self, audio_generator):
         """Play streaming audio"""
@@ -260,7 +290,7 @@ class AudioManager:
             logger.error(f"Streaming playback error: {e}")
         finally:
             if stream:
-                stream.stop_stream()
+                # Only close, don't stop (stop_stream can hang)
                 stream.close()
             self.is_playing = False
             

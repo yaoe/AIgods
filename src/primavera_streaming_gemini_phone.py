@@ -14,6 +14,7 @@ import subprocess
 import ctypes
 from ctypes import cdll
 from dotenv import load_dotenv
+import signal
 
 from deepgram_client import DeepgramClient
 from elevenlabs_client import ElevenLabsClient
@@ -90,17 +91,17 @@ class StreamingVoiceChatbot:
     def __init__(self):
         # Load configuration
         self.config = ConfigLoader()
-        
+
         # Initialize components with configured audio devices
         logger.info(f"Audio Config - Input Device: {AUDIO_INPUT_DEVICE}, Output Device: {AUDIO_OUTPUT_DEVICE}")
         self.audio_manager = AudioManager(
             input_device_index=AUDIO_INPUT_DEVICE,
             output_device_index=AUDIO_OUTPUT_DEVICE
         )
-        
+
         # Always set volume on startup (most reliable method)
         self._ensure_audio_setup()
-        
+
         # Debug audio devices
         self._debug_audio_devices()
         self.deepgram = DeepgramClient(
@@ -115,7 +116,7 @@ class StreamingVoiceChatbot:
             api_key=os.getenv("GOOGLE_API_KEY"),
             personality_config=self.config.personality
         )
-        
+
         # State management
         self.phone_active = False
         self.dial_tone_playing = False
@@ -123,6 +124,8 @@ class StreamingVoiceChatbot:
 
         self.is_listening = False
         self.is_processing = False
+        self.is_ai_speaking = False  # New flag to track AI speech state
+        self.processing_lock = threading.Lock()  # Lock to prevent concurrent processing
         self.current_transcript = ""
         self.accumulated_transcript = ""
         self.last_final_time = 0
@@ -378,27 +381,32 @@ class StreamingVoiceChatbot:
         
     def handle_audio_chunk(self, audio_data: bytes):
         """Handle audio chunk from microphone"""
-        if self.is_listening:
+        # Only send audio if we're listening AND AI is not speaking
+        if self.is_listening and not self.is_ai_speaking:
             self.deepgram.send_audio(audio_data)
             
     def handle_transcript(self, transcript: str, is_final: bool):
         """Handle transcript from Deepgram"""
-        if not transcript.strip():
+        # Ignore all transcripts while AI is speaking
+        if self.is_ai_speaking or not transcript.strip():
             return
             
         current_time = time.time()
         
         if is_final:
             logger.info(f"Final: {transcript}")
-            self.accumulated_transcript += " " + transcript
-            self.last_final_time = current_time
-            
-            # Start processing immediately on sentence boundaries
-            if self._is_sentence_boundary(self.accumulated_transcript):
-                self.process_accumulated_transcript()
+            # Double-check AI is not speaking before processing
+            if not self.is_ai_speaking:
+                self.accumulated_transcript += " " + transcript
+                self.last_final_time = current_time
+                
+                # Start processing immediately on sentence boundaries
+                if self._is_sentence_boundary(self.accumulated_transcript):
+                    self.process_accumulated_transcript()
         else:
-            # Show interim results
-            self.current_transcript = transcript
+            # Show interim results only if AI is not speaking
+            if not self.is_ai_speaking:
+                self.current_transcript = transcript
             
     def _is_sentence_boundary(self, text: str) -> bool:
         """Check if text ends with sentence boundary"""
@@ -410,39 +418,80 @@ class StreamingVoiceChatbot:
                 
     def process_accumulated_transcript(self):
         """Process the accumulated transcript"""
-        if self.is_processing or not self.accumulated_transcript.strip():
-            return
-            
-        transcript = self.accumulated_transcript.strip()
-        self.accumulated_transcript = ""
-        
-        # Don't process very short utterances
-        if len(transcript.split()) < 2:
-            return
-            
-        logger.info(f"Processing: {transcript}")
-        self.is_processing = True
+        # Use lock to prevent race conditions when checking/setting processing state
+        with self.processing_lock:
+            # Don't process if AI is speaking, already processing, or no transcript
+            if self.is_ai_speaking or self.is_processing or not self.accumulated_transcript.strip():
+                return
+
+            transcript = self.accumulated_transcript.strip()
+            self.accumulated_transcript = ""
+
+            # Don't process very short utterances
+            if len(transcript.split()) < 2:
+                return
+
+            logger.info(f"Processing: {transcript}")
+            # Set both flags immediately while holding the lock
+            self.is_processing = True
+            self.is_ai_speaking = True  # Set this early to block new transcripts
 
         # Start ticking sound to indicate processing
         self._start_processing_tick()
-        
-        # Start generating response in background
+
+        # Start generating response in background with timeout monitoring
         response_thread = threading.Thread(
-            target=self._generate_streaming_response,
+            target=self._generate_streaming_response_with_monitor,
             args=(transcript,)
         )
         response_thread.daemon = True
         response_thread.start()
         
+    def _generate_streaming_response_with_monitor(self, transcript: str):
+        """Wrapper to monitor response generation with timeout"""
+        thread_timeout = 60.0  # Maximum time to wait for thread completion
+        
+        # Create the actual response generation thread
+        generation_thread = threading.Thread(
+            target=self._generate_streaming_response,
+            args=(transcript,)
+        )
+        generation_thread.daemon = True
+        generation_thread.start()
+        
+        # Monitor the thread with timeout
+        generation_thread.join(thread_timeout)
+        
+        if generation_thread.is_alive():
+            logger.error(f"Response generation thread timed out after {thread_timeout} seconds")
+            # Force stop processing state
+            self.is_processing = False
+            self._stop_processing_tick()
+            # Queue error message
+            error_msg = "I'm sorry, I'm having trouble responding right now."
+            self.text_queue.put(error_msg)
+        
     def _generate_streaming_response(self, transcript: str):
-        """Generate and stream response"""
+        """Generate and stream response with timeout protection"""
+        response_timeout = 45.0  # 45 second timeout for response generation
+        start_time = time.time()
+        
         try:
             # Add to conversation
             self.conversation.add_user_message(transcript)
             
-            # Stream response text
+            # Stream response text with timeout protection
             sentence_buffer = ""
-            for text_chunk in self.conversation.generate_response(streaming=True):
+            response_generator = self.conversation.generate_response(streaming=True, timeout=30.0)
+            
+            for text_chunk in response_generator:
+                # Check if we've exceeded the overall timeout
+                if time.time() - start_time > response_timeout:
+                    logger.warning("Response generation timed out")
+                    error_msg = "I'm sorry, I'm taking too long to respond."
+                    self.text_queue.put(error_msg)
+                    break
+                    
                 sentence_buffer += text_chunk
             
                 # Send complete sentences to TTS
@@ -462,6 +511,9 @@ class StreamingVoiceChatbot:
 
         except Exception as e:
             logger.error(f"Error generating response: {e}")
+            # Provide user feedback for errors
+            error_msg = "I'm sorry, I encountered an issue. Can you please try again?"
+            self.text_queue.put(error_msg)
         finally:
             self.is_processing = False
             
@@ -511,25 +563,58 @@ class StreamingVoiceChatbot:
             try:
                 # Get audio from queue
                 audio_data = self.audio_queue.get(timeout=1)
-                
+
                 if audio_data is None:  # Shutdown signal
                     break
-                    
+
                 # Stop processing tick when audio is ready to play
                 self._stop_processing_tick()
-                
+
+                # Stop listening while AI is speaking to prevent queuing user speech
+                was_listening = self.is_listening
+                if was_listening:
+                    self.is_listening = False
+                    logger.info("🔇 Stopped listening during AI speech")
+
+                # Clear any accumulated transcript to prevent processing during AI speech
+                self.accumulated_transcript = ""
+                self.current_transcript = ""
+
                 # Play audio with explicit format, cleaning the end noise
                 logger.info("Playing audio chunk...")
                 logger.info(f"Audio output device: {self.audio_manager.output_device_index}")
-                
+
                 # Clean audio to remove end noise
                 cleaned_audio = self._clean_audio_end(audio_data)
-                self.audio_manager.play_audio(cleaned_audio, format='mp3')
-                
+
+                # Calculate audio duration for appropriate timeout
+                audio_duration = self._get_audio_duration(cleaned_audio)
+                # Add 5 second buffer to duration for processing overhead
+                timeout = audio_duration + 5.0
+                logger.info(f"Audio duration: {audio_duration:.1f}s, timeout: {timeout:.1f}s")
+
+                # Play audio with timeout protection
+                success = self._play_audio_with_timeout(cleaned_audio, timeout=timeout)
+
+                if not success:
+                    logger.error("Audio playback failed or timed out - waiting before resuming")
+                    # Wait a bit before resuming to avoid overlapping with stuck audio
+                    time.sleep(2.0)
+
+                # Clear AI speaking flag and resume listening after AI finishes speaking
+                self.is_ai_speaking = False
+                self.is_processing = False  # Also clear processing flag
+                if was_listening:
+                    self.is_listening = True
+                    logger.info("🎤 Resumed listening after AI speech")
+
             except queue.Empty:
                 continue
             except Exception as e:
                 logger.error(f"Playback error: {e}")
+                # Make sure we reset flags on error
+                self.is_ai_speaking = False
+                self.is_processing = False
                 
     def cleanup(self):
         """Clean up resources"""
@@ -625,6 +710,53 @@ class StreamingVoiceChatbot:
             # Return original audio if cleaning fails
             return audio_data
             
+    def _get_audio_duration(self, audio_data: bytes) -> float:
+        """Get duration of audio in seconds"""
+        try:
+            from pydub import AudioSegment
+            import io
+
+            audio_segment = AudioSegment.from_mp3(io.BytesIO(audio_data))
+            duration_seconds = len(audio_segment) / 1000.0  # pydub returns milliseconds
+            return duration_seconds
+        except Exception as e:
+            logger.error(f"Error getting audio duration: {e}")
+            # Return a default safe duration
+            return 30.0
+
+    def _play_audio_with_timeout(self, audio_data: bytes, timeout: float = 10.0):
+        """Play audio with timeout protection to prevent hanging"""
+        result = [None]
+        exception = [None]
+
+        def play_audio():
+            try:
+                self.audio_manager.play_audio(audio_data, format='mp3')
+                result[0] = "success"
+            except Exception as e:
+                exception[0] = e
+
+        # Start audio playback in separate thread
+        playback_thread = threading.Thread(target=play_audio)
+        playback_thread.daemon = True
+        playback_thread.start()
+
+        # Wait for completion with timeout
+        playback_thread.join(timeout)
+
+        if playback_thread.is_alive():
+            # Thread is still running, timeout occurred
+            logger.error(f"Audio playback timed out after {timeout:.1f} seconds - this should not happen!")
+            logger.error("Audio thread is still running in background - may cause overlap")
+            # Note: Can't force-kill PyAudio thread if it's hanging in native code
+            return False
+
+        if exception[0]:
+            logger.error(f"Audio playback error: {exception[0]}")
+            return False
+
+        return True
+            
     def _start_processing_tick(self):
         """Start processing tick sound"""
         if self.processing_tick_active:
@@ -647,12 +779,12 @@ class StreamingVoiceChatbot:
             import io
             
             sample_rate = 16000
-            duration = 0.05  # Very short tick (50ms)
-            frequency = 1000  # 1kHz tick
-            
+            duration = 0.08  # Short tick (80ms)
+            frequency = 220  # A3 note (220Hz) - low, subtle tone
+
             # Generate subtle tick sound
             t = np.linspace(0, duration, int(sample_rate * duration), False)
-            tick_tone = np.sin(2 * np.pi * frequency * t) * 0.15  # Low volume
+            tick_tone = np.sin(2 * np.pi * frequency * t) * 0.6  # Moderate volume
             
             # Add fade in/out to avoid clicks
             fade_samples = int(0.005 * sample_rate)  # 5ms fade
@@ -675,13 +807,30 @@ class StreamingVoiceChatbot:
             audio_segment.export(wav_buffer, format="wav")
             wav_buffer.seek(0)
             tick_wav = wav_buffer.read()
-            
+
+            # Save tick to file for debugging
+            try:
+                with open("/tmp/debug_tick.wav", "wb") as f:
+                    f.write(tick_wav)
+                logger.info("Saved tick to /tmp/debug_tick.wav for testing")
+            except Exception as e:
+                logger.error(f"Could not save tick: {e}")
+
             logger.info("⏳ Playing processing tick...")
-            
+            logger.info(f"Tick: duration={duration}s, frequency={frequency}Hz, volume=1.0, size={len(tick_wav)} bytes")
+            logger.info(f"Output device index: {self.audio_manager.output_device_index}")
+
             # Play ticks every 0.8 seconds while processing
+            # Use afplay directly since PyAudio isn't working reliably for short sounds
+            tick_count = 0
             while self.processing_tick_active:
                 if self.processing_tick_active:
-                    self.audio_manager.play_audio(tick_wav, format='wav')
+                    tick_count += 1
+                    logger.info(f"🔊 TICK #{tick_count}")
+                    # Use afplay in background to play the tick
+                    subprocess.Popen(['afplay', '/tmp/debug_tick.wav'],
+                                   stdout=subprocess.DEVNULL,
+                                   stderr=subprocess.DEVNULL)
                     time.sleep(0.8)  # Pause between ticks
                 
         except Exception as e:
