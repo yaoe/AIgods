@@ -828,10 +828,15 @@ class StreamingVoiceChatbot:
                     tick_count += 1
                     logger.info(f"🔊 TICK #{tick_count}")
                     # Use aplay on Linux/Raspberry Pi, afplay on macOS
-                    player_cmd = 'aplay' if sys.platform == 'linux' else 'afplay'
-                    subprocess.Popen([player_cmd, '/tmp/debug_tick.wav'],
-                                   stdout=subprocess.DEVNULL,
-                                   stderr=subprocess.DEVNULL)
+                    if sys.platform == 'linux':
+                        # Use device 1 (3.5mm jack) on Raspberry Pi
+                        subprocess.Popen(['aplay', '-D', 'plughw:1,0', '/tmp/debug_tick.wav'],
+                                       stdout=subprocess.DEVNULL,
+                                       stderr=subprocess.DEVNULL)
+                    else:
+                        subprocess.Popen(['afplay', '/tmp/debug_tick.wav'],
+                                       stdout=subprocess.DEVNULL,
+                                       stderr=subprocess.DEVNULL)
                     time.sleep(0.8)  # Pause between ticks
                 
         except Exception as e:
