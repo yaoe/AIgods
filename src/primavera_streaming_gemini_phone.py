@@ -377,6 +377,9 @@ class StreamingVoiceChatbot:
         self.accumulated_transcript = ""
         self.current_transcript = ""
 
+        # Clear conversation history for fresh start on next call
+        self.conversation.clear_history()
+
         # Stop recording
         self.audio_manager.stop_recording()
 
