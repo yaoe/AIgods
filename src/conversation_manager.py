@@ -233,8 +233,10 @@ class GeminiConversationManager:
 
             # Remove text within parentheses or asterisks
             #response_text = re.sub(r'\(.*?\)', '', response_text)
-            response_text = re.sub(r'\(.*?\)|\*.*?\*', '', response_text)
+            response_text = re.sub(r'\(.*?\)|\*.*?\*', '', response_text, flags=re.MULTILINE)
 
+            # Remove "Assistant:" at the beginning of the sentence
+            response_text = re.sub(r'^Assistant:\s*', '', response_text)
 
             # Cut off text after a paragraph starting with "User:"
             #response_text = re.split(r'\nUser:.*', response_text)[0]
