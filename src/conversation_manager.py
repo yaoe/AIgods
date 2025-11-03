@@ -231,16 +231,27 @@ class GeminiConversationManager:
 
             logger.info(f"PRE-FILTERED RESPONSE: {response_text}")
 
-            # Remove text within parentheses or asterisks
-            #response_text = re.sub(r'\(.*?\)', '', response_text)
-            response_text = re.sub(r'\(.*?\)|\*.*?\*', '', response_text, flags=re.MULTILINE)
+            # If response starts with "User:", extract everything after "Assistant:"
+            if response_text.startswith("User:"):
+                parts = response_text.split("Assistant:", 1)
+                if len(parts) > 1:
+                    response_text = parts[1]
+                else:
+                    response_text = "I'm sorry, I didn't catch that."
 
-            # Remove "Assistant:" at the beginning of the sentence
+            # Cut off at any subsequent "User:" on a new line
+            response_text = re.split(r'\nUser:', response_text)[0]
+
+            # Remove "Assistant:" prefix if still present
             response_text = re.sub(r'^Assistant:\s*', '', response_text)
 
-            # Cut off text after a paragraph starting with "User:"
-            #response_text = re.split(r'\nUser:.*', response_text)[0]
-            response_text = re.split(r'(?:\r?\n|^)User:.*', response_text)[0]
+            # Remove text within parentheses or asterisks
+            response_text = re.sub(r'\(.*?\)|\*.*?\*', '', response_text, flags=re.MULTILINE)
+
+            # Safety check: ensure non-empty response
+            response_text = response_text.strip()
+            if not response_text:
+                response_text = "I'm sorry, could you repeat that?"
         
             
             # Add response to conversation history
