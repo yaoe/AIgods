@@ -236,7 +236,7 @@ class PhoneChatbot:
                 elif self.last_pulse_enable_state == False and pulse_enable_state == True:
                     if self.counting_active:
                         self.counting_active = False
-                        self._process_dial(self.pulse_count)
+                        self._process_dial(self.pulse_count - 2)
                         
                 # Count pulses
                 if self.counting_active:
