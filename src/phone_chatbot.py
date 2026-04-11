@@ -175,7 +175,7 @@ class PhoneChatbot:
     def _load_personalities(self):
         """Load all personality configurations"""
         personalities = {}
-        for i in range(1, 11):
+        for i in range(0, 10):
             try:
                 with open(f'config/personalities/personality_{i}.json', 'r') as f:
                     personalities[i] = json.load(f)
@@ -258,7 +258,7 @@ class PhoneChatbot:
         print("  p: Pick up phone")
         print("  h: Hang up phone")
         print("  m: Toggle mute")
-        print("  1-9,0: Dial number (0=10)")
+        print("  0-9: Dial number")
         print("  q: Quit")
         
         while True:
@@ -273,8 +273,8 @@ class PhoneChatbot:
                     self._handle_mute_released()
                 else:
                     self._handle_mute_pressed()
-            elif cmd in '1234567890':
-                num = 10 if cmd == '0' else int(cmd)
+            elif cmd in '0123456789':
+                num = int(cmd)
                 self._stop_dial_tone()
                 self._process_dial(num)
             elif cmd == 'q':
@@ -372,7 +372,7 @@ class PhoneChatbot:
         """Process dialed number and start conversation"""
         logger.info(f"📞 Dialed: {number}")
         
-        if number < 1 or number > 10:
+        if number < 0 or number > 9:
             logger.warning(f"Invalid number: {number}")
             # Play error tone or message
             return
