@@ -471,13 +471,18 @@ class PhoneChatbot:
         
     def _handle_audio_chunk(self, audio_data: bytes):
         """Handle audio chunk from microphone (respects mute state)"""
-        # Don't send audio if muted
         if self.is_muted:
             return
-            
-        if (self.is_listening and not self.is_processing) or self.shadow_listening:
-            if hasattr(self, 'smartturn'):
-                self.smartturn.send_audio(audio_data)
+
+        if not getattr(self, 'allow_interrupt', True):
+            # No interrupts: only send audio when not processing/playing
+            if self.is_listening and not self.is_processing:
+                if hasattr(self, 'smartturn'):
+                    self.smartturn.send_audio(audio_data)
+        else:
+            if (self.is_listening and not self.is_processing) or self.shadow_listening:
+                if hasattr(self, 'smartturn'):
+                    self.smartturn.send_audio(audio_data)
             
     def _handle_transcript(self, transcript: str, is_final: bool):
         """Handle transcript from smart-turn ASR"""
@@ -679,8 +684,20 @@ class PhoneChatbot:
             for text_chunk in self.conversation.generate_response(streaming=True):
                 full_response += text_chunk
                 
-            logger.info(f"Response: {full_response}")
-            
+            logger.info(f"Raw response: {full_response}")
+
+            # Strip stage directions (*...*) and parentheticals (...)
+            import re
+            full_response = re.sub(r'\*[^*]*\*', '', full_response)
+            full_response = re.sub(r'\([^)]*\)', '', full_response)
+            full_response = re.sub(r'\s{2,}', ' ', full_response).strip()
+
+            logger.info(f"Filtered response: {full_response}")
+
+            if not full_response:
+                logger.warning("Response empty after filtering")
+                return
+
             # Generate audio for complete response via Qwen-TTS
             logger.info("Generating audio...")
             voice_id = self.current_personality.get("tts_voice",
@@ -695,21 +712,21 @@ class PhoneChatbot:
                     beep_stopped = True
                 audio_chunks.append(chunk)
 
-            # Enable shadow listening for interruption detection
-            self.shadow_listening = True
-            self.audio_playback_start_time = time.time()
-            logger.info("Shadow listening enabled - you can interrupt")
+            # Enable shadow listening for interruption detection (if allowed)
+            if getattr(self, 'allow_interrupt', True):
+                self.shadow_listening = True
+                self.audio_playback_start_time = time.time()
+                logger.info("Shadow listening enabled - you can interrupt")
 
             # Combine and play through our audio manager (Qwen-TTS returns WAV)
             if audio_chunks:
                 complete_audio = b''.join(audio_chunks)
                 self.audio_manager.play_audio(complete_audio, format='wav')
-            
+
             # Wait for playback to complete
             while self.audio_manager.is_playing:
                 time.sleep(0.1)
-            
-            # Disable shadow listening when done
+
             self.shadow_listening = False
                 
         except Exception as e:
@@ -867,13 +884,20 @@ class PhoneChatbot:
             
 
 def main():
-    # No cloud API keys required - using local smart-turn + Qwen-TTS + LM Studio
-    logger.info("Using local inference: smart-turn (ASR), Qwen-TTS, LM Studio (LLM)")
-        
-    # Start phone chatbot
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--interrupt', default='true',
+                        help='Allow interrupting AI speech (true/false, default: true)')
+    args = parser.parse_args()
+
+    allow_interrupt = args.interrupt.lower() in ('true', '1', 'yes')
+    logger.info(f"Using local inference: smart-turn (ASR), Qwen-TTS, LM Studio (LLM)")
+    logger.info(f"Interruptions: {'enabled' if allow_interrupt else 'disabled'}")
+
     chatbot = PhoneChatbot()
+    chatbot.allow_interrupt = allow_interrupt
     chatbot.start()
-    
+
 
 if __name__ == "__main__":
     main()
