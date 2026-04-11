@@ -674,16 +674,20 @@ class PhoneChatbot:
         
     def _generate_and_speak_response(self):
         """Generate AI response and speak it"""
+        no_interrupt = not getattr(self, 'allow_interrupt', True)
         try:
             # Start continuous thinking beep
             self._start_thinking_beep()
-            
+            if no_interrupt and hasattr(self, 'smartturn'):
+                self.smartturn.close()
+                logger.info("Smart-turn paused (no-interrupt mode)")
+
             # Generate complete response first
             logger.info("Generating AI response...")
             full_response = ""
             for text_chunk in self.conversation.generate_response(streaming=True):
                 full_response += text_chunk
-                
+
             logger.info(f"Raw response: {full_response}")
 
             # Strip stage directions (*...*) and parentheticals (...)
@@ -728,11 +732,19 @@ class PhoneChatbot:
                 time.sleep(0.1)
 
             self.shadow_listening = False
-                
+
         except Exception as e:
             logger.error(f"Error generating response: {e}")
         finally:
             self.is_processing = False
+            # Reconnect smart-turn after AI is done (no-interrupt mode)
+            if no_interrupt and hasattr(self, 'smartturn'):
+                try:
+                    self.accumulated_transcript = ""
+                    self.smartturn.connect()
+                    logger.info("Smart-turn resumed")
+                except Exception as e:
+                    logger.error(f"Failed to reconnect smart-turn: {e}")
         
             
     def cleanup(self):
