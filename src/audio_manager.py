@@ -52,7 +52,7 @@ class AudioManager:
         self.record_thread.daemon = True
         self.record_thread.start()
         
-        logger.info("Started recording")
+        logger.debug("Started recording")
         
     def stop_recording(self):
         """Stop recording"""
@@ -165,7 +165,7 @@ class AudioManager:
                     frames_per_buffer=self.chunk_size
                 )
 
-            logger.info(f"Starting playback of {len(pcm_data)} bytes...")
+            logger.debug(f"Starting playback of {len(pcm_data)} bytes...")
 
             # Calculate how long the audio should take to play
             playback_duration = len(pcm_data) / (self.sample_rate * 2)  # 2 bytes per sample (16-bit)
@@ -187,13 +187,13 @@ class AudioManager:
 
                 chunks_written += 1
 
-            logger.info(f"Finished writing {chunks_written} chunks, closing stream...")
+            logger.debug(f"Finished writing {chunks_written} chunks, closing stream...")
 
             # Close stream directly (don't call stop_stream as it can hang on some systems)
             stream.close()
             stream = None
 
-            logger.info("Audio playback completed successfully")
+            logger.debug("Audio playback completed successfully")
 
         except Exception as e:
             logger.error(f"Playback error: {e}")
@@ -208,7 +208,7 @@ class AudioManager:
                 except:
                     pass
             self.is_playing = False
-            logger.info("play_audio() method returning")
+            logger.debug("play_audio() method returning")
             
     def play_audio_stream(self, audio_generator):
         """Play streaming audio"""
@@ -243,7 +243,7 @@ class AudioManager:
         
         try:
             # Collect all audio chunks from ElevenLabs streaming
-            logger.info("Streaming audio from ElevenLabs...")
+            logger.debug("Streaming audio...")
             for chunk in audio_generator:
                 audio_buffer += chunk
                     
@@ -251,7 +251,7 @@ class AudioManager:
                 logger.warning("No audio data received from stream")
                 return
                 
-            logger.info(f"Received {len(audio_buffer)} bytes of streamed audio")
+            logger.debug(f"Received {len(audio_buffer)} bytes of streamed audio")
             
             # Convert complete MP3 to PCM
             audio_segment = AudioSegment.from_mp3(io.BytesIO(audio_buffer))
@@ -281,7 +281,7 @@ class AudioManager:
             # Play audio
             for i in range(0, len(pcm_data), self.chunk_size):
                 if self.is_interrupted:
-                    logger.info("Streaming playback interrupted")
+                    logger.debug("Streaming playback interrupted")
                     break
                 chunk = pcm_data[i:i + self.chunk_size]
                 stream.write(chunk)
