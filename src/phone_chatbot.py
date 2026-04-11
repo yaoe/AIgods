@@ -405,7 +405,7 @@ class PhoneChatbot:
             config = ConfigLoader()
             config.personality = self.current_personality
             
-            # Initialize chatbot components
+            # Initialize chatbot components (smart-turn connects after greeting)
             self.smartturn = SmartTurnClient(
                 on_transcript=self._handle_transcript
             )
@@ -419,17 +419,13 @@ class PhoneChatbot:
                 model=os.getenv("LLM_MODEL", "qwen3.5"),
             )
 
-            # Connect to smart-turn ASR
-            self.smartturn.connect()
-            
-            # Start listening
+            # Start recording (audio won't go to smart-turn until it connects)
             self.is_listening = True
             self.audio_manager.start_recording(self._handle_audio_chunk)
-            
+
             # The god answers the phone immediately with their unique greeting
+            # Smart-turn connects AFTER greeting finishes (inside _play_god_greeting)
             greeting = self.current_personality.get("greeting", f"You have reached {self.current_personality['name']}")
-            
-            # Start greeting generation and playback immediately
             threading.Thread(target=self._play_god_greeting, args=(greeting,), daemon=True).start()
             
             logger.info(f"✅ {self.current_personality['name']} is answering the divine phone!")
@@ -766,7 +762,7 @@ class PhoneChatbot:
         beep_thread.start()
     
     def _play_god_greeting(self, greeting: str):
-        """Play the god's greeting using Qwen-TTS"""
+        """Play the god's greeting using Qwen-TTS, then activate smart-turn"""
         try:
             logger.info("Streaming divine greeting...")
             voice_id = self.current_personality.get("tts_voice",
@@ -791,6 +787,13 @@ class PhoneChatbot:
         except Exception as e:
             logger.error(f"Error streaming god greeting: {e}")
             self._beep_active = False
+        finally:
+            # Now that greeting is done, connect smart-turn to start listening
+            try:
+                self.smartturn.connect()
+                logger.info("Smart-turn activated (greeting finished)")
+            except Exception as e:
+                logger.error(f"Failed to connect smart-turn: {e}")
     
     def _play_connection_beep(self):
         """Play phone-line connection beep until god answers"""
