@@ -4,8 +4,6 @@ import logging
 from typing import List, Dict, Optional, Generator
 from dataclasses import dataclass
 from datetime import datetime
-import google.genai as genai
-from google.genai import types
 import os
 import sys
 import re
@@ -13,7 +11,16 @@ import signal
 import threading
 import time
 
-from gemini_cache import get_gemini_cache, create_new_cache
+# Gemini imports - optional, only needed for GeminiConversationManager
+try:
+    import google.genai as genai
+    from google.genai import types
+    from gemini_cache import get_gemini_cache, create_new_cache
+except Exception:
+    genai = None
+    types = None
+    get_gemini_cache = None
+    create_new_cache = None
 
 logger = logging.getLogger(__name__)
 
