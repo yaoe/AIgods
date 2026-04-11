@@ -410,7 +410,7 @@ class PhoneChatbot:
                 on_transcript=self._handle_transcript
             )
             self.tts = QwenTTSClient(
-                voice_id=self.current_personality.get("tts_voice",
+                voice_id=self.current_personality.get("profile_id",
                          os.getenv("TTS_VOICE_ID", "primavera"))
             )
             self.conversation = ConversationManager(
@@ -700,8 +700,7 @@ class PhoneChatbot:
 
             # Generate audio for complete response via Qwen-TTS
             logger.info("Generating audio...")
-            voice_id = self.current_personality.get("tts_voice",
-                        self.current_personality.get("voice_id", "primavera"))
+            voice_id = self.current_personality.get("profile_id", "primavera")
             logger.info(f"Using TTS voice: {voice_id}")
 
             audio_chunks = []
@@ -765,8 +764,7 @@ class PhoneChatbot:
         """Play the god's greeting using Qwen-TTS, then activate smart-turn"""
         try:
             logger.info("Streaming divine greeting...")
-            voice_id = self.current_personality.get("tts_voice",
-                        self.current_personality.get("voice_id", "primavera"))
+            voice_id = self.current_personality.get("profile_id", "primavera")
             logger.info(f"Using TTS voice for {self.current_personality['name']}: {voice_id}")
 
             logger.info(f"The god speaks (streaming): {greeting[:50]}...")

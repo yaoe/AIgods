@@ -1,0 +1,36 @@
+--
+name: Sofi Lee
+signal-uuid: "2bab95a8-8e05-47e0-9332-d41ef9472a5d"
+phone: "+447917114115"
+status: Returner
+field: Events and design
+stay: More than 1 month
+arriving: 5th May minus 3 months
+departing: End
+accommodation: Private room with private bathroom
+ai-consent: true
+---
+
+# Sofi Lee
+
+## About
+
+Fitness, experiences, travel, mysticism
+Currently working on climate conference in Brazil in event production
+
+## Why Feytopia
+
+Without you I am lost, with you I am lost. It’s great. Life makes different sense with spaces like these. It makes the outside world weird. It makes serendipity happen, it shrinks the world. I’m learning to be a shaman so more of that?
+
+## Contributions
+
+More experience design weeks and soft silliness threaded throughout
+
+## Community Experience
+
+Feÿtopia since 2020; The Olive Grove London. What i like most about community living is the collective excellence that it gathers.
+
+
+## Memory
+
+I remember one time at the Chateau we were in the sheet and a very floppy and cook in a black zentai suit was navigating a laser Maze and it was absolutely ridiculous

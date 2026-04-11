@@ -1,0 +1,60 @@
+name: Charlie Weil
+signal-uuid: "74af769b-130a-4b6f-b2f8-8d798f6afae7"
+phone: "+33769965586"
+status: Returner
+from: Lausanne
+field: "research, tech, circus"
+stay: 3 weeks
+arriving: TBD likely 1-2 weeks in Jan/Feb and 2 weeks April
+accommodation: Private room with private bathroom
+ai-consent: true
+---
+
+# Charlie Weil
+
+
+## Memory
+I remember recently building a gigantic human pyramids with four layers of human bodies climbing on each other and metaphorically and physically to to reach new Heights and creates amazing shapes with everyone's bodies
+
+## About
+
+Environmental researcher and data scientist by training, Charlie Weil leads a technical team of data and software engineers ENAC-IT4R, dedicated to support researchers and build open-source software and data tools for researchers in the sustainability domains.
+
+Their work include the development of a greenhouse gas (GHG) calculator for refugee camps in collaboration with UNHCR, an open decentralised database enhancing rainfall data access for meteorologists worldwide, a webmap that delineates flood risks in Malaysia, serving both researchers and the general public.
+
+Previously at Stanford University (California), she contributed to the implementation of an open-source software for ecosystem services modeling widely used by researchers and landscape stakeholders globally. Through her experiences building data tools in the US, China, Mongolia, Peru and Switzerland for academia, non-profit and public sector, she gained understanding of the impact of open-source technologies in various contexts.
+
+Also a scientific advisor for the Institute Michel Serres (ENS Lyon, France), and a fervent Open Science advocate, she’s active in interdisciplinary efforts at the nexus of technology, sustainability, and data-driven research. Drawing on advancements in data science, environmental research, and software development, she’s always enthusiastic to explore synergies across fields and to build connections and community!
+
+## Why Feytopia
+
+Hopes 2026 :
+- Artistic residencies for training aerial circus
+- conversations on polyamory and parenthoods
+- host an Open Science & Human Pyramids workshop 2nd edition
+
+## Contributions
+
+Host workshops and hug humans
+
+## Community Experience
+
+Yes ! 🤡
+
+## Notes
+
+Love you Feÿtopia team
+
+## Feyblet's Notes
+
+*No interactions yet.*
+
+## Booking History
+
+Total stays: 3 | Total nights: 17 | Returner
+Rooms: Chardon Marie, Bardane, Le Gîte
+
+- 2025-12-30 → 2026-01-01 (Chardon Marie)
+- 2026-01-30 → 2026-02-08 (Bardane)
+- 2026-04-06 → 2026-04-12 (Le Gîte)
+~

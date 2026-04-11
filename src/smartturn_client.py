@@ -12,9 +12,9 @@ except ImportError:
 
 logger = logging.getLogger(__name__)
 
-# Smart-turn servers (MacBook first, Glitchbox fallback)
+# Smart-turn servers (MacBook commented out, using Glitchbox only)
 SERVERS = [
-    ("MacBook",   "ws://100.67.155.96:8200/v1/listen"),
+    # ("MacBook",   "ws://100.67.155.96:8200/v1/listen"),
     ("Glitchbox", "ws://100.79.41.86:8200/v1/listen"),
 ]
 

@@ -1,63 +1,84 @@
+import os
 import requests
 import logging
 from typing import Generator, Optional
 
 logger = logging.getLogger(__name__)
 
-# TTS servers: MacBook first, Glitchbox fallback
+# Base path to voice profiles (resolved relative to this file)
+PROFILES_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "voice_library", "profiles"
+)
+
+# TTS servers: Glitchbox first (MacBook TTS commented out, LLM still uses MacBook)
+# ref_audio_base: where reference.wav files live ON THAT SERVER's filesystem
 TTS_SERVERS = [
-    {
-        "name": "MacBook",
-        "url": "http://100.67.155.96:8000/v1/audio/speech",
-        "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16",
-        "timeout": 10,
-        "use_ref_audio": True,
-        "ref_audio_base": "/Users/ya/Desktop/PLANTOID 22/WHISPER/QwenTTS/voice-samples",
-        "ref_text": "Hello my name is Plantoid, I am a blockchain-based lifeform. I feed off cryptocurrency in order to replicate myself.",
-        "streaming_interval": 2.0,
-    },
+    # {
+    #     "name": "MacBook",
+    #     "url": "http://100.67.155.96:8000/v1/audio/speech",
+    #     "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16",
+    #     "timeout": 10,
+    #     "streaming_interval": 2.0,
+    #     "ref_audio_base": os.path.expanduser(
+    #         "~/Desktop/ART <3/The Artist is Present/AI-GOD/simple-voice-chatbot/voice_library/profiles"
+    #     ),
+    # },
     {
         "name": "Glitchbox",
         "url": "http://100.79.41.86:8000/v1/audio/speech",
         "model": "qwen3-tts",
         "timeout": 20,
-        "use_ref_audio": False,
         "streaming_interval": 0.5,
+        "ref_audio_base": os.path.expanduser("~/PLANTOIDZ/voice_references"),
     },
 ]
 
 
 class QwenTTSClient:
     """
-    Text-to-speech client using Qwen-TTS servers.
-    Drop-in replacement for ElevenLabsClient with same interface:
-      - stream_text(text, ...) -> Generator[bytes]
-      - generate_audio(text, ...) -> bytes
+    Text-to-speech client using Qwen-TTS servers with voice cloning
+    from per-profile reference.wav + transcript.txt.
     """
 
     def __init__(self, voice_id: str = "primavera"):
         self.voice_id = voice_id
 
+    def _load_profile(self, profile_id: str):
+        """Load ref_audio path and ref_text from a voice profile directory."""
+        profile_dir = os.path.join(PROFILES_DIR, profile_id)
+        ref_audio = os.path.join(profile_dir, "reference.wav")
+        ref_text_file = os.path.join(profile_dir, "transcript.txt")
+
+        ref_text = ""
+        if os.path.exists(ref_text_file):
+            with open(ref_text_file) as f:
+                ref_text = f.read().strip()
+
+        return ref_audio, ref_text
+
     def stream_text(self, text: str, voice_settings: dict = None,
                     voice_id: str = None) -> Generator[bytes, None, None]:
         """Stream TTS audio as WAV chunks, trying each server in order."""
         selected_voice = voice_id or self.voice_id
+        _, ref_text = self._load_profile(selected_voice)
 
         for server in TTS_SERVERS:
             try:
+                # Build ref_audio path for THIS server's filesystem
+                ref_audio = os.path.join(
+                    server["ref_audio_base"], selected_voice, "reference.wav"
+                )
+
                 payload = {
                     "model": server["model"],
                     "input": text,
                     "response_format": "wav",
                     "stream": True,
                     "streaming_interval": server["streaming_interval"],
+                    "ref_audio": ref_audio,
+                    "ref_text": ref_text,
                 }
-
-                if server["use_ref_audio"]:
-                    payload["ref_audio"] = f"{server['ref_audio_base']}/{selected_voice}.mp3"
-                    payload["ref_text"] = server["ref_text"]
-                else:
-                    payload["voice"] = f"clone:{selected_voice}"
 
                 resp = requests.post(
                     server["url"],
@@ -82,7 +103,7 @@ class QwenTTSClient:
 
         logger.error("All TTS servers failed")
 
-    # Alias so callers using the old ElevenLabs streaming path keep working
+    # Alias for backwards compat
     stream_text_official = stream_text
 
     def generate_audio(self, text: str, voice_settings: dict = None,
