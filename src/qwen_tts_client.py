@@ -82,7 +82,7 @@ class QwenTTSClient:
                     "model": server["model"],
                     "input": text,
                     "voice": voice_preset,
-                    "ref_audio": ref_audio,
+                    "voice_path": ref_audio,
                     "ref_text": ref_text,
                     "response_format": "wav",
                     "stream": True,
