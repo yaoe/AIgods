@@ -30,7 +30,7 @@ TTS_SERVERS = [
         "model": "qwen3-tts",
         "timeout": 20,
         "streaming_interval": 0.5,
-        "ref_audio_base": os.path.expanduser("~/PLANTOIDZ/voice_references"),
+        "ref_audio_base": "/home/plantoidz/PLANTOIDZ/voice_references",
     },
 ]
 
@@ -65,20 +65,19 @@ class QwenTTSClient:
 
         for server in TTS_SERVERS:
             try:
-                # Build ref_audio path for THIS server's filesystem
-                ref_audio = os.path.join(
-                    server["ref_audio_base"], selected_voice, "reference.wav"
-                )
-
                 payload = {
                     "model": server["model"],
                     "input": text,
                     "response_format": "wav",
                     "stream": True,
                     "streaming_interval": server["streaming_interval"],
-                    "ref_audio": ref_audio,
-                    "ref_text": ref_text,
                 }
+
+                ref_audio = os.path.join(
+                    server["ref_audio_base"], selected_voice, "reference.wav"
+                )
+                payload["ref_audio"] = ref_audio
+                payload["ref_text"] = ref_text
 
                 resp = requests.post(
                     server["url"],
