@@ -19,17 +19,11 @@ from dotenv import load_dotenv
 # Add parent directory to path for imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from src.deepgram_client import DeepgramClient
-from src.elevenlabs_client import ElevenLabsClient
+from src.smartturn_client import SmartTurnClient
+from src.qwen_tts_client import QwenTTSClient
 from src.conversation_manager import ConversationManager
 from src.audio_manager import AudioManager
 from src.config_loader import ConfigLoader
-
-# ElevenLabs import
-try:
-    from elevenlabs import stream
-except ImportError:
-    stream = None
 
 # GPIO imports
 try:
@@ -321,7 +315,7 @@ class PhoneChatbot:
         if GPIO_AVAILABLE:
             GPIO.output(RELAY_PIN, GPIO.HIGH)
         
-        # Stop sending audio to Deepgram (effectively mute mic)
+        # Stop sending audio to ASR (effectively mute mic)
         logger.info("🎤 Microphone muted - not sending audio to speech recognition")
         
     def _handle_mute_released(self):
@@ -412,21 +406,21 @@ class PhoneChatbot:
             config.personality = self.current_personality
             
             # Initialize chatbot components
-            self.deepgram = DeepgramClient(
-                api_key=os.getenv("DEEPGRAM_API_KEY"),
+            self.smartturn = SmartTurnClient(
                 on_transcript=self._handle_transcript
             )
-            self.elevenlabs = ElevenLabsClient(
-                api_key=os.getenv("ELEVENLABS_API_KEY"),
-                voice_id=os.getenv("ELEVENLABS_VOICE_ID", "21m00Tcm4TlvDq8ikWAM")
+            self.tts = QwenTTSClient(
+                voice_id=self.current_personality.get("tts_voice",
+                         os.getenv("TTS_VOICE_ID", "primavera"))
             )
             self.conversation = ConversationManager(
-                api_key=os.getenv("OPENAI_API_KEY"),
-                personality_config=self.current_personality
+                personality_config=self.current_personality,
+                base_url=os.getenv("LLM_BASE_URL", "http://100.67.155.96:1234/v1"),
+                model=os.getenv("LLM_MODEL", "qwen3.5"),
             )
-            
-            # Connect to Deepgram
-            self.deepgram.connect()
+
+            # Connect to smart-turn ASR
+            self.smartturn.connect()
             
             # Start listening
             self.is_listening = True
@@ -457,8 +451,8 @@ class PhoneChatbot:
         self.audio_manager.stop_recording()
         
         # Close connections
-        if hasattr(self, 'deepgram'):
-            self.deepgram.close()
+        if hasattr(self, 'smartturn'):
+            self.smartturn.close()
             
         # Clear state
         self.current_personality = None
@@ -482,11 +476,11 @@ class PhoneChatbot:
             return
             
         if (self.is_listening and not self.is_processing) or self.shadow_listening:
-            if hasattr(self, 'deepgram'):
-                self.deepgram.send_audio(audio_data)
+            if hasattr(self, 'smartturn'):
+                self.smartturn.send_audio(audio_data)
             
     def _handle_transcript(self, transcript: str, is_final: bool):
-        """Handle transcript from Deepgram (using main.py approach)"""
+        """Handle transcript from smart-turn ASR"""
         if not transcript.strip():
             return
             
@@ -687,42 +681,29 @@ class PhoneChatbot:
                 
             logger.info(f"Response: {full_response}")
             
-            # Generate audio for complete response
+            # Generate audio for complete response via Qwen-TTS
             logger.info("Generating audio...")
-            voice_settings = self.current_personality.get("voice_settings", {})
-            voice_id = self.current_personality.get("voice_id")
-            logger.info(f"Using voice_id for response: {voice_id}")
-            
-            # Enable shadow listening for interruption detection
-            self.shadow_listening = True
-            self.audio_playback_start_time = time.time()  # Record when audio starts
-            logger.info("Shadow listening enabled - you can interrupt")
-            
-            # Play the audio using ElevenLabs streaming function
-            logger.info("Playing audio...")
-            
-            audio_stream = self.elevenlabs.client.text_to_speech.stream(
-                text=full_response,
-                voice_id=voice_id,
-                model_id="eleven_multilingual_v2",
-                voice_settings=self.elevenlabs._create_voice_settings(voice_settings) if voice_settings else None
-            )
-            
-            # Option 2: process the audio bytes manually and play through our device
+            voice_id = self.current_personality.get("tts_voice",
+                        self.current_personality.get("voice_id", "primavera"))
+            logger.info(f"Using TTS voice: {voice_id}")
+
             audio_chunks = []
             beep_stopped = False
-            for chunk in audio_stream:
-                # Stop thinking beep right when the first chunk arrives (HTTP request completed)
+            for chunk in self.tts.stream_text(full_response, voice_id=voice_id):
                 if not beep_stopped:
                     self._thinking_beep_active = False
                     beep_stopped = True
-                if isinstance(chunk, bytes):
-                    audio_chunks.append(chunk)
-            
-            # Combine and play through our audio manager (correct device)
+                audio_chunks.append(chunk)
+
+            # Enable shadow listening for interruption detection
+            self.shadow_listening = True
+            self.audio_playback_start_time = time.time()
+            logger.info("Shadow listening enabled - you can interrupt")
+
+            # Combine and play through our audio manager (Qwen-TTS returns WAV)
             if audio_chunks:
                 complete_audio = b''.join(audio_chunks)
-                self.audio_manager.play_audio(complete_audio, format='mp3')
+                self.audio_manager.play_audio(complete_audio, format='wav')
             
             # Wait for playback to complete
             while self.audio_manager.is_playing:
@@ -756,38 +737,28 @@ class PhoneChatbot:
         beep_thread.start()
     
     def _play_god_greeting(self, greeting: str):
-        """Play the god's greeting using standard ElevenLabs streaming"""
+        """Play the god's greeting using Qwen-TTS"""
         try:
-            logger.info("🎭 Streaming divine greeting...")
-            voice_settings = self.current_personality.get("voice_settings", {})
-            voice_id = self.current_personality.get("voice_id")
-            logger.info(f"Using voice_id for {self.current_personality['name']}: {voice_id}")
-            
-            logger.info(f"👑 The god speaks (streaming): {greeting[:50]}...")
-            
-            audio_stream = self.elevenlabs.client.text_to_speech.stream(
-                text=greeting,
-                voice_id=voice_id,
-                model_id="eleven_multilingual_v2",
-                voice_settings=self.elevenlabs._create_voice_settings(voice_settings) if voice_settings else None
-            )
-            
-            # Option 2: process the audio bytes manually and play through our device
+            logger.info("Streaming divine greeting...")
+            voice_id = self.current_personality.get("tts_voice",
+                        self.current_personality.get("voice_id", "primavera"))
+            logger.info(f"Using TTS voice for {self.current_personality['name']}: {voice_id}")
+
+            logger.info(f"The god speaks (streaming): {greeting[:50]}...")
+
             audio_chunks = []
             beep_stopped = False
-            for chunk in audio_stream:
-                # Stop connection beep right when the first chunk arrives (HTTP request completed)
+            for chunk in self.tts.stream_text(greeting, voice_id=voice_id):
                 if not beep_stopped:
                     self._beep_active = False
                     beep_stopped = True
-                if isinstance(chunk, bytes):
-                    audio_chunks.append(chunk)
-            
-            # Combine and play through our audio manager (correct device)
+                audio_chunks.append(chunk)
+
+            # Combine and play (Qwen-TTS returns WAV)
             if audio_chunks:
                 complete_audio = b''.join(audio_chunks)
-                self.audio_manager.play_audio(complete_audio, format='mp3')
-            
+                self.audio_manager.play_audio(complete_audio, format='wav')
+
         except Exception as e:
             logger.error(f"Error streaming god greeting: {e}")
             self._beep_active = False
@@ -896,13 +867,8 @@ class PhoneChatbot:
             
 
 def main():
-    # Check required environment variables
-    required = ["DEEPGRAM_API_KEY", "ELEVENLABS_API_KEY", "OPENAI_API_KEY"]
-    missing = [var for var in required if not os.getenv(var)]
-    
-    if missing:
-        logger.error(f"Missing environment variables: {', '.join(missing)}")
-        sys.exit(1)
+    # No cloud API keys required - using local smart-turn + Qwen-TTS + LM Studio
+    logger.info("Using local inference: smart-turn (ASR), Qwen-TTS, LM Studio (LLM)")
         
     # Start phone chatbot
     chatbot = PhoneChatbot()

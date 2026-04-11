@@ -36,11 +36,14 @@ class Message:
 
 
 class ConversationManager:
-    def __init__(self, api_key: str, personality_config: dict):
-        self.client = openai.OpenAI(api_key=api_key)
+    def __init__(self, personality_config: dict,
+                 base_url: str = "http://100.67.155.96:1234/v1",
+                 model: str = "qwen3.5",
+                 api_key: str = "not-needed"):
+        self.client = openai.OpenAI(base_url=base_url, api_key=api_key)
         self.personality = personality_config
         self.messages: List[Message] = []
-        self.model = "gpt-4-turbo-preview"
+        self.model = model
         
         # Initialize with system message
         system_msg = Message(

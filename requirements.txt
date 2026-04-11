@@ -1,8 +1,8 @@
 pyaudio==0.2.14
 websocket-client==1.7.0
+websockets>=12.0
 python-dotenv==1.0.0
 openai==1.12.0
 requests==2.31.0
 numpy==1.26.3
 pydub==0.25.1
-elevenlabs==1.0.0

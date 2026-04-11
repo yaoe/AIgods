@@ -7,8 +7,8 @@ import logging
 import threading
 from dotenv import load_dotenv
 
-from deepgram_client import DeepgramClient
-from elevenlabs_client import ElevenLabsClient
+from smartturn_client import SmartTurnClient
+from qwen_tts_client import QwenTTSClient
 from conversation_manager import ConversationManager
 from audio_manager import AudioManager
 from config_loader import ConfigLoader
@@ -35,17 +35,16 @@ class VoiceChatbot:
         # Initialize components
         # Use device 1 for Raspberry Pi headphones
         self.audio_manager = AudioManager(output_device_index=1)
-        self.deepgram = DeepgramClient(
-            api_key=os.getenv("DEEPGRAM_API_KEY"),
+        self.smartturn = SmartTurnClient(
             on_transcript=self.handle_transcript
         )
-        self.elevenlabs = ElevenLabsClient(
-            api_key=os.getenv("ELEVENLABS_API_KEY"),
-            voice_id=os.getenv("ELEVENLABS_VOICE_ID", "21m00Tcm4TlvDq8ikWAM")
+        self.tts = QwenTTSClient(
+            voice_id=os.getenv("TTS_VOICE_ID", "primavera")
         )
         self.conversation = ConversationManager(
-            api_key=os.getenv("OPENAI_API_KEY"),
-            personality_config=self.config.personality
+            personality_config=self.config.personality,
+            base_url=os.getenv("LLM_BASE_URL", "http://100.67.155.96:1234/v1"),
+            model=os.getenv("LLM_MODEL", "qwen3.5"),
         )
         
         # State management
@@ -62,8 +61,8 @@ class VoiceChatbot:
         logger.info(f"Personality: {self.config.personality['name']}")
         
         try:
-            # Connect to Deepgram
-            self.deepgram.connect()
+            # Connect to smart-turn ASR
+            self.smartturn.connect()
             
             # Start listening
             self.is_listening = True
@@ -86,10 +85,10 @@ class VoiceChatbot:
     def handle_audio_chunk(self, audio_data: bytes):
         """Handle audio chunk from microphone"""
         if (self.is_listening and not self.is_processing) or self.shadow_listening:
-            self.deepgram.send_audio(audio_data)
+            self.smartturn.send_audio(audio_data)
             
     def handle_transcript(self, transcript: str, is_final: bool):
-        """Handle transcript from Deepgram"""
+        """Handle transcript from smart-turn ASR"""
         if not transcript.strip():
             return
             
@@ -230,18 +229,15 @@ class VoiceChatbot:
             
             # Generate audio for complete response
             logger.info("Generating audio...")
-            audio_data = self.elevenlabs.generate_audio(
-                full_response,
-                self.config.get_voice_settings()
-            )
+            audio_data = self.tts.generate_audio(full_response)
             
             # Enable shadow listening for interruption detection
             self.shadow_listening = True
             logger.info("Shadow listening enabled - you can interrupt")
             
-            # Play the audio
+            # Play the audio (Qwen-TTS returns WAV)
             logger.info("Playing audio...")
-            self.audio_manager.play_audio(audio_data)
+            self.audio_manager.play_audio(audio_data, format='wav')
             
             # Wait for playback to complete
             while self.audio_manager.is_playing:
@@ -260,7 +256,7 @@ class VoiceChatbot:
         logger.info("Shutting down...")
         self.is_listening = False
         self.audio_manager.cleanup()
-        self.deepgram.close()
+        self.smartturn.close()
         
 
 def main():
@@ -269,21 +265,8 @@ def main():
     logger.info(f"Current directory: {os.getcwd()}")
     logger.info(f".env file exists: {os.path.exists('.env')}")
     
-    # Check for required environment variables
-    required_vars = ["DEEPGRAM_API_KEY", "ELEVENLABS_API_KEY", "OPENAI_API_KEY"]
-    missing_vars = [var for var in required_vars if not os.getenv(var)]
-    
-    if missing_vars:
-        logger.error(f"Missing required environment variables: {', '.join(missing_vars)}")
-        logger.error("Please create a .env file with your API keys (see .env.example)")
-        # Debug: Try to show what's in the environment
-        for var in required_vars:
-            value = os.getenv(var)
-            if value:
-                logger.info(f"{var}: Found (length: {len(value)})")
-            else:
-                logger.info(f"{var}: Not found")
-        sys.exit(1)
+    # No cloud API keys required - using local smart-turn + Qwen-TTS + LM Studio
+    logger.info("Using local inference: smart-turn (ASR), Qwen-TTS, LM Studio (LLM)")
         
     # Create and start chatbot
     chatbot = VoiceChatbot()
