@@ -1,4 +1,5 @@
 import os
+import base64
 import requests
 import logging
 from typing import Generator, Optional
@@ -12,7 +13,6 @@ PROFILES_DIR = os.path.join(
 )
 
 # TTS servers: Glitchbox first (MacBook TTS commented out, LLM still uses MacBook)
-# ref_audio_base: where reference.wav files live ON THAT SERVER's filesystem
 TTS_SERVERS = [
     # {
     #     "name": "MacBook",
@@ -20,6 +20,7 @@ TTS_SERVERS = [
     #     "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16",
     #     "timeout": 10,
     #     "streaming_interval": 2.0,
+    #     "send_voice_data": False,  # MacBook uses ref_audio file path
     #     "ref_audio_base": os.path.expanduser(
     #         "~/Desktop/ART <3/The Artist is Present/AI-GOD/simple-voice-chatbot/voice_library/profiles"
     #     ),
@@ -28,56 +29,65 @@ TTS_SERVERS = [
         "name": "Glitchbox",
         "url": "http://100.79.41.86:8000/v1/audio/speech",
         "model": "qwen3-tts",
-        "timeout": 20,
+        "timeout": 60,
         "streaming_interval": 0.5,
-        "ref_audio_base": "/home/plantoidz/PLANTOIDZ/voice_references",
     },
 ]
 
 
 class QwenTTSClient:
     """
-    Text-to-speech client using Qwen-TTS servers with voice cloning
-    from per-profile reference.wav + transcript.txt.
+    Text-to-speech client using Qwen-TTS servers with voice cloning.
+    Sends voice_data (base64 WAV) + ref_text for voice cloning,
+    matching the voice_agent_server_presaved.py approach.
     """
 
     def __init__(self, voice_id: str = "primavera"):
         self.voice_id = voice_id
+        # Pre-load voice data cache to avoid re-reading files each call
+        self._voice_cache: dict[str, tuple[str, str]] = {}
 
-    def _load_profile(self, profile_id: str):
-        """Load ref_audio path and ref_text from a voice profile directory."""
+    def _load_profile(self, profile_id: str) -> tuple[str, str]:
+        """Load voice_data (base64) and ref_text from a voice profile directory."""
+        if profile_id in self._voice_cache:
+            return self._voice_cache[profile_id]
+
         profile_dir = os.path.join(PROFILES_DIR, profile_id)
-        ref_audio = os.path.join(profile_dir, "reference.wav")
-        ref_text_file = os.path.join(profile_dir, "transcript.txt")
+        wav_path = os.path.join(profile_dir, "reference.wav")
+        txt_path = os.path.join(profile_dir, "transcript.txt")
+
+        voice_b64 = ""
+        if os.path.exists(wav_path):
+            with open(wav_path, "rb") as f:
+                voice_b64 = base64.b64encode(f.read()).decode()
+            logger.info(f"Loaded voice reference for {profile_id}")
 
         ref_text = ""
-        if os.path.exists(ref_text_file):
-            with open(ref_text_file) as f:
+        if os.path.exists(txt_path):
+            with open(txt_path) as f:
                 ref_text = f.read().strip()
 
-        return ref_audio, ref_text
+        self._voice_cache[profile_id] = (voice_b64, ref_text)
+        return voice_b64, ref_text
 
     def stream_text(self, text: str, voice_settings: dict = None,
                     voice_id: str = None) -> Generator[bytes, None, None]:
         """Stream TTS audio as WAV chunks, trying each server in order."""
         selected_voice = voice_id or self.voice_id
-        _, ref_text = self._load_profile(selected_voice)
+        voice_b64, ref_text = self._load_profile(selected_voice)
 
         for server in TTS_SERVERS:
             try:
                 payload = {
                     "model": server["model"],
                     "input": text,
+                    "voice": "Vivian",
+                    "voice_data": voice_b64,
+                    "ref_text": ref_text,
                     "response_format": "wav",
                     "stream": True,
-                    "streaming_interval": server["streaming_interval"],
+                    "streaming_interval": server.get("streaming_interval", 0.5),
                 }
-
-                ref_audio = os.path.join(
-                    server["ref_audio_base"], selected_voice, "reference.wav"
-                )
-                payload["ref_audio"] = ref_audio
-                payload["ref_text"] = ref_text
 
                 resp = requests.post(
                     server["url"],
