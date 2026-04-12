@@ -237,7 +237,7 @@ class VoiceChatbot:
             
             # Play the audio (Qwen-TTS returns WAV)
             logger.info("Playing audio...")
-            self.audio_manager.play_audio(audio_data, format='wav')
+            self.audio_manager.play_audio(audio_data, format='raw', sample_rate=24000)
             
             # Wait for playback to complete
             while self.audio_manager.is_playing:

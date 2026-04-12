@@ -717,10 +717,10 @@ class PhoneChatbot:
                 self.audio_playback_start_time = time.time()
                 logger.info("Shadow listening enabled - you can interrupt")
 
-            # Combine and play through our audio manager (Qwen-TTS returns WAV)
+            # Combine and play (Qwen-TTS returns raw PCM 24kHz 16-bit mono)
             if audio_chunks:
                 complete_audio = b''.join(audio_chunks)
-                self.audio_manager.play_audio(complete_audio, format='wav')
+                self.audio_manager.play_audio(complete_audio, format='raw', sample_rate=24000)
 
             # Wait for playback to complete
             while self.audio_manager.is_playing:
@@ -777,10 +777,10 @@ class PhoneChatbot:
                     beep_stopped = True
                 audio_chunks.append(chunk)
 
-            # Combine and play (Qwen-TTS returns WAV)
+            # Combine and play (Qwen-TTS returns raw PCM 24kHz 16-bit mono)
             if audio_chunks:
                 complete_audio = b''.join(audio_chunks)
-                self.audio_manager.play_audio(complete_audio, format='wav')
+                self.audio_manager.play_audio(complete_audio, format='raw', sample_rate=24000)
 
         except Exception as e:
             logger.error(f"Error streaming god greeting: {e}")

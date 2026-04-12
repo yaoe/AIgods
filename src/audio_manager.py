@@ -108,7 +108,7 @@ class AudioManager:
             # Return original data if amplification fails
             return audio_data
     
-    def play_audio(self, audio_data: bytes, format: str = "mp3"):
+    def play_audio(self, audio_data: bytes, format: str = "mp3", sample_rate: int = None):
         """Play audio data"""
         self.is_playing = True
         self.is_interrupted = False
@@ -125,7 +125,7 @@ class AudioManager:
                 audio_segment = AudioSegment(
                     data=audio_data,
                     sample_width=2,  # 16-bit = 2 bytes
-                    frame_rate=self.sample_rate,
+                    frame_rate=sample_rate or self.sample_rate,
                     channels=1
                 )
             else:

@@ -84,7 +84,7 @@ class QwenTTSClient:
                     "voice": voice_preset,
                     "voice_path": ref_audio,
                     "ref_text": ref_text,
-                    "response_format": "wav",
+                    "response_format": "pcm",
                     "stream": True,
                     "streaming_interval": server.get("streaming_interval", 0.5),
                 }
