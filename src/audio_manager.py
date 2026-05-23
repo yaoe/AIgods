@@ -136,8 +136,8 @@ class AudioManager:
             audio_segment = audio_segment.set_channels(1)  # Force mono
             audio_segment = audio_segment.set_sample_width(2)  # 16-bit
 
-            # Increase volume by 6dB (approximately double the volume)
-            audio_segment = audio_segment + 6
+            # Increase volume by 12dB (~4x). Lower to 6dB if clipping occurs.
+            audio_segment = audio_segment + 12
 
             logger.debug(f"Audio format: {audio_segment.frame_rate}Hz, {audio_segment.channels} channels, {audio_segment.sample_width} bytes/sample")
 
@@ -259,8 +259,8 @@ class AudioManager:
             audio_segment = audio_segment.set_channels(1)
             audio_segment = audio_segment.set_sample_width(2)
             
-            # Increase volume by 6dB (same as regular playback)
-            audio_segment = audio_segment + 6
+            # Match the regular playback gain
+            audio_segment = audio_segment + 12
             
             pcm_data = audio_segment.raw_data
             
