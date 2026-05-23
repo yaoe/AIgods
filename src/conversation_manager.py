@@ -46,11 +46,16 @@ class ConversationManager:
     def __init__(self, personality_config: dict,
                  base_url: str = "http://100.67.155.96:1234/v1",
                  model: str = "qwen3.5",
-                 api_key: str = "not-needed"):
+                 api_key: str = "not-needed",
+                 extra_body: dict = None):
         self.client = openai.OpenAI(base_url=base_url, api_key=api_key)
         self.personality = personality_config
         self.messages: List[Message] = []
         self.model = model
+        # Extra fields forwarded as JSON to the OpenAI-compatible server.
+        # On LM Studio + Qwen, this is how you pass chat_template_kwargs
+        # (e.g. enable_thinking=False) without modifying the SDK call shape.
+        self.extra_body = extra_body or {}
         
         # Initialize with system message
         system_msg = Message(
@@ -82,7 +87,8 @@ class ConversationManager:
                     messages=api_messages,
                     temperature=conv_style.get("temperature", 0.7),
                     max_tokens=conv_style.get("max_response_length", 150),
-                    stream=True
+                    stream=True,
+                    extra_body=self.extra_body or None,
                 )
                 
                 full_response = ""
@@ -102,7 +108,8 @@ class ConversationManager:
                     model=self.model,
                     messages=api_messages,
                     temperature=conv_style.get("temperature", 0.7),
-                    max_tokens=conv_style.get("max_response_length", 150)
+                    max_tokens=conv_style.get("max_response_length", 150),
+                    extra_body=self.extra_body or None,
                 )
                 
                 content = response.choices[0].message.content
