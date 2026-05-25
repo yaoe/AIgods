@@ -411,6 +411,43 @@ class PrimaveraOpenSourceChatbot:
 
             time.sleep(0.01)
 
+    def _play_greeting(self):
+        """Play the greeting on pickup.
+
+        - If GREETING_TEXT env var is set (non-empty), TTS it through the
+          active voice clone — used by per-persona launchers (e.g. Logina).
+        - Otherwise, fall back to the original random-WAV behaviour from
+          ./Voice samples/greetings/ — preserves the pre-recorded
+          Primavera greetings when no explicit text is configured.
+        """
+        greeting_text = os.getenv("GREETING_TEXT", "").strip()
+
+        if not greeting_text:
+            self._play_random_sound('./Voice samples/greetings/')
+            return
+
+        logger.info(f"Speaking greeting: {greeting_text}")
+
+        audio_chunks = []
+        for chunk in self.tts.stream_text(greeting_text, voice_id=PRIMAVERA_VOICE_ID):
+            audio_chunks.append(chunk)
+
+        if not audio_chunks:
+            logger.warning(
+                "Greeting TTS produced no audio — caller will hear silence on pickup"
+            )
+            return
+
+        audio_data = b''.join(audio_chunks)
+        # Block the mic-path from picking up the greeting echo as user speech
+        self.is_ai_speaking = True
+        try:
+            self.audio_manager.play_audio(
+                audio_data, format='raw', sample_rate=OMNIVOICE_SAMPLE_RATE
+            )
+        finally:
+            self.is_ai_speaking = False
+
     def _play_random_sound(self, folder_path):
         wav_files = [f for f in os.listdir(folder_path) if f.endswith('.wav')]
         if not wav_files:
@@ -456,7 +493,7 @@ class PrimaveraOpenSourceChatbot:
             self._stop_ringback_tone()
             time.sleep(0.5)
 
-            self._play_random_sound('./Voice samples/greetings/')
+            self._play_greeting()
 
             logger.info("Listening for user speech...")
 
