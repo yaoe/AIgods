@@ -414,34 +414,72 @@ class PrimaveraOpenSourceChatbot:
     def _play_greeting(self):
         """Play the greeting on pickup.
 
-        - If GREETING_TEXT env var is set (non-empty), TTS it through the
-          active voice clone — used by per-persona launchers (e.g. Logina).
-        - Otherwise, fall back to the original random-WAV behaviour from
-          ./Voice samples/greetings/ — preserves the pre-recorded
-          Primavera greetings when no explicit text is configured.
+        Priority order (first match wins):
+          1. GREETINGS_WAV_FOLDER → random pre-rendered WAV. Zero TTS
+             latency. Use render_greetings.py to populate this folder.
+          2. GREETINGS_FILE → text file with one greeting per line; a
+             random line is TTS'd live per pickup (mirrors the WAV folder
+             pattern, but ~2-3s slower as it waits for OmniVoice).
+          3. GREETING_TEXT env var → single string, TTS'd live as-is.
+          4. Fallback: random WAV from ./Voice samples/greetings/ —
+             preserves the pre-recorded Primavera greetings.
+
+        Holds `is_ai_speaking = True` for the entire greeting so the
+        mic-path is silenced uniformly across all four branches.
         """
-        greeting_text = os.getenv("GREETING_TEXT", "").strip()
-
-        if not greeting_text:
-            self._play_random_sound('./Voice samples/greetings/')
-            return
-
-        logger.info(f"Speaking greeting: {greeting_text}")
-
-        audio_chunks = []
-        for chunk in self.tts.stream_text(greeting_text, voice_id=PRIMAVERA_VOICE_ID):
-            audio_chunks.append(chunk)
-
-        if not audio_chunks:
-            logger.warning(
-                "Greeting TTS produced no audio — caller will hear silence on pickup"
-            )
-            return
-
-        audio_data = b''.join(audio_chunks)
-        # Block the mic-path from picking up the greeting echo as user speech
         self.is_ai_speaking = True
         try:
+            # 1. Pre-rendered WAV folder (fastest)
+            wav_folder = os.getenv("GREETINGS_WAV_FOLDER", "").strip()
+            if wav_folder and os.path.isdir(wav_folder):
+                try:
+                    if any(f.endswith(".wav") for f in os.listdir(wav_folder)):
+                        self._play_random_sound(wav_folder)
+                        return
+                    logger.warning(f"{wav_folder} has no .wav files — falling through")
+                except Exception as e:
+                    logger.warning(f"Could not list {wav_folder} ({e}) — falling through")
+
+            greeting_text = ""
+
+            # 2. File of greetings → pick one at random
+            greetings_file = os.getenv("GREETINGS_FILE", "").strip()
+            if greetings_file:
+                try:
+                    with open(greetings_file, "r", encoding="utf-8") as f:
+                        lines = [ln.strip() for ln in f if ln.strip()]
+                    if lines:
+                        greeting_text = random.choice(lines)
+                        logger.info(
+                            f"Picked greeting {lines.index(greeting_text) + 1}/{len(lines)} from {greetings_file}"
+                        )
+                    else:
+                        logger.warning(f"{greetings_file} is empty — falling through")
+                except Exception as e:
+                    logger.warning(f"Could not read {greetings_file} ({e}) — falling through")
+
+            # 3. Single-string env var (used if file path wasn't usable)
+            if not greeting_text:
+                greeting_text = os.getenv("GREETING_TEXT", "").strip()
+
+            # 4. Pre-recorded WAV fallback
+            if not greeting_text:
+                self._play_random_sound('./Voice samples/greetings/')
+                return
+
+            logger.info(f"Speaking greeting: {greeting_text}")
+
+            audio_chunks = []
+            for chunk in self.tts.stream_text(greeting_text, voice_id=PRIMAVERA_VOICE_ID):
+                audio_chunks.append(chunk)
+
+            if not audio_chunks:
+                logger.warning(
+                    "Greeting TTS produced no audio — caller will hear silence on pickup"
+                )
+                return
+
+            audio_data = b''.join(audio_chunks)
             self.audio_manager.play_audio(
                 audio_data, format='raw', sample_rate=OMNIVOICE_SAMPLE_RATE
             )
@@ -486,7 +524,10 @@ class PrimaveraOpenSourceChatbot:
 
             self.start_streaming_threads()
 
-            self.is_listening = True
+            # Start mic capture but keep the listening gate CLOSED until the
+            # greeting finishes — otherwise greeting audio bleeds back through
+            # the mic and smart-turn buffers it as the user's "first turn".
+            self.is_listening = False
             self.audio_manager.start_recording(self.handle_audio_chunk)
 
             logger.info("Ready! Stopping ringback and playing greeting...")
@@ -495,6 +536,10 @@ class PrimaveraOpenSourceChatbot:
 
             self._play_greeting()
 
+            # Greeting done — flush any stale buffered transcript and open the gate.
+            self.accumulated_transcript = ""
+            self.current_transcript = ""
+            self.is_listening = True
             logger.info("Listening for user speech...")
 
         except Exception as e:

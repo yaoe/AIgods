@@ -35,11 +35,19 @@ os.environ.setdefault(
 # and returns an empty corpus, so Logina's system prompt is just the
 # mermaid persona with no interview transcripts appended.
 os.environ.setdefault("PRIMAVERA_TRANSCRIPTS_DIR", "_no_transcripts_for_logina_")
-# Greeting played on pickup, TTS'd through the logina voice clone.
+# Greetings played on pickup. Two layers:
+#   - GREETINGS_WAV_FOLDER: pre-rendered WAVs (instant playback). Populate
+#     with `python render_greetings.py --in config/logina_greetings.txt
+#     --voice logina --out "Voice samples/greetings_logina/"`.
+#   - GREETINGS_FILE: fallback if the WAV folder is empty/missing — live
+#     TTS the random line each time (~2-3s wait on pickup).
 os.environ.setdefault(
-    "GREETING_TEXT",
-    "Oh, hello! It's Logina here, swimming next to your boat on the Seine. "
-    "Happy birthday to Miyuki, by the way! Who am I talking to?",
+    "GREETINGS_WAV_FOLDER",
+    os.path.join(PROJECT_ROOT, "Voice samples", "greetings_logina"),
+)
+os.environ.setdefault(
+    "GREETINGS_FILE",
+    os.path.join(PROJECT_ROOT, "config", "logina_greetings.txt"),
 )
 
 # Make sure src/ is on sys.path so the import works whether the user runs
