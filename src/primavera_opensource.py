@@ -1061,7 +1061,7 @@ class PrimaveraOpenSourceChatbot:
                 tick_count += 1
                 logger.info(f"🔊 TICK #{tick_count}")
                 if sys.platform == 'linux':
-                    subprocess.Popen(['aplay', '-D', 'plughw:1,0', '/tmp/debug_tick.wav'],
+                    subprocess.Popen(['aplay', '-D', 'plughw:3,0', '/tmp/debug_tick.wav'],
                                      stdout=subprocess.DEVNULL,
                                      stderr=subprocess.DEVNULL)
                 else:
