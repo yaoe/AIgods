@@ -109,7 +109,7 @@ logger = logging.getLogger(__name__)
 
 
 # GPIO pin definitions (same as streaming branch)
-PHONE_HANDLE_PIN = 21
+PHONE_HANDLE_PIN = 25 # 21 @@@ changed to GPIO 25 because I2S needs GPIO21
 PULSE_ENABLE_PIN = 23
 PULSE_INPUT_PIN = 24
 
