@@ -265,7 +265,7 @@ class PrimaveraOpenSourceChatbot:
             output_device_index=AUDIO_OUTPUT_DEVICE
         )
 
-        self._ensure_audio_setup()
+        # self._ensure_audio_setup() -- disabled: legacy amixer, conflicts with PipeWire/HifiBerry
         self._debug_audio_devices()
 
         # Build Primavera's personality with all transcripts loaded
