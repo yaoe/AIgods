@@ -378,7 +378,53 @@ class PrimaveraOpenSourceChatbot:
             elif cmd == 'q':
                 break
 
+
     def _gpio_loop(self):
+        hook_stable_count = 0
+        HOOK_DEBOUNCE_COUNT = 5  # 5 × 10ms = 50ms must pass before we accept a change
+
+        while True:
+            raw_phone = GPIO.input(PHONE_HANDLE_PIN)
+            pulse_enable_state = GPIO.input(PULSE_ENABLE_PIN)
+            pulse_state = GPIO.input(PULSE_INPUT_PIN)
+
+            # Debounce the hook switch: require N consecutive identical reads
+            if raw_phone != self.last_phone_state:
+                hook_stable_count += 1
+                if hook_stable_count >= HOOK_DEBOUNCE_COUNT:
+                    if self.last_phone_state and not raw_phone:
+                        self._handle_phone_pickup()
+                    elif not self.last_phone_state and raw_phone:
+                        self._handle_phone_hangup()
+                    self.last_phone_state = raw_phone
+                    hook_stable_count = 0
+            else:
+                hook_stable_count = 0
+
+            # Dial pulses — fast, no debounce
+            if self.phone_active and not self.conversation_active:
+                if self.last_pulse_enable_state and not pulse_enable_state:
+                    logger.info("📞 Dialing started...")
+                    self.counting_active = True
+                    self.pulse_count = 0
+                    self._stop_dial_tone()
+                elif not self.last_pulse_enable_state and pulse_enable_state:
+                    if self.counting_active:
+                        self.counting_active = False
+                        self._start_conversation()
+
+                if self.counting_active and self.last_pulse_state and not pulse_state:
+                    self.pulse_count += 1
+                    logger.info(f"Pulse {self.pulse_count}")
+
+            self.last_pulse_enable_state = pulse_enable_state
+            self.last_pulse_state = pulse_state
+
+            time.sleep(0.01)
+
+
+
+    def _gpio_loop_old(self):
         while True:
             phone_state = GPIO.input(PHONE_HANDLE_PIN)
             pulse_enable_state = GPIO.input(PULSE_ENABLE_PIN)
